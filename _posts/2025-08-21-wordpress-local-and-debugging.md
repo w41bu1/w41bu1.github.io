@@ -190,9 +190,7 @@ mysql> CREATE USER wordpress@localhost IDENTIFIED BY '<your-password>';
 Query OK, 1 row affected (0,00 sec)
 
 -- Cấp quyền cho user WordPress
-mysql> GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER
-    -> ON wordpress.*
-    -> TO wordpress@localhost;
+mysql> GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON wordpress.* TO wordpress@localhost;
 Query OK, 1 row affected (0,00 sec)
 
 -- Làm mới lại quyền
