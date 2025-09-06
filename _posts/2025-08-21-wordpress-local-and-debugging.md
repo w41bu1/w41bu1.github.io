@@ -283,7 +283,7 @@ Nếu có dòng `with Xdebug v3.x.x` nghĩa là đã OK.
 #### Configure Xdebug
 
 ```shell
-sudo nano /etc/php/8.1/apache2/php.ini
+sudo nano /etc/php/<version>/apache2/php.ini
 ```
 
 Thêm vào cuối file
