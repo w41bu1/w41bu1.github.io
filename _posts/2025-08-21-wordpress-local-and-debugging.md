@@ -268,7 +268,7 @@ Extension này kết nối với **Xdebug**.
 #### Install Xdebug on Ubuntu
 
 ```shell
-sudo apt install php<version>-xdebug -y
+sudo apt install php-xdebug -y
 ```
 
 Kiểm tra cài chưa:
