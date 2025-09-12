@@ -48,7 +48,6 @@ Có rất nhiều cách để setup WorkPress, tìm kiếm bằng **Google** có
 #### Install Dependencies
 Cài toàn bộ stack cần thiết để chạy WordPress (web server + database + PHP + các extension quan trọng).
 ```shell
-sudo apt update
 sudo apt install apache2 \
                  ghostscript \
                  libapache2-mod-php \
@@ -269,7 +268,6 @@ Extension này kết nối với **Xdebug**.
 #### Install Xdebug on Ubuntu
 
 ```shell
-sudo apt update
 sudo apt install php-xdebug
 ```
 
