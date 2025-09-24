@@ -1,0 +1,91 @@
+# Văn bản hiển thị trong giao diện
+
+# ----- Nhãn chung -----
+
+layout:
+  post: Bài viết
+  category: Chuyên mục
+  tag: Thẻ
+
+# Các tab trong sidebar
+tabs:
+  # định dạng: <tên_file_không_có_extension>: <giá trị>
+  home: Trang chủ
+  categories: Chuyên mục
+  tags: Thẻ
+  archives: Lưu trữ
+  about: Giới thiệu
+
+# Văn bản trong thanh tìm kiếm & kết quả tìm kiếm
+search:
+  hint: tìm kiếm
+  cancel: Hủy
+  no_results: Rất tiếc! Không tìm thấy kết quả nào.
+
+panel:
+  lastmod: Cập nhật gần đây
+  trending_tags: Thẻ xu hướng
+  toc: Mục lục
+
+copyright:
+  # Hiển thị cuối mỗi bài viết
+  license:
+    template: Bài viết này được cấp phép theo :LICENSE_NAME bởi tác giả.
+    name: CC BY 4.0
+    link: https://creativecommons.org/licenses/by/4.0/
+
+  # Hiển thị ở footer
+  brief: Một số quyền được bảo lưu.
+  verbose: >-
+    Trừ khi có ghi chú khác, các bài viết trên trang này được cấp phép
+    theo giấy phép Creative Commons Attribution 4.0 International (CC BY 4.0) bởi tác giả.
+
+meta: ""
+
+not_found:
+  statement: Xin lỗi, chúng tôi không tìm thấy URL này hoặc nó trỏ đến nội dung không tồn tại.
+
+notification:
+  update_found: Có phiên bản nội dung mới.
+  update: Cập nhật
+
+# ----- Các nhãn liên quan đến bài viết -----
+
+post:
+  written_by: Tác giả
+  posted: Đăng ngày
+  updated: Cập nhật
+  words: từ
+  pageview_measure: lượt xem
+  read_time:
+    unit: phút
+    prompt: đọc
+  relate_posts: Bài viết liên quan
+  share: Chia sẻ
+  button:
+    next: Mới hơn
+    previous: Cũ hơn
+    copy_code:
+      succeed: Đã sao chép!
+    share_link:
+      title: Sao chép liên kết
+      succeed: Sao chép liên kết thành công!
+
+# Định dạng ngày tháng
+# Tham khảo: <http://strftime.net/>, <https://day.js.org/docs/en/display/format>
+df:
+  post:
+    strftime: "%e %b, %Y"
+    dayjs: "ll"
+  archives:
+    strftime: "%b"
+    dayjs: "MMM"
+
+# Trang chuyên mục
+categories:
+  category_measure:
+    singular: chuyên mục
+    plural: chuyên mục
+  post_measure:
+    singular: bài viết
+    plural: bài viết
