@@ -16,7 +16,7 @@ timezone: Asia/Ho_Chi_Minh
 
 title: w41bu1 # the main title
 
-tagline: wanabe hacker... # it will display as the subtitle
+tagline: <i class="fas fa-shield-alt"></i> Security Research <br> <i class="fas fa-bug"></i> Penetration Tester # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
