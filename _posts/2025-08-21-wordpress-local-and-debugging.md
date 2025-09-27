@@ -99,7 +99,13 @@ curl https://wordpress.org/wordpress-6.6.2.tar.gz | sudo -u www-data tar zx -C /
 
 #### Configure Apache for WordPress
 
-Create `/etc/apache2/sites-available/wordpress.conf`:
+Create & edit `/etc/apache2/sites-available/wordpress.conf`:
+
+```shell
+sudo nano /etc/apache2/sites-available/wordpress.conf
+```
+
+Paste the following content in:
 
 ```text
 <VirtualHost *:80>
@@ -179,6 +185,10 @@ sudo -u www-data sed -i 's/password_here/<your-password>/' /srv/www/wordpress/wp
 ```
 
 Add secret keys and salts from: [https://api.wordpress.org/secret-key/1.1/salt/](https://api.wordpress.org/secret-key/1.1/salt/)
+
+```shell
+sudo nano /srv/www/wordpress/wp-config.php
+```
 
 #### Configure WordPress
 
