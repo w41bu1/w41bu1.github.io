@@ -55,7 +55,7 @@ There are many ways to set up WordPress; searching **Google** will provide plent
 Install the full stack required to run WordPress (web server + database + PHP + important extensions):  
 
 ```shell
-sudo apt install apache2 \
+sudo apt install -y apache2 \
                  ghostscript \
                  libapache2-mod-php \
                  mysql-server \
