@@ -286,3 +286,16 @@ To disable auto updates, add to `wp-config.php`:
 ```php
 define( 'WP_AUTO_UPDATE_CORE', false );
 ```
+
+### Increase Plugin Upload Size
+Paste below content into `php.ini`{: .filepath} file.
+
+```ini
+upload_max_filesize = 64M
+post_max_size = 64M
+memory_limit = 128M
+max_execution_time = 300
+max_input_time = 300
+```
+
+---
