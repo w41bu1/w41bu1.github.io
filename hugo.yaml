@@ -1,5 +1,6 @@
 # Hugo configuration file
-title: My Site
+baseURL: "https://w41bu1.github.io"
+title: Bui Van Y
 
 # import hextra as module
 module:
@@ -7,25 +8,45 @@ module:
     - path: github.com/imfing/hextra
 
 markup:
-  # allow raw html
+  highlight:
+    noClasses: false
   goldmark:
     renderer:
       unsafe: true
+    extensions:
+      passthrough:
+        delimiters:
+          block: [['\[', '\]'], ['$$', '$$']]
+          inline: [['\(', '\)']]
+        enable: true
 
-  # enable hextra syntax highlight
-  highlight:
-    noClasses: false
+enableInlineShortcodes: true
+
+defaultContentLanguage: en
+languages:
+  en:
+    languageName: English
+    weight: 1
+    title: Bui Van Y
+  vi:
+    languageName: Vietnamese
+    languageCode: vi
+    weight: 2
+    title: Bui Van Y
 
 menu:
   main:
-    - name: Docs
-      pageRef: /docs
+    - identifier: blog
+      name: Blog
+      pageRef: /blog
       weight: 1
-    - name: About
-      pageRef: /about
+    - identifier: documentation
+      name: Playbook
+      pageRef: /docs
       weight: 2
-    - name: Contact ↗
-      url: "https://github.com/imfing"
+    - identifier: about
+      name: About
+      pageRef: /about
       weight: 3
     - name: Search
       weight: 4
@@ -33,24 +54,99 @@ menu:
         type: search
     - name: GitHub
       weight: 5
-      url: "https://github.com/imfing/hextra-starter-template"
+      url: "https://github.com/w41bu1"
       params:
         icon: github
-    - name: Twitter
-      weight: 6
-      url: "https://twitter.com/"
-      params:
-        icon: x-twitter
 
 params:
+  description: Modern, responsive, batteries-included Hugo theme for creating beautiful static websites.
+
+  externalLinkDecoration: true
+
   navbar:
     displayTitle: true
-    displayLogo: false
+    displayLogo: true
+    logo:
+      path: images/logo.svg
+      dark: images/logo-dark.svg
+      # width: 40
+      # height: 20
+      # link: /
+    width: wide
+
+  theme:
+    # light | dark | system
+    default: dark
+    displayToggle: true
 
   footer:
+    enable: true
     displayCopyright: false
-    displayPoweredBy: true
+    displayPoweredBy: false
+    width: normal
+
+  # Display the last modification date
+  displayUpdatedDate: true
+  dateFormat: "January 2, 2006"
+
+  # Search
+  # flexsearch is enabled by default
+  search:
+    enable: true
+    type: flexsearch
+
+    flexsearch:
+      # index page by: content | summary | heading | title
+      index: content
+      # full | forward | reverse | strict
+      # https://github.com/nextapps-de/flexsearch/#tokenizer-prefix-search
+      tokenize: forward
 
   editURL:
     enable: true
-    base: "https://github.com/imfing/hextra-starter-template/edit/main/content"
+    base: "https://github.com/w41bu1/w41bu1.github.io/edit/main/docs/content"
+
+  blog:
+    list:
+      displayTags: true
+      # date | lastmod | publishDate | title | weight
+      sortBy: date
+      sortOrder: desc # or "asc"
+      # Pagination
+      pagerSize: 8
+
+    article:
+      displayPagination: true
+
+  toc:
+    displayTags: true
+
+  highlight:
+    copy:
+      enable: true
+      # hover | always
+      display: hover
+
+  page:
+    # full (100%), wide (90rem), normal (80rem)
+    width: normal
+    # tabs:
+    #   sync: true
+
+  comments:
+    enable: true
+    type: giscus
+
+    # https://giscus.app/
+    giscus:
+      repo: w41bu1/w41bu1.github.io
+      repoId: R_kgDOP1ZlAg
+      category: General
+      categoryId: DIC_kwDOP1ZlAs4Cv0rK
+      # mapping: pathname
+      # strict: 0
+      # reactionsEnabled: 1
+      # emitMetadata: 0
+      # inputPosition: top
+      # lang: en
+      # theme: noborder_dark

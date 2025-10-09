@@ -1,9 +1,9 @@
 ---
-title: Documentation
-next: first-page
+title: Playbook
+comments: false
 ---
 
-This is a demo of the theme's documentation layout.
+This is a demo of the theme's Playbook layout.
 
 ## Hello, World!
 
