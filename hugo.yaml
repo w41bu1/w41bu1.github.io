@@ -21,6 +21,7 @@ markup:
         enable: true
 
 enableInlineShortcodes: true
+buildFuture: true
 
 defaultContentLanguage: en
 languages:
