@@ -10,6 +10,7 @@ Exploring the thin line between chaos and control ⚡
 ## Explore
 
 {{< cards >}}
-  {{< card link="docs" title="Docs" icon="book-open" >}}
-  {{< card link="about" title="About" icon="user" >}}
+  {{< card link="docs" title="Playbook" icon="book-open" >}}
+  {{< card link="blog" title="Blog" icon="user" >}}
+  {{< card link="https://github.com/w41bu1/PoC" title="PoC" icon="poc" >}}
 {{< /cards >}}
