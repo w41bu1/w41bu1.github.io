@@ -24,6 +24,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .chirpy-lightbox-overlay img {
@@ -44,7 +45,6 @@
   word-wrap: break-word;
 }
 
-/* 🔘 Nút zoom */
 .chirpy-lightbox-controls {
   position: absolute;
   bottom: 30px;
@@ -66,4 +66,10 @@
 
 .chirpy-lightbox-controls button:hover {
   background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 767px) {
+  .chirpy-lightbox-controls {
+    display: none !important;
+  }
 }
