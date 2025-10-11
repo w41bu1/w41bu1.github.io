@@ -1,71 +1,71 @@
 .chirpy-lightbox-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
 }
 
 .chirpy-lightbox-overlay.active {
-  opacity: 1;
-  visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
 
 .chirpy-lightbox-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .chirpy-lightbox-overlay img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  border-radius: 4px;
-  transition: transform 0.3s ease;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    transition: transform 0.3s ease;
 }
 
 .chirpy-lightbox-caption {
-  margin-top: 10px;
-  color: #fff;
-  font-size: 0.95rem;
-  text-align: center;
-  max-width: 90%;
-  word-wrap: break-word;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 0.95rem;
+    text-align: center;
+    max-width: 90%;
+    word-wrap: break-word;
 }
 
+/* 🔘 Nút zoom */
 .chirpy-lightbox-controls {
-  position: absolute;
-  bottom: 30px;
-  display: flex;
-  gap: 10px;
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    gap: 10px;
 }
 
 .chirpy-lightbox-controls button {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  color: #fff;
-  font-size: 1.5rem;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.3s;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+    font-size: 1.5rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
 .chirpy-lightbox-controls button:hover {
-  background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 @media (max-width: 767px) {
