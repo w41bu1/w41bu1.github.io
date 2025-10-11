@@ -19,7 +19,7 @@
   visibility: visible;
 }
 
-.chirpy-lightbox-overlay > div {
+.chirpy-lightbox-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,6 +32,7 @@
   object-fit: contain;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   border-radius: 4px;
+  transition: transform 0.3s ease;
 }
 
 .chirpy-lightbox-caption {
@@ -41,4 +42,28 @@
   text-align: center;
   max-width: 90%;
   word-wrap: break-word;
+}
+
+/* 🔘 Nút zoom */
+.chirpy-lightbox-controls {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.chirpy-lightbox-controls button {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-size: 1.5rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.chirpy-lightbox-controls button:hover {
+  background: rgba(255, 255, 255, 0.3);
 }

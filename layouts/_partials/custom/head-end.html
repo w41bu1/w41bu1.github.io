@@ -3,6 +3,10 @@
         const overlay = document.getElementById('chirpy-lightbox');
         const overlayImg = document.getElementById('chirpy-lightbox-img');
         const overlayCaption = document.getElementById('chirpy-lightbox-caption');
+        const zoomInBtn = document.getElementById('zoom-in');
+        const zoomOutBtn = document.getElementById('zoom-out');
+
+        let scale = 1;
 
         document.querySelectorAll('article img').forEach(img => {
             img.style.cursor = 'zoom-in';
@@ -10,13 +14,29 @@
                 overlayImg.src = img.src;
                 overlayCaption.textContent = img.alt || '';
                 overlay.classList.add('active');
+                scale = 1;
+                overlayImg.style.transform = `scale(${scale})`;
             });
         });
 
-        overlay.addEventListener('click', () => {
-            overlay.classList.remove('active');
-            overlayImg.src = '';
-            overlayCaption.textContent = '';
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                overlay.classList.remove('active');
+                overlayImg.src = '';
+                overlayCaption.textContent = '';
+            }
+        });
+
+        zoomInBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            scale = Math.min(scale + 0.2, 3);
+            overlayImg.style.transform = `scale(${scale})`;
+        });
+
+        zoomOutBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            scale = Math.max(scale - 0.2, 0.5);
+            overlayImg.style.transform = `scale(${scale})`;
         });
     });
 </script>
