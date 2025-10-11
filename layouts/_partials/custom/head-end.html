@@ -1,27 +1,22 @@
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const overlay = document.getElementById('chirpy-lightbox');
-  const overlayImg = document.getElementById('chirpy-lightbox-img');
-  const overlayCaption = document.getElementById('chirpy-lightbox-caption');
+    document.addEventListener("DOMContentLoaded", function () {
+        const overlay = document.getElementById('chirpy-lightbox');
+        const overlayImg = document.getElementById('chirpy-lightbox-img');
+        const overlayCaption = document.getElementById('chirpy-lightbox-caption');
 
-  // Duyệt qua tất cả ảnh trong bài viết
-  document.querySelectorAll('article img').forEach(img => {
-    img.style.cursor = 'zoom-in'; // Thay đổi con trỏ khi hover
-    img.addEventListener('click', () => {
-      overlayImg.src = img.src;
-      overlayCaption.textContent = img.alt || '';
-      overlay.classList.add('active');
+        document.querySelectorAll('article img').forEach(img => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+                overlayImg.src = img.src;
+                overlayCaption.textContent = img.alt || '';
+                overlay.classList.add('active');
+            });
+        });
+
+        overlay.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            overlayImg.src = '';
+            overlayCaption.textContent = '';
+        });
     });
-  });
-
-  // Đóng overlay khi click vào vùng tối
-  overlay.addEventListener('click', (e) => {
-    // Kiểm tra nếu click vào vùng nền tối (không phải ảnh)
-    if (e.target === overlay) {
-      overlay.classList.remove('active');
-      overlayImg.src = '';
-      overlayCaption.textContent = '';
-    }
-  });
-});
 </script>
