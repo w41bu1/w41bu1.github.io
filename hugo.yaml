@@ -82,12 +82,12 @@ params:
   theme:
     # light | dark | system
     default: dark
-    displayToggle: true
+    displayToggle: false
 
   footer:
     enable: true
-    displayCopyright: false
-    displayPoweredBy: false
+    displayCopyright: true
+    displayPoweredBy: true
     width: normal
 
   # Display the last modification date
