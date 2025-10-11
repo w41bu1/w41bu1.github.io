@@ -41,17 +41,17 @@ menu:
       name: Blog
       pageRef: /blog
       weight: 1
-    - identifier: documentation
-      name: Playbook
-      pageRef: /docs
+    - identifier: category
+      name: Category
+      pageRef: /categories
       weight: 2
     - identifier: tag
       name: Tag
       pageRef: /tags
       weight: 3
-    - identifier: category
-      name: Category
-      pageRef: /categories
+    - identifier: documentation
+      name: Playbook
+      pageRef: /docs
       weight: 4
     - name: Search
       weight: 5

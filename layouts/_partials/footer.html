@@ -19,4 +19,34 @@
       </div>
     </div>
   </div>
+  <div class="chirpy-lightbox-overlay" id="chirpy-lightbox">
+    <div>
+        <img src="" alt="" id="chirpy-lightbox-img">
+        <div class="chirpy-lightbox-caption" id="chirpy-lightbox-caption"></div>
+    </div>
+  </div>
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const overlay = document.getElementById('chirpy-lightbox');
+  const overlayImg = document.getElementById('chirpy-lightbox-img');
+  const overlayCaption = document.getElementById('chirpy-lightbox-caption');
+
+  document.querySelectorAll('article img').forEach(img => {
+    img.style.cursor = 'zoom-in'; 
+    img.addEventListener('click', () => {
+      overlayImg.src = img.src;
+      overlayCaption.textContent = img.alt || '';
+      overlay.classList.add('active');
+    });
+  });
+
+  overlay.addEventListener('click', () => {
+    overlay.classList.remove('active');
+    overlayImg.src = '';
+    overlayCaption.textContent = '';
+  });
+});
+</script>
+
