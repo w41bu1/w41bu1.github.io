@@ -4,15 +4,7 @@ description: A powerful and the most popular content management system (CMS).
 date: 2025-08-21 09:00:00 +0700
 categories: [Technology, Web]
 tags: [cms, php, wordpress]
-weight: 1
-images: []
-featuredImage: "app.png"
-
-lightgallery: true
-
-toc:
-  auto: false
----
+image: "app.png"
 
 ---
 
@@ -201,7 +193,7 @@ sudo nano /srv/www/wordpress/wp-config.php
 
 Visit [http://localhost](http://localhost) and set site title, username, password, and admin email.
 
-![Configure WordPress](https://ubuntucommunity.s3.us-east-2.amazonaws.com/original/2X/e/ebe4d6066e0c32f14beca85ffd53e5915a4ab278.png "Configure WordPress")
+{{< figure src="https://ubuntucommunity.s3.us-east-2.amazonaws.com/original/2X/e/ebe4d6066e0c32f14beca85ffd53e5915a4ab278.png" title="Configure WordPress" >}}
 
 ---
 
