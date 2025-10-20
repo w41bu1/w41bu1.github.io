@@ -352,36 +352,36 @@
 </li>
 </ol>
 <h2 id="ecosystem" class="headerLink">
-    <a href="#ecosystem" class="header-mark"></a>33 Ecosystem</h2><ul>
+    <a href="#ecosystem" class="header-mark"></a>9 Ecosystem</h2><ul>
 <li><strong>Core</strong>: the main CMS</li>
 <li><strong>Plugins</strong>: add-on software that extends WordPress functionality with new features</li>
 <li><strong>Themes</strong>: add-on software that defines the visual appearance and layout of a WordPress site</li>
 </ul>
 <hr>
 <h2 id="why-wordpress-hacking" class="headerLink">
-    <a href="#why-wordpress-hacking" class="header-mark"></a>34 Why WordPress Hacking?</h2><p><a href="https://patchstack.com/whitepaper/state-of-wordpress-security-in-2024" target="_blank" rel="noopener noreferrer">State of WordPress Security in 2024</a></p>
+    <a href="#why-wordpress-hacking" class="header-mark"></a>10 Why WordPress Hacking?</h2><p><a href="https://patchstack.com/whitepaper/state-of-wordpress-security-in-2024" target="_blank" rel="noopener noreferrer">State of WordPress Security in 2024</a></p>
 <h3 id="most-popular" class="headerLink">
-    <a href="#most-popular" class="header-mark"></a>34.1 Most Popular</h3><ul>
+    <a href="#most-popular" class="header-mark"></a>10.1 Most Popular</h3><ul>
 <li>Currently, more than 40% of websites worldwide run on WordPress</li>
 <li>This means hackers only need to find one common vulnerability =&gt; they can exploit millions of sites at once</li>
 <li>Similar to the saying: <em>“fish where the fish are”</em></li>
 </ul>
 <h3 id="plugins-and-themes" class="headerLink">
-    <a href="#plugins-and-themes" class="header-mark"></a>34.2 Plugins and Themes</h3><ul>
+    <a href="#plugins-and-themes" class="header-mark"></a>10.2 Plugins and Themes</h3><ul>
 <li>WordPress Core has been reviewed for a long time by thousands of <strong>developers</strong> and <strong>researchers</strong>, making it very difficult for attackers to compromise directly.</li>
 <li>However, there are tens of thousands of plugins and themes from various sources with inconsistent quality.</li>
 <li>Many plugins have poor security coding and are outdated. Hackers just need to scan for outdated versions and exploit them.</li>
 </ul>
 <hr>
 <h2 id="setup-wordpress-for-hacking" class="headerLink">
-    <a href="#setup-wordpress-for-hacking" class="header-mark"></a>35 Setup WordPress for Hacking</h2><p>There are many ways to set up WordPress; searching <strong>Google</strong> will provide plenty of guides. Here I will set it up on an <strong>Ubuntu (22.04)</strong> virtual machine:</p>
+    <a href="#setup-wordpress-for-hacking" class="header-mark"></a>11 Setup WordPress for Hacking</h2><p>There are many ways to set up WordPress; searching <strong>Google</strong> will provide plenty of guides. Here I will set it up on an <strong>Ubuntu (22.04)</strong> virtual machine:</p>
 <ul>
 <li>Does not affect real machine services</li>
 <li>WordPress is relatively lightweight and works well on a VM</li>
 </ul>
 <h3 id="install-and-configure-wordpress" class="headerLink">
-    <a href="#install-and-configure-wordpress" class="header-mark"></a>35.1 Install and Configure WordPress</h3><h4 id="install-dependencies" class="headerLink">
-    <a href="#install-dependencies" class="header-mark"></a>35.1.1 Install Dependencies</h4><p>Install the full stack required to run WordPress (web server + database + PHP + important extensions):</p>
+    <a href="#install-and-configure-wordpress" class="header-mark"></a>11.1 Install and Configure WordPress</h3><h4 id="install-dependencies" class="headerLink">
+    <a href="#install-dependencies" class="header-mark"></a>11.1.1 Install Dependencies</h4><p>Install the full stack required to run WordPress (web server + database + PHP + important extensions):</p>
 <div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -457,7 +457,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-193" 
+    id="codeblock-id-49" 
     class="
       chroma 
       !tw-block 
@@ -487,7 +487,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-zip</span></span></code></pre>
 </div>
 <h4 id="install-wordpress" class="headerLink">
-    <a href="#install-wordpress" class="header-mark"></a>35.1.2 Install WordPress</h4><p>Download and install WordPress source into the web directory:</p>
+    <a href="#install-wordpress" class="header-mark"></a>11.1.2 Install WordPress</h4><p>Download and install WordPress source into the web directory:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -563,7 +563,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-194" 
+    id="codeblock-id-50" 
     class="
       chroma 
       !tw-block 
@@ -662,7 +662,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-195" 
+    id="codeblock-id-51" 
     class="
       chroma 
       !tw-block 
@@ -686,7 +686,7 @@
 </ul>
 
 </blockquote><h4 id="configure-apache-for-wordpress" class="headerLink">
-    <a href="#configure-apache-for-wordpress" class="header-mark"></a>35.1.3 Configure Apache for WordPress</h4><p>Create &amp; edit <code>/etc/apache2/sites-available/wordpress.conf</code>:</p>
+    <a href="#configure-apache-for-wordpress" class="header-mark"></a>11.1.3 Configure Apache for WordPress</h4><p>Create &amp; edit <code>/etc/apache2/sites-available/wordpress.conf</code>:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -762,7 +762,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-196" 
+    id="codeblock-id-52" 
     class="
       chroma 
       !tw-block 
@@ -854,7 +854,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-197" 
+    id="codeblock-id-53" 
     class="
       chroma 
       !tw-block 
@@ -959,7 +959,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-198" 
+    id="codeblock-id-54" 
     class="
       chroma 
       !tw-block 
@@ -1051,7 +1051,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-199" 
+    id="codeblock-id-55" 
     class="
       chroma 
       !tw-block 
@@ -1143,7 +1143,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-200" 
+    id="codeblock-id-56" 
     class="
       chroma 
       !tw-block 
@@ -1235,7 +1235,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-201" 
+    id="codeblock-id-57" 
     class="
       chroma 
       !tw-block 
@@ -1252,7 +1252,7 @@
       "><span class="line"><span class="cl">sudo service apache2 reload</span></span></code></pre>
 </div>
 <h4 id="configure-database" class="headerLink">
-    <a href="#configure-database" class="header-mark"></a>35.1.4 Configure Database</h4><div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+    <a href="#configure-database" class="header-mark"></a>11.1.4 Configure Database</h4><div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
     tw-flex 
@@ -1327,7 +1327,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-202" 
+    id="codeblock-id-58" 
     class="
       chroma 
       !tw-block 
@@ -1418,7 +1418,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-203" 
+    id="codeblock-id-59" 
     class="
       chroma 
       !tw-block 
@@ -1514,7 +1514,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-204" 
+    id="codeblock-id-60" 
     class="
       chroma 
       !tw-block 
@@ -1531,7 +1531,7 @@
       "><span class="line"><span class="cl">sudo service mysql start</span></span></code></pre>
 </div>
 <h4 id="configure-wordpress-to-connect-to-the-database" class="headerLink">
-    <a href="#configure-wordpress-to-connect-to-the-database" class="header-mark"></a>35.1.5 Configure WordPress to Connect to the Database</h4><p>Copy config file:</p>
+    <a href="#configure-wordpress-to-connect-to-the-database" class="header-mark"></a>11.1.5 Configure WordPress to Connect to the Database</h4><p>Copy config file:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -1607,7 +1607,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-205" 
+    id="codeblock-id-61" 
     class="
       chroma 
       !tw-block 
@@ -1699,7 +1699,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-206" 
+    id="codeblock-id-62" 
     class="
       chroma 
       !tw-block 
@@ -1793,7 +1793,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-207" 
+    id="codeblock-id-63" 
     class="
       chroma 
       !tw-block 
@@ -1810,14 +1810,14 @@
       "><span class="line"><span class="cl">sudo nano /srv/www/wordpress/wp-config.php</span></span></code></pre>
 </div>
 <h4 id="configure-wordpress" class="headerLink">
-    <a href="#configure-wordpress" class="header-mark"></a>35.1.6 Configure WordPress</h4><p>Visit <a href="http://localhost" target="_blank" rel="noopener noreferrer">http://localhost</a> and set site title, username, password, and admin email.</p>
+    <a href="#configure-wordpress" class="header-mark"></a>11.1.6 Configure WordPress</h4><p>Visit <a href="http://localhost" target="_blank" rel="noopener noreferrer">http://localhost</a> and set site title, username, password, and admin email.</p>
 <p><img class="tw-inline" loading="lazy" src='/ebe4d6066e0c32f14beca85ffd53e5915a4ab278_194493749738146112.png' srcset="/ebe4d6066e0c32f14beca85ffd53e5915a4ab278_194493749738146112_hu_e6ee05fa298f6c57.webp 800w, /ebe4d6066e0c32f14beca85ffd53e5915a4ab278_194493749738146112_hu_3d2e8aa0db377c19.webp 1200w, /ebe4d6066e0c32f14beca85ffd53e5915a4ab278_194493749738146112_hu_52f39b37abc79399.webp 1600w"  alt="Configure WordPress" height="646" width="816"></p>
 <hr>
 <h3 id="setup-debug-on-vscode" class="headerLink">
-    <a href="#setup-debug-on-vscode" class="header-mark"></a>35.2 Setup Debug on VSCode</h3><h4 id="add-php-debug-extension-on-vscode" class="headerLink">
-    <a href="#add-php-debug-extension-on-vscode" class="header-mark"></a>35.2.1 Add PHP Debug Extension on VSCode</h4><p>Go to <strong>Extensions (Ctrl+Shift+X)</strong> → search <strong>PHP Debug (by Felix Becker)</strong> → <strong>Install</strong>.</p>
+    <a href="#setup-debug-on-vscode" class="header-mark"></a>11.2 Setup Debug on VSCode</h3><h4 id="add-php-debug-extension-on-vscode" class="headerLink">
+    <a href="#add-php-debug-extension-on-vscode" class="header-mark"></a>11.2.1 Add PHP Debug Extension on VSCode</h4><p>Go to <strong>Extensions (Ctrl+Shift+X)</strong> → search <strong>PHP Debug (by Felix Becker)</strong> → <strong>Install</strong>.</p>
 <h4 id="install-xdebug-on-ubuntu" class="headerLink">
-    <a href="#install-xdebug-on-ubuntu" class="header-mark"></a>35.2.2 Install Xdebug on Ubuntu</h4><div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+    <a href="#install-xdebug-on-ubuntu" class="header-mark"></a>11.2.2 Install Xdebug on Ubuntu</h4><div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
     tw-flex 
@@ -1892,7 +1892,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-208" 
+    id="codeblock-id-64" 
     class="
       chroma 
       !tw-block 
@@ -1984,7 +1984,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-209" 
+    id="codeblock-id-65" 
     class="
       chroma 
       !tw-block 
@@ -2001,7 +2001,7 @@
       "><span class="line"><span class="cl">php -v</span></span></code></pre>
 </div>
 <h4 id="configure-xdebug" class="headerLink">
-    <a href="#configure-xdebug" class="header-mark"></a>35.2.3 Configure Xdebug</h4><div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+    <a href="#configure-xdebug" class="header-mark"></a>11.2.3 Configure Xdebug</h4><div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
     tw-flex 
@@ -2076,7 +2076,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-210" 
+    id="codeblock-id-66" 
     class="
       chroma 
       !tw-block 
@@ -2168,7 +2168,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-211" 
+    id="codeblock-id-67" 
     class="
       chroma 
       !tw-block 
@@ -2264,7 +2264,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-212" 
+    id="codeblock-id-68" 
     class="
       chroma 
       !tw-block 
@@ -2281,7 +2281,7 @@
       "><span class="line"><span class="cl">sudo systemctl restart apache2</span></span></code></pre>
 </div>
 <h4 id="configure-vscode-launchjson" class="headerLink">
-    <a href="#configure-vscode-launchjson" class="header-mark"></a>35.2.4 Configure VSCode <code>launch.json</code></h4><p>Open WordPress folder in VSCode:</p>
+    <a href="#configure-vscode-launchjson" class="header-mark"></a>11.2.4 Configure VSCode <code>launch.json</code></h4><p>Open WordPress folder in VSCode:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -2357,7 +2357,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-213" 
+    id="codeblock-id-69" 
     class="
       chroma 
       !tw-block 
@@ -2449,7 +2449,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-214" 
+    id="codeblock-id-70" 
     class="
       chroma 
       !tw-block 
@@ -2480,10 +2480,10 @@
 </div>
 <hr>
 <h2 id="extend" class="headerLink">
-    <a href="#extend" class="header-mark"></a>36 Extend</h2><h3 id="required-version" class="headerLink">
-    <a href="#required-version" class="header-mark"></a>36.1 Required Version</h3><p>Each WordPress version usually requires a specific PHP version. Always check compatibility.</p>
+    <a href="#extend" class="header-mark"></a>12 Extend</h2><h3 id="required-version" class="headerLink">
+    <a href="#required-version" class="header-mark"></a>12.1 Required Version</h3><p>Each WordPress version usually requires a specific PHP version. Always check compatibility.</p>
 <h3 id="wordpress-auto-update" class="headerLink">
-    <a href="#wordpress-auto-update" class="header-mark"></a>36.2 WordPress Auto Update</h3><p>Since <strong>WordPress 3.7</strong> (2013), WordPress supports <strong>automatic background updates</strong> for:</p>
+    <a href="#wordpress-auto-update" class="header-mark"></a>12.2 WordPress Auto Update</h3><p>Since <strong>WordPress 3.7</strong> (2013), WordPress supports <strong>automatic background updates</strong> for:</p>
 <ul>
 <li>Security releases</li>
 <li>Maintenance releases</li>
@@ -2565,7 +2565,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-215" 
+    id="codeblock-id-71" 
     class="
       chroma 
       !tw-block 
@@ -2582,7 +2582,7 @@
       "><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;WP_AUTO_UPDATE_CORE&#39;</span><span class="p">,</span> <span class="k">false</span> <span class="p">);</span></span></span></code></pre>
 </div>
 <h3 id="increase-plugin-upload-size" class="headerLink">
-    <a href="#increase-plugin-upload-size" class="header-mark"></a>36.3 Increase Plugin Upload Size</h3><p>Paste below content into <code>php.ini</code> file.</p>
+    <a href="#increase-plugin-upload-size" class="header-mark"></a>12.3 Increase Plugin Upload Size</h3><p>Paste below content into <code>php.ini</code> file.</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -2658,7 +2658,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-216" 
+    id="codeblock-id-72" 
     class="
       chroma 
       !tw-block 
