@@ -4,7 +4,16 @@
         <link>http://localhost:1313/tags/plugin/</link>
         <description>Plugin - Tag - Bui Van Y</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>w41bui@gmail.com (w41bu1)</managingEditor>
-            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 21 Sep 2025 22:27:00 &#43;0700</lastBuildDate><atom:link href="http://localhost:1313/tags/plugin/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 22 Sep 2025 18:54:00 &#43;0700</lastBuildDate><atom:link href="http://localhost:1313/tags/plugin/" rel="self" type="application/rss+xml" /><item>
+    <title>CVE-2025-39569 Analysis &amp; POC</title>
+    <link>http://localhost:1313/2025-09-22-cve-2025-39569/</link>
+    <pubDate>Mon, 22 Sep 2025 18:54:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/2025-09-22-cve-2025-39569/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/2025-09-22-cve-2025-39569/app.png" referrerpolicy="no-referrer">
+            </div>Security Vulnerability in WordPress Taskbuilder Plugin.]]></description>
+</item><item>
     <title>CVE-2025-39566 Analysis &amp; POC</title>
     <link>http://localhost:1313/2025-09-21-cve-2025-39566/</link>
     <pubDate>Sun, 21 Sep 2025 22:27:00 &#43;0700</pubDate><author>

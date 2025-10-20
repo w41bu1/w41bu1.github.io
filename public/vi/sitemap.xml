@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost:1313/vi/tags/analyst/</loc><lastmod>2025-09-21T22:27:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
+            <loc>http://localhost:1313/vi/tags/analyst/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://localhost:1313/tags/analyst/"
@@ -11,7 +11,7 @@
                     hreflang="vi"
                     href="http://localhost:1313/vi/tags/analyst/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/</loc><lastmod>2025-09-21T22:27:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
+            <loc>http://localhost:1313/vi/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://localhost:1313/"
@@ -20,7 +20,7 @@
                     hreflang="vi"
                     href="http://localhost:1313/vi/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/categories/</loc><lastmod>2025-09-21T22:27:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
+            <loc>http://localhost:1313/vi/categories/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://localhost:1313/categories/"
@@ -29,7 +29,7 @@
                     hreflang="vi"
                     href="http://localhost:1313/vi/categories/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/categories/cve-analyst/</loc><lastmod>2025-09-21T22:27:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
+            <loc>http://localhost:1313/vi/categories/cve-analyst/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://localhost:1313/categories/cve-analyst/"
@@ -38,16 +38,16 @@
                     hreflang="vi"
                     href="http://localhost:1313/vi/categories/cve-analyst/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-09-21-cve-2025-39566/</loc><lastmod>2025-09-21T22:27:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
+            <loc>http://localhost:1313/vi/2025-09-22-cve-2025-39569/</loc><lastmod>2025-09-22T18:56:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-09-21-cve-2025-39566/"
+                        href="http://localhost:1313/2025-09-22-cve-2025-39569/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-09-21-cve-2025-39566/"
+                    href="http://localhost:1313/vi/2025-09-22-cve-2025-39569/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/plugin/</loc><lastmod>2025-09-21T22:27:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
+            <loc>http://localhost:1313/vi/tags/plugin/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://localhost:1313/tags/plugin/"
@@ -56,7 +56,7 @@
                     hreflang="vi"
                     href="http://localhost:1313/vi/tags/plugin/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/posts/</loc><lastmod>2025-09-21T22:27:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
+            <loc>http://localhost:1313/vi/posts/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://localhost:1313/posts/"
@@ -65,7 +65,7 @@
                     hreflang="vi"
                     href="http://localhost:1313/vi/posts/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/sqli/</loc><lastmod>2025-09-21T22:27:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
+            <loc>http://localhost:1313/vi/tags/sqli/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://localhost:1313/tags/sqli/"
@@ -74,7 +74,7 @@
                     hreflang="vi"
                     href="http://localhost:1313/vi/tags/sqli/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/</loc><lastmod>2025-09-21T22:27:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
+            <loc>http://localhost:1313/vi/tags/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://localhost:1313/tags/"
@@ -83,7 +83,16 @@
                     hreflang="vi"
                     href="http://localhost:1313/vi/tags/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/cms/</loc><lastmod>2025-08-21T09:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://localhost:1313/vi/2025-09-21-cve-2025-39566/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://localhost:1313/2025-09-21-cve-2025-39566/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="vi"
+                    href="http://localhost:1313/vi/2025-09-21-cve-2025-39566/"
+                    /></url><url>
+            <loc>http://localhost:1313/vi/tags/cms/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://localhost:1313/tags/cms/"
@@ -92,7 +101,7 @@
                     hreflang="vi"
                     href="http://localhost:1313/vi/tags/cms/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/php/</loc><lastmod>2025-08-21T09:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://localhost:1313/vi/tags/php/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://localhost:1313/tags/php/"
@@ -101,7 +110,7 @@
                     hreflang="vi"
                     href="http://localhost:1313/vi/tags/php/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/categories/web/</loc><lastmod>2025-08-21T09:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://localhost:1313/vi/categories/web/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://localhost:1313/categories/web/"
@@ -110,7 +119,7 @@
                     hreflang="vi"
                     href="http://localhost:1313/vi/categories/web/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/wordpress/</loc><lastmod>2025-08-21T09:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://localhost:1313/vi/tags/wordpress/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://localhost:1313/tags/wordpress/"
@@ -119,7 +128,7 @@
                     hreflang="vi"
                     href="http://localhost:1313/vi/tags/wordpress/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-08-21-wordpress-local-and-debugging/</loc><lastmod>2025-08-21T09:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://localhost:1313/vi/2025-08-21-wordpress-local-and-debugging/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://localhost:1313/2025-08-21-wordpress-local-and-debugging/"
@@ -128,7 +137,7 @@
                     hreflang="vi"
                     href="http://localhost:1313/vi/2025-08-21-wordpress-local-and-debugging/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/blog/</loc><lastmod>2025-08-19T01:10:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://localhost:1313/vi/tags/blog/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://localhost:1313/tags/blog/"
@@ -137,7 +146,7 @@
                     hreflang="vi"
                     href="http://localhost:1313/vi/tags/blog/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/giscus/</loc><lastmod>2025-08-19T01:10:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://localhost:1313/vi/tags/giscus/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://localhost:1313/tags/giscus/"
@@ -146,7 +155,7 @@
                     hreflang="vi"
                     href="http://localhost:1313/vi/tags/giscus/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/github/</loc><lastmod>2025-08-19T01:10:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://localhost:1313/vi/tags/github/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://localhost:1313/tags/github/"
@@ -155,7 +164,7 @@
                     hreflang="vi"
                     href="http://localhost:1313/vi/tags/github/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-08-19-github-pages-with-jekyll-themes-and-giscus/</loc><lastmod>2025-08-19T01:10:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://localhost:1313/vi/2025-08-19-github-pages-with-jekyll-themes-and-giscus/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://localhost:1313/2025-08-19-github-pages-with-jekyll-themes-and-giscus/"
@@ -164,7 +173,7 @@
                     hreflang="vi"
                     href="http://localhost:1313/vi/2025-08-19-github-pages-with-jekyll-themes-and-giscus/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/jekyll/</loc><lastmod>2025-08-19T01:10:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://localhost:1313/vi/tags/jekyll/</loc><lastmod>2025-10-21T00:19:55&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://localhost:1313/tags/jekyll/"
