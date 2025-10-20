@@ -4,33 +4,47 @@
         <link>http://localhost:1313/vi/tags/</link>
         <description>Tags - Nhãn - Bui Van Y</description>
         <generator>Hugo -- gohugo.io</generator><language>vi</language><managingEditor>w41bui@gmail.com (w41bu1)</managingEditor>
-            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 09 Oct 2025 19:00:00 &#43;0700</lastBuildDate><atom:link href="http://localhost:1313/vi/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 22 Oct 2025 19:00:00 &#43;0700</lastBuildDate><atom:link href="http://localhost:1313/vi/tags/" rel="self" type="application/rss+xml" /><item>
     <title>Analyst</title>
     <link>http://localhost:1313/vi/tags/analyst/</link>
-    <pubDate>Thu, 09 Oct 2025 19:00:00 &#43;0700</pubDate><author>
+    <pubDate>Wed, 22 Oct 2025 19:00:00 &#43;0700</pubDate><author>
         <name>w41bu1</name>
     </author><guid>http://localhost:1313/vi/tags/analyst/</guid>
     <description><![CDATA[]]></description>
 </item><item>
+    <title>Csrf</title>
+    <link>http://localhost:1313/vi/tags/csrf/</link>
+    <pubDate>Wed, 22 Oct 2025 19:00:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/tags/csrf/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Plugin</title>
+    <link>http://localhost:1313/vi/tags/plugin/</link>
+    <pubDate>Wed, 22 Oct 2025 19:00:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/tags/plugin/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Lfi</title>
+    <link>http://localhost:1313/vi/tags/lfi/</link>
+    <pubDate>Tue, 21 Oct 2025 19:00:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/tags/lfi/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>Core</title>
     <link>http://localhost:1313/vi/tags/core/</link>
-    <pubDate>Thu, 09 Oct 2025 19:00:00 &#43;0700</pubDate><author>
+    <pubDate>Sat, 11 Oct 2025 19:18:00 &#43;0700</pubDate><author>
         <name>w41bu1</name>
     </author><guid>http://localhost:1313/vi/tags/core/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>Xss</title>
     <link>http://localhost:1313/vi/tags/xss/</link>
-    <pubDate>Thu, 09 Oct 2025 19:00:00 &#43;0700</pubDate><author>
+    <pubDate>Sat, 11 Oct 2025 19:18:00 &#43;0700</pubDate><author>
         <name>w41bu1</name>
     </author><guid>http://localhost:1313/vi/tags/xss/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Plugin</title>
-    <link>http://localhost:1313/vi/tags/plugin/</link>
-    <pubDate>Wed, 08 Oct 2025 13:57:00 &#43;0700</pubDate><author>
-        <name>w41bu1</name>
-    </author><guid>http://localhost:1313/vi/tags/plugin/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>Sqli</title>
@@ -59,20 +73,6 @@
     <pubDate>Thu, 21 Aug 2025 09:00:00 &#43;0700</pubDate><author>
         <name>w41bu1</name>
     </author><guid>http://localhost:1313/vi/tags/wordpress/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Blog</title>
-    <link>http://localhost:1313/vi/tags/blog/</link>
-    <pubDate>Tue, 19 Aug 2025 01:10:00 &#43;0700</pubDate><author>
-        <name>w41bu1</name>
-    </author><guid>http://localhost:1313/vi/tags/blog/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Giscus</title>
-    <link>http://localhost:1313/vi/tags/giscus/</link>
-    <pubDate>Tue, 19 Aug 2025 01:10:00 &#43;0700</pubDate><author>
-        <name>w41bu1</name>
-    </author><guid>http://localhost:1313/vi/tags/giscus/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

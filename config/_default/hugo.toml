@@ -20,3 +20,5 @@ theme = "DoIt"
 # [module]
 # [[module.imports]]
 # path = "github.com/HEIGE-PCloud/DoIt"
+
+buildFuture = true

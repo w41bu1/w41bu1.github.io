@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost:1313/tags/analyst/</loc><lastmod>2025-10-21T00:48:33&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/tags/analyst/</loc><lastmod>2025-10-22T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="vi"
                         href="http://localhost:1313/vi/tags/analyst/"
@@ -11,7 +11,7 @@
                     hreflang="en"
                     href="http://localhost:1313/tags/analyst/"
                     /></url><url>
-            <loc>http://localhost:1313/</loc><lastmod>2025-10-21T00:48:33&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/</loc><lastmod>2025-10-22T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="vi"
                         href="http://localhost:1313/vi/"
@@ -20,7 +20,7 @@
                     hreflang="en"
                     href="http://localhost:1313/"
                     /></url><url>
-            <loc>http://localhost:1313/categories/</loc><lastmod>2025-10-21T00:48:33&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/categories/</loc><lastmod>2025-10-22T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="vi"
                         href="http://localhost:1313/vi/categories/"
@@ -29,16 +29,16 @@
                     hreflang="en"
                     href="http://localhost:1313/categories/"
                     /></url><url>
-            <loc>http://localhost:1313/tags/core/</loc><lastmod>2025-10-21T00:48:33&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/tags/csrf/</loc><lastmod>2025-10-22T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:1313/vi/tags/core/"
+                        href="http://localhost:1313/vi/tags/csrf/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:1313/tags/core/"
+                    href="http://localhost:1313/tags/csrf/"
                     /></url><url>
-            <loc>http://localhost:1313/categories/cve-analyst/</loc><lastmod>2025-10-21T00:48:33&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/categories/cve-analyst/</loc><lastmod>2025-10-22T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="vi"
                         href="http://localhost:1313/vi/categories/cve-analyst/"
@@ -47,52 +47,16 @@
                     hreflang="en"
                     href="http://localhost:1313/categories/cve-analyst/"
                     /></url><url>
-            <loc>http://localhost:1313/2025-10-11-cve-2025-58674/</loc><lastmod>2025-10-11T19:18:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
+            <loc>http://localhost:1313/2025-10-22-cve-2025-11361/</loc><lastmod>2025-10-22T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:1313/vi/2025-10-11-cve-2025-58674/"
+                        href="http://localhost:1313/vi/2025-10-22-cve-2025-11361/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:1313/2025-10-11-cve-2025-58674/"
+                    href="http://localhost:1313/2025-10-22-cve-2025-11361/"
                     /></url><url>
-            <loc>http://localhost:1313/posts/</loc><lastmod>2025-10-21T00:48:33&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="vi"
-                        href="http://localhost:1313/vi/posts/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/posts/"
-                    /></url><url>
-            <loc>http://localhost:1313/tags/</loc><lastmod>2025-10-21T00:48:33&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="vi"
-                        href="http://localhost:1313/vi/tags/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/tags/"
-                    /></url><url>
-            <loc>http://localhost:1313/tags/xss/</loc><lastmod>2025-10-21T00:48:33&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="vi"
-                        href="http://localhost:1313/vi/tags/xss/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/tags/xss/"
-                    /></url><url>
-            <loc>http://localhost:1313/2025-10-10-cve-2025-5062/</loc><lastmod>2025-10-10T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="vi"
-                        href="http://localhost:1313/vi/2025-10-10-cve-2025-5062/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/2025-10-10-cve-2025-5062/"
-                    /></url><url>
-            <loc>http://localhost:1313/tags/plugin/</loc><lastmod>2025-10-21T00:48:33&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/tags/plugin/</loc><lastmod>2025-10-22T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="vi"
                         href="http://localhost:1313/vi/tags/plugin/"
@@ -101,7 +65,160 @@
                     hreflang="en"
                     href="http://localhost:1313/tags/plugin/"
                     /></url><url>
-            <loc>http://localhost:1313/2025-10-09-cve-2024-4439/</loc><lastmod>2025-10-09T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
+            <loc>http://localhost:1313/posts/</loc><lastmod>2025-10-22T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/posts/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/posts/"
+                    /></url><url>
+            <loc>http://localhost:1313/tags/</loc><lastmod>2025-10-22T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/tags/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/tags/"
+                    /></url><url>
+            <loc>http://localhost:1313/2025-10-21-cve-2025-32141/</loc><lastmod>2025-10-21T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/2025-10-21-cve-2025-32141/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/2025-10-21-cve-2025-32141/"
+                    /></url><url>
+            <loc>http://localhost:1313/tags/lfi/</loc><lastmod>2025-10-21T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/tags/lfi/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/tags/lfi/"
+                    /></url><url>
+            <loc>http://localhost:1313/2025-10-20-cve-2025-52716/</loc><lastmod>2025-10-20T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/2025-10-20-cve-2025-52716/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/2025-10-20-cve-2025-52716/"
+                    /></url><url>
+            <loc>http://localhost:1313/2025-10-19-cve-2025-6715/</loc><lastmod>2025-10-19T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/2025-10-19-cve-2025-6715/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/2025-10-19-cve-2025-6715/"
+                    /></url><url>
+            <loc>http://localhost:1313/2025-10-18-cve-2025-26909/</loc><lastmod>2025-10-18T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/2025-10-18-cve-2025-26909/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/2025-10-18-cve-2025-26909/"
+                    /></url><url>
+            <loc>http://localhost:1313/2025-10-17-cve-2025-39399/</loc><lastmod>2025-10-17T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/2025-10-17-cve-2025-39399/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/2025-10-17-cve-2025-39399/"
+                    /></url><url>
+            <loc>http://localhost:1313/2025-10-16-cve-2025-30782/</loc><lastmod>2025-10-16T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/2025-10-16-cve-2025-30782/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/2025-10-16-cve-2025-30782/"
+                    /></url><url>
+            <loc>http://localhost:1313/2025-10-15-cve-2025-30868/</loc><lastmod>2025-10-15T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/2025-10-15-cve-2025-30868/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/2025-10-15-cve-2025-30868/"
+                    /></url><url>
+            <loc>http://localhost:1313/2025-10-14-cve-2025-32654/</loc><lastmod>2025-10-14T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/2025-10-14-cve-2025-32654/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/2025-10-14-cve-2025-32654/"
+                    /></url><url>
+            <loc>http://localhost:1313/2025-10-13-cve-2025-48293/</loc><lastmod>2025-10-13T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/2025-10-13-cve-2025-48293/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/2025-10-13-cve-2025-48293/"
+                    /></url><url>
+            <loc>http://localhost:1313/2025-10-12-cve-2025-53328/</loc><lastmod>2025-10-12T19:18:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/2025-10-12-cve-2025-53328/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/2025-10-12-cve-2025-53328/"
+                    /></url><url>
+            <loc>http://localhost:1313/tags/core/</loc><lastmod>2025-10-21T00:53:14&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/tags/core/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/tags/core/"
+                    /></url><url>
+            <loc>http://localhost:1313/2025-10-11-cve-2025-58674/</loc><lastmod>2025-10-21T00:53:14&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/2025-10-11-cve-2025-58674/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/2025-10-11-cve-2025-58674/"
+                    /></url><url>
+            <loc>http://localhost:1313/tags/xss/</loc><lastmod>2025-10-21T00:53:14&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/tags/xss/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/tags/xss/"
+                    /></url><url>
+            <loc>http://localhost:1313/2025-10-10-cve-2025-5062/</loc><lastmod>2025-10-21T00:53:14&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/2025-10-10-cve-2025-5062/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/2025-10-10-cve-2025-5062/"
+                    /></url><url>
+            <loc>http://localhost:1313/2025-10-09-cve-2024-4439/</loc><lastmod>2025-10-21T00:53:14&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="vi"
                         href="http://localhost:1313/vi/2025-10-09-cve-2024-4439/"
@@ -110,7 +227,7 @@
                     hreflang="en"
                     href="http://localhost:1313/2025-10-09-cve-2024-4439/"
                     /></url><url>
-            <loc>http://localhost:1313/categories/vulnerabilities/</loc><lastmod>2025-10-09T19:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>http://localhost:1313/categories/vulnerabilities/</loc><lastmod>2025-10-21T00:53:14&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://localhost:1313/2025-10-08-cve-2025-9816/</loc><lastmod>2025-10-21T00:48:33&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="vi"
