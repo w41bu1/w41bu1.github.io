@@ -1,0 +1,11 @@
+# Options to make output .md files
+
+[MarkDown]
+  mediaType = "text/plain"
+  isPlainText = true
+  isHTML = false
+
+[JsonFeed]
+  mediaType = "application/feed+json"
+  isPlainText = true
+  notAlternative = true

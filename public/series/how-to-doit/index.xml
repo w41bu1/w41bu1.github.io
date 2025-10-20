@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>How-to-Doit - Series - Bui Van Y</title>
+        <link>http://localhost:1313/series/how-to-doit/</link>
+        <description>How-to-Doit - Series - Bui Van Y</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>heige.pcloud@outlook.com (PCloud)</managingEditor>
+            <webMaster>heige.pcloud@outlook.com (PCloud)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 28 Feb 2022 14:27:14 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/series/how-to-doit/" rel="self" type="application/rss+xml" /><item>
+    <title>How to create diagrams in DoIt</title>
+    <link>http://localhost:1313/create-diagrams/</link>
+    <pubDate>Mon, 28 Feb 2022 14:27:14 &#43;0000</pubDate><author>
+                    <name>PCloud</name>
+                </author><guid>http://localhost:1313/create-diagrams/</guid>
+    <description><![CDATA[This post explains how you can create custom SVG diagrams in DoIt using GoAT or Mermaid.]]></description>
+</item></channel>
+</rss>
