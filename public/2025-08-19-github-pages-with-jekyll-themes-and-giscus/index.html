@@ -300,12 +300,12 @@
 </li>
 </ul>
 <h2 id="requirements" class="headerLink">
-    <a href="#requirements" class="header-mark"></a>6 Requirements</h2><ul>
+    <a href="#requirements" class="header-mark"></a>36 Requirements</h2><ul>
 <li>A <a href="https://github.com/" target="_blank" rel="noopener noreferrer"><strong>Github account</strong></a></li>
 <li>Basic knowledge of <a href="https://markdownlivepreview.com/" target="_blank" rel="noopener noreferrer"><strong>Markdown</strong></a></li>
 </ul>
 <h2 id="creating-a-site-repository" class="headerLink">
-    <a href="#creating-a-site-repository" class="header-mark"></a>7 Creating a Site Repository</h2><p>Here, I use the <a href="https://chirpy.cotes.page/" target="_blank" rel="noopener noreferrer"><strong>Chirpy theme</strong></a>, a popular theme for GitHub Pages optimized for personal or technical blogging.</p>
+    <a href="#creating-a-site-repository" class="header-mark"></a>37 Creating a Site Repository</h2><p>Here, I use the <a href="https://chirpy.cotes.page/" target="_blank" rel="noopener noreferrer"><strong>Chirpy theme</strong></a>, a popular theme for GitHub Pages optimized for personal or technical blogging.</p>
 <p><strong>Steps</strong>:</p>
 <ul>
 <li>Log in to <a href="https://github.com/" target="_blank" rel="noopener noreferrer"><strong>Github</strong></a> and go to the <a href="https://github.com/cotes2020/chirpy-starter" target="_blank" rel="noopener noreferrer"><strong>starter</strong></a>.</li>
@@ -313,13 +313,13 @@
 <li>Name the new repository <code>&lt;username&gt;.github.io</code>, replacing <code>&lt;username&gt;</code> with your GitHub username.</li>
 </ul>
 <h2 id="setting-up-the-environment" class="headerLink">
-    <a href="#setting-up-the-environment" class="header-mark"></a>8 Setting up the Environment</h2><p>There are two main reasons to set up a local development environment for your blog:</p>
+    <a href="#setting-up-the-environment" class="header-mark"></a>38 Setting up the Environment</h2><p>There are two main reasons to set up a local development environment for your blog:</p>
 <ul>
 <li>After pushing code to the repository, GitHub Actions takes time to run before building and rendering the site on GitHub Pages.</li>
 <li>By developing directly on your local machine, you can see changes instantly—faster and more convenient.</li>
 </ul>
 <h3 id="using-dev-containers-recommended-for-windows" class="headerLink">
-    <a href="#using-dev-containers-recommended-for-windows" class="header-mark"></a>8.1 Using Dev Containers (Recommended for Windows)</h3><p><strong>Dev Containers</strong> provide an isolated environment via Docker, preventing conflicts with your system and ensuring all dependencies are managed inside the container.</p>
+    <a href="#using-dev-containers-recommended-for-windows" class="header-mark"></a>38.1 Using Dev Containers (Recommended for Windows)</h3><p><strong>Dev Containers</strong> provide an isolated environment via Docker, preventing conflicts with your system and ensuring all dependencies are managed inside the container.</p>
 <p><strong>Steps</strong>:</p>
 <ol>
 <li>Install Docker:
@@ -338,7 +338,7 @@
 <li>Wait for the Dev Containers setup process to complete.</li>
 </ol>
 <h3 id="setting-up-natively-recommended-for-unix-like-os" class="headerLink">
-    <a href="#setting-up-natively-recommended-for-unix-like-os" class="header-mark"></a>8.2 Setting up Natively (Recommended for Unix-like OS)</h3><p>For Unix-like systems (Linux, macOS), you can set up the environment directly (natively) for better performance. Dev Containers are still available as an alternative.</p>
+    <a href="#setting-up-natively-recommended-for-unix-like-os" class="header-mark"></a>38.2 Setting up Natively (Recommended for Unix-like OS)</h3><p>For Unix-like systems (Linux, macOS), you can set up the environment directly (natively) for better performance. Dev Containers are still available as an alternative.</p>
 <p><strong>Steps</strong>:</p>
 <ol>
 <li>Follow the <a href="https://jekyllrb.com/docs/installation/" target="_blank" rel="noopener noreferrer">Jekyll installation guide</a> and ensure <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">Git</a> is installed.</li>
@@ -421,7 +421,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-3" 
+    id="codeblock-id-15" 
     class="
       chroma 
       !tw-block 
@@ -439,8 +439,8 @@
 </span></span><span class="line"><span class="cl">bundle install</span></span></code></pre>
 </div>
 <h2 id="usage" class="headerLink">
-    <a href="#usage" class="header-mark"></a>9 Usage</h2><h3 id="start-the-jekyll-server" class="headerLink">
-    <a href="#start-the-jekyll-server" class="header-mark"></a>9.1 Start the Jekyll Server</h3><p>To run the site locally, use:</p>
+    <a href="#usage" class="header-mark"></a>39 Usage</h2><h3 id="start-the-jekyll-server" class="headerLink">
+    <a href="#start-the-jekyll-server" class="header-mark"></a>39.1 Start the Jekyll Server</h3><p>To run the site locally, use:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -516,7 +516,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-4" 
+    id="codeblock-id-16" 
     class="
       chroma 
       !tw-block 
@@ -533,7 +533,7 @@
       "><span class="line"><span class="cl">bundle <span class="nb">exec</span> jekyll s</span></span></code></pre>
 </div>
 <h3 id="configuration" class="headerLink">
-    <a href="#configuration" class="header-mark"></a>9.2 Configuration</h3><p>Some variables to configure in <code>_config.yml</code> include:</p>
+    <a href="#configuration" class="header-mark"></a>39.2 Configuration</h3><p>Some variables to configure in <code>_config.yml</code> include:</p>
 <ul>
 <li><code>lang</code>: set the website language</li>
 <li><code>url</code>: your website URL</li>
@@ -542,7 +542,7 @@
 <li><code>avatar</code>: supports local and CORS resources, including <code>gif</code></li>
 </ul>
 <h3 id="comment-feature-via-giscus" class="headerLink">
-    <a href="#comment-feature-via-giscus" class="header-mark"></a>9.3 Comment feature via Giscus</h3><p>We’ll use <a href="https://giscus.app" target="_blank" rel="noopener noreferrer"><strong>Giscus</strong></a> as the comment system. Other free alternatives include <a href="https://disqus.com/" target="_blank" rel="noopener noreferrer"><strong>Disqus</strong></a> and <a href="https://utteranc.es/" target="_blank" rel="noopener noreferrer"><strong>Utterances</strong></a>.</p>
+    <a href="#comment-feature-via-giscus" class="header-mark"></a>39.3 Comment feature via Giscus</h3><p>We’ll use <a href="https://giscus.app" target="_blank" rel="noopener noreferrer"><strong>Giscus</strong></a> as the comment system. Other free alternatives include <a href="https://disqus.com/" target="_blank" rel="noopener noreferrer"><strong>Disqus</strong></a> and <a href="https://utteranc.es/" target="_blank" rel="noopener noreferrer"><strong>Utterances</strong></a>.</p>
 <p><strong>Steps</strong>:</p>
 <ol>
 <li>
@@ -566,7 +566,7 @@
 </li>
 </ol>
 <h3 id="customize-the-favicon" class="headerLink">
-    <a href="#customize-the-favicon" class="header-mark"></a>9.4 Customize the Favicon</h3><p>Create a custom <strong>favicon</strong> for your website instead of using the theme’s default.</p>
+    <a href="#customize-the-favicon" class="header-mark"></a>39.4 Customize the Favicon</h3><p>Create a custom <strong>favicon</strong> for your website instead of using the theme’s default.</p>
 <p><strong>Steps</strong>:</p>
 <ol>
 <li>
@@ -590,15 +590,15 @@
 </li>
 </ol>
 <h2 id="extends" class="headerLink">
-    <a href="#extends" class="header-mark"></a>10 Extends</h2><h3 id="remove-meta-tag-in-footer" class="headerLink">
-    <a href="#remove-meta-tag-in-footer" class="header-mark"></a>10.1 Remove meta tag in Footer</h3><p>You can remove the line <code>Using the Chirpy theme for Jekyll.</code> with these steps:</p>
+    <a href="#extends" class="header-mark"></a>40 Extends</h2><h3 id="remove-meta-tag-in-footer" class="headerLink">
+    <a href="#remove-meta-tag-in-footer" class="header-mark"></a>40.1 Remove meta tag in Footer</h3><p>You can remove the line <code>Using the Chirpy theme for Jekyll.</code> with these steps:</p>
 <ol>
 <li>Create a file at <code>_data/locales/en.yml</code>.</li>
 <li>Copy the contents of <a href="https://raw.githubusercontent.com/cotes2020/jekyll-theme-chirpy/refs/heads/master/_data/locales/en.yml" target="_blank" rel="noopener noreferrer"><strong>en.yml</strong></a> and paste into the new file.</li>
 <li>Change the value of <code>meta</code> to <code>&quot;&quot;</code>.</li>
 </ol>
 <h3 id="write-a-post" class="headerLink">
-    <a href="#write-a-post" class="header-mark"></a>10.2 Write a post</h3><p>Check the <a href="https://chirpy.cotes.page/posts/write-a-new-post/" target="_blank" rel="noopener noreferrer"><strong>rules</strong></a> for writing blog posts with this theme and use <a href="https://markdownlivepreview.com/" target="_blank" rel="noopener noreferrer"><strong>Live Preview</strong></a> to preview your content.</p></div>
+    <a href="#write-a-post" class="header-mark"></a>40.2 Write a post</h3><p>Check the <a href="https://chirpy.cotes.page/posts/write-a-new-post/" target="_blank" rel="noopener noreferrer"><strong>rules</strong></a> for writing blog posts with this theme and use <a href="https://markdownlivepreview.com/" target="_blank" rel="noopener noreferrer"><strong>Live Preview</strong></a> to preview your content.</p></div>
 
         
 

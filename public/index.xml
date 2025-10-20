@@ -4,9 +4,96 @@
         <link>http://localhost:1313/</link>
         <description>The official documentation for the Hugo DoIt theme</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>w41bui@gmail.com (w41bu1)</managingEditor>
-            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 22 Sep 2025 18:54:00 &#43;0700</lastBuildDate>
+            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 01 Oct 2025 12:00:00 &#43;0700</lastBuildDate>
             <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>CVE-2022-21661 Analysis &amp; POC</title>
+    <link>http://localhost:1313/2025-10-01-cve-2022-21661/</link>
+    <pubDate>Wed, 01 Oct 2025 12:00:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/2025-10-01-cve-2022-21661/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/2025-10-01-cve-2022-21661/app.png" referrerpolicy="no-referrer">
+            </div><p>Due to improper <strong>data sanitization</strong> in <code>WP_Query</code>, it is possible in certain cases to perform an <strong>SQL Injection</strong> through <strong>plugins</strong> or <strong>themes</strong> that use it in a particular way. This vulnerability was patched in WordPress version <strong>5.8.3</strong>. Older affected versions were also fixed through security releases going back as far as <strong>3.7.37</strong>.</p>
+<ul>
+<li><strong>CVE ID</strong>: <a href="https://www.cve.org/CVERecord?id=CVE-2022-21661" target="_blank" rel="noopener noreferrer">CVE-2022-21661</a></li>
+<li><strong>Product</strong>: <a href="https://wordpress.org/" target="_blank" rel="noopener noreferrer">WordPress</a></li>
+<li><strong>Vulnerability Type</strong>: SQL Injection</li>
+<li><strong>Affected Versions</strong>: <code>3.7.37 ≤ version &lt; 5.8.3</code></li>
+<li><strong>CVSS severity</strong>: High (8.0)</li>
+</ul>
+<h2 id="requirements" class="headerLink">
+    <a href="#requirements" class="header-mark"></a>50 Requirements</h2><ul>
+<li><a href="https://w41bu1.github.io/blog/2025-08-21-wordpress-local-and-debugging/" target="_blank" rel="noopener noreferrer"><strong>Local WordPress and Debugging</strong></a></li>
+<li><strong>WordPress</strong>: v5.8.2 (vulnerable)</li>
+</ul>
+<h2 id="setup" class="headerLink">
+    <a href="#setup" class="header-mark"></a>51 Setup</h2><h3 id="required-php-version" class="headerLink">
+    <a href="#required-php-version" class="header-mark"></a>51.1 Required PHP Version</h3><p>WordPress is entirely built in PHP, so the PHP version on the server directly affects its operation:</p>]]></description>
+</item><item>
+    <title>CVE-2025-2011 Analysis &amp; POC</title>
+    <link>http://localhost:1313/2025-09-30-cve-2025-2011/</link>
+    <pubDate>Tue, 30 Sep 2025 19:08:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/2025-09-30-cve-2025-2011/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/2025-09-30-cve-2025-2011/app.png" referrerpolicy="no-referrer">
+            </div>Security Vulnerability in WordPress Depicter Slider Plugin.]]></description>
+</item><item>
+    <title>CVE-2025-48118 Analysis &amp; POC</title>
+    <link>http://localhost:1313/2025-09-29-cve-2025-48118/</link>
+    <pubDate>Mon, 29 Sep 2025 19:54:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/2025-09-29-cve-2025-48118/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/2025-09-29-cve-2025-48118/app.png" referrerpolicy="no-referrer">
+            </div>Security Vulnerability in WordPress Woocommerce Partial Shipment Plugin.]]></description>
+</item><item>
+    <title>CVE-2025-30936 Analysis &amp; POC</title>
+    <link>http://localhost:1313/2025-09-28-cve-2025-30936/</link>
+    <pubDate>Sun, 28 Sep 2025 20:51:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/2025-09-28-cve-2025-30936/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/2025-09-28-cve-2025-30936/app.png" referrerpolicy="no-referrer">
+            </div>Security Vulnerability in WordPress Torod Plugin.]]></description>
+</item><item>
+    <title>CVE-2025-48281 Analysis &amp; POC</title>
+    <link>http://localhost:1313/2025-09-27-cve-2025-48281/</link>
+    <pubDate>Sat, 27 Sep 2025 19:00:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/2025-09-27-cve-2025-48281/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/2025-09-27-cve-2025-48281/app.png" referrerpolicy="no-referrer">
+            </div>Security Vulnerability in WordPress MyStyle Custom Product Designer Plugin.]]></description>
+</item><item>
+    <title>CVE-2025-32650 Analysis &amp; POC</title>
+    <link>http://localhost:1313/2025-09-26-cve-2025-32650/</link>
+    <pubDate>Fri, 26 Sep 2025 10:36:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/2025-09-26-cve-2025-32650/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/2025-09-26-cve-2025-32650/app.png" referrerpolicy="no-referrer">
+            </div>Security Vulnerability in WordPress Accessibility Suite Plugin.]]></description>
+</item><item>
+    <title>CVE-2025-58604 Analysis &amp; POC</title>
+    <link>http://localhost:1313/2025-09-25-cve-2025-58604/</link>
+    <pubDate>Thu, 25 Sep 2025 21:13:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/2025-09-25-cve-2025-58604/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/2025-09-25-cve-2025-58604/app.png" referrerpolicy="no-referrer">
+            </div>Security Vulnerability in WordPress Mail Mint Plugin.]]></description>
+</item><item>
+    <title>CVE-2025-26943 Analysis &amp; POC</title>
+    <link>http://localhost:1313/2025-09-23-cve-2025-26943/</link>
+    <pubDate>Tue, 23 Sep 2025 23:28:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/2025-09-23-cve-2025-26943/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/2025-09-23-cve-2025-26943/app.png" referrerpolicy="no-referrer">
+            </div>Security Vulnerability in WordPress Easy Quotes Plugin.]]></description>
+</item><item>
     <title>CVE-2025-39569 Analysis &amp; POC</title>
     <link>http://localhost:1313/2025-09-22-cve-2025-39569/</link>
     <pubDate>Mon, 22 Sep 2025 18:54:00 &#43;0700</pubDate><author>
@@ -24,23 +111,5 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="/2025-09-21-cve-2025-39566/app.png" referrerpolicy="no-referrer">
             </div>Security Vulnerability in WordPress Hostel Plugin.]]></description>
-</item><item>
-    <title>WordPress Local and Debugging</title>
-    <link>http://localhost:1313/2025-08-21-wordpress-local-and-debugging/</link>
-    <pubDate>Thu, 21 Aug 2025 09:00:00 &#43;0700</pubDate><author>
-        <name>w41bu1</name>
-    </author><guid>http://localhost:1313/2025-08-21-wordpress-local-and-debugging/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/2025-08-21-wordpress-local-and-debugging/app.png" referrerpolicy="no-referrer">
-            </div>A powerful and the most popular content management system (CMS).]]></description>
-</item><item>
-    <title>Github Pages with Jekyll themes and Giscus</title>
-    <link>http://localhost:1313/2025-08-19-github-pages-with-jekyll-themes-and-giscus/</link>
-    <pubDate>Tue, 19 Aug 2025 01:10:00 &#43;0700</pubDate><author>
-        <name>w41bu1</name>
-    </author><guid>http://localhost:1313/2025-08-19-github-pages-with-jekyll-themes-and-giscus/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/2025-08-19-github-pages-with-jekyll-themes-and-giscus/app.png" referrerpolicy="no-referrer">
-            </div>How to create your personal blog using Github Pages with "comment" feature]]></description>
 </item></channel>
 </rss>
