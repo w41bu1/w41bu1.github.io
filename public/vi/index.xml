@@ -4,9 +4,72 @@
         <link>http://localhost:1313/vi/</link>
         <description>The official documentation for the Hugo DoIt theme</description>
         <generator>Hugo -- gohugo.io</generator><language>vi</language><managingEditor>w41bui@gmail.com (w41bu1)</managingEditor>
-            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 01 Oct 2025 12:00:00 &#43;0700</lastBuildDate>
+            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 08 Oct 2025 13:57:00 &#43;0700</lastBuildDate>
             <atom:link href="http://localhost:1313/vi/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>CVE-2025-9816 Analysis &amp; POC</title>
+    <link>http://localhost:1313/vi/2025-10-08-cve-2025-9816/</link>
+    <pubDate>Wed, 08 Oct 2025 13:57:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/2025-10-08-cve-2025-9816/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/2025-10-08-cve-2025-9816/app.png" referrerpolicy="no-referrer">
+            </div>Security Vulnerability in WordPress WP Statistics Plugin.]]></description>
+</item><item>
+    <title>CVE-2025-6832 Analysis &amp; POC</title>
+    <link>http://localhost:1313/vi/2025-10-07-cve-2025-6832/</link>
+    <pubDate>Tue, 07 Oct 2025 17:38:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/2025-10-07-cve-2025-6832/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/2025-10-07-cve-2025-6832/app.png" referrerpolicy="no-referrer">
+            </div>Security Vulnerability in WordPress All in One Time Clock Lite Plugin.]]></description>
+</item><item>
+    <title>CVE-2025-10146 Analysis &amp; POC</title>
+    <link>http://localhost:1313/vi/2025-10-06-cve-2025-10146/</link>
+    <pubDate>Mon, 06 Oct 2025 19:18:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/2025-10-06-cve-2025-10146/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/2025-10-06-cve-2025-10146/app.png" referrerpolicy="no-referrer">
+            </div>Security Vulnerability in WordPress Download Manager Plugin.]]></description>
+</item><item>
+    <title>CVE-2025-58990 Analysis &amp; POC</title>
+    <link>http://localhost:1313/vi/2025-10-05-cve-2025-58990/</link>
+    <pubDate>Sun, 05 Oct 2025 22:45:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/2025-10-05-cve-2025-58990/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/2025-10-05-cve-2025-58990/app.png" referrerpolicy="no-referrer">
+            </div>Security Vulnerability in WordPress ShopLentor Plugin.]]></description>
+</item><item>
+    <title>CVE-2025-27006 Analysis &amp; POC</title>
+    <link>http://localhost:1313/vi/2025-10-04-cve-2025-27006/</link>
+    <pubDate>Sat, 04 Oct 2025 19:37:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/2025-10-04-cve-2025-27006/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/2025-10-04-cve-2025-27006/app.png" referrerpolicy="no-referrer">
+            </div>Security Vulnerability in WordPress Authorsy Plugin.]]></description>
+</item><item>
+    <title>CVE-2025-53307 Analysis &amp; POC</title>
+    <link>http://localhost:1313/vi/2025-10-03-cve-2025-53307/</link>
+    <pubDate>Fri, 03 Oct 2025 19:19:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/2025-10-03-cve-2025-53307/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/2025-10-03-cve-2025-53307/app.png" referrerpolicy="no-referrer">
+            </div>Security Vulnerability in WordPress Assistant Plugin.]]></description>
+</item><item>
+    <title>CVE-2025-6234 Analysis &amp; POC</title>
+    <link>http://localhost:1313/vi/2025-10-02-cve-2025-6234/</link>
+    <pubDate>Thu, 02 Oct 2025 20:00:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/2025-10-02-cve-2025-6234/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/2025-10-02-cve-2025-6234/app.png" referrerpolicy="no-referrer">
+            </div>Security Vulnerability in WordPress Hostel Plugin.]]></description>
+</item><item>
     <title>CVE-2022-21661 Analysis &amp; POC</title>
     <link>http://localhost:1313/vi/2025-10-01-cve-2022-21661/</link>
     <pubDate>Wed, 01 Oct 2025 12:00:00 &#43;0700</pubDate><author>
@@ -33,68 +96,5 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="/2025-09-29-cve-2025-48118/app.png" referrerpolicy="no-referrer">
             </div>Security Vulnerability in WordPress Woocommerce Partial Shipment Plugin.]]></description>
-</item><item>
-    <title>CVE-2025-30936 Analysis &amp; POC</title>
-    <link>http://localhost:1313/vi/2025-09-28-cve-2025-30936/</link>
-    <pubDate>Sun, 28 Sep 2025 20:51:00 &#43;0700</pubDate><author>
-        <name>w41bu1</name>
-    </author><guid>http://localhost:1313/vi/2025-09-28-cve-2025-30936/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/2025-09-28-cve-2025-30936/app.png" referrerpolicy="no-referrer">
-            </div>Security Vulnerability in WordPress Torod Plugin.]]></description>
-</item><item>
-    <title>CVE-2025-48281 Analysis &amp; POC</title>
-    <link>http://localhost:1313/vi/2025-09-27-cve-2025-48281/</link>
-    <pubDate>Sat, 27 Sep 2025 19:00:00 &#43;0700</pubDate><author>
-        <name>w41bu1</name>
-    </author><guid>http://localhost:1313/vi/2025-09-27-cve-2025-48281/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/2025-09-27-cve-2025-48281/app.png" referrerpolicy="no-referrer">
-            </div>Security Vulnerability in WordPress MyStyle Custom Product Designer Plugin.]]></description>
-</item><item>
-    <title>CVE-2025-32650 Analysis &amp; POC</title>
-    <link>http://localhost:1313/vi/2025-09-26-cve-2025-32650/</link>
-    <pubDate>Fri, 26 Sep 2025 10:36:00 &#43;0700</pubDate><author>
-        <name>w41bu1</name>
-    </author><guid>http://localhost:1313/vi/2025-09-26-cve-2025-32650/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/2025-09-26-cve-2025-32650/app.png" referrerpolicy="no-referrer">
-            </div>Security Vulnerability in WordPress Accessibility Suite Plugin.]]></description>
-</item><item>
-    <title>CVE-2025-58604 Analysis &amp; POC</title>
-    <link>http://localhost:1313/vi/2025-09-25-cve-2025-58604/</link>
-    <pubDate>Thu, 25 Sep 2025 21:13:00 &#43;0700</pubDate><author>
-        <name>w41bu1</name>
-    </author><guid>http://localhost:1313/vi/2025-09-25-cve-2025-58604/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/2025-09-25-cve-2025-58604/app.png" referrerpolicy="no-referrer">
-            </div>Security Vulnerability in WordPress Mail Mint Plugin.]]></description>
-</item><item>
-    <title>CVE-2025-26943 Analysis &amp; POC</title>
-    <link>http://localhost:1313/vi/2025-09-23-cve-2025-26943/</link>
-    <pubDate>Tue, 23 Sep 2025 23:28:00 &#43;0700</pubDate><author>
-        <name>w41bu1</name>
-    </author><guid>http://localhost:1313/vi/2025-09-23-cve-2025-26943/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/2025-09-23-cve-2025-26943/app.png" referrerpolicy="no-referrer">
-            </div>Security Vulnerability in WordPress Easy Quotes Plugin.]]></description>
-</item><item>
-    <title>CVE-2025-39569 Analysis &amp; POC</title>
-    <link>http://localhost:1313/vi/2025-09-22-cve-2025-39569/</link>
-    <pubDate>Mon, 22 Sep 2025 18:56:00 &#43;0700</pubDate><author>
-        <name>w41bu1</name>
-    </author><guid>http://localhost:1313/vi/2025-09-22-cve-2025-39569/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/2025-09-22-cve-2025-39569/app.png" referrerpolicy="no-referrer">
-            </div>Security Vulnerability in WordPress Taskbuilder Plugin.]]></description>
-</item><item>
-    <title>CVE-2025-39566 Analysis &amp; POC</title>
-    <link>http://localhost:1313/vi/2025-09-21-cve-2025-39566/</link>
-    <pubDate>Sun, 21 Sep 2025 22:27:00 &#43;0700</pubDate><author>
-        <name>w41bu1</name>
-    </author><guid>http://localhost:1313/vi/2025-09-21-cve-2025-39566/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/2025-09-21-cve-2025-39566/app.png" referrerpolicy="no-referrer">
-            </div>Security Vulnerability in WordPress Hostel Plugin.]]></description>
 </item></channel>
 </rss>
