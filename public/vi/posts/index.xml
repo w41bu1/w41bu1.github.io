@@ -1,0 +1,8 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tất cả Bài viết - Bui Van Y</title>
+        <link>http://localhost:1313/vi/posts/</link>
+        <description>Tất cả Bài viết | Bui Van Y</description>
+        <generator>Hugo -- gohugo.io</generator><language>vi</language><managingEditor>w41bui@gmail.com (w41bu1)</managingEditor>
+            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 21 Sep 2025 22:27:00 &#43;0700</lastBuildDate><atom:link href="http://localhost:1313/vi/posts/" rel="self" type="application/rss+xml" /></channel>
+</rss>

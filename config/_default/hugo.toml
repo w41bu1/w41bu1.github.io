@@ -1,5 +1,4 @@
 baseURL = "https://hugodoit.pages.dev"
-# [en, zh-cn, fr, pl, ...] determines default content language
 defaultContentLanguage = "en"
 # website title
 title = "Bui Van Y"

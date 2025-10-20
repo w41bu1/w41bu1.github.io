@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Categories - Danh mục - Bui Van Y</title>
+        <link>http://localhost:1313/vi/categories/</link>
+        <description>Categories - Danh mục - Bui Van Y</description>
+        <generator>Hugo -- gohugo.io</generator><language>vi</language><managingEditor>w41bui@gmail.com (w41bu1)</managingEditor>
+            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 21 Sep 2025 22:27:00 &#43;0700</lastBuildDate><atom:link href="http://localhost:1313/vi/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>CVE Analyst</title>
+    <link>http://localhost:1313/vi/categories/cve-analyst/</link>
+    <pubDate>Sun, 21 Sep 2025 22:27:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/categories/cve-analyst/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Web</title>
+    <link>http://localhost:1313/vi/categories/web/</link>
+    <pubDate>Thu, 21 Aug 2025 09:00:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/categories/web/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
+</rss>

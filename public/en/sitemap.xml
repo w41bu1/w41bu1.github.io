@@ -2,255 +2,193 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost:1313/theme-documentation-basics/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/tags/analyst/</loc><lastmod>2025-09-21T22:27:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
                         rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/theme-documentation-basics/"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/tags/analyst/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:1313/theme-documentation-basics/"
+                    href="http://localhost:1313/tags/analyst/"
                     /></url><url>
-            <loc>http://localhost:1313/theme-documentation-content/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/</loc><lastmod>2025-09-21T22:27:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
                         rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/theme-documentation-content/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/theme-documentation-content/"
-                    /></url><url>
-            <loc>http://localhost:1313/theme-documentation-built-in-shortcodes/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/theme-documentation-built-in-shortcodes/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/theme-documentation-built-in-shortcodes/"
-                    /></url><url>
-            <loc>http://localhost:1313/theme-documentation-extended-shortcodes/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/theme-documentation-extended-shortcodes/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/theme-documentation-extended-shortcodes/"
-                    /></url><url>
-            <loc>http://localhost:1313/basic-markdown-syntax/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/basic-markdown-syntax/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/basic-markdown-syntax/"
-                    /></url><url>
-            <loc>http://localhost:1313/emoji-support/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/emoji-support/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/emoji-support/"
-                    /></url><url>
-            <loc>http://localhost:1313/pwa-support/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/pwa-support/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/pwa-support/"
-                    /></url><url>
-            <loc>http://localhost:1313/authors/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/authors/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/authors/"
-                    /></url><url>
-            <loc>http://localhost:1313/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
                     href="http://localhost:1313/"
                     /></url><url>
-            <loc>http://localhost:1313/categories/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/categories/</loc><lastmod>2025-09-21T22:27:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
                         rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/categories/"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/categories/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
                     href="http://localhost:1313/categories/"
                     /></url><url>
-            <loc>http://localhost:1313/tags/diagram/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/categories/cve-analyst/</loc><lastmod>2025-09-21T22:27:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
                         rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/tags/diagram/"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/categories/cve-analyst/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:1313/tags/diagram/"
+                    href="http://localhost:1313/categories/cve-analyst/"
                     /></url><url>
-            <loc>http://localhost:1313/categories/documentation/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/2025-09-21-cve-2025-39566/</loc><lastmod>2025-09-21T22:27:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
                         rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/categories/documentation/"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/2025-09-21-cve-2025-39566/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:1313/categories/documentation/"
+                    href="http://localhost:1313/2025-09-21-cve-2025-39566/"
                     /></url><url>
-            <loc>http://localhost:1313/create-diagrams/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/tags/plugin/</loc><lastmod>2025-09-21T22:27:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
                         rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/create-diagrams/"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/tags/plugin/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:1313/create-diagrams/"
+                    href="http://localhost:1313/tags/plugin/"
                     /></url><url>
-            <loc>http://localhost:1313/series/how-to-doit/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/posts/</loc><lastmod>2025-09-21T22:27:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
                         rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/series/how-to-doit/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/series/how-to-doit/"
-                    /></url><url>
-            <loc>http://localhost:1313/tags/markdown/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/tags/markdown/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/tags/markdown/"
-                    /></url><url>
-            <loc>http://localhost:1313/authors/pcloud/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/authors/pcloud/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/authors/pcloud/"
-                    /></url><url>
-            <loc>http://localhost:1313/posts/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/posts/"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/posts/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
                     href="http://localhost:1313/posts/"
                     /></url><url>
-            <loc>http://localhost:1313/series/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/tags/sqli/</loc><lastmod>2025-09-21T22:27:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
                         rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/series/"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/tags/sqli/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:1313/series/"
+                    href="http://localhost:1313/tags/sqli/"
                     /></url><url>
-            <loc>http://localhost:1313/tags/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/tags/</loc><lastmod>2025-09-21T22:27:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
                         rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/tags/"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/tags/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
                     href="http://localhost:1313/tags/"
                     /></url><url>
-            <loc>http://localhost:1313/tags/pwa/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/tags/cms/</loc><lastmod>2025-08-21T09:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/tags/pwa/"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/tags/cms/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:1313/tags/pwa/"
+                    href="http://localhost:1313/tags/cms/"
                     /></url><url>
-            <loc>http://localhost:1313/authors/dillon/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/tags/php/</loc><lastmod>2025-08-21T09:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/authors/dillon/"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/tags/php/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:1313/authors/dillon/"
+                    href="http://localhost:1313/tags/php/"
                     /></url><url>
-            <loc>http://localhost:1313/series/getting-start/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/categories/web/</loc><lastmod>2025-08-21T09:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/series/getting-start/"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/categories/web/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:1313/series/getting-start/"
+                    href="http://localhost:1313/categories/web/"
                     /></url><url>
-            <loc>http://localhost:1313/tags/shortcodes/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/tags/wordpress/</loc><lastmod>2025-08-21T09:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/tags/shortcodes/"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/tags/wordpress/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:1313/tags/shortcodes/"
+                    href="http://localhost:1313/tags/wordpress/"
                     /></url><url>
-            <loc>http://localhost:1313/tags/content/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/2025-08-21-wordpress-local-and-debugging/</loc><lastmod>2025-08-21T09:00:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/tags/content/"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/2025-08-21-wordpress-local-and-debugging/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:1313/tags/content/"
+                    href="http://localhost:1313/2025-08-21-wordpress-local-and-debugging/"
                     /></url><url>
-            <loc>http://localhost:1313/tags/configuration/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/tags/blog/</loc><lastmod>2025-08-19T01:10:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/tags/configuration/"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/tags/blog/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:1313/tags/configuration/"
+                    href="http://localhost:1313/tags/blog/"
                     /></url><url>
-            <loc>http://localhost:1313/tags/installation/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/tags/giscus/</loc><lastmod>2025-08-19T01:10:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/tags/installation/"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/tags/giscus/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:1313/tags/installation/"
+                    href="http://localhost:1313/tags/giscus/"
                     /></url><url>
-            <loc>http://localhost:1313/tags/html/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/tags/github/</loc><lastmod>2025-08-19T01:10:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/tags/html/"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/tags/github/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:1313/tags/html/"
+                    href="http://localhost:1313/tags/github/"
                     /></url><url>
-            <loc>http://localhost:1313/tags/emoji/</loc><lastmod>2025-10-20T23:21:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/2025-08-19-github-pages-with-jekyll-themes-and-giscus/</loc><lastmod>2025-08-19T01:10:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/zh-cn/tags/emoji/"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/2025-08-19-github-pages-with-jekyll-themes-and-giscus/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:1313/tags/emoji/"
-                    /></url></urlset>
+                    href="http://localhost:1313/2025-08-19-github-pages-with-jekyll-themes-and-giscus/"
+                    /></url><url>
+            <loc>http://localhost:1313/tags/jekyll/</loc><lastmod>2025-08-19T01:10:00&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/tags/jekyll/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/tags/jekyll/"
+                    /></url><url>
+            <loc>http://localhost:1313/authors/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/authors/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/authors/"
+                    /></url><url>
+            <loc>http://localhost:1313/series/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="vi"
+                        href="http://localhost:1313/vi/series/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/series/"
+                    /></url><url>
+            <loc>http://localhost:1313/categories/technology/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>

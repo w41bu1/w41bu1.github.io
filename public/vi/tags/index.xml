@@ -1,0 +1,78 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - Nhãn - Bui Van Y</title>
+        <link>http://localhost:1313/vi/tags/</link>
+        <description>Tags - Nhãn - Bui Van Y</description>
+        <generator>Hugo -- gohugo.io</generator><language>vi</language><managingEditor>w41bui@gmail.com (w41bu1)</managingEditor>
+            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 21 Sep 2025 22:27:00 &#43;0700</lastBuildDate><atom:link href="http://localhost:1313/vi/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Analyst</title>
+    <link>http://localhost:1313/vi/tags/analyst/</link>
+    <pubDate>Sun, 21 Sep 2025 22:27:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/tags/analyst/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Plugin</title>
+    <link>http://localhost:1313/vi/tags/plugin/</link>
+    <pubDate>Sun, 21 Sep 2025 22:27:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/tags/plugin/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Sqli</title>
+    <link>http://localhost:1313/vi/tags/sqli/</link>
+    <pubDate>Sun, 21 Sep 2025 22:27:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/tags/sqli/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Cms</title>
+    <link>http://localhost:1313/vi/tags/cms/</link>
+    <pubDate>Thu, 21 Aug 2025 09:00:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/tags/cms/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Php</title>
+    <link>http://localhost:1313/vi/tags/php/</link>
+    <pubDate>Thu, 21 Aug 2025 09:00:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/tags/php/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Wordpress</title>
+    <link>http://localhost:1313/vi/tags/wordpress/</link>
+    <pubDate>Thu, 21 Aug 2025 09:00:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/tags/wordpress/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Blog</title>
+    <link>http://localhost:1313/vi/tags/blog/</link>
+    <pubDate>Tue, 19 Aug 2025 01:10:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/tags/blog/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Giscus</title>
+    <link>http://localhost:1313/vi/tags/giscus/</link>
+    <pubDate>Tue, 19 Aug 2025 01:10:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/tags/giscus/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Github</title>
+    <link>http://localhost:1313/vi/tags/github/</link>
+    <pubDate>Tue, 19 Aug 2025 01:10:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/tags/github/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Jekyll</title>
+    <link>http://localhost:1313/vi/tags/jekyll/</link>
+    <pubDate>Tue, 19 Aug 2025 01:10:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/tags/jekyll/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
+</rss>

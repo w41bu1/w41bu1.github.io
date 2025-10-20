@@ -3,20 +3,6 @@
         <title>Series - Series - Bui Van Y</title>
         <link>http://localhost:1313/series/</link>
         <description>Series - Series - Bui Van Y</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>heige.pcloud@outlook.com (PCloud)</managingEditor>
-            <webMaster>heige.pcloud@outlook.com (PCloud)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 28 Feb 2022 14:27:14 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/series/" rel="self" type="application/rss+xml" /><item>
-    <title>How-to-Doit</title>
-    <link>http://localhost:1313/series/how-to-doit/</link>
-    <pubDate>Mon, 28 Feb 2022 14:27:14 &#43;0000</pubDate><author>
-        <name>PCloud</name>
-    </author><guid>http://localhost:1313/series/how-to-doit/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Getting-Start</title>
-    <link>http://localhost:1313/series/getting-start/</link>
-    <pubDate>Fri, 06 Mar 2020 16:29:41 &#43;0800</pubDate><author>
-        <name>PCloud</name>
-    </author><guid>http://localhost:1313/series/getting-start/</guid>
-    <description><![CDATA[]]></description>
-</item></channel>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>w41bui@gmail.com (w41bu1)</managingEditor>
+            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="http://localhost:1313/series/" rel="self" type="application/rss+xml" /></channel>
 </rss>

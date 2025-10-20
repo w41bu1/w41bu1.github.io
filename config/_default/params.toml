@@ -29,11 +29,11 @@ license = '<a rel="license external nofollow noopener noreferrer" href="https://
 bundle = false
 
 [author]
-  name = "PCloud"
-  email = "heige.pcloud@outlook.com"
-  link = "https://github.com/HEIGE-PCloud"
-  avatar = "/images/avatar.webp"
-  gravatarEmail = "heige.pcloud@outlook.com"
+  name = "w41bu1"
+  email = "w41bui@gmail.com"
+  link = "https://github.com/w41bu1"
+  avatar = "/images/avatar.png"
+  gravatarEmail = "w41bu1@gmail.com"
 
 [image]
   # cache remote images for better optimisations
@@ -76,7 +76,7 @@ bundle = false
   custom = ''
   # whether to show Hugo and theme info
   # 是否显示 Hugo 和主题信息
-  hugo = true
+  hugo = false
   # Hosted on (HTML format is supported)
   # 托管服务信息 (支持 HTML 格式)
   # <a title="Github Pages" href="https://docs.github.com/en/pages/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>
@@ -86,7 +86,7 @@ bundle = false
   copyright = true
   # whether to show the author
   # 是否显示作者
-  author = true
+  author = false
   # site creation time
   # 网站创立年份
   since = 2019

@@ -3,69 +3,76 @@
         <title>Tags - Tag - Bui Van Y</title>
         <link>http://localhost:1313/tags/</link>
         <description>Tags - Tag - Bui Van Y</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>heige.pcloud@outlook.com (PCloud)</managingEditor>
-            <webMaster>heige.pcloud@outlook.com (PCloud)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 28 Feb 2022 14:27:14 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>Diagram</title>
-    <link>http://localhost:1313/tags/diagram/</link>
-    <pubDate>Mon, 28 Feb 2022 14:27:14 &#43;0000</pubDate><author>
-        <name>PCloud</name>
-    </author><guid>http://localhost:1313/tags/diagram/</guid>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>w41bui@gmail.com (w41bu1)</managingEditor>
+            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 21 Sep 2025 22:27:00 &#43;0700</lastBuildDate><atom:link href="http://localhost:1313/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Analyst</title>
+    <link>http://localhost:1313/tags/analyst/</link>
+    <pubDate>Sun, 21 Sep 2025 22:27:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/tags/analyst/</guid>
     <description><![CDATA[]]></description>
 </item><item>
-    <title>Markdown</title>
-    <link>http://localhost:1313/tags/markdown/</link>
-    <pubDate>Mon, 28 Feb 2022 14:27:14 &#43;0000</pubDate><author>
-        <name>PCloud</name>
-    </author><guid>http://localhost:1313/tags/markdown/</guid>
+    <title>Plugin</title>
+    <link>http://localhost:1313/tags/plugin/</link>
+    <pubDate>Sun, 21 Sep 2025 22:27:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/tags/plugin/</guid>
     <description><![CDATA[]]></description>
 </item><item>
-    <title>PWA</title>
-    <link>http://localhost:1313/tags/pwa/</link>
-    <pubDate>Mon, 10 May 2021 16:21:41 &#43;0100</pubDate><author>
-        <name>PCloud</name>
-    </author><guid>http://localhost:1313/tags/pwa/</guid>
+    <title>Sqli</title>
+    <link>http://localhost:1313/tags/sqli/</link>
+    <pubDate>Sun, 21 Sep 2025 22:27:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/tags/sqli/</guid>
     <description><![CDATA[]]></description>
 </item><item>
-    <title>Shortcodes</title>
-    <link>http://localhost:1313/tags/shortcodes/</link>
-    <pubDate>Fri, 06 Mar 2020 16:29:41 &#43;0800</pubDate><author>
-        <name>PCloud</name>
-    </author><guid>http://localhost:1313/tags/shortcodes/</guid>
+    <title>Cms</title>
+    <link>http://localhost:1313/tags/cms/</link>
+    <pubDate>Thu, 21 Aug 2025 09:00:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/tags/cms/</guid>
     <description><![CDATA[]]></description>
 </item><item>
-    <title>Content</title>
-    <link>http://localhost:1313/tags/content/</link>
-    <pubDate>Wed, 04 Mar 2020 15:58:26 &#43;0800</pubDate><author>
-        <name>PCloud</name>
-    </author><guid>http://localhost:1313/tags/content/</guid>
+    <title>Php</title>
+    <link>http://localhost:1313/tags/php/</link>
+    <pubDate>Thu, 21 Aug 2025 09:00:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/tags/php/</guid>
     <description><![CDATA[]]></description>
 </item><item>
-    <title>Configuration</title>
-    <link>http://localhost:1313/tags/configuration/</link>
-    <pubDate>Tue, 03 Mar 2020 21:29:01 &#43;0800</pubDate><author>
-        <name>PCloud</name>
-    </author><guid>http://localhost:1313/tags/configuration/</guid>
+    <title>Wordpress</title>
+    <link>http://localhost:1313/tags/wordpress/</link>
+    <pubDate>Thu, 21 Aug 2025 09:00:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/tags/wordpress/</guid>
     <description><![CDATA[]]></description>
 </item><item>
-    <title>Installation</title>
-    <link>http://localhost:1313/tags/installation/</link>
-    <pubDate>Tue, 03 Mar 2020 21:29:01 &#43;0800</pubDate><author>
-        <name>PCloud</name>
-    </author><guid>http://localhost:1313/tags/installation/</guid>
+    <title>Blog</title>
+    <link>http://localhost:1313/tags/blog/</link>
+    <pubDate>Tue, 19 Aug 2025 01:10:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/tags/blog/</guid>
     <description><![CDATA[]]></description>
 </item><item>
-    <title>HTML</title>
-    <link>http://localhost:1313/tags/html/</link>
-    <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate><author>
-        <name>PCloud</name>
-    </author><guid>http://localhost:1313/tags/html/</guid>
+    <title>Giscus</title>
+    <link>http://localhost:1313/tags/giscus/</link>
+    <pubDate>Tue, 19 Aug 2025 01:10:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/tags/giscus/</guid>
     <description><![CDATA[]]></description>
 </item><item>
-    <title>Emoji</title>
-    <link>http://localhost:1313/tags/emoji/</link>
-    <pubDate>Tue, 01 Oct 2019 17:55:28 &#43;0800</pubDate><author>
-        <name>PCloud</name>
-    </author><guid>http://localhost:1313/tags/emoji/</guid>
+    <title>Github</title>
+    <link>http://localhost:1313/tags/github/</link>
+    <pubDate>Tue, 19 Aug 2025 01:10:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/tags/github/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Jekyll</title>
+    <link>http://localhost:1313/tags/jekyll/</link>
+    <pubDate>Tue, 19 Aug 2025 01:10:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/tags/jekyll/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>
