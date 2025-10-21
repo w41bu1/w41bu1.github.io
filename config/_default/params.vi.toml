@@ -171,3 +171,20 @@ keywords = ["Theme", "Hugo"]
   Youtubelegacy = ""
   Zhihu = ""
   Bluesky = ""
+
+# --- SEO and Social Preview ---
+[params.social]
+  enable = true
+
+[params.seo]
+  enable = true
+  openGraph = true
+  twitterCards = true
+
+images = ["images/avatar.png"]
+
+[page.seo]
+  images = []
+  [page.seo.publisher]
+    name = "Bui Van Y"
+    logoUrl = "/images/avatar.png"
