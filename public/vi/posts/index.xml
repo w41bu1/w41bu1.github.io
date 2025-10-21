@@ -4,7 +4,16 @@
         <link>http://localhost:1313/vi/posts/</link>
         <description>Tất cả Bài viết | Bui Van Y</description>
         <generator>Hugo -- gohugo.io</generator><language>vi</language><managingEditor>w41bui@gmail.com (w41bu1)</managingEditor>
-            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 22 Oct 2025 19:00:00 &#43;0700</lastBuildDate><atom:link href="http://localhost:1313/vi/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 23 Oct 2025 19:00:00 &#43;0700</lastBuildDate><atom:link href="http://localhost:1313/vi/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>CVE-2025-11361 Analysis &amp; POC</title>
+    <link>http://localhost:1313/vi/2025-10-22-cve-2025-11361/</link>
+    <pubDate>Wed, 22 Oct 2025 19:00:00 &#43;0700</pubDate><author>
+        <name>w41bu1</name>
+    </author><guid>http://localhost:1313/vi/2025-10-22-cve-2025-11361/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/2025-10-22-cve-2025-11361/app.png" referrerpolicy="no-referrer">
+            </div>Security Vulnerability in WordPress Essential Blocks for Gutenberg Plugin.]]></description>
+</item><item>
     <title>CVE-2025-53328 Analysis &amp; POC</title>
     <link>http://localhost:1313/vi/2025-10-12-cve-2025-53328/</link>
     <pubDate>Sun, 12 Oct 2025 19:18:00 &#43;0700</pubDate><author>
@@ -94,15 +103,6 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="/2025-10-21-cve-2025-32141/app.png" referrerpolicy="no-referrer">
             </div>Security Vulnerability in WordPress MasterStudy LMS Plugin.]]></description>
-</item><item>
-    <title>CVE-2025-11361 Analysis &amp; POC</title>
-    <link>http://localhost:1313/vi/2025-10-22-cve-2025-11361/</link>
-    <pubDate>Wed, 22 Oct 2025 19:00:00 &#43;0700</pubDate><author>
-        <name>w41bu1</name>
-    </author><guid>http://localhost:1313/vi/2025-10-22-cve-2025-11361/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/2025-10-22-cve-2025-11361/app.png" referrerpolicy="no-referrer">
-            </div>Security Vulnerability in WordPress Essential Blocks for Gutenberg Plugin.]]></description>
 </item><item>
     <title>CVE-2024-4439 Analysis &amp; POC</title>
     <link>http://localhost:1313/vi/2025-10-09-cve-2024-4439/</link>
