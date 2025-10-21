@@ -568,7 +568,7 @@ bundle = false
   image = "/images/avatar.png"
   # thumbnail URL
   # 缩略图 URL
-  # thumbnailUrl = "/images/screenshot.png"
+  thumbnailUrl = "/images/avatar.png"
   # Google 搜索结果中网站备用名字
   # alternate site name in Google search result
   # https://developers.google.com/search/docs/appearance/site-names#alternative
