@@ -516,8 +516,8 @@ bundle = false
     # Publisher info
     # 出版者信息
     [page.seo.publisher]
-      name = "xxxx"
-      logoUrl = "/images/avatar.webp"
+      name = "Bui Van Y"
+      #logoUrl = "/images/avatar.png"
   # Related content config
   # 相关文章推荐配置
   [page.related]
