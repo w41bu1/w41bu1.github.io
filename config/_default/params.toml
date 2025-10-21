@@ -565,10 +565,10 @@ bundle = false
 [seo]
   # image URL
   # 图片 URL
-  image = "/images/Apple-Devices-Preview.png"
+  image = "/images/avatar.png"
   # thumbnail URL
   # 缩略图 URL
-  thumbnailUrl = "/images/screenshot.png"
+  # thumbnailUrl = "/images/screenshot.png"
   # Google 搜索结果中网站备用名字
   # alternate site name in Google search result
   # https://developers.google.com/search/docs/appearance/site-names#alternative
