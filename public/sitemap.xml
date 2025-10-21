@@ -2,14 +2,14 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
-    <loc>https://hugodoit.pages.dev/en/sitemap.xml</loc>
+    <loc>http://localhost:1313/en/sitemap.xml</loc>
     
       <lastmod>2025-10-21T19:11:48+07:00</lastmod>
     
   </sitemap>
   
   <sitemap>
-    <loc>https://hugodoit.pages.dev/vi/sitemap.xml</loc>
+    <loc>http://localhost:1313/vi/sitemap.xml</loc>
     
       <lastmod>2025-10-21T19:11:48+07:00</lastmod>
     

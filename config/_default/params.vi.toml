@@ -82,7 +82,7 @@ keywords = ["Theme", "Hugo"]
     # URL of avatar shown in home page
     avatarURL = "/images/avatar.png"
     # URL the avatar links to
-    avatarLinkURL = ""
+    avatarLinkURL = "/images/avatar.png"
     # title shown in home page (HTML format is supported)
     title = ""
     # subtitle shown in home page
