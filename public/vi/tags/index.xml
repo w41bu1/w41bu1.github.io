@@ -1,78 +1,78 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Tags - Nhãn - Bui Van Y</title>
-        <link>https://hugodoit.pages.dev/vi/tags/</link>
+        <link>http://localhost:1313/vi/tags/</link>
         <description>Tags - Nhãn - Bui Van Y</description>
         <generator>Hugo -- gohugo.io</generator><language>vi</language><managingEditor>w41bui@gmail.com (w41bu1)</managingEditor>
-            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 23 Oct 2025 19:00:00 &#43;0700</lastBuildDate><atom:link href="https://hugodoit.pages.dev/vi/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 23 Oct 2025 19:00:00 &#43;0700</lastBuildDate><atom:link href="http://localhost:1313/vi/tags/" rel="self" type="application/rss+xml" /><item>
     <title>Analyst</title>
-    <link>https://hugodoit.pages.dev/vi/tags/analyst/</link>
+    <link>http://localhost:1313/vi/tags/analyst/</link>
     <pubDate>Thu, 23 Oct 2025 19:00:00 &#43;0700</pubDate><author>
         <name>w41bu1</name>
-    </author><guid>https://hugodoit.pages.dev/vi/tags/analyst/</guid>
+    </author><guid>http://localhost:1313/vi/tags/analyst/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>Plugin</title>
-    <link>https://hugodoit.pages.dev/vi/tags/plugin/</link>
+    <link>http://localhost:1313/vi/tags/plugin/</link>
     <pubDate>Thu, 23 Oct 2025 19:00:00 &#43;0700</pubDate><author>
         <name>w41bu1</name>
-    </author><guid>https://hugodoit.pages.dev/vi/tags/plugin/</guid>
+    </author><guid>http://localhost:1313/vi/tags/plugin/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>Ssrf</title>
-    <link>https://hugodoit.pages.dev/vi/tags/ssrf/</link>
+    <link>http://localhost:1313/vi/tags/ssrf/</link>
     <pubDate>Thu, 23 Oct 2025 19:00:00 &#43;0700</pubDate><author>
         <name>w41bu1</name>
-    </author><guid>https://hugodoit.pages.dev/vi/tags/ssrf/</guid>
+    </author><guid>http://localhost:1313/vi/tags/ssrf/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>Lfi</title>
-    <link>https://hugodoit.pages.dev/vi/tags/lfi/</link>
+    <link>http://localhost:1313/vi/tags/lfi/</link>
     <pubDate>Wed, 22 Oct 2025 20:48:00 &#43;0700</pubDate><author>
         <name>w41bu1</name>
-    </author><guid>https://hugodoit.pages.dev/vi/tags/lfi/</guid>
+    </author><guid>http://localhost:1313/vi/tags/lfi/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>Pearcmd</title>
-    <link>https://hugodoit.pages.dev/vi/tags/pearcmd/</link>
+    <link>http://localhost:1313/vi/tags/pearcmd/</link>
     <pubDate>Wed, 22 Oct 2025 20:48:00 &#43;0700</pubDate><author>
         <name>w41bu1</name>
-    </author><guid>https://hugodoit.pages.dev/vi/tags/pearcmd/</guid>
+    </author><guid>http://localhost:1313/vi/tags/pearcmd/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>Cms</title>
-    <link>https://hugodoit.pages.dev/vi/tags/cms/</link>
+    <link>http://localhost:1313/vi/tags/cms/</link>
     <pubDate>Wed, 22 Oct 2025 15:00:00 &#43;0700</pubDate><author>
         <name>w41bu1</name>
-    </author><guid>https://hugodoit.pages.dev/vi/tags/cms/</guid>
+    </author><guid>http://localhost:1313/vi/tags/cms/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>Docker</title>
-    <link>https://hugodoit.pages.dev/vi/tags/docker/</link>
+    <link>http://localhost:1313/vi/tags/docker/</link>
     <pubDate>Wed, 22 Oct 2025 15:00:00 &#43;0700</pubDate><author>
         <name>w41bu1</name>
-    </author><guid>https://hugodoit.pages.dev/vi/tags/docker/</guid>
+    </author><guid>http://localhost:1313/vi/tags/docker/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>Php</title>
-    <link>https://hugodoit.pages.dev/vi/tags/php/</link>
+    <link>http://localhost:1313/vi/tags/php/</link>
     <pubDate>Wed, 22 Oct 2025 15:00:00 &#43;0700</pubDate><author>
         <name>w41bu1</name>
-    </author><guid>https://hugodoit.pages.dev/vi/tags/php/</guid>
+    </author><guid>http://localhost:1313/vi/tags/php/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>Wordpress</title>
-    <link>https://hugodoit.pages.dev/vi/tags/wordpress/</link>
+    <link>http://localhost:1313/vi/tags/wordpress/</link>
     <pubDate>Wed, 22 Oct 2025 15:00:00 &#43;0700</pubDate><author>
         <name>w41bu1</name>
-    </author><guid>https://hugodoit.pages.dev/vi/tags/wordpress/</guid>
+    </author><guid>http://localhost:1313/vi/tags/wordpress/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>Core</title>
-    <link>https://hugodoit.pages.dev/vi/tags/core/</link>
+    <link>http://localhost:1313/vi/tags/core/</link>
     <pubDate>Sat, 11 Oct 2025 19:18:00 &#43;0700</pubDate><author>
         <name>w41bu1</name>
-    </author><guid>https://hugodoit.pages.dev/vi/tags/core/</guid>
+    </author><guid>http://localhost:1313/vi/tags/core/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>
