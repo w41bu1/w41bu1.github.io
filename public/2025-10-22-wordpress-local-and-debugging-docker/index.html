@@ -275,7 +275,7 @@
 </nav></div>
             </div><div class="content" id="content" data-pagefind-body><p><strong>Continuing</strong> from the previous guide on <strong>installing WordPress in a local environment</strong> (<a href="https://w41bu1.github.io/2025-08-21-wordpress-local-and-debugging/" target="_blank" rel="noopener noreferrer">see here</a>), this post will show you how to <strong>set up WordPress with Docker</strong> — a modern, flexible, and easily shareable approach.</p>
 <h2 id="why-use-docker" class="headerLink">
-    <a href="#why-use-docker" class="header-mark"></a>23 Why Use Docker?</h2><p>Docker allows you to package the entire WordPress environment (PHP, MySQL, web server, and source code) into independent containers. This brings several key advantages:</p>
+    <a href="#why-use-docker" class="header-mark"></a>1 Why Use Docker?</h2><p>Docker allows you to package the entire WordPress environment (PHP, MySQL, web server, and source code) into independent containers. This brings several key advantages:</p>
 <ul>
 <li><strong>Environment consistency</strong>: Works the same everywhere, eliminating “works on my machine” issues.</li>
 <li><strong>Easy setup and reset</strong>: Spin up or rebuild your environment in just a few commands.</li>
@@ -285,12 +285,12 @@
 </ul>
 <p>Docker is an <strong>optimal solution</strong> for developing, testing, and collaborating on WordPress projects — especially useful for developers, teams, or penetration testers who need a consistent, reproducible environment.</p>
 <h2 id="setup-wordpress-for-hacker-in-docker" class="headerLink">
-    <a href="#setup-wordpress-for-hacker-in-docker" class="header-mark"></a>24 Setup WordPress for Hacker in Docker</h2><h3 id="prerequisites" class="headerLink">
-    <a href="#prerequisites" class="header-mark"></a>24.1 Prerequisites</h3><h4 id="docker" class="headerLink">
-    <a href="#docker" class="header-mark"></a>24.1.1 Docker</h4><p>First, install <strong>Docker</strong>. It’s available on all major operating systems, with installation steps differing slightly per platform.<br>
+    <a href="#setup-wordpress-for-hacker-in-docker" class="header-mark"></a>2 Setup WordPress for Hacker in Docker</h2><h3 id="prerequisites" class="headerLink">
+    <a href="#prerequisites" class="header-mark"></a>2.1 Prerequisites</h3><h4 id="docker" class="headerLink">
+    <a href="#docker" class="header-mark"></a>2.1.1 Docker</h4><p>First, install <strong>Docker</strong>. It’s available on all major operating systems, with installation steps differing slightly per platform.<br>
 See the official guide: <a href="https://www.docker.com/get-started/" target="_blank" rel="noopener noreferrer">https://www.docker.com/get-started/</a></p>
 <h4 id="docker-compose" class="headerLink">
-    <a href="#docker-compose" class="header-mark"></a>24.1.2 Docker Compose</h4><p>Instead of manually starting containers with <code>docker run</code>, use <strong>Docker Compose</strong> — a tool that defines and manages multiple linked containers using <strong>a single configuration file</strong> (<code>docker-compose.yml</code>).</p>
+    <a href="#docker-compose" class="header-mark"></a>2.1.2 Docker Compose</h4><p>Instead of manually starting containers with <code>docker run</code>, use <strong>Docker Compose</strong> — a tool that defines and manages multiple linked containers using <strong>a single configuration file</strong> (<code>docker-compose.yml</code>).</p>
 <p>For WordPress, you’ll need:</p>
 <ul>
 <li>A <strong>MySQL</strong> container for the database.</li>
@@ -305,7 +305,7 @@ With Docker Compose, everything is neatly handled in one YAML file:</p>
 </ul>
 <p>Install instructions: <a href="https://docs.docker.com/compose/install/" target="_blank" rel="noopener noreferrer">https://docs.docker.com/compose/install/</a></p>
 <h3 id="installing-wordpress-with-docker-compose-and-xdebug" class="headerLink">
-    <a href="#installing-wordpress-with-docker-compose-and-xdebug" class="header-mark"></a>24.2 Installing WordPress with Docker Compose and Xdebug</h3><p>This section shows how to install <strong>WordPress using Docker Compose</strong>, with <strong>Xdebug integration</strong> for debugging directly in <strong>VS Code</strong>.<br>
+    <a href="#installing-wordpress-with-docker-compose-and-xdebug" class="header-mark"></a>2.2 Installing WordPress with Docker Compose and Xdebug</h3><p>This section shows how to install <strong>WordPress using Docker Compose</strong>, with <strong>Xdebug integration</strong> for debugging directly in <strong>VS Code</strong>.<br>
 This gives you a complete development setup that’s easy to debug and extend.</p>
 <p><strong>Folder structure:</strong></p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
@@ -383,7 +383,7 @@ This gives you a complete development setup that’s easy to debug and extend.</
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-122" 
+    id="codeblock-id-1" 
     class="
       chroma 
       !tw-block 
@@ -406,7 +406,7 @@ This gives you a complete development setup that’s easy to debug and extend.</
 </span></span><span class="line"><span class="cl">    └── launch.json</span></span></code></pre>
 </div>
 <h3 id="setup-environment" class="headerLink">
-    <a href="#setup-environment" class="header-mark"></a>24.3 Setup Environment</h3><p>Create a new folder to store all configuration files:</p>
+    <a href="#setup-environment" class="header-mark"></a>2.3 Setup Environment</h3><p>Create a new folder to store all configuration files:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -482,7 +482,7 @@ This gives you a complete development setup that’s easy to debug and extend.</
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-123" 
+    id="codeblock-id-2" 
     class="
       chroma 
       !tw-block 
@@ -499,7 +499,7 @@ This gives you a complete development setup that’s easy to debug and extend.</
       "><span class="line"><span class="cl">mkdir wordpress-docker <span class="o">&amp;&amp;</span> <span class="nb">cd</span> wordpress-docker</span></span></code></pre>
 </div>
 <h3 id="create-dockerfile" class="headerLink">
-    <a href="#create-dockerfile" class="header-mark"></a>24.4 Create Dockerfile</h3><p>The default WordPress image <strong>does not include Xdebug</strong>, so we’ll extend it with a <code>Dockerfile</code>.</p>
+    <a href="#create-dockerfile" class="header-mark"></a>2.4 Create Dockerfile</h3><p>The default WordPress image <strong>does not include Xdebug</strong>, so we’ll extend it with a <code>Dockerfile</code>.</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -575,7 +575,7 @@ This gives you a complete development setup that’s easy to debug and extend.</
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-124" 
+    id="codeblock-id-3" 
     class="
       chroma 
       !tw-block 
@@ -667,7 +667,7 @@ This gives you a complete development setup that’s easy to debug and extend.</
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-125" 
+    id="codeblock-id-4" 
     class="
       chroma 
       !tw-block 
@@ -687,7 +687,7 @@ This gives you a complete development setup that’s easy to debug and extend.</
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> pecl install xdebug <span class="o">&amp;&amp;</span> docker-php-ext-enable xdebug</span></span></code></pre>
 </div>
 <h3 id="create-docker-composeyml" class="headerLink">
-    <a href="#create-docker-composeyml" class="header-mark"></a>24.5 Create docker-compose.yml</h3><p>Now create the file that configures the full environment:</p>
+    <a href="#create-docker-composeyml" class="header-mark"></a>2.5 Create docker-compose.yml</h3><p>Now create the file that configures the full environment:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -763,7 +763,7 @@ This gives you a complete development setup that’s easy to debug and extend.</
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-126" 
+    id="codeblock-id-5" 
     class="
       chroma 
       !tw-block 
@@ -855,7 +855,7 @@ This gives you a complete development setup that’s easy to debug and extend.</
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-127" 
+    id="codeblock-id-6" 
     class="
       chroma 
       !tw-block 
@@ -925,7 +925,7 @@ Mounts your PHP/Xdebug config file for easy customization without rebuilding the
 </li>
 </ul>
 <h3 id="create-phpini" class="headerLink">
-    <a href="#create-phpini" class="header-mark"></a>24.6 Create php.ini</h3><p>Enable Xdebug and adjust PHP settings.</p>
+    <a href="#create-phpini" class="header-mark"></a>2.6 Create php.ini</h3><p>Enable Xdebug and adjust PHP settings.</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -1001,7 +1001,7 @@ Mounts your PHP/Xdebug config file for easy customization without rebuilding the
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-128" 
+    id="codeblock-id-7" 
     class="
       chroma 
       !tw-block 
@@ -1093,7 +1093,7 @@ Mounts your PHP/Xdebug config file for easy customization without rebuilding the
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-129" 
+    id="codeblock-id-8" 
     class="
       chroma 
       !tw-block 
@@ -1126,7 +1126,7 @@ Mounts your PHP/Xdebug config file for easy customization without rebuilding the
 <li>The remaining lines increase upload and memory limits for PHP.</li>
 </ul>
 <h3 id="create-vs-code-launch-configuration" class="headerLink">
-    <a href="#create-vs-code-launch-configuration" class="header-mark"></a>24.7 Create VS Code Launch Configuration</h3><p>Create the VS Code config file to connect with Xdebug:</p>
+    <a href="#create-vs-code-launch-configuration" class="header-mark"></a>2.7 Create VS Code Launch Configuration</h3><p>Create the VS Code config file to connect with Xdebug:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -1202,7 +1202,7 @@ Mounts your PHP/Xdebug config file for easy customization without rebuilding the
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-130" 
+    id="codeblock-id-9" 
     class="
       chroma 
       !tw-block 
@@ -1294,7 +1294,7 @@ Mounts your PHP/Xdebug config file for easy customization without rebuilding the
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-131" 
+    id="codeblock-id-10" 
     class="
       chroma 
       !tw-block 
@@ -1325,12 +1325,12 @@ Mounts your PHP/Xdebug config file for easy customization without rebuilding the
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre>
 </div>
 <h3 id="install-vs-code-extension" class="headerLink">
-    <a href="#install-vs-code-extension" class="header-mark"></a>24.8 Install VS Code Extension</h3><p>Open VS Code → <strong>Extensions (Ctrl + Shift + X)</strong> → Search and install:</p>
+    <a href="#install-vs-code-extension" class="header-mark"></a>2.8 Install VS Code Extension</h3><p>Open VS Code → <strong>Extensions (Ctrl + Shift + X)</strong> → Search and install:</p>
 <blockquote>
   <p><strong>PHP Debug (by Xdebug)</strong></p>
 
 </blockquote><h3 id="run-docker-compose" class="headerLink">
-    <a href="#run-docker-compose" class="header-mark"></a>24.9 Run Docker Compose</h3><p>Start the environment:</p>
+    <a href="#run-docker-compose" class="header-mark"></a>2.9 Run Docker Compose</h3><p>Start the environment:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -1406,7 +1406,7 @@ Mounts your PHP/Xdebug config file for easy customization without rebuilding the
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-132" 
+    id="codeblock-id-11" 
     class="
       chroma 
       !tw-block 

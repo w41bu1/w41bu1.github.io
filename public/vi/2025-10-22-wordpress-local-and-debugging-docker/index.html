@@ -275,7 +275,7 @@
 </nav></div>
             </div><div class="content" id="content" data-pagefind-body><p><strong>Tiếp nối</strong> phần hướng dẫn <strong>cài đặt WordPress trên môi trường local</strong> ở <a href="https://w41bu1.github.io/2025-08-21-wordpress-local-and-debugging/" target="_blank" rel="noopener noreferrer">bài viết trước</a>, bài này sẽ hướng dẫn bạn <strong>thiết lập WordPress bằng Docker</strong> — một cách hiện đại, linh hoạt và dễ chia sẻ hơn.</p>
 <h2 id="why-use-docker" class="headerLink">
-    <a href="#why-use-docker" class="header-mark"></a>19 Why Use Docker?</h2><p>Docker cho phép bạn đóng gói toàn bộ môi trường chạy WordPress (PHP, MySQL, web server và mã nguồn) vào các container độc lập. Cách làm này mang lại nhiều lợi ích:</p>
+    <a href="#why-use-docker" class="header-mark"></a>1 Why Use Docker?</h2><p>Docker cho phép bạn đóng gói toàn bộ môi trường chạy WordPress (PHP, MySQL, web server và mã nguồn) vào các container độc lập. Cách làm này mang lại nhiều lợi ích:</p>
 <ul>
 <li><strong>Đồng nhất môi trường</strong>: Chạy giống nhau trên mọi máy, tránh lỗi “chạy được trên máy tôi”.</li>
 <li><strong>Dễ cài đặt và tái tạo</strong>: Chỉ cần vài lệnh để khởi tạo hoặc reset toàn bộ hệ thống.</li>
@@ -285,12 +285,12 @@
 </ul>
 <p>Docker là <strong>giải pháp tối ưu</strong> để phát triển, thử nghiệm và cộng tác trên các dự án WordPress, đặc biệt hữu ích cho lập trình viên, nhóm làm việc hoặc người làm pentest muốn có môi trường nhất quán, dễ tái sử dụng.</p>
 <h2 id="setup-wordpress-for-hacker-in-docker" class="headerLink">
-    <a href="#setup-wordpress-for-hacker-in-docker" class="header-mark"></a>20 Setup WordPress for Hacker in Docker</h2><h3 id="prerequisites" class="headerLink">
-    <a href="#prerequisites" class="header-mark"></a>20.1 Prerequisites</h3><h4 id="docker" class="headerLink">
-    <a href="#docker" class="header-mark"></a>20.1.1 Docker</h4><p>Trước tiên, bạn cần cài đặt <strong>Docker</strong>. Công cụ này hỗ trợ trên nhiều hệ điều hành, mỗi nền tảng có cách cài đặt riêng.<br>
+    <a href="#setup-wordpress-for-hacker-in-docker" class="header-mark"></a>2 Setup WordPress for Hacker in Docker</h2><h3 id="prerequisites" class="headerLink">
+    <a href="#prerequisites" class="header-mark"></a>2.1 Prerequisites</h3><h4 id="docker" class="headerLink">
+    <a href="#docker" class="header-mark"></a>2.1.1 Docker</h4><p>Trước tiên, bạn cần cài đặt <strong>Docker</strong>. Công cụ này hỗ trợ trên nhiều hệ điều hành, mỗi nền tảng có cách cài đặt riêng.<br>
 Xem hướng dẫn tại: <a href="https://www.docker.com/get-started/" target="_blank" rel="noopener noreferrer">https://www.docker.com/get-started/</a></p>
 <h4 id="docker-compose" class="headerLink">
-    <a href="#docker-compose" class="header-mark"></a>20.1.2 Docker Compose</h4><p>Thay vì chạy từng container thủ công bằng <code>docker run</code>, ta dùng <strong>Docker Compose</strong> để định nghĩa và quản lý nhiều container liên kết chỉ bằng <strong>một file cấu hình duy nhất</strong> (<code>docker-compose.yml</code>).</p>
+    <a href="#docker-compose" class="header-mark"></a>2.1.2 Docker Compose</h4><p>Thay vì chạy từng container thủ công bằng <code>docker run</code>, ta dùng <strong>Docker Compose</strong> để định nghĩa và quản lý nhiều container liên kết chỉ bằng <strong>một file cấu hình duy nhất</strong> (<code>docker-compose.yml</code>).</p>
 <p>Với WordPress, ta cần:</p>
 <ul>
 <li>Một container <strong>MySQL</strong> để lưu cơ sở dữ liệu.</li>
@@ -305,7 +305,7 @@ Với Docker Compose, tất cả nằm trong một file YAML giúp:</p>
 </ul>
 <p>Xem hướng dẫn cài Docker Compose tại: <a href="https://docs.docker.com/compose/install/" target="_blank" rel="noopener noreferrer">https://docs.docker.com/compose/install/</a></p>
 <h3 id="installing-wordpress-with-docker-compose-and-xdebug" class="headerLink">
-    <a href="#installing-wordpress-with-docker-compose-and-xdebug" class="header-mark"></a>20.2 Installing WordPress with Docker Compose and Xdebug</h3><p>Phần này hướng dẫn cài <strong>WordPress với Docker Compose</strong>, tích hợp <strong>Xdebug</strong> để debug trực tiếp trong <strong>VS Code</strong>.<br>
+    <a href="#installing-wordpress-with-docker-compose-and-xdebug" class="header-mark"></a>2.2 Installing WordPress with Docker Compose and Xdebug</h3><p>Phần này hướng dẫn cài <strong>WordPress với Docker Compose</strong>, tích hợp <strong>Xdebug</strong> để debug trực tiếp trong <strong>VS Code</strong>.<br>
 Cách này giúp bạn có môi trường phát triển đầy đủ, dễ gỡ lỗi và mở rộng.</p>
 <p><strong>Cấu trúc thư mục:</strong></p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
@@ -383,7 +383,7 @@ Cách này giúp bạn có môi trường phát triển đầy đủ, dễ gỡ 
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-100" 
+    id="codeblock-id-1" 
     class="
       chroma 
       !tw-block 
@@ -406,7 +406,7 @@ Cách này giúp bạn có môi trường phát triển đầy đủ, dễ gỡ 
 </span></span><span class="line"><span class="cl">    └── launch.json</span></span></code></pre>
 </div>
 <h3 id="setup-environment" class="headerLink">
-    <a href="#setup-environment" class="header-mark"></a>20.3 Setup Environment</h3><p>Tạo thư mục mới để chứa toàn bộ cấu hình:</p>
+    <a href="#setup-environment" class="header-mark"></a>2.3 Setup Environment</h3><p>Tạo thư mục mới để chứa toàn bộ cấu hình:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -482,7 +482,7 @@ Cách này giúp bạn có môi trường phát triển đầy đủ, dễ gỡ 
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-101" 
+    id="codeblock-id-2" 
     class="
       chroma 
       !tw-block 
@@ -499,7 +499,7 @@ Cách này giúp bạn có môi trường phát triển đầy đủ, dễ gỡ 
       "><span class="line"><span class="cl">mkdir wordpress-docker <span class="o">&amp;&amp;</span> <span class="nb">cd</span> wordpress-docker</span></span></code></pre>
 </div>
 <h3 id="create-dockerfile" class="headerLink">
-    <a href="#create-dockerfile" class="header-mark"></a>20.4 Create Dockerfile</h3><p>Image WordPress mặc định <strong>chưa có Xdebug</strong>, nên ta mở rộng bằng <code>Dockerfile</code>.</p>
+    <a href="#create-dockerfile" class="header-mark"></a>2.4 Create Dockerfile</h3><p>Image WordPress mặc định <strong>chưa có Xdebug</strong>, nên ta mở rộng bằng <code>Dockerfile</code>.</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -575,7 +575,7 @@ Cách này giúp bạn có môi trường phát triển đầy đủ, dễ gỡ 
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-102" 
+    id="codeblock-id-3" 
     class="
       chroma 
       !tw-block 
@@ -667,7 +667,7 @@ Cách này giúp bạn có môi trường phát triển đầy đủ, dễ gỡ 
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-103" 
+    id="codeblock-id-4" 
     class="
       chroma 
       !tw-block 
@@ -687,7 +687,7 @@ Cách này giúp bạn có môi trường phát triển đầy đủ, dễ gỡ 
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> pecl install xdebug <span class="o">&amp;&amp;</span> docker-php-ext-enable xdebug</span></span></code></pre>
 </div>
 <h3 id="create-docker-composeyml" class="headerLink">
-    <a href="#create-docker-composeyml" class="header-mark"></a>20.5 Create docker-compose.yml</h3><p>Tạo file để cấu hình toàn bộ hệ thống:</p>
+    <a href="#create-docker-composeyml" class="header-mark"></a>2.5 Create docker-compose.yml</h3><p>Tạo file để cấu hình toàn bộ hệ thống:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -763,7 +763,7 @@ Cách này giúp bạn có môi trường phát triển đầy đủ, dễ gỡ 
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-104" 
+    id="codeblock-id-5" 
     class="
       chroma 
       !tw-block 
@@ -855,7 +855,7 @@ Cách này giúp bạn có môi trường phát triển đầy đủ, dễ gỡ 
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-105" 
+    id="codeblock-id-6" 
     class="
       chroma 
       !tw-block 
@@ -925,7 +925,7 @@ Gắn file cấu hình PHP/Xdebug, dễ tùy chỉnh mà không cần rebuild im
 </li>
 </ul>
 <h3 id="create-phpini" class="headerLink">
-    <a href="#create-phpini" class="header-mark"></a>20.6 Create php.ini</h3><p>Kích hoạt Xdebug và cấu hình PHP.</p>
+    <a href="#create-phpini" class="header-mark"></a>2.6 Create php.ini</h3><p>Kích hoạt Xdebug và cấu hình PHP.</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -1001,7 +1001,7 @@ Gắn file cấu hình PHP/Xdebug, dễ tùy chỉnh mà không cần rebuild im
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-106" 
+    id="codeblock-id-7" 
     class="
       chroma 
       !tw-block 
@@ -1093,7 +1093,7 @@ Gắn file cấu hình PHP/Xdebug, dễ tùy chỉnh mà không cần rebuild im
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-107" 
+    id="codeblock-id-8" 
     class="
       chroma 
       !tw-block 
@@ -1126,7 +1126,7 @@ Gắn file cấu hình PHP/Xdebug, dễ tùy chỉnh mà không cần rebuild im
 <li>Các dòng sau tăng giới hạn upload và tài nguyên PHP.</li>
 </ul>
 <h3 id="create-vs-code-launch-configuration" class="headerLink">
-    <a href="#create-vs-code-launch-configuration" class="header-mark"></a>20.7 Create VS Code Launch Configuration</h3><p>Tạo file cấu hình VS Code để kết nối với Xdebug:</p>
+    <a href="#create-vs-code-launch-configuration" class="header-mark"></a>2.7 Create VS Code Launch Configuration</h3><p>Tạo file cấu hình VS Code để kết nối với Xdebug:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -1202,7 +1202,7 @@ Gắn file cấu hình PHP/Xdebug, dễ tùy chỉnh mà không cần rebuild im
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-108" 
+    id="codeblock-id-9" 
     class="
       chroma 
       !tw-block 
@@ -1294,7 +1294,7 @@ Gắn file cấu hình PHP/Xdebug, dễ tùy chỉnh mà không cần rebuild im
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-109" 
+    id="codeblock-id-10" 
     class="
       chroma 
       !tw-block 
@@ -1325,12 +1325,12 @@ Gắn file cấu hình PHP/Xdebug, dễ tùy chỉnh mà không cần rebuild im
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre>
 </div>
 <h3 id="install-vs-code-extension" class="headerLink">
-    <a href="#install-vs-code-extension" class="header-mark"></a>20.8 Install VS Code Extension</h3><p>Mở VS Code → <strong>Extensions (Ctrl + Shift + X)</strong> → Cài đặt:</p>
+    <a href="#install-vs-code-extension" class="header-mark"></a>2.8 Install VS Code Extension</h3><p>Mở VS Code → <strong>Extensions (Ctrl + Shift + X)</strong> → Cài đặt:</p>
 <blockquote>
   <p><strong>PHP Debug (by Xdebug)</strong></p>
 
 </blockquote><h3 id="run-docker-compose" class="headerLink">
-    <a href="#run-docker-compose" class="header-mark"></a>20.9 Run Docker Compose</h3><p>Khởi động hệ thống:</p>
+    <a href="#run-docker-compose" class="header-mark"></a>2.9 Run Docker Compose</h3><p>Khởi động hệ thống:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -1406,7 +1406,7 @@ Gắn file cấu hình PHP/Xdebug, dễ tùy chỉnh mà không cần rebuild im
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-110" 
+    id="codeblock-id-11" 
     class="
       chroma 
       !tw-block 

@@ -12,7 +12,7 @@
     </author><guid>http://localhost:1313/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app.png" referrerpolicy="no-referrer">
-            </div>Technical analysis and proof-of-concept demonstrating an LFI bypass (forced .php suffix) leveraging pearcmd.php]]></description>
+            </div><hr>]]></description>
 </item><item>
     <title>WordPress Local and Debugging in Docker</title>
     <link>http://localhost:1313/2025-10-22-wordpress-local-and-debugging-docker/</link>
