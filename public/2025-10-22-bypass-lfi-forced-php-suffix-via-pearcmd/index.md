@@ -1,6 +1,5 @@
 # Exploiting LFI2RCE Vulnerability via PHP PEARCMD
 
---------
 
 <!--more-->
 
