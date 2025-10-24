@@ -1,6 +1,6 @@
 # site description
 # 网站描述
-description = "<img src=x onerror=alert()>"
+description = "Security Researcher · Penetration Tester"
 # site keywords
 # 网站关键词
 keywords = ["Theme", "Hugo"]

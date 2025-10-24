@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Blog - Tag - Bui Van Y</title>
-        <link>https://hugodoit.pages.dev/tags/blog/</link>
+        <link>https://w41bu1.github.io/tags/blog/</link>
         <description>Blog - Tag - Bui Van Y</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>w41bui@gmail.com (w41bu1)</managingEditor>
-            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 19 Aug 2025 01:10:00 &#43;0700</lastBuildDate><atom:link href="https://hugodoit.pages.dev/tags/blog/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>w41bui@gmail.com (w41bu1)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 19 Aug 2025 01:10:00 &#43;0700</lastBuildDate><atom:link href="https://w41bu1.github.io/tags/blog/" rel="self" type="application/rss+xml" /><item>
     <title>Github Pages with Jekyll themes and Giscus</title>
-    <link>https://hugodoit.pages.dev/2025-08-19-github-pages-with-jekyll-themes-and-giscus/</link>
+    <link>https://w41bu1.github.io/2025-08-19-github-pages-with-jekyll-themes-and-giscus/</link>
     <pubDate>Tue, 19 Aug 2025 01:10:00 &#43;0700</pubDate><author>
         <name>w41bu1</name>
-    </author><guid>https://hugodoit.pages.dev/2025-08-19-github-pages-with-jekyll-themes-and-giscus/</guid>
+    </author><guid>https://w41bu1.github.io/2025-08-19-github-pages-with-jekyll-themes-and-giscus/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/2025-08-19-github-pages-with-jekyll-themes-and-giscus/app.png" referrerpolicy="no-referrer">
             </div>How to create your personal blog using Github Pages with "comment" feature]]></description>
