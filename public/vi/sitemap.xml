@@ -2,543 +2,543 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost:1313/vi/tags/analyst/</loc><lastmod>2025-10-25T12:36:29&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/tags/analyst/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/tags/analyst/"
+                        href="https://w41bu1.github.io/tags/analyst/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/tags/analyst/"
+                    href="https://w41bu1.github.io/vi/tags/analyst/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/</loc><lastmod>2025-10-25T13:17:38&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/"
+                        href="https://w41bu1.github.io/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/"
+                    href="https://w41bu1.github.io/vi/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/categories/</loc><lastmod>2025-10-25T13:17:38&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/categories/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/categories/"
+                        href="https://w41bu1.github.io/categories/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/categories/"
+                    href="https://w41bu1.github.io/vi/categories/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/categories/cve-analyst/</loc><lastmod>2025-10-25T12:36:29&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/categories/cve-analyst/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/categories/cve-analyst/"
+                        href="https://w41bu1.github.io/categories/cve-analyst/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/categories/cve-analyst/"
+                    href="https://w41bu1.github.io/vi/categories/cve-analyst/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-23-cve-2023-36679/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-23-cve-2023-36679/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-23-cve-2023-36679/"
+                        href="https://w41bu1.github.io/2025-10-23-cve-2023-36679/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-23-cve-2023-36679/"
+                    href="https://w41bu1.github.io/vi/2025-10-23-cve-2023-36679/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/plugin/</loc><lastmod>2025-10-25T12:36:29&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/tags/plugin/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/tags/plugin/"
+                        href="https://w41bu1.github.io/tags/plugin/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/tags/plugin/"
+                    href="https://w41bu1.github.io/vi/tags/plugin/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/posts/</loc><lastmod>2025-10-25T13:17:38&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/posts/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/posts/"
+                        href="https://w41bu1.github.io/posts/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/posts/"
+                    href="https://w41bu1.github.io/vi/posts/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/ssrf/</loc><lastmod>2025-10-22T01:07:24&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/tags/ssrf/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/tags/ssrf/"
+                        href="https://w41bu1.github.io/tags/ssrf/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/tags/ssrf/"
+                    href="https://w41bu1.github.io/vi/tags/ssrf/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/</loc><lastmod>2025-10-25T13:17:38&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/tags/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/tags/"
+                        href="https://w41bu1.github.io/tags/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/tags/"
+                    href="https://w41bu1.github.io/vi/tags/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/</loc><lastmod>2025-10-25T12:36:29&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/"
+                        href="https://w41bu1.github.io/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/"
+                    href="https://w41bu1.github.io/vi/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/lfi/</loc><lastmod>2025-10-25T12:36:29&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/tags/lfi/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/tags/lfi/"
+                        href="https://w41bu1.github.io/tags/lfi/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/tags/lfi/"
+                    href="https://w41bu1.github.io/vi/tags/lfi/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/pearcmd/</loc><lastmod>2025-10-25T12:36:29&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/tags/pearcmd/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/tags/pearcmd/"
+                        href="https://w41bu1.github.io/tags/pearcmd/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/tags/pearcmd/"
+                    href="https://w41bu1.github.io/vi/tags/pearcmd/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-22-cve-2025-11361/</loc><lastmod>2025-10-22T01:07:24&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-22-cve-2025-11361/</loc><lastmod>2025-10-22T01:07:24&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-22-cve-2025-11361/"
+                        href="https://w41bu1.github.io/2025-10-22-cve-2025-11361/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-22-cve-2025-11361/"
+                    href="https://w41bu1.github.io/vi/2025-10-22-cve-2025-11361/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/cms/</loc><lastmod>2025-10-25T13:17:38&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/tags/cms/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/tags/cms/"
+                        href="https://w41bu1.github.io/tags/cms/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/tags/cms/"
+                    href="https://w41bu1.github.io/vi/tags/cms/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/docker/</loc><lastmod>2025-10-22T16:15:20&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/tags/docker/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/tags/docker/"
+                        href="https://w41bu1.github.io/tags/docker/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/tags/docker/"
+                    href="https://w41bu1.github.io/vi/tags/docker/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/php/</loc><lastmod>2025-10-25T13:17:38&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/tags/php/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/tags/php/"
+                        href="https://w41bu1.github.io/tags/php/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/tags/php/"
+                    href="https://w41bu1.github.io/vi/tags/php/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/categories/web/</loc><lastmod>2025-10-25T13:17:38&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/categories/web/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/categories/web/"
+                        href="https://w41bu1.github.io/categories/web/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/categories/web/"
+                    href="https://w41bu1.github.io/vi/categories/web/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/wordpress/</loc><lastmod>2025-10-25T13:17:38&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/tags/wordpress/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/tags/wordpress/"
+                        href="https://w41bu1.github.io/tags/wordpress/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/tags/wordpress/"
+                    href="https://w41bu1.github.io/vi/tags/wordpress/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-22-wordpress-local-and-debugging-docker/</loc><lastmod>2025-10-22T16:15:20&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-22-wordpress-local-and-debugging-docker/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-22-wordpress-local-and-debugging-docker/"
+                        href="https://w41bu1.github.io/2025-10-22-wordpress-local-and-debugging-docker/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-22-wordpress-local-and-debugging-docker/"
+                    href="https://w41bu1.github.io/vi/2025-10-22-wordpress-local-and-debugging-docker/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-21-cve-2025-32141/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-21-cve-2025-32141/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-21-cve-2025-32141/"
+                        href="https://w41bu1.github.io/2025-10-21-cve-2025-32141/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-21-cve-2025-32141/"
+                    href="https://w41bu1.github.io/vi/2025-10-21-cve-2025-32141/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-20-cve-2025-52716/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-20-cve-2025-52716/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-20-cve-2025-52716/"
+                        href="https://w41bu1.github.io/2025-10-20-cve-2025-52716/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-20-cve-2025-52716/"
+                    href="https://w41bu1.github.io/vi/2025-10-20-cve-2025-52716/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-19-cve-2025-6715/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-19-cve-2025-6715/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-19-cve-2025-6715/"
+                        href="https://w41bu1.github.io/2025-10-19-cve-2025-6715/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-19-cve-2025-6715/"
+                    href="https://w41bu1.github.io/vi/2025-10-19-cve-2025-6715/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-18-cve-2025-26909/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-18-cve-2025-26909/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-18-cve-2025-26909/"
+                        href="https://w41bu1.github.io/2025-10-18-cve-2025-26909/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-18-cve-2025-26909/"
+                    href="https://w41bu1.github.io/vi/2025-10-18-cve-2025-26909/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-17-cve-2025-39399/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-17-cve-2025-39399/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-17-cve-2025-39399/"
+                        href="https://w41bu1.github.io/2025-10-17-cve-2025-39399/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-17-cve-2025-39399/"
+                    href="https://w41bu1.github.io/vi/2025-10-17-cve-2025-39399/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-16-cve-2025-30782/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-16-cve-2025-30782/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-16-cve-2025-30782/"
+                        href="https://w41bu1.github.io/2025-10-16-cve-2025-30782/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-16-cve-2025-30782/"
+                    href="https://w41bu1.github.io/vi/2025-10-16-cve-2025-30782/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-15-cve-2025-30868/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-15-cve-2025-30868/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-15-cve-2025-30868/"
+                        href="https://w41bu1.github.io/2025-10-15-cve-2025-30868/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-15-cve-2025-30868/"
+                    href="https://w41bu1.github.io/vi/2025-10-15-cve-2025-30868/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-14-cve-2025-32654/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-14-cve-2025-32654/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-14-cve-2025-32654/"
+                        href="https://w41bu1.github.io/2025-10-14-cve-2025-32654/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-14-cve-2025-32654/"
+                    href="https://w41bu1.github.io/vi/2025-10-14-cve-2025-32654/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-13-cve-2025-48293/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-13-cve-2025-48293/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-13-cve-2025-48293/"
+                        href="https://w41bu1.github.io/2025-10-13-cve-2025-48293/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-13-cve-2025-48293/"
+                    href="https://w41bu1.github.io/vi/2025-10-13-cve-2025-48293/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-12-cve-2025-53328/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-12-cve-2025-53328/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-12-cve-2025-53328/"
+                        href="https://w41bu1.github.io/2025-10-12-cve-2025-53328/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-12-cve-2025-53328/"
+                    href="https://w41bu1.github.io/vi/2025-10-12-cve-2025-53328/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/core/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/tags/core/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/tags/core/"
+                        href="https://w41bu1.github.io/tags/core/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/tags/core/"
+                    href="https://w41bu1.github.io/vi/tags/core/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-11-cve-2025-58674/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-11-cve-2025-58674/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-11-cve-2025-58674/"
+                        href="https://w41bu1.github.io/2025-10-11-cve-2025-58674/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-11-cve-2025-58674/"
+                    href="https://w41bu1.github.io/vi/2025-10-11-cve-2025-58674/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/xss/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/tags/xss/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/tags/xss/"
+                        href="https://w41bu1.github.io/tags/xss/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/tags/xss/"
+                    href="https://w41bu1.github.io/vi/tags/xss/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-10-cve-2025-5062/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-10-cve-2025-5062/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-10-cve-2025-5062/"
+                        href="https://w41bu1.github.io/2025-10-10-cve-2025-5062/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-10-cve-2025-5062/"
+                    href="https://w41bu1.github.io/vi/2025-10-10-cve-2025-5062/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-09-cve-2024-4439/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-09-cve-2024-4439/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-09-cve-2024-4439/"
+                        href="https://w41bu1.github.io/2025-10-09-cve-2024-4439/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-09-cve-2024-4439/"
+                    href="https://w41bu1.github.io/vi/2025-10-09-cve-2024-4439/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-08-cve-2025-9816/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-08-cve-2025-9816/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-08-cve-2025-9816/"
+                        href="https://w41bu1.github.io/2025-10-08-cve-2025-9816/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-08-cve-2025-9816/"
+                    href="https://w41bu1.github.io/vi/2025-10-08-cve-2025-9816/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-07-cve-2025-6832/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-07-cve-2025-6832/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-07-cve-2025-6832/"
+                        href="https://w41bu1.github.io/2025-10-07-cve-2025-6832/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-07-cve-2025-6832/"
+                    href="https://w41bu1.github.io/vi/2025-10-07-cve-2025-6832/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-06-cve-2025-10146/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-06-cve-2025-10146/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-06-cve-2025-10146/"
+                        href="https://w41bu1.github.io/2025-10-06-cve-2025-10146/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-06-cve-2025-10146/"
+                    href="https://w41bu1.github.io/vi/2025-10-06-cve-2025-10146/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-05-cve-2025-58990/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-05-cve-2025-58990/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-05-cve-2025-58990/"
+                        href="https://w41bu1.github.io/2025-10-05-cve-2025-58990/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-05-cve-2025-58990/"
+                    href="https://w41bu1.github.io/vi/2025-10-05-cve-2025-58990/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-04-cve-2025-27006/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-04-cve-2025-27006/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-04-cve-2025-27006/"
+                        href="https://w41bu1.github.io/2025-10-04-cve-2025-27006/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-04-cve-2025-27006/"
+                    href="https://w41bu1.github.io/vi/2025-10-04-cve-2025-27006/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-03-cve-2025-53307/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-03-cve-2025-53307/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-03-cve-2025-53307/"
+                        href="https://w41bu1.github.io/2025-10-03-cve-2025-53307/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-03-cve-2025-53307/"
+                    href="https://w41bu1.github.io/vi/2025-10-03-cve-2025-53307/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-02-cve-2025-6234/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-02-cve-2025-6234/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-02-cve-2025-6234/"
+                        href="https://w41bu1.github.io/2025-10-02-cve-2025-6234/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-02-cve-2025-6234/"
+                    href="https://w41bu1.github.io/vi/2025-10-02-cve-2025-6234/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-10-01-cve-2022-21661/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-10-01-cve-2022-21661/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-10-01-cve-2022-21661/"
+                        href="https://w41bu1.github.io/2025-10-01-cve-2022-21661/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-10-01-cve-2022-21661/"
+                    href="https://w41bu1.github.io/vi/2025-10-01-cve-2022-21661/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/sqli/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/tags/sqli/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/tags/sqli/"
+                        href="https://w41bu1.github.io/tags/sqli/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/tags/sqli/"
+                    href="https://w41bu1.github.io/vi/tags/sqli/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-09-30-cve-2025-2011/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-09-30-cve-2025-2011/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-09-30-cve-2025-2011/"
+                        href="https://w41bu1.github.io/2025-09-30-cve-2025-2011/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-09-30-cve-2025-2011/"
+                    href="https://w41bu1.github.io/vi/2025-09-30-cve-2025-2011/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-09-29-cve-2025-48118/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-09-29-cve-2025-48118/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-09-29-cve-2025-48118/"
+                        href="https://w41bu1.github.io/2025-09-29-cve-2025-48118/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-09-29-cve-2025-48118/"
+                    href="https://w41bu1.github.io/vi/2025-09-29-cve-2025-48118/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-09-28-cve-2025-30936/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-09-28-cve-2025-30936/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-09-28-cve-2025-30936/"
+                        href="https://w41bu1.github.io/2025-09-28-cve-2025-30936/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-09-28-cve-2025-30936/"
+                    href="https://w41bu1.github.io/vi/2025-09-28-cve-2025-30936/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-09-27-cve-2025-48281/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-09-27-cve-2025-48281/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-09-27-cve-2025-48281/"
+                        href="https://w41bu1.github.io/2025-09-27-cve-2025-48281/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-09-27-cve-2025-48281/"
+                    href="https://w41bu1.github.io/vi/2025-09-27-cve-2025-48281/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-09-26-cve-2025-32650/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-09-26-cve-2025-32650/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-09-26-cve-2025-32650/"
+                        href="https://w41bu1.github.io/2025-09-26-cve-2025-32650/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-09-26-cve-2025-32650/"
+                    href="https://w41bu1.github.io/vi/2025-09-26-cve-2025-32650/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-09-25-cve-2025-58604/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-09-25-cve-2025-58604/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-09-25-cve-2025-58604/"
+                        href="https://w41bu1.github.io/2025-09-25-cve-2025-58604/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-09-25-cve-2025-58604/"
+                    href="https://w41bu1.github.io/vi/2025-09-25-cve-2025-58604/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-09-23-cve-2025-26943/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-09-23-cve-2025-26943/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-09-23-cve-2025-26943/"
+                        href="https://w41bu1.github.io/2025-09-23-cve-2025-26943/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-09-23-cve-2025-26943/"
+                    href="https://w41bu1.github.io/vi/2025-09-23-cve-2025-26943/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-09-22-cve-2025-39569/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-09-22-cve-2025-39569/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-09-22-cve-2025-39569/"
+                        href="https://w41bu1.github.io/2025-09-22-cve-2025-39569/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-09-22-cve-2025-39569/"
+                    href="https://w41bu1.github.io/vi/2025-09-22-cve-2025-39569/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-09-21-cve-2025-39566/</loc><lastmod>2025-10-21T19:11:48&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-09-21-cve-2025-39566/</loc><lastmod>2025-10-25T13:24:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-09-21-cve-2025-39566/"
+                        href="https://w41bu1.github.io/2025-09-21-cve-2025-39566/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-09-21-cve-2025-39566/"
+                    href="https://w41bu1.github.io/vi/2025-09-21-cve-2025-39566/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-08-21-wordpress-local-and-debugging/</loc><lastmod>2025-10-25T13:17:38&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-08-21-wordpress-local-and-debugging/</loc><lastmod>2025-10-25T13:17:38&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-08-21-wordpress-local-and-debugging/"
+                        href="https://w41bu1.github.io/2025-08-21-wordpress-local-and-debugging/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-08-21-wordpress-local-and-debugging/"
+                    href="https://w41bu1.github.io/vi/2025-08-21-wordpress-local-and-debugging/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/blog/</loc><lastmod>2025-10-25T13:06:36&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/tags/blog/</loc><lastmod>2025-10-25T13:06:36&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/tags/blog/"
+                        href="https://w41bu1.github.io/tags/blog/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/tags/blog/"
+                    href="https://w41bu1.github.io/vi/tags/blog/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/giscus/</loc><lastmod>2025-10-25T13:06:36&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/tags/giscus/</loc><lastmod>2025-10-25T13:06:36&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/tags/giscus/"
+                        href="https://w41bu1.github.io/tags/giscus/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/tags/giscus/"
+                    href="https://w41bu1.github.io/vi/tags/giscus/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/github/</loc><lastmod>2025-10-25T13:06:36&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/tags/github/</loc><lastmod>2025-10-25T13:06:36&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/tags/github/"
+                        href="https://w41bu1.github.io/tags/github/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/tags/github/"
+                    href="https://w41bu1.github.io/vi/tags/github/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/2025-08-19-github-pages-with-jekyll-themes-and-giscus/</loc><lastmod>2025-10-25T13:06:36&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/2025-08-19-github-pages-with-jekyll-themes-and-giscus/</loc><lastmod>2025-10-25T13:06:36&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/2025-08-19-github-pages-with-jekyll-themes-and-giscus/"
+                        href="https://w41bu1.github.io/2025-08-19-github-pages-with-jekyll-themes-and-giscus/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/2025-08-19-github-pages-with-jekyll-themes-and-giscus/"
+                    href="https://w41bu1.github.io/vi/2025-08-19-github-pages-with-jekyll-themes-and-giscus/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/tags/jekyll/</loc><lastmod>2025-10-25T13:06:36&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/tags/jekyll/</loc><lastmod>2025-10-25T13:06:36&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/tags/jekyll/"
+                        href="https://w41bu1.github.io/tags/jekyll/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/tags/jekyll/"
+                    href="https://w41bu1.github.io/vi/tags/jekyll/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/authors/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/authors/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/authors/"
+                        href="https://w41bu1.github.io/authors/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/authors/"
+                    href="https://w41bu1.github.io/vi/authors/"
                     /></url><url>
-            <loc>http://localhost:1313/vi/series/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://w41bu1.github.io/vi/series/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://localhost:1313/series/"
+                        href="https://w41bu1.github.io/series/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="http://localhost:1313/vi/series/"
+                    href="https://w41bu1.github.io/vi/series/"
                     /></url></urlset>
