@@ -4,7 +4,7 @@ description: How to create your personal blog using Github Pages with "comment" 
 date: 2025-08-19 01:10:00 +0700
 categories: [Web]
 tags: [blog, jekyll, giscus, github]
-images: []
+images: ["app.png"]
 featuredImage: "app.png"
 
 lightgallery: true

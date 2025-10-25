@@ -181,10 +181,10 @@ keywords = ["Theme", "Hugo"]
   openGraph = true
   twitterCards = true
 
-images = ["images/avatar.png"]
+images = [""]
 
 [page.seo]
   images = []
   [page.seo.publisher]
     name = "Bui Van Y"
-    logoUrl = "/images/avatar.png"
+    logoUrl = ""

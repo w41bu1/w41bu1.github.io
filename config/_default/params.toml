@@ -512,12 +512,12 @@ bundle = false
   [page.seo]
     # image URL
     # 图片 URL
-    images = []
+    images = ["/images/avatar.jpg"]
     # Publisher info
     # 出版者信息
     [page.seo.publisher]
       name = "Bui Van Y"
-      logoUrl = "/images/avatar.png"
+      logoUrl = "/images/avatar.jpg"
   # Related content config
   # 相关文章推荐配置
   [page.related]
@@ -565,10 +565,10 @@ bundle = false
 [seo]
   # image URL
   # 图片 URL
-  image = "/images/avatar.png"
+  image = "/images/avatar.jpg"
   # thumbnail URL
   # 缩略图 URL
-  thumbnailUrl = "/images/avatar.png"
+  thumbnailUrl = "/images/avatar.jpg"
   # Google 搜索结果中网站备用名字
   # alternate site name in Google search result
   # https://developers.google.com/search/docs/appearance/site-names#alternative
