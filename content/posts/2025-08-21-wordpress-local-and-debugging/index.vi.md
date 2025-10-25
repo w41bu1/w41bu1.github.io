@@ -4,7 +4,7 @@ description: A powerful and the most popular content management system (CMS).
 date: 2025-08-21 09:00:00 +0700
 categories: [Web]
 tags: [cms, php, wordpress]
-images: []
+images: ["app.png"]
 featuredImage: "app.png"
 
 lightgallery: true
