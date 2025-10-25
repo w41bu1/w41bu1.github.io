@@ -4,7 +4,7 @@ description: Technical analysis and proof-of-concept demonstrating an LFI bypass
 date: 2025-10-22 20:48:00 +0700
 categories: [CVE Analyst]
 tags: [analyst, lfi, plugin, pearcmd]
-image: ./app.png
+images: []
 featuredImage: "app.png"
 
 lightgallery: true
