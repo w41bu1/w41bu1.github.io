@@ -181,7 +181,21 @@
 </div>
 <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
-</div><main class="tw-mx-4 tw-flex-1"><dialog id="toc-dialog" class="tw-max-w-full tw-w-full tw-max-h-full tw-h-full tw-ml-16">
+</div><main class="tw-mx-4 tw-flex-1"><div class="toc print:!tw-hidden" id="toc-auto">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content always-active" id="toc-content-auto"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-are-pear-and-pecl">What are PEAR and PECL?</a></li>
+    <li><a href="#pearcmdphp-and-register_argc_argv"><code>pearcmd.php</code> and <code>register_argc_argv</code></a></li>
+    <li><a href="#analysis-of-php-source-code">Analysis of PHP Source Code</a></li>
+    <li><a href="#rfc3875-explain">RFC3875 Explain</a></li>
+    <li><a href="#testing-pear-in-cli">Testing PEAR in CLI</a></li>
+    <li><a href="#pearcmd-code-analysis"><code>pearcmd</code> Code Analysis</a></li>
+    <li><a href="#flow">Flow</a></li>
+    <li><a href="#exploit">Exploit</a></li>
+  </ul>
+</nav></div>
+    </div><dialog id="toc-dialog" class="tw-max-w-full tw-w-full tw-max-h-full tw-h-full tw-ml-16">
         <div class="toc tw-mx-4 tw-max-w-full">
             <h2 class="tw-mx-0 tw-my-6 tw-uppercase tw-text-2xl">Contents</h2>
             <div class="toc-content"><nav id="TableOfContents">
@@ -197,7 +211,7 @@
   </ul>
 </nav></div>
         </div>
-    </dialog><article class="page single print:!tw-w-full print:!tw-max-w-none print:!tw-m-0 print:!tw-p-0"><h1 class="single-title" data-pagefind-meta="date:2025-10-22" data-pagefind-body>Exploiting LFI2RCE Vulnerability via PHP PEARCMD</h1><div class="post-meta">
+    </dialog><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single print:!tw-w-full print:!tw-max-w-none print:!tw-m-0 print:!tw-p-0"><h1 class="single-title" data-pagefind-meta="date:2025-10-22" data-pagefind-body>Exploiting LFI2RCE Vulnerability via PHP PEARCMD</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><img class="tw-inline-block tw-max-h-4 tw-rounded-full tw-translate-y-[-2px] tw-mr-1"  src='/images/avatar.png'   alt="w41bu1 avatar" height="16" width="16"><a href="https://github.com/w41bu1" title="Author" target="_blank" rel="noopener noreferrer author" class="author">w41bu1</a>
                 </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/cve-analyst/"><svg class="icon"
@@ -208,9 +222,27 @@
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;2450 words&nbsp;
                     <svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;11 minutes&nbsp;</div>
-        </div><div class="featured-image"><img  loading="eager" src='/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app.png' srcset="/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app_hu_1b80a445fb47586a.webp 800w, /2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app_hu_f66ad74974794813.webp 1200w, /2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app_hu_19dd8e5cc190a8c8.webp 1600w"  alt="Technical analysis and proof-of-concept demonstrating an LFI bypass (forced .php suffix) leveraging pearcmd.php" height="630" width="1200"></div><div class="content" id="content" data-pagefind-body><p>Hello. After analyzing 10 CVEs related to LFI in WordPress plugins, I noticed a common barrier: many exploitation vectors are constrained by the requirement to <strong>have a <code>.php</code> suffix</strong>. This significantly reduces exploitability. During my research I found the article <a href="https://www.leavesongs.com/PENETRATION/docker-php-include-getshell.html#0x06-pearcmdphp" target="_blank" rel="noopener noreferrer">docker-php-include-getshell</a>. That article describes a way to <strong>bypass the <code>.php</code> constraint</strong> by abusing the <code>pearcmd.php</code> file which is part of PHP&rsquo;s <strong>PECL/PEAR</strong> toolkit and is present in WordPress environments deployed on Docker — a very practical trick for no-upload scenarios.</p>
+        </div><div class="featured-image"><img  loading="eager" src='/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app.png' srcset="/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app_hu_1b80a445fb47586a.webp 800w, /2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app_hu_f66ad74974794813.webp 1200w, /2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app_hu_19dd8e5cc190a8c8.webp 1600w"  alt="Technical analysis and proof-of-concept demonstrating an LFI bypass (forced .php suffix) leveraging pearcmd.php" height="630" width="1200"></div><div class="details toc print:!tw-block" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span class="details-icon"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-are-pear-and-pecl">What are PEAR and PECL?</a></li>
+    <li><a href="#pearcmdphp-and-register_argc_argv"><code>pearcmd.php</code> and <code>register_argc_argv</code></a></li>
+    <li><a href="#analysis-of-php-source-code">Analysis of PHP Source Code</a></li>
+    <li><a href="#rfc3875-explain">RFC3875 Explain</a></li>
+    <li><a href="#testing-pear-in-cli">Testing PEAR in CLI</a></li>
+    <li><a href="#pearcmd-code-analysis"><code>pearcmd</code> Code Analysis</a></li>
+    <li><a href="#flow">Flow</a></li>
+    <li><a href="#exploit">Exploit</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content" data-pagefind-body><p>Hello. After analyzing 10 CVEs related to LFI in WordPress plugins, I noticed a common barrier: many exploitation vectors are constrained by the requirement to <strong>have a <code>.php</code> suffix</strong>. This significantly reduces exploitability. During my research I found the article <a href="https://www.leavesongs.com/PENETRATION/docker-php-include-getshell.html#0x06-pearcmdphp" target="_blank" rel="noopener noreferrer">docker-php-include-getshell</a>. That article describes a way to <strong>bypass the <code>.php</code> constraint</strong> by abusing the <code>pearcmd.php</code> file which is part of PHP&rsquo;s <strong>PECL/PEAR</strong> toolkit and is present in WordPress environments deployed on Docker — a very practical trick for no-upload scenarios.</p>
 <h2 id="what-are-pear-and-pecl" class="headerLink">
-    <a href="#what-are-pear-and-pecl" class="header-mark"></a>1 What are PEAR and PECL?</h2><ul>
+    <a href="#what-are-pear-and-pecl" class="header-mark"></a>33 What are PEAR and PECL?</h2><ul>
 <li><strong>PECL (PHP Extension Community Library)</strong>: a command-line tool to install and manage PHP extensions.</li>
 <li><strong>PEAR (PHP Extension and Application Repository)</strong>: the library platform used by PECL.</li>
 </ul>
@@ -292,7 +324,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-1" 
+    id="codeblock-id-133" 
     class="
       chroma 
       !tw-block 
@@ -310,7 +342,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 </span></span><span class="line"><span class="cl">Archive  Console  OS  PEAR  PEAR.php  Structures  System.php  XML  build  data  doc  extensions  pearcmd.php  peclcmd.php  test</span></span></code></pre>
 </div>
 <h2 id="pearcmdphp-and-register_argc_argv" class="headerLink">
-    <a href="#pearcmdphp-and-register_argc_argv" class="header-mark"></a>2 <code>pearcmd.php</code> and <code>register_argc_argv</code></h2><p><code>pearcmd.php</code> is a PHP script designed to run in CLI mode, for example:</p>
+    <a href="#pearcmdphp-and-register_argc_argv" class="header-mark"></a>34 <code>pearcmd.php</code> and <code>register_argc_argv</code></h2><p><code>pearcmd.php</code> is a PHP script designed to run in CLI mode, for example:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -386,7 +418,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-2" 
+    id="codeblock-id-134" 
     class="
       chroma 
       !tw-block 
@@ -413,7 +445,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 </figure></p>
 <p>When WordPress is set up on Docker, <code>register_argc_argv</code> is often enabled by default. The question becomes: when PHP runs under a web SAPI (FPM/Apache) and not in CLI, where does <code>$argv</code> come from?</p>
 <h2 id="analysis-of-php-source-code" class="headerLink">
-    <a href="#analysis-of-php-source-code" class="header-mark"></a>3 Analysis of PHP Source Code</h2><p>In the PHP core there is logic like:</p>
+    <a href="#analysis-of-php-source-code" class="header-mark"></a>35 Analysis of PHP Source Code</h2><p>In the PHP core there is logic like:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -489,7 +521,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-3" 
+    id="codeblock-id-135" 
     class="
       chroma 
       !tw-block 
@@ -587,7 +619,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-4" 
+    id="codeblock-id-136" 
     class="
       chroma 
       !tw-block 
@@ -608,7 +640,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 <p><strong>Consequence</strong>:</p>
 <p>When <code>pearcmd.php</code> is included via LFI in a web environment where <code>$_SERVER['argv']</code> is generated from the query string, an attacker can control the command-line parameters that <code>pearcmd.php</code> reads. Thus, PEAR/PECL command functionality can be abused via the web to perform unwanted actions.</p>
 <h2 id="rfc3875-explain" class="headerLink">
-    <a href="#rfc3875-explain" class="header-mark"></a>4 RFC3875 Explain</h2><p>RFC3875 (the CGI spec) defines a form of <strong>&ldquo;indexed&rdquo; HTTP query</strong> — that is, a query string without unencoded <code>=</code> characters sent via GET or HEAD.</p>
+    <a href="#rfc3875-explain" class="header-mark"></a>36 RFC3875 Explain</h2><p>RFC3875 (the CGI spec) defines a form of <strong>&ldquo;indexed&rdquo; HTTP query</strong> — that is, a query string without unencoded <code>=</code> characters sent via GET or HEAD.</p>
 <p>When encountering such a query, the server <strong>SHOULD</strong> treat the query-string as a <strong>search-string</strong>, splitting it into <strong>search-words</strong> separated by <code>+</code>:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
@@ -685,7 +717,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-5" 
+    id="codeblock-id-137" 
     class="
       chroma 
       !tw-block 
@@ -780,7 +812,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-6" 
+    id="codeblock-id-138" 
     class="
       chroma 
       !tw-block 
@@ -818,7 +850,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 </figure></p>
 <p>👉 By passing a query string like <code>?a+b+c+...</code>, PHP will split on <code>+</code> and create <code>$_SERVER['argv']</code> as an array <code>['a', 'b', 'c', ...]</code>, consistent with RFC3875 semantics.</p>
 <h2 id="testing-pear-in-cli" class="headerLink">
-    <a href="#testing-pear-in-cli" class="header-mark"></a>5 Testing PEAR in CLI</h2><p>The author&rsquo;s article mentions a payload related to <code>config-create</code>, described as used to create a configuration file.</p>
+    <a href="#testing-pear-in-cli" class="header-mark"></a>37 Testing PEAR in CLI</h2><p>The author&rsquo;s article mentions a payload related to <code>config-create</code>, described as used to create a configuration file.</p>
 <p><figure><a class="lightgallery" href="/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc-config.png" title="doc-config" data-thumbnail="/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc-config.png" data-sub-html="<h2>Description of config-create</h2><p>doc-config</p>"><img  loading="lazy" src='/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc-config.png' srcset="/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc-config_hu_73d8eb0d3054dcaa.webp 800w, /2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc-config_hu_709d1cb8ba1edbe2.webp 1200w, /2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc-config_hu_80353b6aaa771342.webp 1600w"  alt="doc-config" height="387" width="608"></a><figcaption class="image-caption">Description of config-create</figcaption>
 </figure></p>
 <p>When I tried running the command on CLI:</p>
@@ -897,7 +929,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-7" 
+    id="codeblock-id-139" 
     class="
       chroma 
       !tw-block 
@@ -995,7 +1027,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-8" 
+    id="codeblock-id-140" 
     class="
       chroma 
       !tw-block 
@@ -1089,7 +1121,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-9" 
+    id="codeblock-id-141" 
     class="
       chroma 
       !tw-block 
@@ -1181,7 +1213,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-10" 
+    id="codeblock-id-142" 
     class="
       chroma 
       !tw-block 
@@ -1317,7 +1349,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-11" 
+    id="codeblock-id-143" 
     class="
       chroma 
       !tw-block 
@@ -1340,7 +1372,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 <p>The created file contains information about <code>test_root_path</code>, presented in <code>serialize</code> format.</p>
 <p>However, that was the CLI execution path. For web exploitation, one must analyze the source to see how the program accepts and processes parameters passed in.</p>
 <h2 id="pearcmd-code-analysis" class="headerLink">
-    <a href="#pearcmd-code-analysis" class="header-mark"></a>6 <code>pearcmd</code> Code Analysis</h2><p>Before analyzing <code>/usr/local/lib/php/pearcmd.php</code>, it&rsquo;s useful to set up a debugging environment to observe execution flow — see: <a href="https://w41bu1.github.io/2025-10-22-wordpress-local-and-debugging-docker/" target="_blank" rel="noopener noreferrer">https://w41bu1.github.io/2025-10-22-wordpress-local-and-debugging-docker/</a></p>
+    <a href="#pearcmd-code-analysis" class="header-mark"></a>38 <code>pearcmd</code> Code Analysis</h2><p>Before analyzing <code>/usr/local/lib/php/pearcmd.php</code>, it&rsquo;s useful to set up a debugging environment to observe execution flow — see: <a href="https://w41bu1.github.io/2025-10-22-wordpress-local-and-debugging-docker/" target="_blank" rel="noopener noreferrer">https://w41bu1.github.io/2025-10-22-wordpress-local-and-debugging-docker/</a></p>
 <p>Then copy all PHP source from the container to a local machine, preserving directory structure, so when the debugger stops at <code>/usr/local/lib/php/pearcmd.php</code> you can open and inspect the corresponding file from the container:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
@@ -1417,7 +1449,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-12" 
+    id="codeblock-id-144" 
     class="
       chroma 
       !tw-block 
@@ -1508,7 +1540,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-13" 
+    id="codeblock-id-145" 
     class="
       chroma 
       !tw-block 
@@ -1630,7 +1662,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-14" 
+    id="codeblock-id-146" 
     class="
       chroma 
       !tw-block 
@@ -1721,7 +1753,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-15" 
+    id="codeblock-id-147" 
     class="
       chroma 
       !tw-block 
@@ -1822,7 +1854,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-16" 
+    id="codeblock-id-148" 
     class="
       chroma 
       !tw-block 
@@ -1913,7 +1945,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-17" 
+    id="codeblock-id-149" 
     class="
       chroma 
       !tw-block 
@@ -2019,7 +2051,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-18" 
+    id="codeblock-id-150" 
     class="
       chroma 
       !tw-block 
@@ -2114,7 +2146,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-19" 
+    id="codeblock-id-151" 
     class="
       chroma 
       !tw-block 
@@ -2210,7 +2242,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-20" 
+    id="codeblock-id-152" 
     class="
       chroma 
       !tw-block 
@@ -2302,7 +2334,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-21" 
+    id="codeblock-id-153" 
     class="
       chroma 
       !tw-block 
@@ -2397,7 +2429,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-22" 
+    id="codeblock-id-154" 
     class="
       chroma 
       !tw-block 
@@ -2546,7 +2578,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-23" 
+    id="codeblock-id-155" 
     class="
       chroma 
       !tw-block 
@@ -2642,7 +2674,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-24" 
+    id="codeblock-id-156" 
     class="
       chroma 
       !tw-block 
@@ -2752,7 +2784,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-25" 
+    id="codeblock-id-157" 
     class="
       chroma 
       !tw-block 
@@ -2851,7 +2883,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-26" 
+    id="codeblock-id-158" 
     class="
       chroma 
       !tw-block 
@@ -2947,7 +2979,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-27" 
+    id="codeblock-id-159" 
     class="
       chroma 
       !tw-block 
@@ -3042,7 +3074,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-28" 
+    id="codeblock-id-160" 
     class="
       chroma 
       !tw-block 
@@ -3137,7 +3169,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-29" 
+    id="codeblock-id-161" 
     class="
       chroma 
       !tw-block 
@@ -3272,7 +3304,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-30" 
+    id="codeblock-id-162" 
     class="
       chroma 
       !tw-block 
@@ -3366,7 +3398,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-31" 
+    id="codeblock-id-163" 
     class="
       chroma 
       !tw-block 
@@ -3383,7 +3415,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
       "><span class="line"><span class="cl"><span class="nv">$ok</span> <span class="o">=</span> <span class="nv">$cmd</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$command</span><span class="p">,</span> <span class="nv">$opts</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span></span></span></code></pre>
 </div>
 <h2 id="flow" class="headerLink">
-    <a href="#flow" class="header-mark"></a>7 Flow</h2><ol>
+    <a href="#flow" class="header-mark"></a>39 Flow</h2><ol>
 <li>Send a GET request:</li>
 </ol>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
@@ -3461,7 +3493,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-32" 
+    id="codeblock-id-164" 
     class="
       chroma 
       !tw-block 
@@ -3499,7 +3531,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
     <div class="details-content">
         <div class="admonition-content"><p>The created config file contains the <code>root path</code> value. If this value is written as a valid PHP tag (<code>&lt;?php ... ?&gt;</code>) and the file is accessible by the client, the webserver will process the PHP content in that file and the code will be executed, leading to <strong>RCE</strong>.</p></div></div></div><h2 id="exploit" class="headerLink">
-    <a href="#exploit" class="header-mark"></a>8 Exploit</h2><p>Leveraging <a href="https://w41bu1.github.io/2025-10-13-cve-2025-48293/" target="_blank" rel="noopener noreferrer">CVE-2025-48293</a> analyzed earlier to expand into an exploit via <code>pearcmd.php</code></p>
+    <a href="#exploit" class="header-mark"></a>40 Exploit</h2><p>Leveraging <a href="https://w41bu1.github.io/2025-10-13-cve-2025-48293/" target="_blank" rel="noopener noreferrer">CVE-2025-48293</a> analyzed earlier to expand into an exploit via <code>pearcmd.php</code></p>
 <p>Send a request with an LFI payload pointing to <code>pearcmd.php</code>:</p>
 <div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
   <div class="
@@ -3576,7 +3608,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-33" 
+    id="codeblock-id-165" 
     class="
       chroma 
       !tw-block 
