@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jekyll - Nhãn - Bui Van Y</title>
+    <link>http://localhost:1313/vi/tags/jekyll/</link>
+    <description>Bui Van Y</description>
+    <generator>Hugo 0.152.2 &amp; FixIt v0.4.0-alpha.2-20251023040336-063af2cd</generator>
+    <language>vi</language>
+    <managingEditor>w41bu1@gmail.com (Bui Van Y)</managingEditor>
+    <webMaster>w41bu1@gmail.com (Bui Van Y)</webMaster>
+    <lastBuildDate>Tue, 19 Aug 2025 01:10:00 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/vi/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Github Pages with Jekyll themes and Giscus</title>
+      <link>http://localhost:1313/vi/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/</link>
+      <pubDate>Tue, 19 Aug 2025 01:10:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
+      <guid>http://localhost:1313/vi/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/</guid>
+      <category domain="http://localhost:1313/vi/categories/web/">Web</category>
+      <description>How to create your personal blog using Github Pages with &#34;comment&#34; feature</description>
+    </item>
+  </channel>
+</rss>

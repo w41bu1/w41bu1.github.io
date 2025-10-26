@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>WordPress Local and Debugging - Bui Van Y</title><meta name="author" content="Bui Van Y">
+<meta name="description" content="A powerful and the most popular content management system (CMS)."><meta name="keywords" content='cms, php, wordpress'>
+  <meta itemprop="name" content="WordPress Local and Debugging">
+  <meta itemprop="description" content="A powerful and the most popular content management system (CMS).">
+  <meta itemprop="datePublished" content="2025-08-21T09:00:00+07:00">
+  <meta itemprop="dateModified" content="2025-08-21T09:00:00+07:00">
+  <meta itemprop="wordCount" content="840">
+  <meta itemprop="image" content="http://localhost:1313/posts/2025-08-21-wordpress-local-and-debugging/app.png">
+  <meta itemprop="keywords" content="Cms,Php,Wordpress"><meta property="og:url" content="http://localhost:1313/posts/2025-08-21-wordpress-local-and-debugging/">
+  <meta property="og:site_name" content="Bui Van Y">
+  <meta property="og:title" content="WordPress Local and Debugging">
+  <meta property="og:description" content="A powerful and the most popular content management system (CMS).">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-21T09:00:00+07:00">
+    <meta property="article:modified_time" content="2025-08-21T09:00:00+07:00">
+    <meta property="article:tag" content="Cms">
+    <meta property="article:tag" content="Php">
+    <meta property="article:tag" content="Wordpress">
+    <meta property="og:image" content="http://localhost:1313/posts/2025-08-21-wordpress-local-and-debugging/app.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/posts/2025-08-21-wordpress-local-and-debugging/app.png">
+  <meta name="twitter:title" content="WordPress Local and Debugging">
+  <meta name="twitter:description" content="A powerful and the most popular content management system (CMS).">
+<meta name="application-name" content="Bui Van Y">
+<meta name="apple-mobile-web-app-title" content="Bui Van Y"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/svg-spinners--wind-toy.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/posts/2025-08-21-wordpress-local-and-debugging/" title="WordPress Local and Debugging - Bui Van Y" /><link rel="prev" type="text/html" href="http://localhost:1313/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/" title="Github Pages with Jekyll themes and Giscus" /><link rel="alternate" type="text/markdown" href="http://localhost:1313/posts/2025-08-21-wordpress-local-and-debugging/index.md" title="WordPress Local and Debugging - Bui Van Y"><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "WordPress Local and Debugging",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/posts\/2025-08-21-wordpress-local-and-debugging\/"
+    },"image": ["http:\/\/localhost:1313\/images\/avatar.png"],"genre": "posts","keywords": "cms, php, wordpress","wordcount":  840 ,
+    "url": "http:\/\/localhost:1313\/posts\/2025-08-21-wordpress-local-and-debugging\/","datePublished": "2025-08-21T09:00:00+07:00","dateModified": "2025-08-21T09:00:00+07:00","publisher": {
+      "@type": "Organization",
+      "name": "/images/avatar.png","logo": "http:\/\/localhost:1313\/images\/avatar.png"},"author": {
+        "@type": "Person",
+        "name": "Bui Van Y"
+      },"description": "A powerful and the most popular content management system (CMS)."
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Bui Van Y"><img class="logo" src='/images/svg-spinners--wind-toy.svg' alt="Bui Van Y" height="32" width="32"><span class="header-title-text">Bui Van Y</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/posts/"><i class="fa-solid fa-file-alt fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item">
+              <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li><li class="menu-item language-switch">
+            <span role="button" aria-label="Select Language" title="Select Language"><i class="fa-solid fa-language fa-fw" aria-hidden="true"></i></span>
+            <ul class="sub-menu"><li class="menu-item"><span class="text-secondary" title="English">English</span></li><li class="menu-item"><a href="/vi/posts/2025-08-21-wordpress-local-and-debugging/" class="menu-link" title="Vietnamese">Vietnamese</a></li></ul>
+          </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Bui Van Y"><img class="logo" src='/images/svg-spinners--wind-toy.svg' alt="Bui Van Y" height="26" width="26"><span class="header-title-text">Bui Van Y</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/posts/"><i class="fa-solid fa-file-alt fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item"><a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span><span class="menu-system-item language-switch">
+              <span role="button" aria-label="Select Language" title="Select Language">English<i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+              <select class="language-select" onchange="location = this.value;"><option value="/posts/2025-08-21-wordpress-local-and-debugging/" selected disabled>English</option><option value="/vi/posts/2025-08-21-wordpress-local-and-debugging/">Vietnamese</option></select>
+            </span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>WordPress Local and Debugging</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="github.com/w41bu1" title="Author" rel=" author" class="author"><img class="avatar" src='/images/avatar.png' alt="Bui Van Y" height="16" width="16">&nbsp;Bui Van Y</a></span><span class="post-included-in">&nbsp;included in <a href="/categories/web/" class="post-category" title="Category - Web"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Web</a></span></div><div class="post-meta-line"><span title="published on 2025-08-21 09:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-21">2025-08-21</time></span>&nbsp;<span title="840 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 900 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 minutes</span>&nbsp;</div>
+    </div><div class="featured-image"><img src='/posts/2025-08-21-wordpress-local-and-debugging/app.png' alt="/posts/2025-08-21-wordpress-local-and-debugging/app.png"></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#ecosystem">Ecosystem</a></li>
+    <li><a href="#why-wordpress-hacking">Why WordPress Hacking?</a>
+      <ul>
+        <li><a href="#most-popular">Most Popular</a></li>
+        <li><a href="#plugins-and-themes">Plugins and Themes</a></li>
+      </ul>
+    </li>
+    <li><a href="#setup-wordpress-for-hacking">Setup WordPress for Hacking</a>
+      <ul>
+        <li><a href="#install-and-configure-wordpress">Install and Configure WordPress</a>
+          <ul>
+            <li><a href="#install-dependencies">Install Dependencies</a></li>
+            <li><a href="#install-wordpress">Install WordPress</a></li>
+            <li><a href="#configure-apache-for-wordpress">Configure Apache for WordPress</a></li>
+            <li><a href="#configure-database">Configure Database</a></li>
+            <li><a href="#configure-wordpress-to-connect-to-the-database">Configure WordPress to Connect to the Database</a></li>
+            <li><a href="#configure-wordpress">Configure WordPress</a></li>
+          </ul>
+        </li>
+        <li><a href="#setup-debug-on-vscode">Setup Debug on VSCode</a>
+          <ul>
+            <li><a href="#add-php-debug-extension-on-vscode">Add PHP Debug Extension on VSCode</a></li>
+            <li><a href="#install-xdebug-on-ubuntu">Install Xdebug on Ubuntu</a></li>
+            <li><a href="#configure-xdebug">Configure Xdebug</a></li>
+            <li><a href="#configure-vscode-launchjson">Configure VSCode <code>launch.json</code></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#extend">Extend</a>
+      <ul>
+        <li><a href="#required-version">Required Version</a></li>
+        <li><a href="#wordpress-auto-update">WordPress Auto Update</a></li>
+        <li><a href="#increase-plugin-upload-size">Increase Plugin Upload Size</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p><strong>WordPress</strong> is a powerful and the most popular content management system (CMS) that allows you to easily create, manage, and customize websites and blogs. It is an open-source CMS, built on PHP and using either MySQL or MariaDB.</p>
+<ul>
+<li>Released in 2003, initially just for blogging, then evolved into a platform for building websites, online stores, forums, landing pages, etc.</li>
+<li>Today, more than 40% of websites worldwide run on WordPress.</li>
+</ul>
+<p>There are two versions of WordPress:</p>
+<ol>
+<li>
+<p><strong>WordPress.com</strong></p>
+<ul>
+<li>Hosting service provided by Automattic</li>
+<li>You just register an account, no installation needed</li>
+<li>Limited customization; advanced features require payment</li>
+</ul>
+</li>
+<li>
+<p><strong>WordPress.org</strong></p>
+<ul>
+<li>Open source, you download and install it on your own hosting/server</li>
+<li>Fully customizable: install plugins, themes, write code, and build any type of website</li>
+</ul>
+</li>
+</ol>
+<h2 class="heading-element" id="ecosystem"><span>Ecosystem</span>
+  <a href="#ecosystem" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li><strong>Core</strong>: the main CMS</li>
+<li><strong>Plugins</strong>: add-on software that extends WordPress functionality with new features</li>
+<li><strong>Themes</strong>: add-on software that defines the visual appearance and layout of a WordPress site</li>
+</ul>
+<hr>
+<h2 class="heading-element" id="why-wordpress-hacking"><span>Why WordPress Hacking?</span>
+  <a href="#why-wordpress-hacking" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><a href="https://patchstack.com/whitepaper/state-of-wordpress-security-in-2024"target="_blank" rel="external nofollow noopener noreferrer">State of WordPress Security in 2024</a></p>
+<h3 class="heading-element" id="most-popular"><span>Most Popular</span>
+  <a href="#most-popular" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>Currently, more than 40% of websites worldwide run on WordPress</li>
+<li>This means hackers only need to find one common vulnerability =&gt; they can exploit millions of sites at once</li>
+<li>Similar to the saying: <em>“fish where the fish are”</em></li>
+</ul>
+<h3 class="heading-element" id="plugins-and-themes"><span>Plugins and Themes</span>
+  <a href="#plugins-and-themes" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>WordPress Core has been reviewed for a long time by thousands of <strong>developers</strong> and <strong>researchers</strong>, making it very difficult for attackers to compromise directly.</li>
+<li>However, there are tens of thousands of plugins and themes from various sources with inconsistent quality.</li>
+<li>Many plugins have poor security coding and are outdated. Hackers just need to scan for outdated versions and exploit them.</li>
+</ul>
+<hr>
+<h2 class="heading-element" id="setup-wordpress-for-hacking"><span>Setup WordPress for Hacking</span>
+  <a href="#setup-wordpress-for-hacking" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>There are many ways to set up WordPress; searching <strong>Google</strong> will provide plenty of guides. Here I will set it up on an <strong>Ubuntu (22.04)</strong> virtual machine:</p>
+<ul>
+<li>Does not affect real machine services</li>
+<li>WordPress is relatively lightweight and works well on a VM</li>
+</ul>
+<h3 class="heading-element" id="install-and-configure-wordpress"><span>Install and Configure WordPress</span>
+  <a href="#install-and-configure-wordpress" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 class="heading-element" id="install-dependencies"><span>Install Dependencies</span>
+  <a href="#install-dependencies" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Install the full stack required to run WordPress (web server + database + PHP + important extensions):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install -y apache2 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 ghostscript <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 libapache2-mod-php <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 mysql-server <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-bcmath <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-curl <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-imagick <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-intl <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-json <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-mbstring <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-mysql <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-xml <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-zip</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 class="heading-element" id="install-wordpress"><span>Install WordPress</span>
+  <a href="#install-wordpress" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Download and install WordPress source into the web directory:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># Create folder to store site source code</span>
+</span></span><span class="line"><span class="cl">sudo mkdir -p /srv/www
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Change ownership to www-data (default user for Apache/Nginx)</span>
+</span></span><span class="line"><span class="cl">sudo chown www-data: /srv/www
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Download the latest WordPress package and extract it into /srv/www</span>
+</span></span><span class="line"><span class="cl">curl https://wordpress.org/latest.tar.gz <span class="p">|</span> sudo -u www-data tar zx -C /srv/www</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Download a specific version:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl https://wordpress.org/wordpress-6.6.2.tar.gz <span class="p">|</span> sudo -u www-data tar zx -C /srv/www</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>Installing from <code>wordpress.org</code> is the most reliable and safest approach:</p>
+<ul>
+<li>Ubuntu has a <code>wordpress</code> package in its repository, but it is often outdated compared to the official release.</li>
+<li>The WordPress community only supports installations from the official source.</li>
+</ul>
+</blockquote>
+<h4 class="heading-element" id="configure-apache-for-wordpress"><span>Configure Apache for WordPress</span>
+  <a href="#configure-apache-for-wordpress" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Create &amp; edit <code>/etc/apache2/sites-available/wordpress.conf</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo nano /etc/apache2/sites-available/wordpress.conf</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Paste the following content in:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">&lt;VirtualHost *:80&gt;
+</span></span><span class="line"><span class="cl">    DocumentRoot /srv/www/wordpress
+</span></span><span class="line"><span class="cl">    &lt;Directory /srv/www/wordpress&gt;
+</span></span><span class="line"><span class="cl">        Options FollowSymLinks
+</span></span><span class="line"><span class="cl">        AllowOverride Limit Options FileInfo
+</span></span><span class="line"><span class="cl">        DirectoryIndex index.php
+</span></span><span class="line"><span class="cl">        Require all granted
+</span></span><span class="line"><span class="cl">    &lt;/Directory&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;Directory /srv/www/wordpress/wp-content&gt;
+</span></span><span class="line"><span class="cl">        Options FollowSymLinks
+</span></span><span class="line"><span class="cl">        Require all granted
+</span></span><span class="line"><span class="cl">    &lt;/Directory&gt;
+</span></span><span class="line"><span class="cl">&lt;/VirtualHost&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Enable the site:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo a2ensite wordpress</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Enable rewrite module:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo a2enmod rewrite</span></span></code></pre></td></tr></table>
+</div>
+</div><p>(Optional) Disable default site:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo a2dissite 000-default</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Reload Apache:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo service apache2 reload</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 class="heading-element" id="configure-database"><span>Configure Database</span>
+  <a href="#configure-database" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo mysql -u root</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">wordpress</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="n">wordpress</span><span class="o">@</span><span class="n">localhost</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;&lt;your-password&gt;&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GRANT</span><span class="w"> </span><span class="k">SELECT</span><span class="p">,</span><span class="k">INSERT</span><span class="p">,</span><span class="k">UPDATE</span><span class="p">,</span><span class="k">DELETE</span><span class="p">,</span><span class="k">CREATE</span><span class="p">,</span><span class="k">DROP</span><span class="p">,</span><span class="k">ALTER</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">wordpress</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">wordpress</span><span class="o">@</span><span class="n">localhost</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">quit</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Restart MySQL:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo service mysql start</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 class="heading-element" id="configure-wordpress-to-connect-to-the-database"><span>Configure WordPress to Connect to the Database</span>
+  <a href="#configure-wordpress-to-connect-to-the-database" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Copy config file:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo -u www-data cp /srv/www/wordpress/wp-config-sample.php /srv/www/wordpress/wp-config.php</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Edit database info:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo -u www-data sed -i <span class="s1">&#39;s/database_name_here/wordpress/&#39;</span> /srv/www/wordpress/wp-config.php
+</span></span><span class="line"><span class="cl">sudo -u www-data sed -i <span class="s1">&#39;s/username_here/wordpress/&#39;</span> /srv/www/wordpress/wp-config.php
+</span></span><span class="line"><span class="cl">sudo -u www-data sed -i <span class="s1">&#39;s/password_here/&lt;your-password&gt;/&#39;</span> /srv/www/wordpress/wp-config.php</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Add secret keys and salts from: <a href="https://api.wordpress.org/secret-key/1.1/salt/"target="_blank" rel="external nofollow noopener noreferrer">https://api.wordpress.org/secret-key/1.1/salt/</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo nano /srv/www/wordpress/wp-config.php</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 class="heading-element" id="configure-wordpress"><span>Configure WordPress</span>
+  <a href="#configure-wordpress" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Visit <a href="http://localhost"target="_blank" rel="external nofollow noopener noreferrer">http://localhost</a> and set site title, username, password, and admin email.</p>
+<p><img loading="lazy" src='https://ubuntucommunity.s3.us-east-2.amazonaws.com/original/2X/e/ebe4d6066e0c32f14beca85ffd53e5915a4ab278.png' alt="Configure WordPress"></p>
+<hr>
+<h3 class="heading-element" id="setup-debug-on-vscode"><span>Setup Debug on VSCode</span>
+  <a href="#setup-debug-on-vscode" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 class="heading-element" id="add-php-debug-extension-on-vscode"><span>Add PHP Debug Extension on VSCode</span>
+  <a href="#add-php-debug-extension-on-vscode" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Go to <strong>Extensions (Ctrl+Shift+X)</strong> → search <strong>PHP Debug (by Felix Becker)</strong> → <strong>Install</strong>.</p>
+<h4 class="heading-element" id="install-xdebug-on-ubuntu"><span>Install Xdebug on Ubuntu</span>
+  <a href="#install-xdebug-on-ubuntu" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install php-xdebug -y</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Check installation:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">php -v</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 class="heading-element" id="configure-xdebug"><span>Configure Xdebug</span>
+  <a href="#configure-xdebug" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo nano /etc/php/&lt;version&gt;/apache2/php.ini</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Append:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="na">zend_extension</span><span class="o">=</span><span class="s">xdebug.so</span>
+</span></span><span class="line"><span class="cl"><span class="na">xdebug.mode</span><span class="o">=</span><span class="s">debug</span>
+</span></span><span class="line"><span class="cl"><span class="na">xdebug.start_with_request</span><span class="o">=</span><span class="s">yes</span>
+</span></span><span class="line"><span class="cl"><span class="na">xdebug.client_host</span><span class="o">=</span><span class="s">127.0.0.1</span>
+</span></span><span class="line"><span class="cl"><span class="na">xdebug.client_port</span><span class="o">=</span><span class="s">9003</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Restart Apache:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl restart apache2</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 class="heading-element" id="configure-vscode-launchjson"><span>Configure VSCode <code>launch.json</code></span>
+  <a href="#configure-vscode-launchjson" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Open WordPress folder in VSCode:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">code /srv/www/wordpress</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Create <code>.vscode/launch.json</code>:</p>
+<json-viewer value="&#34;{\n  \&#34;version\&#34;: \&#34;0.2.0\&#34;,\n  \&#34;configurations\&#34;: [\n    {\n      \&#34;name\&#34;: \&#34;Listen for Xdebug\&#34;,\n      \&#34;type\&#34;: \&#34;php\&#34;,\n      \&#34;request\&#34;: \&#34;launch\&#34;,\n      \&#34;port\&#34;: 9003,\n      \&#34;pathMappings\&#34;: {\n        \&#34;/srv/www/wordpress\&#34;: \&#34;${workspaceFolder}\&#34;\n      }\n    }\n  ]\n}&#34;" expand-depth="1" boxed copyable="{&#34;copiedText&#34;:&#34;Copied&#34;,&#34;copyText&#34;:&#34;Copy&#34;}"></json-viewer><hr>
+<h2 class="heading-element" id="extend"><span>Extend</span>
+  <a href="#extend" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 class="heading-element" id="required-version"><span>Required Version</span>
+  <a href="#required-version" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Each WordPress version usually requires a specific PHP version. Always check compatibility.</p>
+<h3 class="heading-element" id="wordpress-auto-update"><span>WordPress Auto Update</span>
+  <a href="#wordpress-auto-update" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Since <strong>WordPress 3.7</strong> (2013), WordPress supports <strong>automatic background updates</strong> for:</p>
+<ul>
+<li>Security releases</li>
+<li>Maintenance releases</li>
+<li>(Major versions require explicit opt-in)</li>
+</ul>
+<p>To disable auto updates, add to <code>wp-config.php</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;WP_AUTO_UPDATE_CORE&#39;</span><span class="p">,</span> <span class="k">false</span> <span class="p">);</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 class="heading-element" id="increase-plugin-upload-size"><span>Increase Plugin Upload Size</span>
+  <a href="#increase-plugin-upload-size" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Paste below content into <code>php.ini</code> file.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="na">upload_max_filesize</span> <span class="o">=</span> <span class="s">64M</span>
+</span></span><span class="line"><span class="cl"><span class="na">post_max_size</span> <span class="o">=</span> <span class="s">64M</span>
+</span></span><span class="line"><span class="cl"><span class="na">memory_limit</span> <span class="o">=</span> <span class="s">128M</span>
+</span></span><span class="line"><span class="cl"><span class="na">max_execution_time</span> <span class="o">=</span> <span class="s">300</span>
+</span></span><span class="line"><span class="cl"><span class="na">max_input_time</span> <span class="o">=</span> <span class="s">300</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod"><span title="Updated on 2025-08-21 09:00:00">Updated on 2025-08-21&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/posts/2025-08-21-wordpress-local-and-debugging/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2025-08-21-wordpress-local-and-debugging/index.en.md?plain=1" title="View source"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">View source</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/edit/main/content/posts/2025-08-21-wordpress-local-and-debugging/index.en.md" title="Edit this page"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Edit this page</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/issues/new?title=[BUG]%20WordPress&#43;Local&#43;and&#43;Debugging&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cWordPress&#43;Local&#43;and&#43;Debugging%7c%0A%7cURL%7chttp://localhost:1313/posts/2025-08-21-wordpress-local-and-debugging/%7c%0A%7cFilename%7chttps://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2025-08-21-wordpress-local-and-debugging/index.en.md?plain=1%7c" title="Report issue"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Report issue</a></span><span><a href="vscode://file//home/w41bu1/Desktop/w41bu1.github.io/content/posts/2025-08-21-wordpress-local-and-debugging/index.en.md" title="Open in editor"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-vscode">Open in editor</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="http://localhost:1313/posts/2025-08-21-wordpress-local-and-debugging/" data-title="WordPress Local and Debugging" data-hashtags="cms,php,wordpress"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/2025-08-21-wordpress-local-and-debugging/" data-hashtag="cms"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="http://localhost:1313/posts/2025-08-21-wordpress-local-and-debugging/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/posts/2025-08-21-wordpress-local-and-debugging/" data-title="WordPress Local and Debugging"><i class="fa-brands fa-hacker-news fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/cms/" class="post-tag" title="Tags - Cms">Cms</a><a href="/tags/php/" class="post-tag" title="Tags - Php">Php</a><a href="/tags/wordpress/" class="post-tag" title="Tags - Wordpress">Wordpress</a></section>
+    <section><span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/" class="post-nav-item" rel="prev" title="Github Pages With Jekyll Themes and Giscus"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Github Pages With Jekyll Themes and Giscus</a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.152.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.0-alpha.2-20251023040336-063af2cd"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="github.com/w41bu1">Bui Van Y</a></span></div><div class="footer-line statistics"></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/json-viewer-element/json-viewer-element.umd.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/cell-watermark/watermark.min.js" defer></script><script src="/lib/pace/pace.min.js" async defer></script><script src="/posts/2025-08-21-wordpress-local-and-debugging/config/page.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</html>
