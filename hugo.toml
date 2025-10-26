@@ -1577,12 +1577,12 @@ katex = false
 
 # FixIt 0.2.14 | NEW Giscus comments config
 [params.page.comment.giscus]
-enable = false
-repo = ""
-repoId = ""
-category = ""
-categoryId = ""
-mapping = ""
+enable = true
+repo = "w41bu1/w41bu1.github.io"
+repoId = "R_kgDOQJiPkw"
+category = "General"
+categoryId = "DIC_kwDOQJiPk84CxGVP"
+mapping = "pathname"
 origin = "https://giscus.app" # FixIt NEW | 0.3.7 Or set it to your self-hosted domain
 strict = "0" # FixIt NEW | 0.2.18
 term = ""
