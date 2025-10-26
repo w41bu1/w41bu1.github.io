@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Core - Nhãn - Bui Van Y</title>
+    <link>http://localhost:1313/vi/tags/core/</link>
+    <description>Bui Van Y</description>
+    <generator>Hugo 0.152.2 &amp; FixIt v0.4.0-alpha.2-20251023040336-063af2cd</generator>
+    <language>vi</language>
+    <managingEditor>w41bu1@gmail.com (Bui Van Y)</managingEditor>
+    <webMaster>w41bu1@gmail.com (Bui Van Y)</webMaster>
+    <lastBuildDate>Sat, 11 Oct 2025 19:18:00 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/vi/tags/core/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CVE-2025-58674 Analysis &amp; POC</title>
+      <link>http://localhost:1313/vi/posts/2025-10-11-cve-2025-58674/</link>
+      <pubDate>Sat, 11 Oct 2025 19:18:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
+      <guid>http://localhost:1313/vi/posts/2025-10-11-cve-2025-58674/</guid>
+      <category domain="http://localhost:1313/vi/categories/cve-analyst/">CVE Analyst</category>
+      <description>Security Vulnerability in WordPress Core.</description>
+    </item>
+    <item>
+      <title>CVE-2024-4439 Analysis &amp; POC</title>
+      <link>http://localhost:1313/vi/posts/2025-10-09-cve-2024-4439/</link>
+      <pubDate>Thu, 09 Oct 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
+      <guid>http://localhost:1313/vi/posts/2025-10-09-cve-2024-4439/</guid>
+      <category domain="http://localhost:1313/vi/categories/cve-analyst/">CVE Analyst</category>
+      <description>Security Vulnerability in WordPress Core.</description>
+    </item>
+    <item>
+      <title>CVE-2025-6832 Analysis &amp; POC</title>
+      <link>http://localhost:1313/vi/posts/2025-10-07-cve-2025-6832/</link>
+      <pubDate>Tue, 07 Oct 2025 17:38:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
+      <guid>http://localhost:1313/vi/posts/2025-10-07-cve-2025-6832/</guid>
+      <category domain="http://localhost:1313/vi/categories/cve-analyst/">CVE Analyst</category>
+      <description>Security Vulnerability in WordPress All in One Time Clock Lite Plugin.</description>
+    </item>
+  </channel>
+</rss>

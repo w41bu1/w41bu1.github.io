@@ -8,8 +8,16 @@
     <language>en</language>
     <managingEditor>w41bu1@gmail.com (Bui Van Y)</managingEditor>
     <webMaster>w41bu1@gmail.com (Bui Van Y)</webMaster>
-    <lastBuildDate>Thu, 21 Aug 2025 09:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 27 Oct 2025 01:26:30 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WordPress Local and Debugging in Docker</title>
+      <link>http://localhost:1313/posts/2025-10-22-wordpress-local-and-debugging-docker/</link>
+      <pubDate>Wed, 22 Oct 2025 15:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
+      <guid>http://localhost:1313/posts/2025-10-22-wordpress-local-and-debugging-docker/</guid>
+      <category domain="http://localhost:1313/categories/web/">Web</category>
+      <description>A powerful and the most popular content management system (CMS).</description>
+    </item>
     <item>
       <title>WordPress Local and Debugging</title>
       <link>http://localhost:1313/posts/2025-08-21-wordpress-local-and-debugging/</link>

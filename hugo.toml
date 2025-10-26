@@ -1379,7 +1379,7 @@ fullscreen = true
 # FixIt 0.3.0 | NEW Related content config (https://gohugo.io/content-management/related/)
 [params.page.related]
 enable = true
-count = 5
+count = 10
 # FixIt 0.3.20 | NEW position of related content, optional values: ["aside", "footer"]
 position = [
   "aside",
