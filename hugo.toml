@@ -42,6 +42,8 @@ enableEmoji = true
 # See: https://fixit.lruihao.cn/documentation/basics/#menu-configuration
 # -------------------------------------------------------------------------------------
 
+buildFuture = true
+
 [menu]
 
 [[menu.main]]
