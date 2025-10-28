@@ -8,8 +8,16 @@
     <language>en</language>
     <managingEditor>w41bu1@gmail.com (Bui Van Y)</managingEditor>
     <webMaster>w41bu1@gmail.com (Bui Van Y)</webMaster>
-    <lastBuildDate>Thu, 30 Oct 2025 19:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 31 Oct 2025 19:00:00 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/ssrf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CVE-2025-60161 Analysis &amp; POC</title>
+      <link>http://localhost:1313/posts/2025-10-31-cve-2025-60161/</link>
+      <pubDate>Fri, 31 Oct 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
+      <guid>http://localhost:1313/posts/2025-10-31-cve-2025-60161/</guid>
+      <category domain="http://localhost:1313/categories/cve-analyst/">CVE Analyst</category>
+      <description>Security Vulnerability in WordPress ZoloBlocks Plugin.</description>
+    </item>
     <item>
       <title>CVE-2025-11128 Analysis &amp; POC</title>
       <link>http://localhost:1313/posts/2025-10-30-cve-2025-11128/</link>
