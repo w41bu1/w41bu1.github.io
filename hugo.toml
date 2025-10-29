@@ -110,7 +110,7 @@ icon = "fa-solid fa-tags"
       url = "/posts/"
       weight = 1
       [languages.en.menu.main.params]
-        icon = "fa-solid fa-file-alt"
+        icon = "fa-solid fa-pencil fa-beat"
     [[languages.en.menu.main]]
       identifier = "categories"
       name = "Categories"
@@ -595,9 +595,9 @@ typeit = false
 # FixIt 0.2.12 | NEW Header subtitle config
 [params.header.subtitle]
 # subtitle name
-name = ""
+name = "w41bu1"
 # whether to use typeit animation for subtitle name
-typeit = false
+typeit = true
 
 # FixIt 0.2.18 | NEW Breadcrumb config
 [params.breadcrumb]
@@ -629,7 +629,7 @@ gov = ""
 # ICP info only in China (HTML format is supported)
 icp = ""
 # license info (HTML format is supported)
-license = ""
+license = "w41bu1"
 
 # FixIt 0.3.0 | NEW whether to show Hugo and theme info
 [params.footer.powered]
@@ -738,9 +738,6 @@ paginate = 6
   enable = true
   light = "rgb(0 119 190 / 10%)"
   dark  = "rgb(255 255 255 / 10%)"
-
-[params.style]
-  backgroundGrid = true
 
 # FixIt 0.2.16 | CHANGED Social config about the author
 [params.social]
