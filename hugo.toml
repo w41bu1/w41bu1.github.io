@@ -15,7 +15,7 @@ title = "Bui Van Y"
 # Hostname (and path) to the root
 baseURL = "http://localhost:1313"
 # theme list
-theme = ["FixIt"] # enable in your site config file
+theme = ["FixIt", "cmpt-flyfish"] # enable in your site config file
 # determines default content language ["en", "zh-cn", "fr", "pl", ...]
 defaultContentLanguage = "en"
 # language code ["en", "zh-CN", "fr", "pl", ...]
@@ -726,17 +726,21 @@ typeit = false
 # whether to show social links
 social = true
 # disclaimer (HTML format is supported)
-disclaimer = """
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=w41bu1&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=false&order=1" height="150" alt="stats graph" /> <br>
-</div>
-"""
+disclaimer = ""
 
 # Home page posts
 [params.home.posts]
 enable = false
 # special amount of posts in each home posts page
 paginate = 6
+
+[params.flyfish]
+  enable = true
+  light = "rgb(0 119 190 / 10%)"
+  dark  = "rgb(255 255 255 / 10%)"
+
+[params.style]
+  backgroundGrid = true
 
 # FixIt 0.2.16 | CHANGED Social config about the author
 [params.social]
@@ -913,7 +917,7 @@ selector = "article" # FixIt 0.2.17 | NEW
 [params.watermark]
 enable = true
 # watermark's text (HTML format is supported)
-content = "w41bu1"
+content = "+"
 # watermark's transparency
 opacity = 0.1
 # watermark's width. unit: px
@@ -1164,7 +1168,7 @@ aside = []
 comment = []
 footer = []
 widgets = []
-assets = []
+assets = [ "inject/cmpt-flyfish.html" ]
 postTocBefore = []
 postTocAfter = []
 postContentBefore = []
