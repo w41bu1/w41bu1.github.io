@@ -8,8 +8,16 @@
     <language>en</language>
     <managingEditor>w41bu1@gmail.com (Bui Van Y)</managingEditor>
     <webMaster>w41bu1@gmail.com (Bui Van Y)</webMaster>
-    <lastBuildDate>Wed, 29 Oct 2025 01:02:38 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 03 Nov 2025 19:00:00 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/analyst/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CVE-2025-2940 Analysis &amp; POC</title>
+      <link>http://localhost:1313/posts/2025-11-03-cve-2025-2940/</link>
+      <pubDate>Mon, 03 Nov 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
+      <guid>http://localhost:1313/posts/2025-11-03-cve-2025-2940/</guid>
+      <category domain="http://localhost:1313/categories/cve-analyst/">CVE Analyst</category>
+      <description>Security Vulnerability in WordPress Ninja Tables Plugin.</description>
+    </item>
     <item>
       <title>CVE-2025-1043 Analysis &amp; POC</title>
       <link>http://localhost:1313/posts/2025-11-02-cve-2025-1043/</link>
