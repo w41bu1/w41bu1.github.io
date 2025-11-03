@@ -8,8 +8,16 @@
     <language>vi</language>
     <managingEditor>w41bu1@gmail.com (Bui Van Y)</managingEditor>
     <webMaster>w41bu1@gmail.com (Bui Van Y)</webMaster>
-    <lastBuildDate>Sat, 08 Nov 2025 19:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 09 Nov 2025 19:00:00 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/vi/tags/arbitrary-file-upload/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CVE-2025-1128 Analysis &amp; POC</title>
+      <link>http://localhost:1313/vi/posts/2025-11-09-cve-2025-1128/</link>
+      <pubDate>Sun, 09 Nov 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
+      <guid>http://localhost:1313/vi/posts/2025-11-09-cve-2025-1128/</guid>
+      <category domain="http://localhost:1313/vi/categories/cve-analyst/">CVE Analyst</category>
+      <description>Security Vulnerability in WordPress Everest Forms Plugin.</description>
+    </item>
     <item>
       <title>CVE-2025-39557 Analysis &amp; POC</title>
       <link>http://localhost:1313/vi/posts/2025-11-08-cve-2025-39557/</link>
