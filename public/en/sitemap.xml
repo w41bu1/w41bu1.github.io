@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/tags/analyst/</loc>
-    <lastmod>2025-11-09T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-03T18:25:14+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/analyst/"/>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/arbitrary-file-upload/</loc>
-    <lastmod>2025-11-09T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-03T18:25:14+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/arbitrary-file-upload/"/>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-11-09T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-03T18:25:14+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/"/>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-11-09T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-03T18:25:14+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/categories/"/>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/categories/cve-analyst/</loc>
-    <lastmod>2025-11-09T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-03T18:25:14+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/categories/cve-analyst/"/>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-09-cve-2025-1128/</loc>
-    <lastmod>2025-11-09T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-03T18:25:14+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-09-cve-2025-1128/"/>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/plugin/</loc>
-    <lastmod>2025-11-09T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-03T18:25:14+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/plugin/"/>
@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-11-09T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-03T18:25:14+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/"/>
@@ -66,7 +66,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-11-09T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-03T18:25:14+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/"/>
@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-08-cve-2025-39557/</loc>
-    <lastmod>2025-11-03T01:53:15+07:00</lastmod>
+    <lastmod>2025-11-03T18:25:14+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-08-cve-2025-39557/"/>
@@ -583,6 +583,13 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/jekyll/"/>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/jekyll/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/2025-11-10-cve-2023-48777/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-10-cve-2023-48777/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/2025-11-10-cve-2023-48777/"/>
   </url>
   <url>
     <loc>http://localhost:1313/collections/</loc>
