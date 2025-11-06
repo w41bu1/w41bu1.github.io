@@ -8,15 +8,23 @@
     <language>en</language>
     <managingEditor>w41bu1@gmail.com (Bui Van Y)</managingEditor>
     <webMaster>w41bu1@gmail.com (Bui Van Y)</webMaster>
-    <lastBuildDate>Wed, 05 Nov 2025 15:08:07 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 11 Nov 2025 19:00:00 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/arbitrary-file-upload/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CVE-2025-47637 Analysis &amp; POC</title>
+      <link>http://localhost:1313/posts/2025-11-11-cve-2025-47637/</link>
+      <pubDate>Tue, 11 Nov 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
+      <guid>http://localhost:1313/posts/2025-11-11-cve-2025-47637/</guid>
+      <category domain="http://localhost:1313/categories/cve-analyst/">CVE Analyst</category>
+      <description>Security Vulnerability in WordPress STAGGS Plugin.</description>
+    </item>
     <item>
       <title>CVE-2023-48777 Analysis &amp; POC</title>
       <link>http://localhost:1313/posts/2025-11-10-cve-2023-48777/</link>
       <pubDate>Mon, 10 Nov 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
       <guid>http://localhost:1313/posts/2025-11-10-cve-2023-48777/</guid>
       <category domain="http://localhost:1313/categories/cve-analyst/">CVE Analyst</category>
-      <description>Security Vulnerability in WordPress Elementor Website Builder Plugin 3.3.0-3.18.1 Plugin.</description>
+      <description>Security Vulnerability in WordPress Elementor Website Builder Plugin</description>
     </item>
     <item>
       <title>CVE-2025-1128 Analysis &amp; POC</title>
