@@ -3,7 +3,7 @@ title: "POP Chain Analysis & Exploit"
 description: "Explore the POP Chain in a PHP lab: identify gadgets, craft a payload, and successfully achieve RCE."
 date: 2025-11-11 19:00:00 +0700
 categories: ["CVE Analyst"]
-tags: ["analyst", "plugin", "arbitrary file upload"]
+tags: ["analyst", "plugin", "pop chain", "insecure deserialize"]
 images: ["app.png"]
 featuredImage: "app.png"
 

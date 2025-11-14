@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/tags/analyst/</loc>
-    <lastmod>2025-11-11T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-11T22:42:30+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/analyst/"/>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/arbitrary-file-upload/</loc>
-    <lastmod>2025-11-11T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-08T02:31:50+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/arbitrary-file-upload/"/>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-11-11T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-13T19:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/"/>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-11-11T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-13T19:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/categories/"/>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/categories/cve-analyst/</loc>
-    <lastmod>2025-11-11T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-13T19:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/categories/cve-analyst/"/>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/plugin/</loc>
-    <lastmod>2025-11-11T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-11T22:42:30+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/plugin/"/>
@@ -58,19 +58,43 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-11-11T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-13T19:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/"/>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/"/>
   </url>
   <url>
+    <loc>http://localhost:1313/tags/sink/</loc>
+    <lastmod>2025-11-13T19:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/sink/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/sink/"/>
+  </url>
+  <url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-11-11T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-13T19:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/"/>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/wordpress/</loc>
+    <lastmod>2025-11-13T19:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/wordpress/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/wordpress/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/2025-11-13-wordpress-vulnerability-sink/</loc>
+    <lastmod>2025-11-13T19:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-13-wordpress-vulnerability-sink/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/2025-11-13-wordpress-vulnerability-sink/"/>
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-12-cve-2025-32202/</loc>
@@ -89,8 +113,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/2025-11-11-cve-2025-47637/"/>
   </url>
   <url>
+    <loc>http://localhost:1313/tags/insecure-deserialize/</loc>
+    <lastmod>2025-11-11T22:42:30+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/insecure-deserialize/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/insecure-deserialize/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/pop-chain/</loc>
+    <lastmod>2025-11-11T22:42:30+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/pop-chain/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/pop-chain/"/>
+  </url>
+  <url>
     <loc>http://localhost:1313/posts/2025-11-11-pop-chain-lab1/</loc>
-    <lastmod>2025-11-11T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-11T22:42:30+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-11-pop-chain-lab1/"/>
@@ -295,14 +335,6 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/categories/web/"/>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/categories/web/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/wordpress/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/wordpress/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/wordpress/"/>
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-22-wordpress-local-and-debugging-docker/</loc>
