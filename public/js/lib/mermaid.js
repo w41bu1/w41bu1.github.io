@@ -101,9 +101,3 @@ window.FixItMermaid = {
   init: initMermaid,
 }
 window.mermaid = mermaid
-
-if (document.readyState !== 'loading') {
-  initMermaid()
-} else {
-  document.addEventListener('DOMContentLoaded', initMermaid, false)
-}
