@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>WordPress Local and Debugging in Docker - Bui Van Y</title><meta name="author" content="Bui Van Y">
+<meta name="description" content="A powerful and the most popular content management system (CMS)."><meta name="keywords" content='cms, php, wordpress, docker'>
+  <meta itemprop="name" content="WordPress Local and Debugging in Docker">
+  <meta itemprop="description" content="A powerful and the most popular content management system (CMS).">
+  <meta itemprop="datePublished" content="2025-10-22T15:00:00+07:00">
+  <meta itemprop="dateModified" content="2025-10-27T01:40:34+07:00">
+  <meta itemprop="wordCount" content="716">
+  <meta itemprop="image" content="http://localhost:1313/posts/2025-10-22-wordpress-local-and-debugging-docker/app.png">
+  <meta itemprop="keywords" content="Cms,Php,Wordpress,Docker"><meta property="og:url" content="http://localhost:1313/posts/2025-10-22-wordpress-local-and-debugging-docker/">
+  <meta property="og:site_name" content="Bui Van Y">
+  <meta property="og:title" content="WordPress Local and Debugging in Docker">
+  <meta property="og:description" content="A powerful and the most popular content management system (CMS).">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-22T15:00:00+07:00">
+    <meta property="article:modified_time" content="2025-10-27T01:40:34+07:00">
+    <meta property="article:tag" content="Cms">
+    <meta property="article:tag" content="Php">
+    <meta property="article:tag" content="Wordpress">
+    <meta property="article:tag" content="Docker">
+    <meta property="og:image" content="http://localhost:1313/posts/2025-10-22-wordpress-local-and-debugging-docker/app.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/posts/2025-10-22-wordpress-local-and-debugging-docker/app.png">
+  <meta name="twitter:title" content="WordPress Local and Debugging in Docker">
+  <meta name="twitter:description" content="A powerful and the most popular content management system (CMS).">
+<meta name="application-name" content="Bui Van Y">
+<meta name="apple-mobile-web-app-title" content="Bui Van Y"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/svg-spinners--wind-toy.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/posts/2025-10-22-wordpress-local-and-debugging-docker/" title="WordPress Local and Debugging in Docker - Bui Van Y" /><link rel="prev" type="text/html" href="http://localhost:1313/posts/2025-10-21-cve-2025-32141/" title="CVE-2025-32141 Analysis &amp; POC" /><link rel="next" type="text/html" href="http://localhost:1313/posts/2025-10-22-cve-2025-11361/" title="CVE-2025-11361 Analysis &amp; POC" /><link rel="alternate" type="text/markdown" href="http://localhost:1313/posts/2025-10-22-wordpress-local-and-debugging-docker/index.md" title="WordPress Local and Debugging in Docker - Bui Van Y"><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "WordPress Local and Debugging in Docker",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/posts\/2025-10-22-wordpress-local-and-debugging-docker\/"
+    },"image": ["http:\/\/localhost:1313\/images\/avatar.png"],"genre": "posts","keywords": "cms, php, wordpress, docker","wordcount":  716 ,
+    "url": "http:\/\/localhost:1313\/posts\/2025-10-22-wordpress-local-and-debugging-docker\/","datePublished": "2025-10-22T15:00:00+07:00","dateModified": "2025-10-27T01:40:34+07:00","publisher": {
+      "@type": "Organization",
+      "name": "/images/avatar.png","logo": "http:\/\/localhost:1313\/images\/avatar.png"},"author": {
+        "@type": "Person",
+        "name": "Bui Van Y"
+      },"description": "A powerful and the most popular content management system (CMS)."
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Bui Van Y"><img class="logo" src='/images/svg-spinners--wind-toy.svg' alt="Bui Van Y" height="32" width="32"><span class="header-title-text">Bui Van Y</span></a><span class="typeit header-subtitle"><template>w41bu1</template></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/posts/"><i class="fa-solid fa-pencil fa-beat fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item">
+              <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" role="button" aria-label="Switch Theme" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></li><li class="menu-item language-switch">
+            <span role="button" aria-label="Select Language" title="Select Language"><i class="fa-solid fa-language fa-fw" aria-hidden="true"></i></span>
+            <ul class="sub-menu"><li class="menu-item"><span class="text-secondary" title="English">English</span></li><li class="menu-item"><a href="/vi/posts/2025-10-22-wordpress-local-and-debugging-docker/" class="menu-link" title="Vietnamese">Vietnamese</a></li></ul>
+          </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Bui Van Y"><img class="logo" src='/images/svg-spinners--wind-toy.svg' alt="Bui Van Y" height="26" width="26"><span class="header-title-text">Bui Van Y</span></a><span class="typeit header-subtitle"><template>w41bu1</template></span></div>
+      <div class="theme-switch" role="button" aria-label="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/posts/"><i class="fa-solid fa-pencil fa-beat fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item"><a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system"><span class="menu-system-item language-switch">
+              <span role="button" aria-label="Select Language" title="Select Language">English<i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+              <select id="language-select" class="language-select" onchange="location = this.value;"><option value="/posts/2025-10-22-wordpress-local-and-debugging-docker/" selected disabled>English</option><option value="/vi/posts/2025-10-22-wordpress-local-and-debugging-docker/">Vietnamese</option></select>
+            </span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"><div class="details related-details open">
+      <div class="details-summary related-summary">
+        <i class="fa-solid fa-fire fa-fade text-danger fa-fw" aria-hidden="true"></i>
+        <span class="related-title">Related Content</span><i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+      <div class="details-content related-content">
+        <ul class="related-list"><li class="related-item">
+              <a href="/posts/2025-08-21-wordpress-local-and-debugging/" title="WordPress Local and Debugging">WordPress Local and Debugging</a></li><li class="related-item">
+              <a href="/posts/2025-11-13-wordpress-vulnerability-sink/" title="WordPress Vulnerability Sinks">WordPress Vulnerability Sinks</a></li></ul>
+      </div>
+    </div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>WordPress Local and Debugging in Docker</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="github.com/w41bu1" title="Author" rel=" author" class="author"><img class="avatar" src='/images/avatar.png' alt="Bui Van Y" height="16" width="16">&nbsp;Bui Van Y</a></span><span class="post-included-in">&nbsp;included in <a href="/categories/web/" class="post-category" title="Category - Web"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Web</a></span></div><div class="post-meta-line"><span title="published on 2025-10-22 15:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-10-22">2025-10-22</time></span>&nbsp;<span title="Updated on 2025-10-27 01:40:34"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2025-10-27">2025-10-27</time></span>&nbsp;<span title="716 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 800 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 minutes</span>&nbsp;</div>
+    </div><div class="featured-image"><img src='/posts/2025-10-22-wordpress-local-and-debugging-docker/app.png' alt="/posts/2025-10-22-wordpress-local-and-debugging-docker/app.png"></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-use-docker">Why Use Docker?</a></li>
+    <li><a href="#setup-wordpress-for-hacker-in-docker">Setup WordPress for Hacker in Docker</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a>
+          <ul>
+            <li><a href="#docker">Docker</a></li>
+            <li><a href="#docker-compose">Docker Compose</a></li>
+          </ul>
+        </li>
+        <li><a href="#installing-wordpress-with-docker-compose-and-xdebug">Installing WordPress with Docker Compose and Xdebug</a></li>
+        <li><a href="#setup-environment">Setup Environment</a></li>
+        <li><a href="#create-dockerfile">Create Dockerfile</a></li>
+        <li><a href="#create-docker-composeyml">Create docker-compose.yml</a></li>
+        <li><a href="#create-phpini">Create php.ini</a></li>
+        <li><a href="#create-vs-code-launch-configuration">Create VS Code Launch Configuration</a></li>
+        <li><a href="#install-vs-code-extension">Install VS Code Extension</a></li>
+        <li><a href="#run-docker-compose">Run Docker Compose</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p><strong>Continuing</strong> from the previous guide on <strong>installing WordPress in a local environment</strong> (<a href="https://w41bu1.github.io/2025-08-21-wordpress-local-and-debugging/"target="_blank" rel="external nofollow noopener noreferrer">see here</a>), this post will show you how to <strong>set up WordPress with Docker</strong> — a modern, flexible, and easily shareable approach.</p>
+<h2 class="heading-element" id="why-use-docker"><span>Why Use Docker?</span>
+  <a href="#why-use-docker" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>Docker allows you to package the entire WordPress environment (PHP, MySQL, web server, and source code) into independent containers. This brings several key advantages:</p>
+<ul>
+<li><strong>Environment consistency</strong>: Works the same everywhere, eliminating “works on my machine” issues.</li>
+<li><strong>Easy setup and reset</strong>: Spin up or rebuild your environment in just a few commands.</li>
+<li><strong>Isolation and security</strong>: Each container runs independently, avoiding software conflicts.</li>
+<li><strong>Convenient development and debugging</strong>: Enable Xdebug, monitor logs, or tweak PHP settings without affecting your main system.</li>
+<li><strong>Easy sharing</strong>: Just share the <code>docker-compose.yml</code> file — others can launch the exact same setup without manual installation.</li>
+</ul>
+<p>Docker is an <strong>optimal solution</strong> for developing, testing, and collaborating on WordPress projects — especially useful for developers, teams, or penetration testers who need a consistent, reproducible environment.</p>
+<h2 class="heading-element" id="setup-wordpress-for-hacker-in-docker"><span>Setup WordPress for Hacker in Docker</span>
+  <a href="#setup-wordpress-for-hacker-in-docker" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 class="heading-element" id="prerequisites"><span>Prerequisites</span>
+  <a href="#prerequisites" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 class="heading-element" id="docker"><span>Docker</span>
+  <a href="#docker" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>First, install <strong>Docker</strong>. It’s available on all major operating systems, with installation steps differing slightly per platform.<br>
+See the official guide: <a href="https://www.docker.com/get-started/"target="_blank" rel="external nofollow noopener noreferrer">https://www.docker.com/get-started/</a></p>
+<h4 class="heading-element" id="docker-compose"><span>Docker Compose</span>
+  <a href="#docker-compose" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Instead of manually starting containers with <code>docker run</code>, use <strong>Docker Compose</strong> — a tool that defines and manages multiple linked containers using <strong>a single configuration file</strong> (<code>docker-compose.yml</code>).</p>
+<p>For WordPress, you’ll need:</p>
+<ul>
+<li>A <strong>MySQL</strong> container for the database.</li>
+<li>A <strong>WordPress (PHP + web server)</strong> container for the site itself.</li>
+</ul>
+<p>Manually setting this up involves complex commands and configurations.<br>
+With Docker Compose, everything is neatly handled in one YAML file:</p>
+<ul>
+<li><strong>Easy setup</strong>: Run <code>docker-compose up -d</code> to get WordPress + MySQL instantly.</li>
+<li><strong>Easy sharing</strong>: Anyone can use your <code>docker-compose.yml</code> to replicate your setup.</li>
+<li><strong>Easy expansion</strong>: Add phpMyAdmin, Nginx, or Xdebug with just a few extra lines.</li>
+</ul>
+<p>Install instructions: <a href="https://docs.docker.com/compose/install/"target="_blank" rel="external nofollow noopener noreferrer">https://docs.docker.com/compose/install/</a></p>
+<h3 class="heading-element" id="installing-wordpress-with-docker-compose-and-xdebug"><span>Installing WordPress with Docker Compose and Xdebug</span>
+  <a href="#installing-wordpress-with-docker-compose-and-xdebug" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>This section shows how to install <strong>WordPress using Docker Compose</strong>, with <strong>Xdebug integration</strong> for debugging directly in <strong>VS Code</strong>.<br>
+This gives you a complete development setup that’s easy to debug and extend.</p>
+<p><strong>Folder structure:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── wordpress
+</span></span><span class="line"><span class="cl">├── docker-compose.yml
+</span></span><span class="line"><span class="cl">├── Dockerfile
+</span></span><span class="line"><span class="cl">├── php.ini
+</span></span><span class="line"><span class="cl">└── .vscode
+</span></span><span class="line"><span class="cl">    └── launch.json</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 class="heading-element" id="setup-environment"><span>Setup Environment</span>
+  <a href="#setup-environment" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Create a new folder to store all configuration files:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mkdir wordpress-docker <span class="o">&amp;&amp;</span> <span class="nb">cd</span> wordpress-docker</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 class="heading-element" id="create-dockerfile"><span>Create Dockerfile</span>
+  <a href="#create-dockerfile" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>The default WordPress image <strong>does not include Xdebug</strong>, so we’ll extend it with a <code>Dockerfile</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">nano Dockerfile</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Content:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">wordpress:latest</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Install Xdebug</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> pecl install xdebug <span class="o">&amp;&amp;</span> docker-php-ext-enable xdebug</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 class="heading-element" id="create-docker-composeyml"><span>Create docker-compose.yml</span>
+  <a href="#create-docker-composeyml" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Now create the file that configures the full environment:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">nano docker-compose.yml</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Content:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">db</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">mysql:latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">wp_db</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">MYSQL_ROOT_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l">root</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">MYSQL_DATABASE</span><span class="p">:</span><span class="w"> </span><span class="l">wordpress</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">MYSQL_USER</span><span class="p">:</span><span class="w"> </span><span class="l">wordpress</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">MYSQL_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l">wordpress</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">db_data:/var/lib/mysql</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">wordpress</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w"> </span><span class="l">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">wp_app</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">db</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;80:80&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">WORDPRESS_DB_HOST</span><span class="p">:</span><span class="w"> </span><span class="l">db:3306</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">WORDPRESS_DB_USER</span><span class="p">:</span><span class="w"> </span><span class="l">wordpress</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">WORDPRESS_DB_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l">wordpress</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">WORDPRESS_DB_NAME</span><span class="p">:</span><span class="w"> </span><span class="l">wordpress</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./wordpress:/var/www/html</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./php.ini:/usr/local/etc/php/conf.d/php.ini</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="l">db_data:</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition info open disabled">
+  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-circle-info" aria-hidden="true"></i>Info</div>
+  <div class="details-content">
+    <div class="admonition-content"><p>The <code>volumes:</code> section handles <strong>data persistence and source code synchronization</strong> between your host machine and containers.</p></div>
+  </div>
+</div><p><strong>Explanation:</strong></p>
+<ul>
+<li>
+<p><strong><code>db_data:/var/lib/mysql</code></strong><br>
+Stores MySQL data persistently — your database won’t be lost if the container is removed.</p>
+</li>
+<li>
+<p><strong><code>./wordpress:/var/www/html</code></strong><br>
+Syncs WordPress source code between your machine and the container, allowing live editing.</p>
+</li>
+<li>
+<p><strong><code>./php.ini:/usr/local/etc/php/conf.d/php.ini</code></strong><br>
+Mounts your PHP/Xdebug config file for easy customization without rebuilding the image.</p>
+</li>
+</ul>
+<h3 class="heading-element" id="create-phpini"><span>Create php.ini</span>
+  <a href="#create-phpini" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Enable Xdebug and adjust PHP settings.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">nano php.ini</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Content:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="na">zend_extension</span><span class="o">=</span><span class="s">xdebug</span>
+</span></span><span class="line"><span class="cl"><span class="na">xdebug.mode</span><span class="o">=</span><span class="s">debug</span>
+</span></span><span class="line"><span class="cl"><span class="na">xdebug.start_with_request</span><span class="o">=</span><span class="s">yes</span>
+</span></span><span class="line"><span class="cl"><span class="na">xdebug.client_host</span><span class="o">=</span><span class="s">172.17.0.1</span>
+</span></span><span class="line"><span class="cl"><span class="na">xdebug.client_port</span><span class="o">=</span><span class="s">9003</span>
+</span></span><span class="line"><span class="cl"><span class="na">xdebug.log_level</span><span class="o">=</span><span class="s">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="na">upload_max_filesize</span> <span class="o">=</span> <span class="s">64M</span>
+</span></span><span class="line"><span class="cl"><span class="na">post_max_size</span> <span class="o">=</span> <span class="s">64M</span>
+</span></span><span class="line"><span class="cl"><span class="na">memory_limit</span> <span class="o">=</span> <span class="s">128M</span>
+</span></span><span class="line"><span class="cl"><span class="na">max_execution_time</span> <span class="o">=</span> <span class="s">300</span>
+</span></span><span class="line"><span class="cl"><span class="na">max_input_time</span> <span class="o">=</span> <span class="s">300</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Explanation:</strong></p>
+<ul>
+<li>The <code>xdebug.*</code> lines enable debugging in VS Code.</li>
+<li>The remaining lines increase upload and memory limits for PHP.</li>
+</ul>
+<h3 class="heading-element" id="create-vs-code-launch-configuration"><span>Create VS Code Launch Configuration</span>
+  <a href="#create-vs-code-launch-configuration" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Create the VS Code config file to connect with Xdebug:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mkdir .vscode <span class="o">&amp;&amp;</span> nano .vscode/launch.json</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Content:</strong></p>
+<json-viewer value="&#34;{\r\n  \&#34;version\&#34;: \&#34;0.2.0\&#34;,\r\n  \&#34;configurations\&#34;: [\r\n    {\r\n      \&#34;name\&#34;: \&#34;Listen for Xdebug\&#34;,\r\n      \&#34;type\&#34;: \&#34;php\&#34;,\r\n      \&#34;request\&#34;: \&#34;launch\&#34;,\r\n      \&#34;port\&#34;: 9003,\r\n      \&#34;pathMappings\&#34;: {\r\n        \&#34;/var/www/html\&#34;: \&#34;${workspaceFolder}/wordpress\&#34;\r\n      },\r\n      \&#34;log\&#34;: true\r\n    }\r\n  ]\r\n}&#34;" expand-depth="1" boxed copyable="{&#34;copiedText&#34;:&#34;Copied&#34;,&#34;copyText&#34;:&#34;Copy&#34;}"></json-viewer><h3 class="heading-element" id="install-vs-code-extension"><span>Install VS Code Extension</span>
+  <a href="#install-vs-code-extension" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Open VS Code → <strong>Extensions (Ctrl + Shift + X)</strong> → Search and install:</p>
+<blockquote>
+<p><strong>PHP Debug (by Xdebug)</strong></p>
+</blockquote>
+<h3 class="heading-element" id="run-docker-compose"><span>Run Docker Compose</span>
+  <a href="#run-docker-compose" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Start the environment:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker-compose up -d</span></span></code></pre></td></tr></table>
+</div>
+</div><p>After the containers start, visit <strong><a href="http://localhost"target="_blank" rel="external nofollow noopener noreferrer">http://localhost</a></strong> to complete the WordPress installation.<br>
+You can now set breakpoints in your PHP code and debug directly in VS Code.</p></div><hr class="awesome-hr" />
+    <h2 id="see-also">Related Content</h2>
+    <ul><li>
+          <a href="/posts/2025-08-21-wordpress-local-and-debugging/" title="WordPress Local and Debugging">WordPress Local and Debugging</a></li><li>
+          <a href="/posts/2025-11-13-wordpress-vulnerability-sink/" title="WordPress Vulnerability Sinks">WordPress Vulnerability Sinks</a></li></ul><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod"><span title="Updated on 2025-10-27 01:40:34">Updated on 2025-10-27&nbsp;<a class="git-hash" href="https://github.com/w41bu1/w41bu1.github.io/commit/9adcfc8a6a2e794d74d7a68cbdb1d508a51dfe07" rel="external nofollow noopener noreferrer" target="_blank" title="Basic update&#10&#10Commit: 9adcfc8a6a2e794d74d7a68cbdb1d508a51dfe07 [9adcfc8]&#10Author: w41bu1&#10Date: 2025-10-27 01:40:34"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i>9adcfc8</a></span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/posts/2025-10-22-wordpress-local-and-debugging-docker/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts%5c2025-10-22-wordpress-local-and-debugging-docker%5cindex.en.md?plain=1" title="View source"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">View source</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/edit/main/content/posts%5c2025-10-22-wordpress-local-and-debugging-docker%5cindex.en.md" title="Edit this page"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Edit this page</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/issues/new?title=[BUG]%20WordPress&#43;Local&#43;and&#43;Debugging&#43;in&#43;Docker&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cWordPress&#43;Local&#43;and&#43;Debugging&#43;in&#43;Docker%7c%0A%7cURL%7chttp://localhost:1313/posts/2025-10-22-wordpress-local-and-debugging-docker/%7c%0A%7cFilename%7chttps://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts%5c2025-10-22-wordpress-local-and-debugging-docker%5cindex.en.md?plain=1%7c" title="Report issue"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Report issue</a></span><span><a href="vscode://file/D:%5cwork%5cproject%5cw41bu1.github.io%5ccontent%5cposts%5c2025-10-22-wordpress-local-and-debugging-docker%5cindex.en.md" title="Open in editor"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-vscode">Open in editor</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="http://localhost:1313/posts/2025-10-22-wordpress-local-and-debugging-docker/" data-title="WordPress Local and Debugging in Docker" data-hashtags="cms,php,wordpress,docker"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/2025-10-22-wordpress-local-and-debugging-docker/" data-hashtag="cms"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="http://localhost:1313/posts/2025-10-22-wordpress-local-and-debugging-docker/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/posts/2025-10-22-wordpress-local-and-debugging-docker/" data-title="WordPress Local and Debugging in Docker"><i class="fa-brands fa-hacker-news fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/cms/" class="post-tag" title="Tags - Cms">Cms</a><a href="/tags/php/" class="post-tag" title="Tags - Php">Php</a><a href="/tags/wordpress/" class="post-tag" title="Tags - Wordpress">Wordpress</a><a href="/tags/docker/" class="post-tag" title="Tags - Docker">Docker</a></section>
+    <section><span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/2025-10-21-cve-2025-32141/" class="post-nav-item" rel="prev" title="CVE-2025-32141 Analysis &amp; POC"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>CVE-2025-32141 Analysis &amp; POC</a><a href="/posts/2025-10-22-cve-2025-11361/" class="post-nav-item" rel="next" title="CVE-2025-11361 Analysis &amp; POC">CVE-2025-11361 Analysis &amp; POC<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
+      <div class="toc">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content" id="toc-content-drawer"><nav >
+  <ul>
+    <li><a href="#why-use-docker">Why Use Docker?</a></li>
+    <li><a href="#setup-wordpress-for-hacker-in-docker">Setup WordPress for Hacker in Docker</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a>
+          <ul>
+            <li><a href="#docker">Docker</a></li>
+            <li><a href="#docker-compose">Docker Compose</a></li>
+          </ul>
+        </li>
+        <li><a href="#installing-wordpress-with-docker-compose-and-xdebug">Installing WordPress with Docker Compose and Xdebug</a></li>
+        <li><a href="#setup-environment">Setup Environment</a></li>
+        <li><a href="#create-dockerfile">Create Dockerfile</a></li>
+        <li><a href="#create-docker-composeyml">Create docker-compose.yml</a></li>
+        <li><a href="#create-phpini">Create php.ini</a></li>
+        <li><a href="#create-vs-code-launch-configuration">Create VS Code Launch Configuration</a></li>
+        <li><a href="#install-vs-code-extension">Install VS Code Extension</a></li>
+        <li><a href="#run-docker-compose">Run Docker Compose</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div>
+    </dialog></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="github.com/w41bu1">Bui Van Y</a></span><span class="license footer-divider">w41bu1</span></div><div class="footer-line statistics"></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian"><span class="gov"><i class="fa-solid fa-user-secret"></i></span><span class="icp footer-divider"><i class="fa-solid fa-bug"></i></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><svg viewBox="0 0 100 100">
+              <circle class="bg" cx="50" cy="50" r="50"></circle>
+              <circle class="progress" cx="50" cy="50" r="50"></circle>
+            </svg></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="Contents"><i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/json-viewer-element/json-viewer-element.umd.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/cell-watermark/watermark.min.js" defer></script><script src="/lib/pace/pace.min.js" async defer></script><script src="/js/config/422041fbe3434f71b860d4048195bd8b.js" defer></script><script src="/js/theme.min.js" defer></script><script src="/js/flyfish.min.js" defer></script></body>
+</html>

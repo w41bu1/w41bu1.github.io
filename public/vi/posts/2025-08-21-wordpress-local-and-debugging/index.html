@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="vi">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>WordPress Local and Debugging - Bui Van Y</title><meta name="author" content="Bui Van Y">
+<meta name="description" content="A powerful and the most popular content management system (CMS)."><meta name="keywords" content='cms, php, wordpress'>
+  <meta itemprop="name" content="WordPress Local and Debugging">
+  <meta itemprop="description" content="A powerful and the most popular content management system (CMS).">
+  <meta itemprop="datePublished" content="2025-08-21T09:00:00+07:00">
+  <meta itemprop="dateModified" content="2025-10-27T01:26:30+07:00">
+  <meta itemprop="wordCount" content="1689">
+  <meta itemprop="image" content="http://localhost:1313/posts/2025-08-21-wordpress-local-and-debugging/app.png">
+  <meta itemprop="keywords" content="Cms,Php,Wordpress"><meta property="og:url" content="http://localhost:1313/vi/posts/2025-08-21-wordpress-local-and-debugging/">
+  <meta property="og:site_name" content="Bui Van Y">
+  <meta property="og:title" content="WordPress Local and Debugging">
+  <meta property="og:description" content="A powerful and the most popular content management system (CMS).">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-21T09:00:00+07:00">
+    <meta property="article:modified_time" content="2025-10-27T01:26:30+07:00">
+    <meta property="article:tag" content="Cms">
+    <meta property="article:tag" content="Php">
+    <meta property="article:tag" content="Wordpress">
+    <meta property="og:image" content="http://localhost:1313/posts/2025-08-21-wordpress-local-and-debugging/app.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/posts/2025-08-21-wordpress-local-and-debugging/app.png">
+  <meta name="twitter:title" content="WordPress Local and Debugging">
+  <meta name="twitter:description" content="A powerful and the most popular content management system (CMS).">
+<meta name="application-name" content="Bui Van Y">
+<meta name="apple-mobile-web-app-title" content="Bui Van Y"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/svg-spinners--wind-toy.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/vi/posts/2025-08-21-wordpress-local-and-debugging/" title="WordPress Local and Debugging - Bui Van Y" /><link rel="prev" type="text/html" href="http://localhost:1313/vi/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/" title="Github Pages with Jekyll themes and Giscus" /><link rel="next" type="text/html" href="http://localhost:1313/vi/posts/2025-09-21-cve-2025-39566/" title="CVE-2025-39566 Analysis &amp; POC" /><link rel="alternate" type="text/markdown" href="http://localhost:1313/vi/posts/2025-08-21-wordpress-local-and-debugging/index.md" title="WordPress Local and Debugging - Bui Van Y"><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "WordPress Local and Debugging",
+    "inLanguage": "vi",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/vi\/posts\/2025-08-21-wordpress-local-and-debugging\/"
+    },"image": ["http:\/\/localhost:1313\/images\/avatar.png"],"genre": "posts","keywords": "cms, php, wordpress","wordcount":  1689 ,
+    "url": "http:\/\/localhost:1313\/vi\/posts\/2025-08-21-wordpress-local-and-debugging\/","datePublished": "2025-08-21T09:00:00+07:00","dateModified": "2025-10-27T01:26:30+07:00","publisher": {
+      "@type": "Organization",
+      "name": "/images/avatar.png","logo": "http:\/\/localhost:1313\/images\/avatar.png"},"author": {
+        "@type": "Person",
+        "name": "Bui Van Y"
+      },"description": "A powerful and the most popular content management system (CMS)."
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/vi/" title="Bui Van Y"><img class="logo" src='/images/svg-spinners--wind-toy.svg' alt="Bui Van Y" height="32" width="32"><span class="header-title-text">Bui Van Y</span></a><span class="typeit header-subtitle"><template>w41bu1</template></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/vi/posts/"><i class="fa-solid fa-file-alt fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item">
+              <a class="menu-link" href="/vi/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a class="menu-link" href="/vi/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Tìm tiêu đề hoặc nội dung..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Tìm kiếm">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Xoá">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" role="button" aria-label="Đổi chủ đề" title="Đổi chủ đề"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></li><li class="menu-item language-switch">
+            <span role="button" aria-label="Chọn Ngôn ngữ" title="Chọn Ngôn ngữ"><i class="fa-solid fa-language fa-fw" aria-hidden="true"></i></span>
+            <ul class="sub-menu"><li class="menu-item"><a href="/posts/2025-08-21-wordpress-local-and-debugging/" class="menu-link" title="English">English</a></li><li class="menu-item"><span class="text-secondary" title="Vietnamese">Vietnamese</span></li></ul>
+          </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/vi/" title="Bui Van Y"><img class="logo" src='/images/svg-spinners--wind-toy.svg' alt="Bui Van Y" height="26" width="26"><span class="header-title-text">Bui Van Y</span></a><span class="typeit header-subtitle"><template>w41bu1</template></span></div>
+      <div class="theme-switch" role="button" aria-label="Đổi chủ đề"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Tìm tiêu đề hoặc nội dung..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Tìm kiếm">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Xoá">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Huỷ
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/vi/posts/"><i class="fa-solid fa-file-alt fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item"><a class="menu-link" href="/vi/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item"><a class="menu-link" href="/vi/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system"><span class="menu-system-item language-switch">
+              <span role="button" aria-label="Chọn Ngôn ngữ" title="Chọn Ngôn ngữ">Vietnamese<i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+              <select id="language-select" class="language-select" onchange="location = this.value;"><option value="/posts/2025-08-21-wordpress-local-and-debugging/">English</option><option value="/vi/posts/2025-08-21-wordpress-local-and-debugging/" selected disabled>Vietnamese</option></select>
+            </span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"><div class="details related-details open">
+      <div class="details-summary related-summary">
+        <i class="fa-solid fa-fire fa-fade text-danger fa-fw" aria-hidden="true"></i>
+        <span class="related-title">Nội dung liên quan</span><i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+      <div class="details-content related-content">
+        <ul class="related-list"><li class="related-item">
+              <a href="/vi/posts/2025-10-22-wordpress-local-and-debugging-docker/" title="WordPress Local and Debugging in Docker">WordPress Local and Debugging in Docker</a></li><li class="related-item">
+              <a href="/vi/posts/2025-11-13-wordpress-vulnerability-sink/" title="WordPress Vulnerability Sinks">WordPress Vulnerability Sinks</a></li></ul>
+      </div>
+    </div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>WordPress Local and Debugging</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="github.com/w41bu1" title="Tác giả" rel=" author" class="author"><img class="avatar" src='/images/avatar.png' alt="Bui Van Y" height="16" width="16">&nbsp;Bui Van Y</a></span><span class="post-included-in">&nbsp;trong <a href="/vi/categories/web/" class="post-category" title="Danh mục - Web"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Web</a></span></div><div class="post-meta-line"><span title="đăng ngày 2025-08-21 09:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-21">2025-08-21</time></span>&nbsp;<span title="Cập nhật ngày 2025-10-27 01:26:30"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2025-10-27">2025-10-27</time></span>&nbsp;<span title="1689 từ"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>Khoảng 1700 từ</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>8 phút</span>&nbsp;</div>
+    </div><div class="featured-image"><img src='/posts/2025-08-21-wordpress-local-and-debugging/app.png' alt="/posts/2025-08-21-wordpress-local-and-debugging/app.png"></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Nội dung</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#ecosystem">Ecosystem</a></li>
+    <li><a href="#why-wordpress-hacking">Why WordPress Hacking?</a>
+      <ul>
+        <li><a href="#most-popular">Most Popular</a></li>
+        <li><a href="#plugin-and-theme">Plugin and Theme</a></li>
+      </ul>
+    </li>
+    <li><a href="#setup-wordpress-for-hacking">Setup WordPress for Hacking</a>
+      <ul>
+        <li><a href="#install-and-configure-wordpress">Install and configure WordPress</a>
+          <ul>
+            <li><a href="#install-dependencies">Install Dependencies</a></li>
+            <li><a href="#install-wordpress">Install WordPress</a></li>
+            <li><a href="#configure-apache-for-wordpress">Configure Apache for WordPress</a></li>
+            <li><a href="#configure-database">Configure database</a></li>
+            <li><a href="#configure-wordpress-to-connect-to-the-database">Configure WordPress to connect to the database</a></li>
+            <li><a href="#configure-wordpress">Configure WordPress</a></li>
+          </ul>
+        </li>
+        <li><a href="#setup-debug-on-vscode">Setup Debug on VSCode</a>
+          <ul>
+            <li><a href="#add-php-debug-extension-on-vs-code">Add PHP Debug extension on VS Code</a></li>
+            <li><a href="#install-xdebug-on-ubuntu">Install Xdebug on Ubuntu</a></li>
+            <li><a href="#configure-xdebug">Configure Xdebug</a></li>
+            <li><a href="#configure-vscode-launchjson">Configure VSCode <code>launch.json</code></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#extend">Extend</a>
+      <ul>
+        <li><a href="#required-version">Required Version</a></li>
+        <li><a href="#wordpress-auto-update">WordPress Auto Update</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p><strong>WordPress</strong> là một hệ thống quản lý nội dung (CMS) mạnh mẽ và phổ biến nhất cho phép bạn tạo, quản lý và tùy chỉnh các trang web và blog một cách dễ dàng. Nó là open-source CMS, được xây dựng trên PHP và sử dụng cơ sở dữ liệu MySQL hoặc Maria DB.</p>
+<ul>
+<li>Ra đời năm 2003, ban đầu chỉ để viết blog, sau đó phát triển thành nền tảng tạo website, cửa hàng online, diễn đàn, landing page…</li>
+<li>Hiện nay, hơn 40% website trên thế giới chạy bằng WordPress.</li>
+</ul>
+<p>Có 2 phiên bản WordPress:</p>
+<ol>
+<li>WordPress.com</li>
+</ol>
+<ul>
+<li>Dịch vụ hosting do Automattic cung cấp</li>
+<li>Bạn chỉ cần đăng ký tài khoản, không phải cài đặt</li>
+<li>Hạn chế tùy chỉnh, muốn nâng cao thì phải trả phí</li>
+</ul>
+<ol start="2">
+<li>WordPress.org</li>
+</ol>
+<ul>
+<li>Mã nguồn mở, bạn tự tải về và cài đặt lên hosting/server riêng</li>
+<li>Tùy chỉnh toàn diện, có thể cài plugin, theme, viết code, tạo website theo ý mình</li>
+</ul>
+<h2 class="heading-element" id="ecosystem"><span>Ecosystem</span>
+  <a href="#ecosystem" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>Core: CMS chính</li>
+<li>Plugin: Một phần mềm bổ sung có thể được cài đặt trên trang web WordPress để mở rộng chức năng của nó và thêm các tính năng mới</li>
+<li>Themes: Một phần mềm bổ sung đại diện cho sự xuất hiện trực quan và bố cục của một trang web WordPress</li>
+</ul>
+<h2 class="heading-element" id="why-wordpress-hacking"><span>Why WordPress Hacking?</span>
+  <a href="#why-wordpress-hacking" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><a href="https://patchstack.com/whitepaper/state-of-wordpress-security-in-2024"target="_blank" rel="external nofollow noopener noreferrer">State of WordPress Security in 2024</a></p>
+<h3 class="heading-element" id="most-popular"><span>Most Popular</span>
+  <a href="#most-popular" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>Hiện tại hơn 40% website trên toàn thế giới chạy WordPress</li>
+<li>Nghĩa là hacker chỉ cần tìm ra một lỗ hổng phổ biến =&gt; có thể khai thác hàng triệu site cùng lúc</li>
+<li>Giống như <code>“cá nhiều thì chài ở đó”</code></li>
+</ul>
+<h3 class="heading-element" id="plugin-and-theme"><span>Plugin and Theme</span>
+  <a href="#plugin-and-theme" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>WordPress Core đã được xem xét trong 1 thời gian dài bởi hàng ngàn <strong>developers</strong> và <strong>researchers</strong>. Kết quả là rất khó để kẻ tấn công có thể đột nhập vào</li>
+<li>Tuy nhiên, có hàng chục ngàn plugin và theme từ nhiều nguồn, chất lượng không đồng đều được sử dụng</li>
+<li>Nhiều plugin code bảo mật kém, không còn được cập nhật. Hacker chỉ cần scan plugin/theme để tìm version lỗi thời, rồi khai thác</li>
+</ul>
+<h2 class="heading-element" id="setup-wordpress-for-hacking"><span>Setup WordPress for Hacking</span>
+  <a href="#setup-wordpress-for-hacking" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>Có rất nhiều cách để setup WorkPress, tìm kiếm bằng <strong>Google</strong> có thể cung cấp nhiều bài viết về nó. Ở đây tôi sẽ setup trên máy ảo <strong>Ubuntu (22.04)</strong>:</p>
+<ul>
+<li>Không ảnh hưởng đến các dịch vụ của máy thật</li>
+<li>WordPress tương đối nhẹ để sử dụng trên máy ảo</li>
+</ul>
+<h3 class="heading-element" id="install-and-configure-wordpress"><span>Install and configure WordPress</span>
+  <a href="#install-and-configure-wordpress" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 class="heading-element" id="install-dependencies"><span>Install Dependencies</span>
+  <a href="#install-dependencies" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Cài toàn bộ stack cần thiết để chạy WordPress (web server + database + PHP + các extension quan trọng).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install apache2 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 ghostscript <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 libapache2-mod-php <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 mysql-server <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-bcmath <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-curl <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-imagick <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-intl <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-json <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-mbstring <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-mysql <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-xml <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 php-zip</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 class="heading-element" id="install-wordpress"><span>Install WordPress</span>
+  <a href="#install-wordpress" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Tải và cài mã nguồn WordPress vào thư mục web.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># Tạo folder để lưu trữ mã nguồn website</span>
+</span></span><span class="line"><span class="cl">sudo mkdir -p /srv/www
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Đổi owner thành www-data, đây là user mặc định của Apache/Nginx để chạy web server</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Khi Apache/NGINX khởi động, nó không chạy bằng root (nguy hiểm vì có toàn quyền hệ thống), mà sẽ drop xuống chạy dưới quyền www-data.</span>
+</span></span><span class="line"><span class="cl">sudo chown www-data: /srv/www
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Tải gói WordPress mới nhất từ trang chính thức</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Giải nén vao thưc mục /srv/www được tạo ở trên</span>
+</span></span><span class="line"><span class="cl">curl https://wordpress.org/latest.tar.gz <span class="p">|</span> sudo -u www-data tar zx -C /srv/www</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Có thể tải phiên bản cụ thể bằng:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl https://wordpress.org/wordpress-6.6.2.tar.gz <span class="p">|</span> sudo -u www-data tar zx -C /srv/www</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>Cài từ <code>wordpress.org</code> là cách chuẩn nhất và ít rủi ro:</p>
+<ul>
+<li>Ubuntu có sẵn package <strong>wordpress</strong> trong repo. Nhưng nó thường cũ hơn nhiều so với bản chính thức trên <code>wordpress.org</code></li>
+<li>Cộng đồng WordPress chỉ hỗ trợ khi bạn dùng bản chính thức từ <code>wordpress.org</code>, vì nếu bạn gặp lỗi do package của Ubuntu thì họ không giải quyết được.
+{: .prompt-info }</li>
+</ul>
+</blockquote>
+<h4 class="heading-element" id="configure-apache-for-wordpress"><span>Configure Apache for WordPress</span>
+  <a href="#configure-apache-for-wordpress" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Tạo file <code>/etc/apache2/sites-available/wordpress.conf</code> cấu hình Apache cho WordPress:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl"># Lắng nghe trên tất cả địa chỉ IP (*) tại port 80 (HTTP).
+</span></span><span class="line"><span class="cl">&lt;VirtualHost *:80&gt;  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    # Thư mục gốc của website (nơi chứa mã nguồn WordPress).
+</span></span><span class="line"><span class="cl">    DocumentRoot /srv/www/wordpress 
+</span></span><span class="line"><span class="cl">    &lt;Directory /srv/www/wordpress&gt;
+</span></span><span class="line"><span class="cl">        Options FollowSymLinks
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        # Cho phép file .htaccess ghi đè một số thiết lập liên quan đến bảo mật và URL rewriting.
+</span></span><span class="line"><span class="cl">        AllowOverride Limit Options FileInfo 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        # Khi truy cập thư mục, Apache sẽ tìm file index.php để hiển thị.
+</span></span><span class="line"><span class="cl">        DirectoryIndex index.php 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        # Cho phép tất cả mọi người truy cập (cần cho website public).
+</span></span><span class="line"><span class="cl">        Require all granted 
+</span></span><span class="line"><span class="cl">    &lt;/Directory&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    # Riêng thư mục wp-content (chứa plugin, theme, upload) cũng cho phép truy cập.
+</span></span><span class="line"><span class="cl">    &lt;Directory /srv/www/wordpress/wp-content&gt; 
+</span></span><span class="line"><span class="cl">        Options FollowSymLinks
+</span></span><span class="line"><span class="cl">        Require all granted
+</span></span><span class="line"><span class="cl">    &lt;/Directory&gt;
+</span></span><span class="line"><span class="cl">&lt;/VirtualHost&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Kích hoạt site WordPress</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo a2ensite wordpress</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>a2ensite</strong> = <code>enable site config</code> (tạo symlink từ <code>/etc/apache2/sites-available/wordpress.conf</code> sang <code>/etc/apache2/sites-enabled/</code>)</li>
+<li>Sau đó site wordpress sẽ được Apache load khi restart.</li>
+</ul>
+<p><strong>Kích hoạt module rewrite</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo a2enmod rewrite</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>WordPress cần module mod_rewrite để hỗ trợ <strong>Pretty Permalinks</strong> (ví dụ <code>/blog/hello-world/</code> thay vì <code>?p=123</code>)</li>
+</ul>
+<p><strong>Vô hiệu hóa site mặc định (Option)</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo a2dissite 000-default</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Apache mặc định có site <code>000-default.conf</code> (chỉ hiển thị &ldquo;It works!&rdquo;)</li>
+<li>Nếu không disable, site mặc định có thể chiếm port <code>80</code> trước WordPress</li>
+</ul>
+<p>👉 Hoặc nếu không muốn disable, có thể thêm ServerName vào VirtualHost WordPress để Apache phân biệt domain.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">&lt;VirtualHost *:80&gt;
+</span></span><span class="line"><span class="cl">    ServerName mywordpress.local
+</span></span><span class="line"><span class="cl">    DocumentRoot /srv/www/wordpress
+</span></span><span class="line"><span class="cl">    ...
+</span></span><span class="line"><span class="cl">&lt;/VirtualHost&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Muốn chạy được thì phải cấu hình DNS hoặc sửa file hosts:</p>
+<ul>
+<li>Linux/Mac: <code>/etc/hosts</code></li>
+<li>Windows: <code>C:\Windows\System32\drivers\etc\hosts</code></li>
+</ul>
+<p><strong>Reload Apache</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo service apache2 reload</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Tải lại cấu hình mới mà không cần dừng server</li>
+</ul>
+<h4 class="heading-element" id="configure-database"><span>Configure database</span>
+  <a href="#configure-database" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>WordPress cần một cơ sở dữ liệu (MySQL/MariaDB) để lưu:</p>
+<ul>
+<li>Bài viết, trang, menu</li>
+<li>Người dùng, mật khẩu (hash)</li>
+<li>Cấu hình site</li>
+<li>Plugins, themes settings</li>
+</ul>
+<p><strong>Mở MySQL với quyền root</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo mysql -u root</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Cấu hình MySQL</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- Tạo database wordpress 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">wordpress</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- Tạo user riêng cho wordpress
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="n">wordpress</span><span class="o">@</span><span class="n">localhost</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;&lt;your-password&gt;&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- Cấp quyền cho user WordPress
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">SELECT</span><span class="p">,</span><span class="k">INSERT</span><span class="p">,</span><span class="k">UPDATE</span><span class="p">,</span><span class="k">DELETE</span><span class="p">,</span><span class="k">CREATE</span><span class="p">,</span><span class="k">DROP</span><span class="p">,</span><span class="k">ALTER</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">wordpress</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">wordpress</span><span class="o">@</span><span class="n">localhost</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- Làm mới lại quyền
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="n">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- Thoát
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="n">quit</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Bye</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Khởi động lại dịch vụ</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo service mysql start</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 class="heading-element" id="configure-wordpress-to-connect-to-the-database"><span>Configure WordPress to connect to the database</span>
+  <a href="#configure-wordpress-to-connect-to-the-database" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p><strong>Copy file cấu hình mẫu</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo -u www-data cp /srv/www/wordpress/wp-config-sample.php /srv/www/wordpress/wp-config.php</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>WordPress khi tải về có sẵn file wp-config-sample.php</li>
+<li>Bạn copy nó thành wp-config.php để làm file cấu hình chính cho site</li>
+</ul>
+<p><strong>Chỉnh sửa thông tin database</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo -u www-data sed -i <span class="s1">&#39;s/database_name_here/wordpress/&#39;</span> /srv/www/wordpress/wp-config.php
+</span></span><span class="line"><span class="cl">sudo -u www-data sed -i <span class="s1">&#39;s/username_here/wordpress/&#39;</span> /srv/www/wordpress/wp-config.php
+</span></span><span class="line"><span class="cl">sudo -u www-data sed -i <span class="s1">&#39;s/password_here/&lt;your-password&gt;/&#39;</span> /srv/www/wordpress/wp-config.php</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Đây là 3 dòng thay thế text trong file <code>wp-config.php</code>:
+<ul>
+<li><code>database_name_here</code> =&gt; <code>wordpress</code> (tên DB đã tạo ở bước trước)</li>
+<li><code>username_here</code> =&gt; <code>wordpress</code> (user MySQL đã tạo)</li>
+<li><code>password_here</code> =&gt; <code>&lt;your-password&gt;</code> (password đã set)</li>
+</ul>
+</li>
+<li>Khi Apache chạy WordPress, nó sẽ đọc file này để biết dùng user nào + DB nào để kết nối MySQL</li>
+</ul>
+<p><strong>Thêm Secret Keys và Salts</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo -u www-data nano /srv/www/wordpress/wp-config.php</span></span></code></pre></td></tr></table>
+</div>
+</div><p>👉 Đây là chuỗi bí mật mà WordPress dùng để:</p>
+<ul>
+<li>Mã hóa session cookies</li>
+<li>Sinh ra token (nonce) chống CSRF</li>
+<li>Ngăn chặn tấn công kiểu “known secret” (ví dụ kẻ tấn công đoán được secret mặc định để giả mạo login)</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;AUTH_KEY&#39;</span><span class="p">,</span>         <span class="s1">&#39;put your unique phrase here&#39;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;SECURE_AUTH_KEY&#39;</span><span class="p">,</span>  <span class="s1">&#39;put your unique phrase here&#39;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;LOGGED_IN_KEY&#39;</span><span class="p">,</span>    <span class="s1">&#39;put your unique phrase here&#39;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;NONCE_KEY&#39;</span><span class="p">,</span>        <span class="s1">&#39;put your unique phrase here&#39;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;AUTH_SALT&#39;</span><span class="p">,</span>        <span class="s1">&#39;put your unique phrase here&#39;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;SECURE_AUTH_SALT&#39;</span><span class="p">,</span> <span class="s1">&#39;put your unique phrase here&#39;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;LOGGED_IN_SALT&#39;</span><span class="p">,</span>   <span class="s1">&#39;put your unique phrase here&#39;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;NONCE_SALT&#39;</span><span class="p">,</span>       <span class="s1">&#39;put your unique phrase here&#39;</span> <span class="p">);</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Thay đổi nó bằng các chuỗi random sau: <a href="https://api.wordpress.org/secret-key/1.1/salt/"target="_blank" rel="external nofollow noopener noreferrer">https://api.wordpress.org/secret-key/1.1/salt/</a></p>
+<h4 class="heading-element" id="configure-wordpress"><span>Configure WordPress</span>
+  <a href="#configure-wordpress" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Truy cập <a href="http://localhost"target="_blank" rel="external nofollow noopener noreferrer">http://localhost</a>, đặt <strong>site title</strong>, <strong>username</strong>, <strong>password</strong>, <strong>email</strong> cho user <code>admin</code></p>
+<p><img loading="lazy" src='https://ubuntucommunity.s3.us-east-2.amazonaws.com/original/2X/e/ebe4d6066e0c32f14beca85ffd53e5915a4ab278.png' alt="Configure WordPress"></p>
+<h3 class="heading-element" id="setup-debug-on-vscode"><span>Setup Debug on VSCode</span>
+  <a href="#setup-debug-on-vscode" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Để hiểu được luồng của trang web chạy và xử lí ở mỗi request, ta cần phải debug nó.</p>
+<h4 class="heading-element" id="add-php-debug-extension-on-vs-code"><span>Add PHP Debug extension on VS Code</span>
+  <a href="#add-php-debug-extension-on-vs-code" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Vào <strong>Extensions (Ctrl+Shift+X)</strong> =&gt; tìm <strong>PHP Debug (by Felix Becker)</strong> =&gt; <strong>Install</strong>.
+Extension này kết nối với <strong>Xdebug</strong>.</p>
+<h4 class="heading-element" id="install-xdebug-on-ubuntu"><span>Install Xdebug on Ubuntu</span>
+  <a href="#install-xdebug-on-ubuntu" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install php-xdebug -y</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Kiểm tra cài chưa:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">php -v</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Nếu có dòng <code>with Xdebug v3.x.x</code> nghĩa là đã OK.</p>
+<h4 class="heading-element" id="configure-xdebug"><span>Configure Xdebug</span>
+  <a href="#configure-xdebug" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo nano /etc/php/&lt;version&gt;/apache2/php.ini</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Thêm vào cuối file</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="na">zend_extension</span><span class="o">=</span><span class="s">xdebug.so</span>
+</span></span><span class="line"><span class="cl"><span class="na">xdebug.mode</span><span class="o">=</span><span class="s">debug</span>
+</span></span><span class="line"><span class="cl"><span class="na">xdebug.start_with_request</span><span class="o">=</span><span class="s">yes</span>
+</span></span><span class="line"><span class="cl"><span class="na">xdebug.client_host</span><span class="o">=</span><span class="s">127.0.0.1</span>
+</span></span><span class="line"><span class="cl"><span class="na">xdebug.client_port</span><span class="o">=</span><span class="s">9003</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Port mặc định mới của Xdebug v3 là <strong>9003</strong>.</p>
+<p>Sau đó restart Apache:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl restart apache2</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 class="heading-element" id="configure-vscode-launchjson"><span>Configure VSCode <code>launch.json</code></span>
+  <a href="#configure-vscode-launchjson" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Mở thư mục chứa trang web wordpress bằng VSCode</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">code /srv/www/wordpress</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Trong <strong>VS Code</strong> =&gt; <strong>Run and Debug (Ctrl+Shift+D)</strong> =&gt; tạo file <code>launch.json</code> với nội dung:</p>
+<json-viewer value="&#34;{\r\n  \&#34;version\&#34;: \&#34;0.2.0\&#34;,\r\n  \&#34;configurations\&#34;: [\r\n    {\r\n      \&#34;name\&#34;: \&#34;Listen for Xdebug\&#34;,\r\n      \&#34;type\&#34;: \&#34;php\&#34;,\r\n      \&#34;request\&#34;: \&#34;launch\&#34;,\r\n      \&#34;port\&#34;: 9003,\r\n      \&#34;pathMappings\&#34;: {\r\n        \&#34;/srv/www/wordpress\&#34;: \&#34;${workspaceFolder}\&#34;\r\n      }\r\n    }\r\n  ]\r\n}&#34;" expand-depth="1" boxed copyable="{&#34;copiedText&#34;:&#34;Đã sao chép&#34;,&#34;copyText&#34;:&#34;Sao chép&#34;}"></json-viewer><p><code>pathMappings</code>: ánh xạ thư mục trong <strong>container/server</strong> (<code>/srv/www/wordpress</code>) về thư mục <strong>local</strong> của trong VS Code.</p>
+<p>Như vậy là đã hoàn thành setup WordPress trên local kết hợp Debug nó trên VSCode.</p>
+<h2 class="heading-element" id="extend"><span>Extend</span>
+  <a href="#extend" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 class="heading-element" id="required-version"><span>Required Version</span>
+  <a href="#required-version" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Mỗi phiên bản WordPress thường đi kèm 1 phiên bản PHP thích hợp. Nên kiểm tra tính tương thích này để quá trình setup không bị lỗi.</p>
+<h3 class="heading-element" id="wordpress-auto-update"><span>WordPress Auto Update</span>
+  <a href="#wordpress-auto-update" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Từ WordPress <strong>3.7 trở đi</strong> (2013), WordPress có cơ chế tự động cập nhật (<strong>automatic background updates</strong>) cho:</p>
+<ul>
+<li>Bản vá bảo mật (security release).</li>
+<li>Bản bảo trì (maintenance release).</li>
+<li>Không tự động update major version (trừ khi bật rõ ràng).</li>
+</ul>
+<p>Hệ thống kiểm tra với server <strong>api.wordpress.org</strong> để xem có bản vá nào mới sẽ tự động nâng cấp background lên. Việc này diễn ra rất nhanh sau khi setup, nên bạn thấy code đổi khác so với source gốc.</p>
+<p>Quá trình setup diễn ra khi truy cập <strong>/wp-admin/install.php</strong></p>
+<p>Để vô hiệu hóa cơ chế cập nhật tự động này, thêm dòng sau vào <code>wp-config.php</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;WP_AUTO_UPDATE_CORE&#39;</span><span class="p">,</span> <span class="k">false</span> <span class="p">);</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div><hr class="awesome-hr" />
+    <h2 id="see-also">Nội dung liên quan</h2>
+    <ul><li>
+          <a href="/vi/posts/2025-10-22-wordpress-local-and-debugging-docker/" title="WordPress Local and Debugging in Docker">WordPress Local and Debugging in Docker</a></li><li>
+          <a href="/vi/posts/2025-11-13-wordpress-vulnerability-sink/" title="WordPress Vulnerability Sinks">WordPress Vulnerability Sinks</a></li></ul><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod"><span title="Cập nhật ngày 2025-10-27 01:26:30">Cập nhật ngày 2025-10-27&nbsp;<a class="git-hash" href="https://github.com/w41bu1/w41bu1.github.io/commit/6c5d1faabdd7fd653a880271c5de770a17979544" rel="external nofollow noopener noreferrer" target="_blank" title="first commit&#10&#10Commit: 6c5d1faabdd7fd653a880271c5de770a17979544 [6c5d1fa]&#10Author: w41bu1&#10Date: 2025-10-27 01:26:30"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i>6c5d1fa</a></span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/vi/posts/2025-08-21-wordpress-local-and-debugging/index.md" title="Đọc với định dạng Markdown" class="link-to-markdown">Đọc với định dạng Markdown</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts%5c2025-08-21-wordpress-local-and-debugging%5cindex.vi.md?plain=1" title="Xem mã nguồn"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">Xem mã nguồn</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/edit/main/content/posts%5c2025-08-21-wordpress-local-and-debugging%5cindex.vi.md" title="Chỉnh sửa trang này"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Chỉnh sửa trang này</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/issues/new?title=[BUG]%20WordPress&#43;Local&#43;and&#43;Debugging&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cWordPress&#43;Local&#43;and&#43;Debugging%7c%0A%7cURL%7chttp://localhost:1313/vi/posts/2025-08-21-wordpress-local-and-debugging/%7c%0A%7cFilename%7chttps://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts%5c2025-08-21-wordpress-local-and-debugging%5cindex.vi.md?plain=1%7c" title="Báo cáo lỗi"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Báo cáo lỗi</a></span><span><a href="vscode://file/D:%5cwork%5cproject%5cw41bu1.github.io%5ccontent%5cposts%5c2025-08-21-wordpress-local-and-debugging%5cindex.vi.md" title="Mở trong trình chỉnh sửa"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-vscode">Mở trong trình chỉnh sửa</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Chia sẻ trên X" data-sharer="twitter" data-url="http://localhost:1313/vi/posts/2025-08-21-wordpress-local-and-debugging/" data-title="WordPress Local and Debugging" data-hashtags="cms,php,wordpress"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Chia sẻ trên Facebook" data-sharer="facebook" data-url="http://localhost:1313/vi/posts/2025-08-21-wordpress-local-and-debugging/" data-hashtag="cms"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Chia sẻ trên Linkedin" data-sharer="linkedin" data-url="http://localhost:1313/vi/posts/2025-08-21-wordpress-local-and-debugging/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Chia sẻ trên Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/vi/posts/2025-08-21-wordpress-local-and-debugging/" data-title="WordPress Local and Debugging"><i class="fa-brands fa-hacker-news fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/vi/tags/cms/" class="post-tag" title="Nhãn - Cms">Cms</a><a href="/vi/tags/php/" class="post-tag" title="Nhãn - Php">Php</a><a href="/vi/tags/wordpress/" class="post-tag" title="Nhãn - Wordpress">Wordpress</a></section>
+    <section><span><a href="javascript:void(0);" onclick="window.history.back();">Quay lại</a></span>&nbsp;|&nbsp;<span><a href="/vi/">Trang chủ</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/vi/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/" class="post-nav-item" rel="prev" title="Github Pages With Jekyll Themes and Giscus"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Github Pages With Jekyll Themes and Giscus</a><a href="/vi/posts/2025-09-21-cve-2025-39566/" class="post-nav-item" rel="next" title="CVE-2025-39566 Analysis &amp; POC">CVE-2025-39566 Analysis &amp; POC<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Nội dung"><h2 class="toc-title">Nội dung&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
+      <div class="toc">
+        <h2 class="toc-title">Nội dung</h2>
+        <div class="toc-content" id="toc-content-drawer"><nav >
+  <ul>
+    <li><a href="#ecosystem">Ecosystem</a></li>
+    <li><a href="#why-wordpress-hacking">Why WordPress Hacking?</a>
+      <ul>
+        <li><a href="#most-popular">Most Popular</a></li>
+        <li><a href="#plugin-and-theme">Plugin and Theme</a></li>
+      </ul>
+    </li>
+    <li><a href="#setup-wordpress-for-hacking">Setup WordPress for Hacking</a>
+      <ul>
+        <li><a href="#install-and-configure-wordpress">Install and configure WordPress</a>
+          <ul>
+            <li><a href="#install-dependencies">Install Dependencies</a></li>
+            <li><a href="#install-wordpress">Install WordPress</a></li>
+            <li><a href="#configure-apache-for-wordpress">Configure Apache for WordPress</a></li>
+            <li><a href="#configure-database">Configure database</a></li>
+            <li><a href="#configure-wordpress-to-connect-to-the-database">Configure WordPress to connect to the database</a></li>
+            <li><a href="#configure-wordpress">Configure WordPress</a></li>
+          </ul>
+        </li>
+        <li><a href="#setup-debug-on-vscode">Setup Debug on VSCode</a>
+          <ul>
+            <li><a href="#add-php-debug-extension-on-vs-code">Add PHP Debug extension on VS Code</a></li>
+            <li><a href="#install-xdebug-on-ubuntu">Install Xdebug on Ubuntu</a></li>
+            <li><a href="#configure-xdebug">Configure Xdebug</a></li>
+            <li><a href="#configure-vscode-launchjson">Configure VSCode <code>launch.json</code></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#extend">Extend</a>
+      <ul>
+        <li><a href="#required-version">Required Version</a></li>
+        <li><a href="#wordpress-auto-update">WordPress Auto Update</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div>
+    </dialog></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="github.com/w41bu1">Bui Van Y</a></span><span class="license footer-divider">w41bu1</span></div><div class="footer-line statistics"></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='Tổng khách truy cập'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Tổng lượt truy cập'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian"><span class="gov"><i class="fa-solid fa-user-secret"></i></span><span class="icp footer-divider"><i class="fa-solid fa-bug"></i></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="Lên trên"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><svg viewBox="0 0 100 100">
+              <circle class="bg" cx="50" cy="50" r="50"></circle>
+              <circle class="progress" cx="50" cy="50" r="50"></circle>
+            </svg></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="Nội dung"><i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">Trang web này hoạt động tốt nhất khi JavaScript được kích hoạt.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/json-viewer-element/json-viewer-element.umd.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/cell-watermark/watermark.min.js" defer></script><script src="/lib/pace/pace.min.js" async defer></script><script src="/js/config/b7af9f20e93bc441098bfe0eeccea87b.js" defer></script><script src="/js/theme.min.js" defer></script><script src="/js/flyfish.min.js" defer></script></body>
+</html>

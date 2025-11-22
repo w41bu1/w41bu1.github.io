@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="vi">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Github Pages With Jekyll Themes and Giscus - Bui Van Y</title><meta name="author" content="Bui Van Y">
+<meta name="description" content="How to create your personal blog using Github Pages with &#34;comment&#34; feature"><meta name="keywords" content='blog, jekyll, giscus, github'>
+  <meta itemprop="name" content="Github Pages with Jekyll themes and Giscus">
+  <meta itemprop="description" content="How to create your personal blog using Github Pages with &#34;comment&#34; feature">
+  <meta itemprop="datePublished" content="2025-08-19T01:10:00+07:00">
+  <meta itemprop="dateModified" content="2025-10-27T01:26:30+07:00">
+  <meta itemprop="wordCount" content="821">
+  <meta itemprop="image" content="http://localhost:1313/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/app.png">
+  <meta itemprop="keywords" content="Blog,Jekyll,Giscus,Github"><meta property="og:url" content="http://localhost:1313/vi/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/">
+  <meta property="og:site_name" content="Bui Van Y">
+  <meta property="og:title" content="Github Pages with Jekyll themes and Giscus">
+  <meta property="og:description" content="How to create your personal blog using Github Pages with &#34;comment&#34; feature">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-19T01:10:00+07:00">
+    <meta property="article:modified_time" content="2025-10-27T01:26:30+07:00">
+    <meta property="article:tag" content="Blog">
+    <meta property="article:tag" content="Jekyll">
+    <meta property="article:tag" content="Giscus">
+    <meta property="article:tag" content="Github">
+    <meta property="og:image" content="http://localhost:1313/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/app.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/app.png">
+  <meta name="twitter:title" content="Github Pages with Jekyll themes and Giscus">
+  <meta name="twitter:description" content="How to create your personal blog using Github Pages with &#34;comment&#34; feature">
+<meta name="application-name" content="Bui Van Y">
+<meta name="apple-mobile-web-app-title" content="Bui Van Y"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/svg-spinners--wind-toy.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/vi/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/" title="Github Pages with Jekyll themes and Giscus - Bui Van Y" /><link rel="next" type="text/html" href="http://localhost:1313/vi/posts/2025-08-21-wordpress-local-and-debugging/" title="WordPress Local and Debugging" /><link rel="alternate" type="text/markdown" href="http://localhost:1313/vi/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/index.md" title="Github Pages with Jekyll themes and Giscus - Bui Van Y"><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Github Pages with Jekyll themes and Giscus",
+    "inLanguage": "vi",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/vi\/posts\/2025-08-19-github-pages-with-jekyll-themes-and-giscus\/"
+    },"image": ["http:\/\/localhost:1313\/images\/avatar.png"],"genre": "posts","keywords": "blog, jekyll, giscus, github","wordcount":  821 ,
+    "url": "http:\/\/localhost:1313\/vi\/posts\/2025-08-19-github-pages-with-jekyll-themes-and-giscus\/","datePublished": "2025-08-19T01:10:00+07:00","dateModified": "2025-10-27T01:26:30+07:00","publisher": {
+      "@type": "Organization",
+      "name": "/images/avatar.png","logo": "http:\/\/localhost:1313\/images\/avatar.png"},"author": {
+        "@type": "Person",
+        "name": "Bui Van Y"
+      },"description": "How to create your personal blog using Github Pages with \"comment\" feature"
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/vi/" title="Bui Van Y"><img class="logo" src='/images/svg-spinners--wind-toy.svg' alt="Bui Van Y" height="32" width="32"><span class="header-title-text">Bui Van Y</span></a><span class="typeit header-subtitle"><template>w41bu1</template></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/vi/posts/"><i class="fa-solid fa-file-alt fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item">
+              <a class="menu-link" href="/vi/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a class="menu-link" href="/vi/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Tìm tiêu đề hoặc nội dung..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Tìm kiếm">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Xoá">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" role="button" aria-label="Đổi chủ đề" title="Đổi chủ đề"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></li><li class="menu-item language-switch">
+            <span role="button" aria-label="Chọn Ngôn ngữ" title="Chọn Ngôn ngữ"><i class="fa-solid fa-language fa-fw" aria-hidden="true"></i></span>
+            <ul class="sub-menu"><li class="menu-item"><a href="/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/" class="menu-link" title="English">English</a></li><li class="menu-item"><span class="text-secondary" title="Vietnamese">Vietnamese</span></li></ul>
+          </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/vi/" title="Bui Van Y"><img class="logo" src='/images/svg-spinners--wind-toy.svg' alt="Bui Van Y" height="26" width="26"><span class="header-title-text">Bui Van Y</span></a><span class="typeit header-subtitle"><template>w41bu1</template></span></div>
+      <div class="theme-switch" role="button" aria-label="Đổi chủ đề"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Tìm tiêu đề hoặc nội dung..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Tìm kiếm">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Xoá">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Huỷ
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/vi/posts/"><i class="fa-solid fa-file-alt fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item"><a class="menu-link" href="/vi/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item"><a class="menu-link" href="/vi/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system"><span class="menu-system-item language-switch">
+              <span role="button" aria-label="Chọn Ngôn ngữ" title="Chọn Ngôn ngữ">Vietnamese<i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+              <select id="language-select" class="language-select" onchange="location = this.value;"><option value="/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/">English</option><option value="/vi/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/" selected disabled>Vietnamese</option></select>
+            </span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"><div class="details related-details open">
+      <div class="details-summary related-summary">
+        <i class="fa-solid fa-fire fa-fade text-danger fa-fw" aria-hidden="true"></i>
+        <span class="related-title">Nội dung liên quan</span><i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+      <div class="details-content related-content">
+        <ul class="related-list"><li class="related-item">
+              <a href="/vi/posts/2025-11-21-cve-2025-2939/" title="CVE-2025-2939 Analysis &amp; POC">CVE-2025-2939 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2025-11-20-cve-2025-49386/" title="CVE-2025-53572 Analysis &amp; POC">CVE-2025-53572 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2025-11-19-cve-2025-6742/" title="CVE-2025-6742 Analysis &amp; POC">CVE-2025-6742 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2025-11-18-cve-2025-53572/" title="CVE-2025-53572 Analysis &amp; POC">CVE-2025-53572 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2025-11-17-cve-2025-49401/" title="CVE-2025-49401 Analysis &amp; POC">CVE-2025-49401 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2025-11-14-cve-2025-9083/" title="CVE-2025-9083 Analysis &amp; POC">CVE-2025-9083 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2025-11-13-cve-2025-7847/" title="CVE-2025-7847 Analysis &amp; POC">CVE-2025-7847 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2025-11-12-cve-2025-32202/" title="CVE-2025-32202 Analysis &amp; POC">CVE-2025-32202 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2025-11-11-cve-2025-47637/" title="CVE-2025-47637 Analysis &amp; POC">CVE-2025-47637 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2025-11-10-cve-2023-48777/" title="CVE-2023-48777 Analysis &amp; POC">CVE-2023-48777 Analysis &amp; POC</a></li></ul>
+      </div>
+    </div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Github Pages With Jekyll Themes and Giscus</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="github.com/w41bu1" title="Tác giả" rel=" author" class="author"><img class="avatar" src='/images/avatar.png' alt="Bui Van Y" height="16" width="16">&nbsp;Bui Van Y</a></span><span class="post-included-in">&nbsp;trong <a href="/vi/categories/web/" class="post-category" title="Danh mục - Web"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Web</a></span></div><div class="post-meta-line"><span title="đăng ngày 2025-08-19 01:10:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-19">2025-08-19</time></span>&nbsp;<span title="Cập nhật ngày 2025-10-27 01:26:30"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2025-10-27">2025-10-27</time></span>&nbsp;<span title="821 từ"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>Khoảng 900 từ</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 phút</span>&nbsp;</div>
+    </div><div class="featured-image"><img src='/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/app.png' alt="/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/app.png"></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Nội dung</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#creating-a-site-repository">Creating a Site Repository</a></li>
+    <li><a href="#setting-up-the-environment">Setting up the Environment</a>
+      <ul>
+        <li><a href="#using-dev-containers-recommended-for-windows">Using Dev Containers (Recommended for Windows)</a></li>
+        <li><a href="#setting-up-natively-recommended-for-unix-like-os">Setting up Natively (Recommended for Unix-like OS)</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#start-the-jekyll-server">Start the Jekyll Server</a></li>
+        <li><a href="#configuration">Configuration</a></li>
+        <li><a href="#comment-feature-via-giscus">Comment feature via Giscus</a></li>
+        <li><a href="#customize-the-favicon">Customize the Favicon</a></li>
+      </ul>
+    </li>
+    <li><a href="#extends">Extends</a>
+      <ul>
+        <li><a href="#remove-meta-tag-in-footer">Remove meta tag in Footer</a></li>
+        <li><a href="#write-a-post">Write a post</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>Khi bắt đầu tạo blog cá nhân, có ba công cụ bạn cần biết: GitHub Pages, Jekyll và Giscus.</p>
+<ul>
+<li>
+<p><strong>Github Pages</strong>: Dịch vụ miễn phí từ GitHub, cho phép bạn triển khai website tĩnh trực tiếp từ repository. Chỉ cần push code lên GitHub, blog của bạn sẽ tự động xuất hiện trên Internet mà không cần server riêng.</p>
+</li>
+<li>
+<p><strong>Jekyll</strong>: Một static site generator tích hợp sẵn với GitHub Pages. Jekyll giúp bạn dễ dàng tạo blog từ các file Markdown, tổ chức nội dung bằng template và theme sẵn có.</p>
+</li>
+<li>
+<p><strong>Giscus</strong>: Một hệ thống bình luận hiện đại dựa trên GitHub Discussions. Thay vì phải dùng dịch vụ ngoài như Disqus, bạn có thể tận dụng GitHub để quản lý comment, vừa gọn nhẹ vừa thân thiện với developer.</p>
+</li>
+</ul>
+<h2 class="heading-element" id="requirements"><span>Requirements</span>
+  <a href="#requirements" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>Tài khoản <a href="https://github.com/"target="_blank" rel="external nofollow noopener noreferrer"><strong>Github</strong></a></li>
+<li>Kiến thức cơ bản về <a href="https://markdownlivepreview.com/"target="_blank" rel="external nofollow noopener noreferrer"><strong>Markdown</strong></a></li>
+</ul>
+<h2 class="heading-element" id="creating-a-site-repository"><span>Creating a Site Repository</span>
+  <a href="#creating-a-site-repository" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>Ở đây, tôi sử dụng <a href="https://chirpy.cotes.page/"target="_blank" rel="external nofollow noopener noreferrer"><strong>Chirpy themes</strong></a>, đây là theme khá nổi tiếng dành cho GitHub Pages, được tối ưu cho việc viết blog cá nhân hoặc technical blog.</p>
+<p><strong>Các bước thực hiện</strong>:</p>
+<ul>
+<li>Đăng nhập vào <a href="https://github.com/"target="_blank" rel="external nofollow noopener noreferrer"><strong>Github</strong></a> và di chuyển đến <a href="https://github.com/cotes2020/chirpy-starter"target="_blank" rel="external nofollow noopener noreferrer"><strong>starter</strong></a></li>
+<li>Thay vì Fork, ta click <kbd>Use this template</kbd> và chọn <kbd>Create a new repository</kbd> để tự động tạo Site Repository.</li>
+<li>Đặt tên cho Repository mới <code>&lt;username&gt;.github.io</code>, thay đổi <code>&lt;username&gt;</code> thành Github username của bạn.</li>
+</ul>
+<h2 class="heading-element" id="setting-up-the-environment"><span>Setting up the Environment</span>
+  <a href="#setting-up-the-environment" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>Có 2 lý do chính bạn nên setup môi trường trên máy local khi phát triển blog:</p>
+<ul>
+<li>Sau khi push code lên Repository, GitHub Actions sẽ mất một khoảng thời gian để chạy rồi mới build và render ra GitHub Pages.</li>
+<li>Khi dev trực tiếp trên local, bạn có thể quan sát kết quả ngay lập tức, nhanh hơn và thuận tiện hơn.</li>
+</ul>
+<h3 class="heading-element" id="using-dev-containers-recommended-for-windows"><span>Using Dev Containers (Recommended for Windows)</span>
+  <a href="#using-dev-containers-recommended-for-windows" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><strong>Dev Containers</strong> cung cấp một môi trường cô lập bằng Docker, giúp tránh xung đột với hệ thống và đảm bảo mọi dependency đều được quản lý trong container.</p>
+<p><strong>Các bước thực hiện</strong>:</p>
+<ol>
+<li>Cài đặt Docker:
+<ul>
+<li>Trên Windows/macOS: cài <a href="https://www.docker.com/products/docker-desktop/"target="_blank" rel="external nofollow noopener noreferrer">Docker Desktop</a>.</li>
+<li>Trên Linux: cài <a href="https://docs.docker.com/engine/install/"target="_blank" rel="external nofollow noopener noreferrer">Docker Engine</a>.</li>
+</ul>
+</li>
+<li>Cài <a href="https://code.visualstudio.com/"target="_blank" rel="external nofollow noopener noreferrer">VS Code</a> và extension <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers"target="_blank" rel="external nofollow noopener noreferrer">Dev Containers</a>.</li>
+<li>Clone repository:
+<ul>
+<li>Nếu dùng Docker Desktop: mở VS Code và <a href="https://code.visualstudio.com/docs/devcontainers/containers#_quick-start-open-a-git-repository-or-github-pr-in-an-isolated-container-volume"target="_blank" rel="external nofollow noopener noreferrer">clone repo trong container volume</a>.</li>
+<li>Nếu dùng Docker Engine: clone repo về local, sau đó <a href="https://code.visualstudio.com/docs/devcontainers/containers#_quick-start-open-an-existing-folder-in-a-container"target="_blank" rel="external nofollow noopener noreferrer">mở bằng container</a> trong VS Code.</li>
+</ul>
+</li>
+<li>Chờ quá trình thiết lập Dev Containers hoàn tất.</li>
+</ol>
+<h3 class="heading-element" id="setting-up-natively-recommended-for-unix-like-os"><span>Setting up Natively (Recommended for Unix-like OS)</span>
+  <a href="#setting-up-natively-recommended-for-unix-like-os" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Với các hệ điều hành dạng Unix-like (Linux, macOS), bạn có thể setup môi trường trực tiếp (native) để đạt hiệu năng tốt nhất. Ngoài ra, vẫn có thể dùng Dev Containers như một lựa chọn thay thế.</p>
+<p><strong>Các bước thực hiện</strong>:</p>
+<ol>
+<li>Làm theo <a href="https://jekyllrb.com/docs/installation/"target="_blank" rel="external nofollow noopener noreferrer">hướng dẫn cài đặt Jekyll</a> và đảm bảo đã cài đặt <a href="https://git-scm.com/"target="_blank" rel="external nofollow noopener noreferrer">Git</a>.</li>
+<li>Clone repository về máy local.</li>
+<li>Nếu bạn fork theme, cài <a href="https://nodejs.org/"target="_blank" rel="external nofollow noopener noreferrer">Node.js</a> và chạy <code>bash tools/init.sh</code> trong thư mục gốc để khởi tạo repo.</li>
+<li>Chạy lệnh dưới đây ở thư mục gốc để toàn bộ gem sẽ được cài vào <code>./vendor/bundle/</code> trong project, không cần <strong>sudo</strong> và không đụng gì đến <code>/var/lib/gems..</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bundle config <span class="nb">set</span> --local path <span class="s1">&#39;vendor/bundle&#39;</span>
+</span></span><span class="line"><span class="cl">bundle install</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 class="heading-element" id="usage"><span>Usage</span>
+  <a href="#usage" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 class="heading-element" id="start-the-jekyll-server"><span>Start the Jekyll Server</span>
+  <a href="#start-the-jekyll-server" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Để chạy site trên local, sử dụng lệnh dưới đây:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bundle <span class="nb">exec</span> jekyll s</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 class="heading-element" id="configuration"><span>Configuration</span>
+  <a href="#configuration" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Một số biến cần cấu hình trong <code>_config.yml</code>, bao gồm:</p>
+<ul>
+<li><code>lang</code>: Set language cho website của bạn</li>
+<li><code>url</code>: Trỏ đến website của bạn</li>
+<li><code>title</code>: Title chính, nằm dưới avatar</li>
+<li><code>tagline</code>: Subtitle, mô tả trang web</li>
+<li><code>avatar</code>: hỗ trợ local và CORS resources, có thể sử dụng <code>gif</code></li>
+</ul>
+<h3 class="heading-element" id="comment-feature-via-giscus"><span>Comment feature via Giscus</span>
+  <a href="#comment-feature-via-giscus" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Ta sử dụng <a href="https://giscus.app"target="_blank" rel="external nofollow noopener noreferrer"><strong>Giscus</strong></a> làm hệ thống comment cho website, ngoài ra còn các option khác như: <a href="https://disqus.com/"target="_blank" rel="external nofollow noopener noreferrer"><strong>Disqus</strong></a>, <a href="https://utteranc.es/"target="_blank" rel="external nofollow noopener noreferrer"><strong>Utterances</strong></a>, tất cả đều miễn phí.</p>
+<p><strong>Các bước thực hiện</strong>:</p>
+<ol>
+<li>Cài đặt <a href="https://github.com/apps/giscus"target="_blank" rel="external nofollow noopener noreferrer"><strong>giscus</strong></a> vào Github.</li>
+<li>Vào <strong>Settings</strong> của repository chọn <strong>General</strong> và bật <strong>Discussions</strong> để giscus lưu comments vào <strong>Discussions</strong>.</li>
+<li>Nhập repository <code>&lt;username&gt;/&lt;username&gt;.github.io</code>, thông báo màu xanh lá xuất hiện khi các tiêu chí ở trên được đáp ứng.</li>
+<li>Chọn thể loại discussion và chủ đề cho website.</li>
+<li>Cấu hình giscus trong <code>_config.yml</code>
+<ul>
+<li><code>provider</code>: chọn giscus</li>
+<li><code>giscus</code>: mapping các biến tương ứng đã làm ở <a href="https://github.com/apps/giscus"target="_blank" rel="external nofollow noopener noreferrer"><strong>giscus</strong></a> vào biến <code>giscus</code>.</li>
+</ul>
+</li>
+</ol>
+<h3 class="heading-element" id="customize-the-favicon"><span>Customize the Favicon</span>
+  <a href="#customize-the-favicon" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Tạo <strong>favicon</strong> riêng cho website của bạn, không phải sử dụng <strong>favicon</strong> mặc định của themes</p>
+<p><strong>Các bước thực hiện</strong>:</p>
+<ol>
+<li>Truy cập <a href="https://www.favicon-generator.org/"target="_blank" rel="external nofollow noopener noreferrer"><strong>Favicon Genarate</strong></a></li>
+<li>Click <kbd>Browse</kbd> chọn favicon cần tạo, sau đó click <kbd>Create Favicon</kbd> để tạo.</li>
+<li>Click <code>Download the generated favicon</code> để tải các file chứa các favicon về.</li>
+<li>Giải nén file vừa tải, xóa 2 file dưới đây:
+<ul>
+<li>browserconfig.xml</li>
+<li>site.webmanifest</li>
+</ul>
+</li>
+<li>Copy toàn bộ file còn lại và paste vào <code>assets/img/favicons</code>(nếu chưa có thì tạo).</li>
+</ol>
+<h2 class="heading-element" id="extends"><span>Extends</span>
+  <a href="#extends" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 class="heading-element" id="remove-meta-tag-in-footer"><span>Remove meta tag in Footer</span>
+  <a href="#remove-meta-tag-in-footer" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Có thể xóa dòng <code>Using the Chirpy theme for Jekyll.</code> bằng các bước sau:</p>
+<ol>
+<li>Tạo file theo đường dẫn sau <code>_data/locales/en.yml</code>.</li>
+<li>Copy nội dung <a href="https://raw.githubusercontent.com/cotes2020/jekyll-theme-chirpy/refs/heads/master/_data/locales/en.yml"target="_blank" rel="external nofollow noopener noreferrer"><strong>en.yml</strong></a> và dán vào file vừa tạo.</li>
+<li>Sửa nội dung biến <code>meta</code> thành <code>&quot;&quot;</code></li>
+</ol>
+<h3 class="heading-element" id="write-a-post"><span>Write a post</span>
+  <a href="#write-a-post" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Tham khảo <a href="https://chirpy.cotes.page/posts/write-a-new-post/"target="_blank" rel="external nofollow noopener noreferrer"><strong>rule</strong></a> để viết blog của themes và sử dụng <a href="https://markdownlivepreview.com/"target="_blank" rel="external nofollow noopener noreferrer"><strong>Live Preview</strong></a> để quan sát</p></div><hr class="awesome-hr" />
+    <h2 id="see-also">Nội dung liên quan</h2>
+    <ul><li>
+          <a href="/vi/posts/2025-11-21-cve-2025-2939/" title="CVE-2025-2939 Analysis &amp; POC">CVE-2025-2939 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2025-11-20-cve-2025-49386/" title="CVE-2025-53572 Analysis &amp; POC">CVE-2025-53572 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2025-11-19-cve-2025-6742/" title="CVE-2025-6742 Analysis &amp; POC">CVE-2025-6742 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2025-11-18-cve-2025-53572/" title="CVE-2025-53572 Analysis &amp; POC">CVE-2025-53572 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2025-11-17-cve-2025-49401/" title="CVE-2025-49401 Analysis &amp; POC">CVE-2025-49401 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2025-11-14-cve-2025-9083/" title="CVE-2025-9083 Analysis &amp; POC">CVE-2025-9083 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2025-11-13-cve-2025-7847/" title="CVE-2025-7847 Analysis &amp; POC">CVE-2025-7847 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2025-11-12-cve-2025-32202/" title="CVE-2025-32202 Analysis &amp; POC">CVE-2025-32202 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2025-11-11-cve-2025-47637/" title="CVE-2025-47637 Analysis &amp; POC">CVE-2025-47637 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2025-11-10-cve-2023-48777/" title="CVE-2023-48777 Analysis &amp; POC">CVE-2023-48777 Analysis &amp; POC</a></li></ul><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod"><span title="Cập nhật ngày 2025-10-27 01:26:30">Cập nhật ngày 2025-10-27&nbsp;<a class="git-hash" href="https://github.com/w41bu1/w41bu1.github.io/commit/6c5d1faabdd7fd653a880271c5de770a17979544" rel="external nofollow noopener noreferrer" target="_blank" title="first commit&#10&#10Commit: 6c5d1faabdd7fd653a880271c5de770a17979544 [6c5d1fa]&#10Author: w41bu1&#10Date: 2025-10-27 01:26:30"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i>6c5d1fa</a></span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/vi/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/index.md" title="Đọc với định dạng Markdown" class="link-to-markdown">Đọc với định dạng Markdown</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts%5c2025-08-19-github-pages-with-jekyll-themes-and-giscus%5cindex.vi.md?plain=1" title="Xem mã nguồn"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">Xem mã nguồn</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/edit/main/content/posts%5c2025-08-19-github-pages-with-jekyll-themes-and-giscus%5cindex.vi.md" title="Chỉnh sửa trang này"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Chỉnh sửa trang này</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/issues/new?title=[BUG]%20Github&#43;Pages&#43;with&#43;Jekyll&#43;themes&#43;and&#43;Giscus&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cGithub&#43;Pages&#43;with&#43;Jekyll&#43;themes&#43;and&#43;Giscus%7c%0A%7cURL%7chttp://localhost:1313/vi/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/%7c%0A%7cFilename%7chttps://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts%5c2025-08-19-github-pages-with-jekyll-themes-and-giscus%5cindex.vi.md?plain=1%7c" title="Báo cáo lỗi"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Báo cáo lỗi</a></span><span><a href="vscode://file/D:%5cwork%5cproject%5cw41bu1.github.io%5ccontent%5cposts%5c2025-08-19-github-pages-with-jekyll-themes-and-giscus%5cindex.vi.md" title="Mở trong trình chỉnh sửa"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-vscode">Mở trong trình chỉnh sửa</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Chia sẻ trên X" data-sharer="twitter" data-url="http://localhost:1313/vi/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/" data-title="Github Pages With Jekyll Themes and Giscus" data-hashtags="blog,jekyll,giscus,github"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Chia sẻ trên Facebook" data-sharer="facebook" data-url="http://localhost:1313/vi/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/" data-hashtag="blog"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Chia sẻ trên Linkedin" data-sharer="linkedin" data-url="http://localhost:1313/vi/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Chia sẻ trên Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/vi/posts/2025-08-19-github-pages-with-jekyll-themes-and-giscus/" data-title="Github Pages With Jekyll Themes and Giscus"><i class="fa-brands fa-hacker-news fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/vi/tags/blog/" class="post-tag" title="Nhãn - Blog">Blog</a><a href="/vi/tags/jekyll/" class="post-tag" title="Nhãn - Jekyll">Jekyll</a><a href="/vi/tags/giscus/" class="post-tag" title="Nhãn - Giscus">Giscus</a><a href="/vi/tags/github/" class="post-tag" title="Nhãn - Github">Github</a></section>
+    <section><span><a href="javascript:void(0);" onclick="window.history.back();">Quay lại</a></span>&nbsp;|&nbsp;<span><a href="/vi/">Trang chủ</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/vi/posts/2025-08-21-wordpress-local-and-debugging/" class="post-nav-item" rel="next" title="WordPress Local and Debugging">WordPress Local and Debugging<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Nội dung"><h2 class="toc-title">Nội dung&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
+      <div class="toc">
+        <h2 class="toc-title">Nội dung</h2>
+        <div class="toc-content" id="toc-content-drawer"><nav >
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#creating-a-site-repository">Creating a Site Repository</a></li>
+    <li><a href="#setting-up-the-environment">Setting up the Environment</a>
+      <ul>
+        <li><a href="#using-dev-containers-recommended-for-windows">Using Dev Containers (Recommended for Windows)</a></li>
+        <li><a href="#setting-up-natively-recommended-for-unix-like-os">Setting up Natively (Recommended for Unix-like OS)</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#start-the-jekyll-server">Start the Jekyll Server</a></li>
+        <li><a href="#configuration">Configuration</a></li>
+        <li><a href="#comment-feature-via-giscus">Comment feature via Giscus</a></li>
+        <li><a href="#customize-the-favicon">Customize the Favicon</a></li>
+      </ul>
+    </li>
+    <li><a href="#extends">Extends</a>
+      <ul>
+        <li><a href="#remove-meta-tag-in-footer">Remove meta tag in Footer</a></li>
+        <li><a href="#write-a-post">Write a post</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div>
+    </dialog></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="github.com/w41bu1">Bui Van Y</a></span><span class="license footer-divider">w41bu1</span></div><div class="footer-line statistics"></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='Tổng khách truy cập'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Tổng lượt truy cập'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian"><span class="gov"><i class="fa-solid fa-user-secret"></i></span><span class="icp footer-divider"><i class="fa-solid fa-bug"></i></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="Lên trên"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><svg viewBox="0 0 100 100">
+              <circle class="bg" cx="50" cy="50" r="50"></circle>
+              <circle class="progress" cx="50" cy="50" r="50"></circle>
+            </svg></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="Nội dung"><i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">Trang web này hoạt động tốt nhất khi JavaScript được kích hoạt.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/cell-watermark/watermark.min.js" defer></script><script src="/lib/pace/pace.min.js" async defer></script><script src="/js/config/97840b94cf23d363ee90f4729e16e21c.js" defer></script><script src="/js/theme.min.js" defer></script><script src="/js/flyfish.min.js" defer></script></body>
+</html>

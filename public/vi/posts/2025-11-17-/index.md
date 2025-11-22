@@ -1,0 +1,168 @@
+# CVE-2025-9083 Analysis & POC
+
+
+<!--more-->
+
+## CVE & Basic Info
+Plugin này thực hiện thao tác **unserialize** dữ liệu mà người dùng gửi qua trường form, điều này có thể cho phép **người dùng chưa xác thực** thực hiện **PHP Object Injection** nếu tồn tại một *gadget* phù hợp trong hệ thống.
+
+* **CVE ID**: [CVE-2025-9083](https://www.cve.org/CVERecord?id=CVE-2025-9083)
+* **Vulnerability Type**: Arbitrary File Upload
+* **Affected Versions**: <= 3.11.0
+* **Patched Versions**: 3.11.1
+* **CVSS severity**: High (9.8)
+* **Required Privilege**: Unauthenticated
+* **Product**: [WordPress Ninja Forms Plugin](https://wordpress.org/plugins/ninja-forms/)
+
+## Requirements
+* **Local WordPress & Debugging**
+    * [Virtual Machine](https://w41bu1.github.io/posts/2025-08-21-wordpress-local-and-debugging/)
+    * [Docker](https://w41bu1.github.io/posts/2025-10-22-wordpress-local-and-debugging-docker/)
+* **Plugin Version** - **Ninja Forms**:  
+    * `3.11.0` – **vulnerable**  
+    * `3.11.1` – **patched**
+* **Diff Tool (diff)** → [**Meld**](https://meldmerge.org/) hoặc bất kỳ công cụ diff nào.
+
+## Cause
+Lỗ hổng xuất phát từ hàm `extractSubmissions()` thuộc file `FieldsetRepeater.php`
+
+```php
+if(is_string($fieldSubmissionValue)){
+    $fieldSubmissionValue = maybe_unserialize($fieldSubmissionValue);
+}
+```
+
+`maybe_unserialize()` được gọi nhưng không có cơ chế chống lại tấn công PHP Object Injection
+
+![Diff](diff.png "Bản lỗi và bản vá")
+
+Bản vá đã sử dụng `unserialize()` thay vì `maybe_unserialize()`. Chặn toàn bộ việc tạo object khi unserialize bằng `['allowed_classes' => false]` => Ngăn chặn PHP Object Injection
+
+## Analysis
+
+![Class Name](class_name.png "Tên của class")
+
+Tên class tương ứng với một layout fields trong khi tạo blank form bằng plugin
+
+![Create Form](create_form.png "Tạo form với Repeatable Fieldset")
+
+Thử tạo form với **Repeatable Fieldset** sau đó kéo **Single Line Text** vào **Repeatable Fieldset** để làm input, embed nó vào post hoặc page
+
+![Embed Form](embed_form.png "Thêm form vào post")
+
+Public post và thử submit form với input là `payload`:
+
+![Request](request1.png "Request thử với `payload`")
+
+Ta thấy toàn bộ dữ liệu được gán vào param `formData`, ta copy nội dung đã được URL Decode vào ứng dụng format JSON online [https://jsonformatter.org/](https://jsonformatter.org/)
+
+![Format](format.png "Data dạng JSON được format")
+
+Quan sát debugger ta thấy sự tương đồng ở đây
+
+![Debug](debug1.png "Dữ liệu trong debugger")
+
+`$fieldSubmissionValue` tương ứng với `value` trong field có id `8`. Như vậy khi `value` là chuỗi thì nó sẽ gọi hàm `maybe_unserialize()`
+
+Ta tạo class và đặt trong `wp-config.php` để test sự kiện kích hoạt khi `maybe_unserialize()` được gọi.
+
+```php
+class ObjectInjection
+{
+   public $command;
+
+   function __destruct(){
+        die(system($this->command));
+   }
+}
+```
+
+Gửi lại request submit với giá trị của `value` là chuỗi serialize chứa payload. Vì bao bọc bên ngoài là JSON nên khi truyền chuỗi cần phải chú ý escape `"` thành `\"` để tránh gây lỗi.
+
+![Change Value](change_value.png "Change giá trị của value thành chuỗi serialize")
+
+![Debug2](debug2.png "Giá trị của value trong debugger")
+
+Shell thực thi => Deserialize được kích hoạt.
+
+![Result](result.png "Deserialize được kích hoạt")
+
+---
+
+Luồng gọi hàm của callstack:
+
+Ứng dụng đã đăng ký một ajax dành cho Unauthenticated user
+
+```php
+if( isset( $_POST['formData'] ) ) {
+    $this->_form_data = json_decode( $_POST['formData'], TRUE  );
+
+    // php5.2 fallback
+    if( ! $this->_form_data ) $this->_form_data = json_decode( stripslashes( $_POST['formData'] ), TRUE  );
+}
+add_action( 'wp_ajax_nopriv_nf_ajax_submit',   array( $this, 'submit' )  );
+```
+
+Tức khi gửi POST request đến endpoint `/wp-admin/admin-ajax.php` với param `action=nf_ajax_submit` thì callback `submit` được gọi
+
+Khi form được submit đầy đủ thì nó luồng gọi hàm sẽ theo trình tự này
+
+![Callstack](callstack.png "Luồng gọi hàm trong callstack")
+
+## Flow
+
+{{< mermaid >}}
+graph TD
+A["POST /wp-admin/admin-ajax.php"] -- action=nf_ajax_submit&security=security_code&formData=form_data --> B["wp_ajax_nopriv_nf_ajax_submit"]
+B --> C["NF_AJAX_Controllers_Submission::submit()"]
+C --> D["NF_AJAX_Controllers_Submission::process()"]
+D --> E["NF_MergeTags_Fields::add_field()"]
+E --> F["NF_MergeTags_Fields::generateFieldsetTableRows()"]
+F --> G["NF_Handlers_FieldsetRepeater::extractSubmissions()"] --> H{$fieldSubmissionValue is String?}
+H -- Yes --> I["maybe_unserialize($fieldSubmissionValue)"]
+I --> K("RCE")
+{{< /mermaid >}}
+
+## Proof of Concept (PoC)
+
+1. Sử dụng plugin để tạo blank form với `Single Line Text` nằm trong `Repeatable Fieldset` và thêm form vào post/page
+2. Submit form và cho request đi qua Burp proxy 
+3. Sửa lại `value` của `field` chứa chuổi serialized thay thì JSON
+```
+"O:15:\"ObjectInjection\":1:{s:7:\"command\";s:4:\"ls /\";}"
+```
+4. Gửi lại request
+
+> [!TIP]
+> Để test trên local, ta tạo class chứa magic method `__wakeup()` sẽ tự kích hoạt khi deserialized đặt nó trong `wp-config.php`
+> ```php
+> class ObjectInjection
+> {
+>   public $command;
+>   function __destruct(){
+>		die(system($this->command));
+>   }
+> }
+> ```
+
+# Conclusion
+Lỗ hổng CVE-2025-9083 bắt nguồn từ việc sử dụng `maybe_unserialize()` trên dữ liệu do người dùng cung cấp mà không có bất kỳ cơ chế kiểm soát hoặc hạn chế lớp được unserialize. Điều này cho phép kẻ tấn công chưa xác thực thực thi mã tuỳ ý trên hệ thống nếu tìm được gadget phù hợp trong WordPress hoặc plugin/theme khác. Bản vá 3.11.1 đã loại bỏ hoàn toàn khả năng tạo object bằng cách sử dụng `unserialize()` với tùy chọn `['allowed_classes' => false]`, giúp ngăn chặn POI ở tầng cơ sở.
+
+# Key Takeaways
+- `maybe_unserialize()` cực kỳ rủi ro khi áp dụng lên input của người dùng.
+- Chỉ cần một gadget tồn tại trong mã nguồn là có thể dẫn đến Remote Code Execution.
+- WordPress AJAX endpoints mở cho unauthenticated user thường là điểm tấn công trọng yếu.
+- JSON embedding khiến payload serialize phải escape cẩn thận để tránh lỗi.
+- Bản vá 3.11.1 chứng minh việc kiểm soát lớp khi unserialize là biện pháp phòng thủ quan trọng.
+
+## References
+
+[Deserialization](https://book.hacktricks.wiki/en/pentesting-web/deserialization/index.html)
+
+[ WordPress Ninja Forms Plugin < 3.11.1 is vulnerable to PHP Object Injection ](https://patchstack.com/database/wordpress/plugin/ninja-forms/vulnerability/wordpress-ninja-forms-plugin-3-11-1-unauthenticated-php-object-injection-vulnerability)  
+
+---
+
+> Tác giả: [Bui Van Y](github.com/w41bu1)  
+> URL: http://localhost:1313/vi/posts/2025-11-17-/  
+
