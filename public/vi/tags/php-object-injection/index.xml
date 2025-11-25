@@ -8,14 +8,22 @@
     <language>vi</language>
     <managingEditor>w41bu1@gmail.com (Bui Van Y)</managingEditor>
     <webMaster>w41bu1@gmail.com (Bui Van Y)</webMaster>
-    <lastBuildDate>Mon, 24 Nov 2025 19:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 24 Nov 2025 21:59:49 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/vi/tags/php-object-injection/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CVE-2025-48134 Analysis &amp; POC</title>
       <link>http://localhost:1313/vi/posts/2025-11-24-cve-2025-48134/</link>
       <pubDate>Mon, 24 Nov 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
       <guid>http://localhost:1313/vi/posts/2025-11-24-cve-2025-48134/</guid>
-      <category domain="http://localhost:1313/vi/categories/cve-analyst/">CVE Analyst</category>
+      <category domain="http://localhost:1313/vi/categories/cve-analysis/">CVE Analysis</category>
+      <description>Security Vulnerability in WordPress WP Tabs Plugin.</description>
+    </item>
+    <item>
+      <title>CVE-2025-48134 Analysis &amp; POC</title>
+      <link>http://localhost:1313/vi/posts/2025-11-25-cve-2025-3439/</link>
+      <pubDate>Mon, 24 Nov 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
+      <guid>http://localhost:1313/vi/posts/2025-11-25-cve-2025-3439/</guid>
+      <category domain="http://localhost:1313/vi/categories/cve-analysis/">CVE Analysis</category>
       <description>Security Vulnerability in WordPress WP Tabs Plugin.</description>
     </item>
     <item>
@@ -23,7 +31,7 @@
       <link>http://localhost:1313/vi/posts/2025-11-23-cve-2025-30773/</link>
       <pubDate>Sun, 23 Nov 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
       <guid>http://localhost:1313/vi/posts/2025-11-23-cve-2025-30773/</guid>
-      <category domain="http://localhost:1313/vi/categories/cve-analyst/">CVE Analyst</category>
+      <category domain="http://localhost:1313/vi/categories/cve-analysis/">CVE Analysis</category>
       <description>Security Vulnerability in WordPress TranslatePress Plugin.</description>
     </item>
     <item>
@@ -31,7 +39,7 @@
       <link>http://localhost:1313/vi/posts/2025-11-21-cve-2025-2939/</link>
       <pubDate>Fri, 21 Nov 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
       <guid>http://localhost:1313/vi/posts/2025-11-21-cve-2025-2939/</guid>
-      <category domain="http://localhost:1313/vi/categories/cve-analyst/">CVE Analyst</category>
+      <category domain="http://localhost:1313/vi/categories/cve-analysis/">CVE Analysis</category>
       <description>Security Vulnerability in WordPress Ninja Tables – Easy Data Table Builder Plugin.</description>
     </item>
     <item>
@@ -39,7 +47,7 @@
       <link>http://localhost:1313/vi/posts/2025-11-20-cve-2025-49386/</link>
       <pubDate>Thu, 20 Nov 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
       <guid>http://localhost:1313/vi/posts/2025-11-20-cve-2025-49386/</guid>
-      <category domain="http://localhost:1313/vi/categories/cve-analyst/">CVE Analyst</category>
+      <category domain="http://localhost:1313/vi/categories/cve-analysis/">CVE Analysis</category>
       <description>Security Vulnerability in WordPress Preserve Code Formatting Plugin.</description>
     </item>
     <item>
@@ -47,7 +55,7 @@
       <link>http://localhost:1313/vi/posts/2025-11-19-cve-2025-6742/</link>
       <pubDate>Wed, 19 Nov 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
       <guid>http://localhost:1313/vi/posts/2025-11-19-cve-2025-6742/</guid>
-      <category domain="http://localhost:1313/vi/categories/cve-analyst/">CVE Analyst</category>
+      <category domain="http://localhost:1313/vi/categories/cve-analysis/">CVE Analysis</category>
       <description>Security Vulnerability in WordPress SureForm Plugin.</description>
     </item>
     <item>
@@ -55,7 +63,7 @@
       <link>http://localhost:1313/vi/posts/2025-11-18-cve-2025-53572/</link>
       <pubDate>Tue, 18 Nov 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
       <guid>http://localhost:1313/vi/posts/2025-11-18-cve-2025-53572/</guid>
-      <category domain="http://localhost:1313/vi/categories/cve-analyst/">CVE Analyst</category>
+      <category domain="http://localhost:1313/vi/categories/cve-analysis/">CVE Analysis</category>
       <description>Security Vulnerability in WordPress WP Easy Contact Plugin.</description>
     </item>
     <item>
@@ -63,7 +71,7 @@
       <link>http://localhost:1313/vi/posts/2025-11-17-cve-2025-49401/</link>
       <pubDate>Mon, 17 Nov 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
       <guid>http://localhost:1313/vi/posts/2025-11-17-cve-2025-49401/</guid>
-      <category domain="http://localhost:1313/vi/categories/cve-analyst/">CVE Analyst</category>
+      <category domain="http://localhost:1313/vi/categories/cve-analysis/">CVE Analysis</category>
       <description>Security Vulnerability in WordPress Quiz And Survey Master Plugin.</description>
     </item>
     <item>
@@ -71,7 +79,7 @@
       <link>http://localhost:1313/vi/posts/2025-11-14-cve-2025-9083/</link>
       <pubDate>Fri, 14 Nov 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
       <guid>http://localhost:1313/vi/posts/2025-11-14-cve-2025-9083/</guid>
-      <category domain="http://localhost:1313/vi/categories/cve-analyst/">CVE Analyst</category>
+      <category domain="http://localhost:1313/vi/categories/cve-analysis/">CVE Analysis</category>
       <description>Security Vulnerability in WordPress Ninja Forms Plugin.</description>
     </item>
   </channel>

@@ -104,6 +104,7 @@ Có thể xóa dòng `Using the Chirpy theme for Jekyll.` bằng các bước sa
 ### Write a post
 Tham khảo [**rule**](https://chirpy.cotes.page/posts/write-a-new-post/) để viết blog của themes và sử dụng [**Live Preview**](https://markdownlivepreview.com/) để quan sát
 
+
 ---
 
 > Tác giả: [Bui Van Y](github.com/w41bu1)  

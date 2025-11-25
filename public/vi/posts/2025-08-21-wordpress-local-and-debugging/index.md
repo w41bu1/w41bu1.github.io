@@ -348,6 +348,7 @@ Quá trình setup diễn ra khi truy cập **/wp-admin/install.php**
 define( 'WP_AUTO_UPDATE_CORE', false );
 ```
 
+
 ---
 
 > Tác giả: [Bui Van Y](github.com/w41bu1)  

@@ -15,7 +15,7 @@
       <link>http://localhost:1313/vi/posts/2025-10-11-cve-2025-58674/</link>
       <pubDate>Sat, 11 Oct 2025 19:18:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
       <guid>http://localhost:1313/vi/posts/2025-10-11-cve-2025-58674/</guid>
-      <category domain="http://localhost:1313/vi/categories/cve-analyst/">CVE Analyst</category>
+      <category domain="http://localhost:1313/vi/categories/cve-analysis/">CVE Analysis</category>
       <description>Security Vulnerability in WordPress Core.</description>
     </item>
     <item>
@@ -23,7 +23,7 @@
       <link>http://localhost:1313/vi/posts/2025-10-09-cve-2024-4439/</link>
       <pubDate>Thu, 09 Oct 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
       <guid>http://localhost:1313/vi/posts/2025-10-09-cve-2024-4439/</guid>
-      <category domain="http://localhost:1313/vi/categories/cve-analyst/">CVE Analyst</category>
+      <category domain="http://localhost:1313/vi/categories/cve-analysis/">CVE Analysis</category>
       <description>Security Vulnerability in WordPress Core.</description>
     </item>
     <item>
@@ -31,7 +31,7 @@
       <link>http://localhost:1313/vi/posts/2025-10-07-cve-2025-6832/</link>
       <pubDate>Tue, 07 Oct 2025 17:38:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
       <guid>http://localhost:1313/vi/posts/2025-10-07-cve-2025-6832/</guid>
-      <category domain="http://localhost:1313/vi/categories/cve-analyst/">CVE Analyst</category>
+      <category domain="http://localhost:1313/vi/categories/cve-analysis/">CVE Analysis</category>
       <description>Security Vulnerability in WordPress All in One Time Clock Lite Plugin.</description>
     </item>
   </channel>

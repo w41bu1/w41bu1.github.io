@@ -15,7 +15,7 @@
       <link>http://localhost:1313/posts/2025-11-13-wordpress-vulnerability-sink/</link>
       <pubDate>Thu, 13 Nov 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
       <guid>http://localhost:1313/posts/2025-11-13-wordpress-vulnerability-sink/</guid>
-      <category domain="http://localhost:1313/categories/cve-analyst/">CVE Analyst</category>
+      <category domain="http://localhost:1313/categories/cve-analysis/">CVE Analysis</category>
       <description>A list of &#39;sink&#39; points in WordPress — where input data can lead to the execution of malicious actions.</description>
     </item>
     <item>

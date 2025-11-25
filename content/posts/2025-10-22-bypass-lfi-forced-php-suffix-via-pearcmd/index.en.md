@@ -2,7 +2,7 @@
 title: Exploiting LFI2RCE Vulnerability via PHP PEARCMD
 description: Technical analysis and proof-of-concept demonstrating an LFI bypass (forced .php suffix) leveraging pearcmd.php
 date: 2025-10-22 20:48:00 +0700
-categories: [CVE Analyst]
+categories: [CVE Analysis]
 tags: [analyst, lfi, plugin, pearcmd]
 images: ["app.png"]
 featuredImage: "app.png"
