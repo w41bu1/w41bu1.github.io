@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/tags/analyst/</loc>
-    <lastmod>2025-11-24T21:59:49+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/analyst/"/>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-11-24T21:59:49+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/"/>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-11-24T21:59:49+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/categories/"/>
@@ -26,23 +26,23 @@
   </url>
   <url>
     <loc>http://localhost:1313/categories/cve-analysis/</loc>
-    <lastmod>2025-11-24T21:59:49+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/categories/cve-analysis/"/>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/categories/cve-analysis/"/>
   </url>
   <url>
-    <loc>http://localhost:1313/posts/2025-11-24-cve-2025-48134/</loc>
-    <lastmod>2025-11-24T21:59:49+07:00</lastmod>
+    <loc>http://localhost:1313/posts/2025-11-25-cve-2025-3439/</loc>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-24-cve-2025-48134/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/2025-11-24-cve-2025-48134/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-25-cve-2025-3439/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/2025-11-25-cve-2025-3439/"/>
   </url>
   <url>
     <loc>http://localhost:1313/tags/php-object-injection/</loc>
-    <lastmod>2025-11-24T21:59:49+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/php-object-injection/"/>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/plugin/</loc>
-    <lastmod>2025-11-24T21:59:49+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/plugin/"/>
@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-11-24T21:59:49+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/"/>
@@ -66,15 +66,23 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-11-24T21:59:49+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/"/>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/"/>
   </url>
   <url>
+    <loc>http://localhost:1313/posts/2025-11-24-cve-2025-48134/</loc>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-24-cve-2025-48134/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/2025-11-24-cve-2025-48134/"/>
+  </url>
+  <url>
     <loc>http://localhost:1313/posts/2025-11-23-cve-2025-30773/</loc>
-    <lastmod>2025-11-24T01:30:12+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-23-cve-2025-30773/"/>
@@ -82,7 +90,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-22-cve-2025-9501/</loc>
-    <lastmod>2025-11-23T12:19:07+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-22-cve-2025-9501/"/>
@@ -90,7 +98,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/remote-code-execution/</loc>
-    <lastmod>2025-11-23T12:19:07+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/remote-code-execution/"/>
@@ -98,7 +106,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-21-cve-2025-2939/</loc>
-    <lastmod>2025-11-21T18:15:32+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-21-cve-2025-2939/"/>
@@ -106,7 +114,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-20-cve-2025-49386/</loc>
-    <lastmod>2025-11-20T11:25:25+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-20-cve-2025-49386/"/>
@@ -114,7 +122,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-19-cve-2025-6742/</loc>
-    <lastmod>2025-11-20T04:23:28+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-19-cve-2025-6742/"/>
@@ -122,7 +130,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-18-cve-2025-53572/</loc>
-    <lastmod>2025-11-19T01:05:54+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-18-cve-2025-53572/"/>
@@ -130,7 +138,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-17-cve-2025-49401/</loc>
-    <lastmod>2025-11-18T00:23:37+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-17-cve-2025-49401/"/>
@@ -138,7 +146,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-14-cve-2025-9083/</loc>
-    <lastmod>2025-11-18T00:23:37+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-14-cve-2025-9083/"/>
@@ -146,7 +154,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/arbitrary-file-upload/</loc>
-    <lastmod>2025-11-08T02:31:50+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/arbitrary-file-upload/"/>
@@ -154,7 +162,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-13-cve-2025-7847/</loc>
-    <lastmod>2025-11-08T02:31:50+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-13-cve-2025-7847/"/>
@@ -162,7 +170,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/sink/</loc>
-    <lastmod>2025-11-14T10:10:35+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/sink/"/>
@@ -170,7 +178,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/wordpress/</loc>
-    <lastmod>2025-11-14T10:10:35+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/wordpress/"/>
@@ -178,7 +186,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-13-wordpress-vulnerability-sink/</loc>
-    <lastmod>2025-11-14T10:10:35+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-13-wordpress-vulnerability-sink/"/>
@@ -186,7 +194,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-12-cve-2025-32202/</loc>
-    <lastmod>2025-11-08T02:31:50+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-12-cve-2025-32202/"/>
@@ -202,7 +210,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-11-cve-2025-47637/</loc>
-    <lastmod>2025-11-08T02:31:50+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-11-cve-2025-47637/"/>
@@ -234,7 +242,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-10-cve-2023-48777/</loc>
-    <lastmod>2025-11-08T02:31:50+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-10-cve-2023-48777/"/>
@@ -242,7 +250,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-09-cve-2025-1128/</loc>
-    <lastmod>2025-11-03T18:25:14+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-09-cve-2025-1128/"/>
@@ -250,7 +258,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-08-cve-2025-39557/</loc>
-    <lastmod>2025-11-03T18:25:14+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-08-cve-2025-39557/"/>
@@ -258,7 +266,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-07-cve-2025-47577/</loc>
-    <lastmod>2025-11-02T02:36:29+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-07-cve-2025-47577/"/>
@@ -266,7 +274,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-06-cve-2025-10647/</loc>
-    <lastmod>2025-11-02T02:36:29+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-06-cve-2025-10647/"/>
@@ -274,7 +282,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-05-cve-2025-10147/</loc>
-    <lastmod>2025-11-01T21:07:30+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-05-cve-2025-10147/"/>
@@ -282,7 +290,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-04-cve-2025-62065/</loc>
-    <lastmod>2025-11-01T15:34:26+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-04-cve-2025-62065/"/>
@@ -290,7 +298,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-03-cve-2025-2940/</loc>
-    <lastmod>2025-10-30T16:59:09+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-03-cve-2025-2940/"/>
@@ -298,7 +306,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/ssrf/</loc>
-    <lastmod>2025-10-30T16:59:09+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/ssrf/"/>
@@ -306,7 +314,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-02-cve-2025-1043/</loc>
-    <lastmod>2025-10-29T01:02:38+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-02-cve-2025-1043/"/>
@@ -314,7 +322,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-01-cve-2025-52713/</loc>
-    <lastmod>2025-10-28T22:08:17+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-01-cve-2025-52713/"/>
@@ -322,7 +330,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-31-cve-2025-60161/</loc>
-    <lastmod>2025-10-28T16:00:25+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-31-cve-2025-60161/"/>
@@ -330,7 +338,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-30-cve-2025-11128/</loc>
-    <lastmod>2025-10-28T16:00:25+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-30-cve-2025-11128/"/>
@@ -338,7 +346,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-29-cve-2025-12136/</loc>
-    <lastmod>2025-10-28T16:00:25+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-29-cve-2025-12136/"/>
@@ -346,7 +354,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-28-cve-2025-6851/</loc>
-    <lastmod>2025-10-27T21:42:17+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-28-cve-2025-6851/"/>
@@ -354,7 +362,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-27-cve-2025-10861/</loc>
-    <lastmod>2025-10-27T14:42:13+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-27-cve-2025-10861/"/>
@@ -362,7 +370,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-23-cve-2023-36679/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-23-cve-2023-36679/"/>
@@ -370,7 +378,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/"/>
@@ -378,7 +386,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/lfi/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/lfi/"/>
@@ -386,7 +394,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/pearcmd/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/pearcmd/"/>
@@ -394,7 +402,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-22-cve-2025-11361/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-22-cve-2025-11361/"/>
@@ -402,7 +410,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/cms/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/cms/"/>
@@ -418,7 +426,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/php/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/php/"/>
@@ -426,7 +434,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/categories/web/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/categories/web/"/>
@@ -442,7 +450,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-21-cve-2025-32141/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-21-cve-2025-32141/"/>
@@ -450,7 +458,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-20-cve-2025-52716/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-20-cve-2025-52716/"/>
@@ -458,7 +466,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-19-cve-2025-6715/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-19-cve-2025-6715/"/>
@@ -466,7 +474,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-18-cve-2025-26909/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-18-cve-2025-26909/"/>
@@ -474,7 +482,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-17-cve-2025-39399/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-17-cve-2025-39399/"/>
@@ -482,7 +490,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-16-cve-2025-30782/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-16-cve-2025-30782/"/>
@@ -490,7 +498,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-15-cve-2025-30868/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-15-cve-2025-30868/"/>
@@ -498,7 +506,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-14-cve-2025-32654/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-14-cve-2025-32654/"/>
@@ -506,7 +514,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-13-cve-2025-48293/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-13-cve-2025-48293/"/>
@@ -514,7 +522,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-12-cve-2025-53328/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-12-cve-2025-53328/"/>
@@ -522,7 +530,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/core/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/core/"/>
@@ -530,7 +538,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-11-cve-2025-58674/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-11-cve-2025-58674/"/>
@@ -538,7 +546,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/xss/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/xss/"/>
@@ -546,7 +554,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-10-cve-2025-5062/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-10-cve-2025-5062/"/>
@@ -554,7 +562,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-09-cve-2024-4439/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-09-cve-2024-4439/"/>
@@ -562,7 +570,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-08-cve-2025-9816/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-08-cve-2025-9816/"/>
@@ -570,7 +578,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-07-cve-2025-6832/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-07-cve-2025-6832/"/>
@@ -578,7 +586,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-06-cve-2025-10146/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-06-cve-2025-10146/"/>
@@ -586,7 +594,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-05-cve-2025-58990/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-05-cve-2025-58990/"/>
@@ -594,7 +602,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-04-cve-2025-27006/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-04-cve-2025-27006/"/>
@@ -602,7 +610,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-03-cve-2025-53307/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-03-cve-2025-53307/"/>
@@ -610,7 +618,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-02-cve-2025-6234/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-02-cve-2025-6234/"/>
@@ -618,7 +626,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-10-01-cve-2022-21661/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-10-01-cve-2022-21661/"/>
@@ -626,7 +634,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/sqli/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/sqli/"/>
@@ -634,7 +642,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-09-30-cve-2025-2011/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-09-30-cve-2025-2011/"/>
@@ -642,7 +650,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-09-29-cve-2025-48118/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-09-29-cve-2025-48118/"/>
@@ -650,7 +658,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-09-28-cve-2025-30936/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-09-28-cve-2025-30936/"/>
@@ -658,7 +666,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-09-27-cve-2025-48281/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-09-27-cve-2025-48281/"/>
@@ -666,7 +674,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-09-26-cve-2025-32650/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-09-26-cve-2025-32650/"/>
@@ -674,7 +682,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-09-25-cve-2025-58604/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-09-25-cve-2025-58604/"/>
@@ -682,7 +690,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-09-23-cve-2025-26943/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-09-23-cve-2025-26943/"/>
@@ -690,7 +698,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-09-22-cve-2025-39569/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-09-22-cve-2025-39569/"/>
@@ -698,7 +706,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-09-21-cve-2025-39566/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-09-21-cve-2025-39566/"/>
@@ -706,7 +714,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-08-21-wordpress-local-and-debugging/</loc>
-    <lastmod>2025-10-27T01:26:30+07:00</lastmod>
+    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-08-21-wordpress-local-and-debugging/"/>
@@ -751,13 +759,6 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/jekyll/"/>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/jekyll/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/posts/2025-11-25-cve-2025-3439/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-25-cve-2025-3439/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/2025-11-25-cve-2025-3439/"/>
   </url>
   <url>
     <loc>http://localhost:1313/collections/</loc>
