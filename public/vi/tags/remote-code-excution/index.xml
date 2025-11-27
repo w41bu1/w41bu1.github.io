@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Remote Code Excution - Nhãn - Bui Van Y</title>
+    <link>http://localhost:1313/vi/tags/remote-code-excution/</link>
+    <description>Bui Van Y</description>
+    <generator>Hugo 0.152.2 &amp; FixIt v0.4.0-alpha.3-20251121172518-6f99565f</generator>
+    <language>vi</language>
+    <managingEditor>w41bu1@gmail.com (Bui Van Y)</managingEditor>
+    <webMaster>w41bu1@gmail.com (Bui Van Y)</webMaster>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://localhost:1313/vi/tags/remote-code-excution/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
