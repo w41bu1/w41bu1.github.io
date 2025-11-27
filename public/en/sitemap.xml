@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/tags/analyst/</loc>
-    <lastmod>2025-11-26T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-26T22:06:24+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/analyst/"/>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-11-26T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-26T22:06:24+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/"/>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-11-26T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-26T22:06:24+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/categories/"/>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/categories/cve-analysis/</loc>
-    <lastmod>2025-11-26T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-26T22:06:24+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/categories/cve-analysis/"/>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-26-cve-2025-26763/</loc>
-    <lastmod>2025-11-26T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-26T22:06:24+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-26-cve-2025-26763/"/>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/php-object-injection/</loc>
-    <lastmod>2025-11-26T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-26T22:06:24+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/php-object-injection/"/>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/plugin/</loc>
-    <lastmod>2025-11-26T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-26T22:06:24+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/plugin/"/>
@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-11-26T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-26T22:06:24+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/"/>
@@ -66,7 +66,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-11-26T19:00:00+07:00</lastmod>
+    <lastmod>2025-11-26T22:06:24+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/"/>
