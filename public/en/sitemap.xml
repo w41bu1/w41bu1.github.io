@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/tags/analyst/</loc>
-    <lastmod>2025-11-27T21:48:59+07:00</lastmod>
+    <lastmod>2025-11-28T23:08:46+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/analyst/"/>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-11-27T21:48:59+07:00</lastmod>
+    <lastmod>2025-11-28T23:08:46+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/"/>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-11-27T21:48:59+07:00</lastmod>
+    <lastmod>2025-11-28T23:08:46+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/categories/"/>
@@ -26,11 +26,51 @@
   </url>
   <url>
     <loc>http://localhost:1313/categories/cve-analysis/</loc>
-    <lastmod>2025-11-27T21:48:59+07:00</lastmod>
+    <lastmod>2025-11-28T23:08:46+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/categories/cve-analysis/"/>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/categories/cve-analysis/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/2025-11-28-cve-2025-9321/</loc>
+    <lastmod>2025-11-28T23:08:46+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-28-cve-2025-9321/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/2025-11-28-cve-2025-9321/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/plugin/</loc>
+    <lastmod>2025-11-28T23:08:46+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/plugin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/plugin/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-11-28T23:08:46+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/remote-code-execution/</loc>
+    <lastmod>2025-11-28T23:08:46+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/remote-code-execution/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/remote-code-execution/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-11-28T23:08:46+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/"/>
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-27-cve-2025-13035/</loc>
@@ -39,38 +79,6 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-11-27-cve-2025-13035/"/>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/2025-11-27-cve-2025-13035/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/plugin/</loc>
-    <lastmod>2025-11-27T21:48:59+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/plugin/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/plugin/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-11-27T21:48:59+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/remote-code-execution/</loc>
-    <lastmod>2025-11-27T21:48:59+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/remote-code-execution/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/remote-code-execution/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-11-27T21:48:59+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/"/>
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-11-26-cve-2025-26763/</loc>
