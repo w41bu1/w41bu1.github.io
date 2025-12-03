@@ -8,7 +8,7 @@
     <language>en</language>
     <managingEditor>w41bu1@gmail.com (Bui Van Y)</managingEditor>
     <webMaster>w41bu1@gmail.com (Bui Van Y)</webMaster>
-    <lastBuildDate>Wed, 26 Nov 2025 22:06:24 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 03 Dec 2025 22:36:56 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/php-object-injection/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CVE-2025-26763 Analysis &amp; POC</title>
