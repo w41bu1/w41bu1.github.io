@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/vi/tags/analyst/</loc>
-    <lastmod>2025-12-07T19:00:00+07:00</lastmod>
+    <lastmod>2025-12-05T15:17:41+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/analyst/"/>
@@ -10,13 +10,15 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/tags/broken-access-control/</loc>
-    <lastmod>2025-12-07T19:00:00+07:00</lastmod>
+    <lastmod>2025-12-05T15:17:41+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/broken-access-control/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/broken-access-control/"/>
   </url>
   <url>
     <loc>http://localhost:1313/vi/</loc>
-    <lastmod>2025-12-07T19:00:00+07:00</lastmod>
+    <lastmod>2025-12-05T15:17:41+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/"/>
@@ -24,7 +26,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/categories/</loc>
-    <lastmod>2025-12-07T19:00:00+07:00</lastmod>
+    <lastmod>2025-12-05T15:17:41+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/categories/"/>
@@ -32,7 +34,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/categories/cve-analysis/</loc>
-    <lastmod>2025-12-07T19:00:00+07:00</lastmod>
+    <lastmod>2025-12-05T15:17:41+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/categories/cve-analysis/"/>
@@ -40,7 +42,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/posts/2025-12-07-cve-2025-11726/</loc>
-    <lastmod>2025-12-07T19:00:00+07:00</lastmod>
+    <lastmod>2025-12-05T15:17:41+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/2025-12-07-cve-2025-11726/"/>
@@ -48,7 +50,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/tags/plugin/</loc>
-    <lastmod>2025-12-07T19:00:00+07:00</lastmod>
+    <lastmod>2025-12-05T15:17:41+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/plugin/"/>
@@ -56,7 +58,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/posts/</loc>
-    <lastmod>2025-12-07T19:00:00+07:00</lastmod>
+    <lastmod>2025-12-05T15:17:41+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/"/>
@@ -64,7 +66,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/tags/</loc>
-    <lastmod>2025-12-07T19:00:00+07:00</lastmod>
+    <lastmod>2025-12-05T15:17:41+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/"/>
@@ -88,7 +90,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/posts/2025-12-05-cve-2023-33999/</loc>
-    <lastmod>2025-12-05T20:00:00+07:00</lastmod>
+    <lastmod>2025-12-05T15:17:41+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/2025-12-05-cve-2023-33999/"/>
@@ -96,7 +98,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/tags/xss/</loc>
-    <lastmod>2025-12-05T20:00:00+07:00</lastmod>
+    <lastmod>2025-12-05T15:17:41+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/xss/"/>
