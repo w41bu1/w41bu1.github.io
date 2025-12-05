@@ -8,7 +8,7 @@
     <language>en</language>
     <managingEditor>w41bu1@gmail.com (Bui Van Y)</managingEditor>
     <webMaster>w41bu1@gmail.com (Bui Van Y)</webMaster>
-    <lastBuildDate>Wed, 03 Dec 2025 22:36:56 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 05 Dec 2025 20:00:00 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/plugin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CVE-2024-11600 Analysis &amp; POC</title>
@@ -17,6 +17,14 @@
       <guid>http://localhost:1313/posts/2025-12-06-cve-2024-11600/</guid>
       <category domain="http://localhost:1313/categories/cve-analysis/">CVE Analysis</category>
       <description>Security Vulnerability in WordPress Borderless Plugin.</description>
+    </item>
+    <item>
+      <title>CVE-2023-33999 Analysis &amp; POC</title>
+      <link>http://localhost:1313/posts/2025-12-05-cve-2023-33999/</link>
+      <pubDate>Fri, 05 Dec 2025 20:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
+      <guid>http://localhost:1313/posts/2025-12-05-cve-2023-33999/</guid>
+      <category domain="http://localhost:1313/categories/cve-analysis/">CVE Analysis</category>
+      <description>Security Vulnerability in Freemius SDK.</description>
     </item>
     <item>
       <title>CVE-2024-8672 Analysis &amp; POC</title>
