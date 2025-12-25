@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kali - Tag - Bui Van Y</title>
+    <link>http://localhost:1313/tags/kali/</link>
+    <description>Bui Van Y</description>
+    <generator>Hugo 0.153.2 &amp; FixIt v0.4.0-alpha.3-20251225101113-8ffb9a95</generator>
+    <language>en</language>
+    <managingEditor>w41bu1@gmail.com (Bui Van Y)</managingEditor>
+    <webMaster>w41bu1@gmail.com (Bui Van Y)</webMaster>
+    <lastBuildDate>Thu, 25 Dec 2025 19:00:00 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/kali/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup Kali Linux for Pentest</title>
+      <link>http://localhost:1313/posts/2025-12-25-setup-kali-for-pentest/</link>
+      <pubDate>Thu, 25 Dec 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
+      <guid>http://localhost:1313/posts/2025-12-25-setup-kali-for-pentest/</guid>
+      <category domain="http://localhost:1313/categories/pentest/">Pentest</category>
+      <description>Share the process of setting up Kali Linux for pentesting, optimizing the working environment and commonly used tools.</description>
+    </item>
+  </channel>
+</rss>

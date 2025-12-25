@@ -123,6 +123,7 @@
       <div class="details-content related-content">
         <ul class="related-list"><li class="related-item">
               <a href="/vi/posts/2025-08-21-wordpress-local-and-debugging/" title="WordPress Local and Debugging">WordPress Local and Debugging</a></li><li class="related-item">
+              <a href="/vi/posts/2025-12-25-setup-kali-for-pentest/" title="Setup Kali Linux for Pentest">Setup Kali Linux for Pentest</a></li><li class="related-item">
               <a href="/vi/posts/2025-11-13-wordpress-vulnerability-sink/" title="WordPress Vulnerability Sinks">WordPress Vulnerability Sinks</a></li></ul>
       </div>
     </div></aside>
@@ -131,7 +132,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>WordPress Local and Debugging in Docker</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="github.com/w41bu1" title="Tác giả" rel=" author" class="author"><img class="avatar" src='/images/avatar.png' alt="Bui Van Y" height="16" width="16">&nbsp;Bui Van Y</a></span><span class="post-included-in">&nbsp;trong <a href="/vi/categories/web/" class="post-category" title="Danh mục - Web"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Web</a></span></div><div class="post-meta-line"><span title="đăng ngày 2025-10-22 15:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-10-22">2025-10-22</time></span>&nbsp;<span title="Cập nhật ngày 2025-10-27 01:40:34"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2025-10-27">2025-10-27</time></span>&nbsp;<span title="830 từ"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>Khoảng 900 từ</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 phút</span>&nbsp;</div>
-    </div><div class="featured-image"><img src='/posts/2025-10-22-wordpress-local-and-debugging-docker/app.png' alt="/posts/2025-10-22-wordpress-local-and-debugging-docker/app.png"></div><div class="details toc" id="toc-static" data-kept="false">
+    </div><div class="featured-image"><img loading="eager" src='/posts/2025-10-22-wordpress-local-and-debugging-docker/app.png' sizes="(max-width: 680px) 100vw, (max-width: 960px) 80vw, (max-width: 1440px) 56vw, 800px" alt="/posts/2025-10-22-wordpress-local-and-debugging-docker/app.png" height="500" width="1000"></div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>Nội dung</span>
           <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
@@ -159,7 +160,7 @@
     </li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><p><strong>Tiếp nối</strong> phần hướng dẫn <strong>cài đặt WordPress trên môi trường local</strong> ở <a href="https://w41bu1.github.io/2025-08-21-wordpress-local-and-debugging/"target="_blank" rel="external nofollow noopener noreferrer">bài viết trước</a>, bài này sẽ hướng dẫn bạn <strong>thiết lập WordPress bằng Docker</strong> — một cách hiện đại, linh hoạt và dễ chia sẻ hơn.</p>
+      </div><div class="content" id="content"><p><strong>Tiếp nối</strong> phần hướng dẫn <strong>cài đặt WordPress trên môi trường local</strong> ở <a href="https://w41bu1.github.io/2025-08-21-wordpress-local-and-debugging/" target="_blank" rel="external nofollow noopener noreferrer">bài viết trước</a>, bài này sẽ hướng dẫn bạn <strong>thiết lập WordPress bằng Docker</strong> — một cách hiện đại, linh hoạt và dễ chia sẻ hơn.</p>
 <h2 class="heading-element" id="why-use-docker"><span>Why Use Docker?</span>
   <a href="#why-use-docker" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -186,7 +187,7 @@
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h4><p>Trước tiên, bạn cần cài đặt <strong>Docker</strong>. Công cụ này hỗ trợ trên nhiều hệ điều hành, mỗi nền tảng có cách cài đặt riêng.<br>
-Xem hướng dẫn tại: <a href="https://www.docker.com/get-started/"target="_blank" rel="external nofollow noopener noreferrer">https://www.docker.com/get-started/</a></p>
+Xem hướng dẫn tại: <a href="https://www.docker.com/get-started/" target="_blank" rel="external nofollow noopener noreferrer">https://www.docker.com/get-started/</a></p>
 <h4 class="heading-element" id="docker-compose"><span>Docker Compose</span>
   <a href="#docker-compose" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -204,7 +205,7 @@ Với Docker Compose, tất cả nằm trong một file YAML giúp:</p>
 <li><strong>Dễ chia sẻ</strong>: Người khác chỉ cần cùng file <code>docker-compose.yml</code> là chạy được.</li>
 <li><strong>Dễ mở rộng</strong>: Thêm phpMyAdmin, Nginx, hoặc Xdebug chỉ cần vài dòng.</li>
 </ul>
-<p>Xem hướng dẫn cài Docker Compose tại: <a href="https://docs.docker.com/compose/install/"target="_blank" rel="external nofollow noopener noreferrer">https://docs.docker.com/compose/install/</a></p>
+<p>Xem hướng dẫn cài Docker Compose tại: <a href="https://docs.docker.com/compose/install/" target="_blank" rel="external nofollow noopener noreferrer">https://docs.docker.com/compose/install/</a></p>
 <h3 class="heading-element" id="installing-wordpress-with-docker-compose-and-xdebug"><span>Installing WordPress with Docker Compose and Xdebug</span>
   <a href="#installing-wordpress-with-docker-compose-and-xdebug" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -212,8 +213,8 @@ Với Docker Compose, tất cả nằm trong một file YAML giúp:</p>
 </h3><p>Phần này hướng dẫn cài <strong>WordPress với Docker Compose</strong>, tích hợp <strong>Xdebug</strong> để debug trực tiếp trong <strong>VS Code</strong>.<br>
 Cách này giúp bạn có môi trường phát triển đầy đủ, dễ gỡ lỗi và mở rộng.</p>
 <p><strong>Cấu trúc thư mục:</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-sh"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
@@ -229,35 +230,35 @@ Cách này giúp bạn có môi trường phát triển đầy đủ, dễ gỡ 
 </span></span><span class="line"><span class="cl">├── Dockerfile
 </span></span><span class="line"><span class="cl">├── php.ini
 </span></span><span class="line"><span class="cl">└── .vscode
-</span></span><span class="line"><span class="cl">    └── launch.json</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">    └── launch.json</span></span></code></pre></td></tr></table></div>
 </div>
 </div><h3 class="heading-element" id="setup-environment"><span>Setup Environment</span>
   <a href="#setup-environment" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p>Tạo thư mục mới để chứa toàn bộ cấu hình:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-sh"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mkdir wordpress-docker <span class="o">&amp;&amp;</span> <span class="nb">cd</span> wordpress-docker</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mkdir wordpress-docker <span class="o">&amp;&amp;</span> <span class="nb">cd</span> wordpress-docker</span></span></code></pre></td></tr></table></div>
 </div>
 </div><h3 class="heading-element" id="create-dockerfile"><span>Create Dockerfile</span>
   <a href="#create-dockerfile" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p>Image WordPress mặc định <strong>chưa có Xdebug</strong>, nên ta mở rộng bằng <code>Dockerfile</code>.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-sh"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">nano Dockerfile</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">nano Dockerfile</span></span></code></pre></td></tr></table></div>
 </div>
 </div><p><strong>Nội dung:</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-dockerfile"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
@@ -267,23 +268,23 @@ Cách này giúp bạn có môi trường phát triển đầy đủ, dễ gỡ 
 <pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">wordpress:latest</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="c"># Cài đặt Xdebug</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> pecl install xdebug <span class="o">&amp;&amp;</span> docker-php-ext-enable xdebug</span></span></code></pre></td></tr></table>
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> pecl install xdebug <span class="o">&amp;&amp;</span> docker-php-ext-enable xdebug</span></span></code></pre></td></tr></table></div>
 </div>
 </div><h3 class="heading-element" id="create-docker-composeyml"><span>Create docker-compose.yml</span>
   <a href="#create-docker-composeyml" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p>Tạo file để cấu hình toàn bộ hệ thống:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-sh"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">nano docker-compose.yml</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">nano docker-compose.yml</span></span></code></pre></td></tr></table></div>
 </div>
 </div><p><strong>Nội dung:</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-yaml"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="2" style="--fi-max-shown-lines:10;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
@@ -349,7 +350,7 @@ Cách này giúp bạn có môi trường phát triển đầy đủ, dễ gỡ 
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./php.ini:/usr/local/etc/php/conf.d/php.ini</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="nt">volumes</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="l">db_data:</span></span></span></code></pre></td></tr></table>
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="l">db_data:</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="Mở rộng hoặc thu gọn khối mã" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
 </div>
 </div><div class="details admonition info open disabled">
   <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-circle-info" aria-hidden="true"></i>Thông tin</div>
@@ -376,16 +377,16 @@ Gắn file cấu hình PHP/Xdebug, dễ tùy chỉnh mà không cần rebuild im
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p>Kích hoạt Xdebug và cấu hình PHP.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-sh"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">nano php.ini</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">nano php.ini</span></span></code></pre></td></tr></table></div>
 </div>
 </div><p><strong>Nội dung:</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-ini"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="2" style="--fi-max-shown-lines:10;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
@@ -411,7 +412,7 @@ Gắn file cấu hình PHP/Xdebug, dễ tùy chỉnh mà không cần rebuild im
 </span></span><span class="line"><span class="cl"><span class="na">post_max_size</span> <span class="o">=</span> <span class="s">64M</span>
 </span></span><span class="line"><span class="cl"><span class="na">memory_limit</span> <span class="o">=</span> <span class="s">128M</span>
 </span></span><span class="line"><span class="cl"><span class="na">max_execution_time</span> <span class="o">=</span> <span class="s">300</span>
-</span></span><span class="line"><span class="cl"><span class="na">max_input_time</span> <span class="o">=</span> <span class="s">300</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="na">max_input_time</span> <span class="o">=</span> <span class="s">300</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="Mở rộng hoặc thu gọn khối mã" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
 </div>
 </div><p><strong>Giải thích:</strong></p>
 <ul>
@@ -423,12 +424,12 @@ Gắn file cấu hình PHP/Xdebug, dễ tùy chỉnh mà không cần rebuild im
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p>Tạo file cấu hình VS Code để kết nối với Xdebug:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-sh"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mkdir .vscode <span class="o">&amp;&amp;</span> nano .vscode/launch.json</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mkdir .vscode <span class="o">&amp;&amp;</span> nano .vscode/launch.json</span></span></code></pre></td></tr></table></div>
 </div>
 </div><p><strong>Nội dung:</strong></p>
 <json-viewer value="&#34;{\n  \&#34;version\&#34;: \&#34;0.2.0\&#34;,\n  \&#34;configurations\&#34;: [\n    {\n      \&#34;name\&#34;: \&#34;Listen for Xdebug\&#34;,\n      \&#34;type\&#34;: \&#34;php\&#34;,\n      \&#34;request\&#34;: \&#34;launch\&#34;,\n      \&#34;port\&#34;: 9003,\n      \&#34;pathMappings\&#34;: {\n        \&#34;/var/www/html\&#34;: \&#34;${workspaceFolder}/wordpress\&#34;\n      },\n      \&#34;log\&#34;: true\n    }\n  ]\n}&#34;" expand-depth="1" boxed copyable="{&#34;copiedText&#34;:&#34;Đã sao chép&#34;,&#34;copyText&#34;:&#34;Sao chép&#34;}"></json-viewer><h3 class="heading-element" id="install-vs-code-extension"><span>Install VS Code Extension</span>
@@ -444,18 +445,19 @@ Gắn file cấu hình PHP/Xdebug, dễ tùy chỉnh mà không cần rebuild im
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p>Khởi động hệ thống:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-sh"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker-compose up -d</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker-compose up -d</span></span></code></pre></td></tr></table></div>
 </div>
-</div><p>Sau khi khởi chạy, truy cập <strong><a href="http://localhost"target="_blank" rel="external nofollow noopener noreferrer">http://localhost</a></strong> để cài đặt WordPress.
+</div><p>Sau khi khởi chạy, truy cập <strong><a href="http://localhost" target="_blank" rel="external nofollow noopener noreferrer">http://localhost</a></strong> để cài đặt WordPress.
 Giờ bạn có thể đặt breakpoint trong file PHP và debug trực tiếp trên VS Code.</p></div><hr class="awesome-hr" />
     <h2 id="see-also">Nội dung liên quan</h2>
     <ul><li>
           <a href="/vi/posts/2025-08-21-wordpress-local-and-debugging/" title="WordPress Local and Debugging">WordPress Local and Debugging</a></li><li>
+          <a href="/vi/posts/2025-12-25-setup-kali-for-pentest/" title="Setup Kali Linux for Pentest">Setup Kali Linux for Pentest</a></li><li>
           <a href="/vi/posts/2025-11-13-wordpress-vulnerability-sink/" title="WordPress Vulnerability Sinks">WordPress Vulnerability Sinks</a></li></ul><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
@@ -463,7 +465,7 @@ Giờ bạn có thể đặt breakpoint trong file PHP và debug trực tiếp t
       </div><div class="post-info-license">
             <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
           </div></div><div class="post-info-line">
-        <div class="post-info-md"><span><a href="/vi/posts/2025-10-22-wordpress-local-and-debugging-docker/index.md" title="Đọc với định dạng Markdown" class="link-to-markdown">Đọc với định dạng Markdown</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2025-10-22-wordpress-local-and-debugging-docker/index.vi.md?plain=1" title="Xem mã nguồn"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">Xem mã nguồn</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/edit/main/content/posts/2025-10-22-wordpress-local-and-debugging-docker/index.vi.md" title="Chỉnh sửa trang này"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Chỉnh sửa trang này</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/issues/new?title=[BUG]%20WordPress&#43;Local&#43;and&#43;Debugging&#43;in&#43;Docker&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cWordPress&#43;Local&#43;and&#43;Debugging&#43;in&#43;Docker%7c%0A%7cURL%7chttp://localhost:1313/vi/posts/2025-10-22-wordpress-local-and-debugging-docker/%7c%0A%7cFilename%7chttps://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2025-10-22-wordpress-local-and-debugging-docker/index.vi.md?plain=1%7c" title="Báo cáo lỗi"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Báo cáo lỗi</a></span><span><a href="vscode://file//home/w41/Project/w41bu1.github.io/content/posts/2025-10-22-wordpress-local-and-debugging-docker/index.vi.md" title="Mở trong trình chỉnh sửa"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-vscode">Mở trong trình chỉnh sửa</a></span></div>
+        <div class="post-info-md"><span><a href="/vi/posts/2025-10-22-wordpress-local-and-debugging-docker/index.md" title="Đọc với định dạng Markdown" class="link-to-markdown">Đọc với định dạng Markdown</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2025-10-22-wordpress-local-and-debugging-docker/index.vi.md?plain=1" title="Xem mã nguồn" target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">Xem mã nguồn</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/edit/main/content/posts/2025-10-22-wordpress-local-and-debugging-docker/index.vi.md" title="Chỉnh sửa trang này" target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Chỉnh sửa trang này</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/issues/new?title=[BUG]%20WordPress&#43;Local&#43;and&#43;Debugging&#43;in&#43;Docker&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cWordPress&#43;Local&#43;and&#43;Debugging&#43;in&#43;Docker%7c%0A%7cURL%7chttp://localhost:1313/vi/posts/2025-10-22-wordpress-local-and-debugging-docker/%7c%0A%7cFilename%7chttps://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2025-10-22-wordpress-local-and-debugging-docker/index.vi.md?plain=1%7c" title="Báo cáo lỗi" target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Báo cáo lỗi</a></span><span><a href="vscode://file//home/w41/Project/w41bu1.github.io/content/posts/2025-10-22-wordpress-local-and-debugging-docker/index.vi.md" title="Mở trong trình chỉnh sửa" target="_blank" rel="external nofollow noopener noreferrer" class="link-to-vscode">Mở trong trình chỉnh sửa</a></span></div>
         <div class="post-info-share">
           <span><a href="javascript:void(0);" title="Chia sẻ trên X" data-sharer="twitter" data-url="http://localhost:1313/vi/posts/2025-10-22-wordpress-local-and-debugging-docker/" data-title="WordPress Local and Debugging in Docker" data-hashtags="cms,php,wordpress,docker"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="Chia sẻ trên Facebook" data-sharer="facebook" data-url="http://localhost:1313/vi/posts/2025-10-22-wordpress-local-and-debugging-docker/" data-hashtag="cms"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>

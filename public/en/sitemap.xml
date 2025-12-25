@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/analyst/</loc>
-    <lastmod>2025-12-24T19:00:00+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/analyst/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/analyst/"/>
-  </url>
-  <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-12-24T19:00:00+07:00</lastmod>
+    <lastmod>2025-12-25T19:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/"/>
@@ -18,15 +10,71 @@
   </url>
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-12-24T19:00:00+07:00</lastmod>
+    <lastmod>2025-12-25T19:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/categories/"/>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/categories/"/>
   </url>
   <url>
+    <loc>http://localhost:1313/tags/kali/</loc>
+    <lastmod>2025-12-25T19:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/kali/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/kali/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/categories/pentest/</loc>
+    <lastmod>2025-12-25T19:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/categories/pentest/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/categories/pentest/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-12-25T19:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/setup/</loc>
+    <lastmod>2025-12-25T19:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/setup/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/setup/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/2025-12-25-setup-kali-for-pentest/</loc>
+    <lastmod>2025-12-25T19:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-12-25-setup-kali-for-pentest/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/2025-12-25-setup-kali-for-pentest/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-12-25T19:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/analyst/</loc>
+    <lastmod>2025-12-24T16:19:10+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/analyst/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/analyst/"/>
+  </url>
+  <url>
     <loc>http://localhost:1313/categories/cve-analysis/</loc>
-    <lastmod>2025-12-24T19:00:00+07:00</lastmod>
+    <lastmod>2025-12-24T16:19:10+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/categories/cve-analysis/"/>
@@ -34,7 +82,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-12-24-cve-2025-64283/</loc>
-    <lastmod>2025-12-24T19:00:00+07:00</lastmod>
+    <lastmod>2025-12-24T16:19:10+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2025-12-24-cve-2025-64283/"/>
@@ -42,7 +90,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/idor/</loc>
-    <lastmod>2025-12-24T19:00:00+07:00</lastmod>
+    <lastmod>2025-12-24T16:19:10+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/idor/"/>
@@ -50,27 +98,11 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/plugin/</loc>
-    <lastmod>2025-12-24T19:00:00+07:00</lastmod>
+    <lastmod>2025-12-24T16:19:10+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/plugin/"/>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/plugin/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-12-24T19:00:00+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-12-24T19:00:00+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/"/>
   </url>
   <url>
     <loc>http://localhost:1313/posts/2025-12-22-cve-2025-57886/</loc>

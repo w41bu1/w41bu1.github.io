@@ -10,7 +10,7 @@
   <meta itemprop="description" content="Explore the POP Chain in a PHP lab: identify gadgets, craft a payload, and successfully achieve RCE.">
   <meta itemprop="datePublished" content="2025-11-11T19:00:00+07:00">
   <meta itemprop="dateModified" content="2025-11-25T21:12:53+07:00">
-  <meta itemprop="wordCount" content="743">
+  <meta itemprop="wordCount" content="745">
   <meta itemprop="image" content="http://localhost:1313/posts/2025-11-11-pop-chain-lab1/app.png">
   <meta itemprop="keywords" content="Analyst,Plugin,Pop Chain,Insecure Deserialize"><meta property="og:url" content="http://localhost:1313/vi/posts/2025-11-11-pop-chain-lab1/">
   <meta property="og:site_name" content="Bui Van Y">
@@ -43,7 +43,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/localhost:1313\/vi\/posts\/2025-11-11-pop-chain-lab1\/"
-    },"image": ["http:\/\/localhost:1313\/images\/avatar.png"],"genre": "posts","keywords": "analyst, plugin, pop chain, insecure deserialize","wordcount":  743 ,
+    },"image": ["http:\/\/localhost:1313\/images\/avatar.png"],"genre": "posts","keywords": "analyst, plugin, pop chain, insecure deserialize","wordcount":  745 ,
     "url": "http:\/\/localhost:1313\/vi\/posts\/2025-11-11-pop-chain-lab1\/","datePublished": "2025-11-11T19:00:00+07:00","dateModified": "2025-11-25T21:12:53+07:00","publisher": {
       "@type": "Organization",
       "name": "/images/avatar.png","logo": "http:\/\/localhost:1313\/images\/avatar.png"},"author": {
@@ -138,8 +138,8 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>POP Chain Analysis &amp; Exploit</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="github.com/w41bu1" title="Tác giả" rel=" author" class="author"><img class="avatar" src='/images/avatar.png' alt="Bui Van Y" height="16" width="16">&nbsp;Bui Van Y</a></span><span class="post-included-in">&nbsp;trong <a href="/vi/categories/cve-analyst/" class="post-category" title="Danh mục - CVE Analyst"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> CVE Analyst</a></span></div><div class="post-meta-line"><span title="đăng ngày 2025-11-11 19:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-11-11">2025-11-11</time></span>&nbsp;<span title="Cập nhật ngày 2025-11-25 21:12:53"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2025-11-25">2025-11-25</time></span>&nbsp;<span title="743 từ"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>Khoảng 800 từ</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 phút</span>&nbsp;</div>
-    </div><div class="featured-image"><img src='/posts/2025-11-11-pop-chain-lab1/app.png' alt="/posts/2025-11-11-pop-chain-lab1/app.png"></div><div class="details toc" id="toc-static" data-kept="false">
+      <div class="post-meta-line"><span class="post-author"><a href="github.com/w41bu1" title="Tác giả" rel=" author" class="author"><img class="avatar" src='/images/avatar.png' alt="Bui Van Y" height="16" width="16">&nbsp;Bui Van Y</a></span><span class="post-included-in">&nbsp;trong <a href="/vi/categories/cve-analyst/" class="post-category" title="Danh mục - CVE Analyst"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> CVE Analyst</a></span></div><div class="post-meta-line"><span title="đăng ngày 2025-11-11 19:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-11-11">2025-11-11</time></span>&nbsp;<span title="Cập nhật ngày 2025-11-25 21:12:53"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2025-11-25">2025-11-25</time></span>&nbsp;<span title="745 từ"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>Khoảng 800 từ</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 phút</span>&nbsp;</div>
+    </div><div class="featured-image"><img loading="eager" src='/posts/2025-11-11-pop-chain-lab1/app.png' sizes="(max-width: 680px) 100vw, (max-width: 960px) 80vw, (max-width: 1440px) 56vw, 800px" alt="/posts/2025-11-11-pop-chain-lab1/app.png" height="1244" width="4124"></div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>Nội dung</span>
           <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
@@ -163,7 +163,7 @@
 </h2><p>Trong quá trình nghiên cứu <strong>Insecure Deserialization</strong>, mình nhận được một lab liên quan đến <strong>POP Chain</strong> (Property-Oriented Programming Chain). Đây là một dạng tấn công thú vị: thay vì khai thác hàm hay lệnh trực tiếp, kẻ tấn công kết hợp các <em>gadget</em> (các phương thức magic của class) để đạt được mục tiêu — ví dụ thực thi lệnh hệ thống (RCE).</p>
 <p>Bài viết này mô tả quá trình mình phân tích và khai thác lab: từ xem qua mã nguồn, nhận diện các gadget hữu dụng, tới cách xây payload để kích hoạt chuỗi gọi (POP chain). Mục tiêu là giúp bạn hiểu được phương pháp tư duy khi xử lý lab kiểu này.</p>
 <p>Lab mình thực hiện:
-<a href="https://github.com/William957-web/POP-CHAIN-LAB1/blob/main/index.php"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/William957-web/POP-CHAIN-LAB1/blob/main/index.php</a></p>
+<a href="https://github.com/William957-web/POP-CHAIN-LAB1/blob/main/index.php" target="_blank" rel="external nofollow noopener noreferrer">https://github.com/William957-web/POP-CHAIN-LAB1/blob/main/index.php</a></p>
 <h2 class="heading-element" id="analysis"><span>Analysis</span>
   <a href="#analysis" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -172,8 +172,8 @@
   <a href="#t%e1%bb%95ng-quan-m%c3%a3-ngu%e1%bb%93n" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h3><div class="highlight" title="lab.php" data-open="true"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+</h3><div class="code-block highlight" data-mode="classic" data-copyable="true" title="lab.php" data-open="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i><span class="title-inner">lab.php</span></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="2" style="--fi-max-shown-lines:10;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
@@ -284,11 +284,11 @@
 </span></span><span class="line"><span class="cl">	<span class="nx">unserialize</span><span class="p">(</span><span class="nx">base64_decode</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;pop&#39;</span><span class="p">]));</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
-</span></span></span></code></pre></td></tr></table>
+</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="Mở rộng hoặc thu gọn khối mã" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
 </div>
 </div><p>File chính có ba class quan trọng: <code>User</code>, <code>Note</code>, <code>Whale</code>. Cuối file có dòng unserialize đầu vào nếu <code>$_POST['pop']</code> được gửi:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
@@ -296,7 +296,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;pop&#39;</span><span class="p">])){</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">unserialize</span><span class="p">(</span><span class="nx">base64_decode</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;pop&#39;</span><span class="p">]));</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>Những điểm đáng chú ý:</p>
 <ul>
@@ -313,12 +313,12 @@
 </h3><ol>
 <li>
 <p><strong>Unserialize một <code>User</code></strong>: Khi unserialize một object <code>User</code>, magic method <code>__wakeup()</code> sẽ chạy. Ở đây <code>__wakeup()</code> khởi tạo một <code>Note</code> mới bằng cách lấy <code>$this-&gt;name . &quot;say hello&quot;</code> làm content và <code>'test_whale'</code> làm whale:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">memo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Note</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">.</span> <span class="s2">&#34;say hello&#34;</span><span class="p">,</span> <span class="s1">&#39;test_whale&#39;</span><span class="p">);</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">memo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Note</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">.</span> <span class="s2">&#34;say hello&#34;</span><span class="p">,</span> <span class="s1">&#39;test_whale&#39;</span><span class="p">);</span></span></span></code></pre></td></tr></table></div>
 </div>
 </div></li>
 <li>
@@ -326,23 +326,23 @@
 </li>
 <li>
 <p><strong><code>record()</code> truy xuất thuộc tính động trên <code>$whale</code></strong>: Trong <code>record()</code> có dòng:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$test</span> <span class="o">=</span> <span class="nv">$whale</span><span class="o">-&gt;</span><span class="nv">$content</span><span class="p">;</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$test</span> <span class="o">=</span> <span class="nv">$whale</span><span class="o">-&gt;</span><span class="nv">$content</span><span class="p">;</span></span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>Nếu <code>$whale</code> là một object <code>Whale</code> và <code>$content</code> không khớp thuộc tính tồn tại, PHP sẽ gọi magic <code>Whale::__get($attribute)</code>.</p>
 </li>
 <li>
 <p><strong><code>Whale::__get()</code> thực thi <code>system()</code></strong>: <code>__get()</code> của <code>Whale</code> chứa:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">system</span><span class="p">(</span><span class="s1">&#39;echo &#34;&#39;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span><span class="o">.</span><span class="s1">&#39;&#34; &gt;&gt; log.txt&#39;</span><span class="p">);</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">system</span><span class="p">(</span><span class="s1">&#39;echo &#34;&#39;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span><span class="o">.</span><span class="s1">&#39;&#34; &gt;&gt; log.txt&#39;</span><span class="p">);</span></span></span></code></pre></td></tr></table></div>
 </div>
 </div><p>Vì <code>system()</code> chạy shell, nếu <code>$this-&gt;name</code> chứa ký tự phá vỡ lệnh (ví dụ <code>&quot;; ls /; echo &quot;</code>), attacker có thể chèn và thực thi lệnh shell dẫn tới RCE.</p>
 </li>
@@ -352,8 +352,8 @@
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p>Tạo 1 file tương tự file gốc nhưng chứa code tạo serialize:</p>
-<div class="highlight" title="lab_copy.php"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
+<div class="code-block highlight" data-mode="classic" data-copyable="true" title="lab_copy.php"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i><span class="title-inner">lab_copy.php</span></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="2" style="--fi-max-shown-lines:10;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
@@ -466,13 +466,13 @@
 </span></span><span class="line hl"><span class="cl"><span class="nv">$searialize</span> <span class="o">=</span> <span class="nx">serialize</span><span class="p">(</span><span class="nv">$u</span><span class="p">);</span>
 </span></span><span class="line hl"><span class="cl"><span class="k">echo</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span> <span class="nv">$searialize</span> <span class="o">.</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
-</span></span></span></code></pre></td></tr></table>
+</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="Mở rộng hoặc thu gọn khối mã" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
 </div>
 </div><p>Chạy file này và copy chuỗi base64 trả về:</p>
-<p><figure><a class="lightgallery" href="/posts/2025-11-11-pop-chain-lab1/base64_return.png" title="Chuỗi base64 trả về" data-thumbnail="/posts/2025-11-11-pop-chain-lab1/base64_return.png" data-sub-html="<h2>Base64</h2><p>Chuỗi base64 trả về</p>"><img loading="lazy" src='/posts/2025-11-11-pop-chain-lab1/base64_return.png' alt="Base64" height="450" width="1542"></a><figcaption class="image-caption">Chuỗi base64 trả về</figcaption>
+<p><figure><a class="lightgallery" target="_blank" href="/posts/2025-11-11-pop-chain-lab1/base64_return.png" title="Chuỗi base64 trả về" data-thumbnail="/posts/2025-11-11-pop-chain-lab1/base64_return.png" data-sub-html="<h2>Base64</h2><p>Chuỗi base64 trả về</p>"><img loading="lazy" src='/posts/2025-11-11-pop-chain-lab1/base64_return.png' alt="Base64" height="450" width="1542"></a><figcaption class="image-caption">Chuỗi base64 trả về</figcaption>
   </figure></p>
 <p>Gửi request theo cú pháp challenge</p>
-<p><figure><a class="lightgallery" href="/posts/2025-11-11-pop-chain-lab1/result.png" title="RCE thành công" data-thumbnail="/posts/2025-11-11-pop-chain-lab1/result.png" data-sub-html="<h2>RCE</h2><p>RCE thành công</p>"><img loading="lazy" src='/posts/2025-11-11-pop-chain-lab1/result.png' alt="RCE" height="593" width="1542"></a><figcaption class="image-caption">RCE thành công</figcaption>
+<p><figure><a class="lightgallery" target="_blank" href="/posts/2025-11-11-pop-chain-lab1/result.png" title="RCE thành công" data-thumbnail="/posts/2025-11-11-pop-chain-lab1/result.png" data-sub-html="<h2>RCE</h2><p>RCE thành công</p>"><img loading="lazy" src='/posts/2025-11-11-pop-chain-lab1/result.png' alt="RCE" height="593" width="1542"></a><figcaption class="image-caption">RCE thành công</figcaption>
   </figure></p></div><hr class="awesome-hr" />
     <h2 id="see-also">Nội dung liên quan</h2>
     <ul><li>
@@ -492,7 +492,7 @@
       </div><div class="post-info-license">
             <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
           </div></div><div class="post-info-line">
-        <div class="post-info-md"><span><a href="/vi/posts/2025-11-11-pop-chain-lab1/index.md" title="Đọc với định dạng Markdown" class="link-to-markdown">Đọc với định dạng Markdown</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2025-11-11-POP-CHAIN-LAB1/index.vi.md?plain=1" title="Xem mã nguồn"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">Xem mã nguồn</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/edit/main/content/posts/2025-11-11-POP-CHAIN-LAB1/index.vi.md" title="Chỉnh sửa trang này"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Chỉnh sửa trang này</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/issues/new?title=[BUG]%20POP&#43;Chain&#43;Analysis&#43;%26&#43;Exploit&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cPOP&#43;Chain&#43;Analysis&#43;%26&#43;Exploit%7c%0A%7cURL%7chttp://localhost:1313/vi/posts/2025-11-11-pop-chain-lab1/%7c%0A%7cFilename%7chttps://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2025-11-11-POP-CHAIN-LAB1/index.vi.md?plain=1%7c" title="Báo cáo lỗi"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Báo cáo lỗi</a></span><span><a href="vscode://file//home/w41/Project/w41bu1.github.io/content/posts/2025-11-11-POP-CHAIN-LAB1/index.vi.md" title="Mở trong trình chỉnh sửa"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-vscode">Mở trong trình chỉnh sửa</a></span></div>
+        <div class="post-info-md"><span><a href="/vi/posts/2025-11-11-pop-chain-lab1/index.md" title="Đọc với định dạng Markdown" class="link-to-markdown">Đọc với định dạng Markdown</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2025-11-11-POP-CHAIN-LAB1/index.vi.md?plain=1" title="Xem mã nguồn" target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">Xem mã nguồn</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/edit/main/content/posts/2025-11-11-POP-CHAIN-LAB1/index.vi.md" title="Chỉnh sửa trang này" target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Chỉnh sửa trang này</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/issues/new?title=[BUG]%20POP&#43;Chain&#43;Analysis&#43;%26&#43;Exploit&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cPOP&#43;Chain&#43;Analysis&#43;%26&#43;Exploit%7c%0A%7cURL%7chttp://localhost:1313/vi/posts/2025-11-11-pop-chain-lab1/%7c%0A%7cFilename%7chttps://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2025-11-11-POP-CHAIN-LAB1/index.vi.md?plain=1%7c" title="Báo cáo lỗi" target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Báo cáo lỗi</a></span><span><a href="vscode://file//home/w41/Project/w41bu1.github.io/content/posts/2025-11-11-POP-CHAIN-LAB1/index.vi.md" title="Mở trong trình chỉnh sửa" target="_blank" rel="external nofollow noopener noreferrer" class="link-to-vscode">Mở trong trình chỉnh sửa</a></span></div>
         <div class="post-info-share">
           <span><a href="javascript:void(0);" title="Chia sẻ trên X" data-sharer="twitter" data-url="http://localhost:1313/vi/posts/2025-11-11-pop-chain-lab1/" data-title="POP Chain Analysis &amp; Exploit" data-hashtags="analyst,plugin,pop chain,insecure deserialize"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="Chia sẻ trên Facebook" data-sharer="facebook" data-url="http://localhost:1313/vi/posts/2025-11-11-pop-chain-lab1/" data-hashtag="analyst"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
