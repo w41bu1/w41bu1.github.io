@@ -8,8 +8,16 @@
     <language>en</language>
     <managingEditor>w41bu1@gmail.com (Bui Van Y)</managingEditor>
     <webMaster>w41bu1@gmail.com (Bui Van Y)</webMaster>
-    <lastBuildDate>Tue, 30 Dec 2025 10:19:45 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 31 Dec 2025 19:00:00 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/idor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CVE-2024-13887 Analysis &amp; POC</title>
+      <link>http://localhost:1313/posts/2025-12-31-cve-2024-13887/</link>
+      <pubDate>Wed, 31 Dec 2025 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
+      <guid>http://localhost:1313/posts/2025-12-31-cve-2024-13887/</guid>
+      <category domain="http://localhost:1313/categories/cve-analysis/">CVE Analysis</category>
+      <description>Security Vulnerability in WordPress Business Directory Plugin.</description>
+    </item>
     <item>
       <title>CVE-2024-12114 Analysis &amp; POC</title>
       <link>http://localhost:1313/posts/2025-12-30-cve-2024-12114/</link>
