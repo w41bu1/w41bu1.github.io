@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/vi/tags/analyst/</loc>
-    <lastmod>2025-12-30T13:05:39+07:00</lastmod>
+    <lastmod>2026-01-01T19:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/analyst/"/>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/</loc>
-    <lastmod>2025-12-30T13:05:39+07:00</lastmod>
+    <lastmod>2026-01-01T19:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/"/>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/categories/</loc>
-    <lastmod>2025-12-30T13:05:39+07:00</lastmod>
+    <lastmod>2026-01-01T19:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/categories/"/>
@@ -26,11 +26,49 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/categories/cve-analysis/</loc>
-    <lastmod>2025-12-30T13:05:39+07:00</lastmod>
+    <lastmod>2026-01-01T19:00:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/categories/cve-analysis/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/categories/cve-analysis/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vi/posts/2026-01-01-cve-2025-11749/</loc>
+    <lastmod>2026-01-01T19:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/2026-01-01-cve-2025-11749/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2026-01-01-cve-2025-11749/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vi/tags/plugin/</loc>
+    <lastmod>2026-01-01T19:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/plugin/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/plugin/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vi/posts/</loc>
+    <lastmod>2026-01-01T19:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vi/tags/privilege-escalation/</loc>
+    <lastmod>2026-01-01T19:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vi/tags/</loc>
+    <lastmod>2026-01-01T19:00:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/"/>
   </url>
   <url>
     <loc>http://localhost:1313/vi/posts/2025-12-31-cve-2024-13887/</loc>
@@ -47,30 +85,6 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/idor/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/idor/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vi/tags/plugin/</loc>
-    <lastmod>2025-12-30T13:05:39+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/plugin/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/plugin/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vi/posts/</loc>
-    <lastmod>2025-12-30T13:05:39+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vi/tags/</loc>
-    <lastmod>2025-12-30T13:05:39+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/tags/"/>
   </url>
   <url>
     <loc>http://localhost:1313/vi/posts/2025-12-30-cve-2024-12114/</loc>
@@ -466,7 +480,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/categories/bug-bounty/</loc>
-    <lastmod>2025-12-04T00:26:04+07:00</lastmod>
+    <lastmod>2025-12-30T15:24:44+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -480,7 +494,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/tags/sink/</loc>
-    <lastmod>2025-12-04T00:26:04+07:00</lastmod>
+    <lastmod>2025-12-30T15:24:44+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/sink/"/>
@@ -488,7 +502,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/tags/wordpress/</loc>
-    <lastmod>2025-12-04T00:26:04+07:00</lastmod>
+    <lastmod>2025-12-30T15:24:44+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/wordpress/"/>
@@ -496,7 +510,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/posts/2025-11-13-wordpress-vulnerability-sink/</loc>
-    <lastmod>2025-12-04T00:26:04+07:00</lastmod>
+    <lastmod>2025-12-30T15:24:44+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/2025-11-13-wordpress-vulnerability-sink/"/>

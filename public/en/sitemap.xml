@@ -1057,6 +1057,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/jekyll/"/>
   </url>
   <url>
+    <loc>http://localhost:1313/posts/2026-01-01-cve-2025-11749/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/posts/2026-01-01-cve-2025-11749/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/2026-01-01-cve-2025-11749/"/>
+  </url>
+  <url>
     <loc>http://localhost:1313/collections/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
