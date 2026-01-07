@@ -8,8 +8,16 @@
     <language>vi</language>
     <managingEditor>w41bu1@gmail.com (Bui Van Y)</managingEditor>
     <webMaster>w41bu1@gmail.com (Bui Van Y)</webMaster>
-    <lastBuildDate>Tue, 06 Jan 2026 19:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 07 Jan 2026 19:00:00 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/vi/tags/analyst/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CVE-2025-2563 Analysis &amp; POC</title>
+      <link>http://localhost:1313/vi/posts/2026-01-07-cve-2025-2563/</link>
+      <pubDate>Wed, 07 Jan 2026 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
+      <guid>http://localhost:1313/vi/posts/2026-01-07-cve-2025-2563/</guid>
+      <category domain="http://localhost:1313/vi/categories/cve-analysis/">CVE Analysis</category>
+      <description>Security Vulnerability in WordPress User Registration Plugin.</description>
+    </item>
     <item>
       <title>CVE-2025-7654 Analysis &amp; POC</title>
       <link>http://localhost:1313/vi/posts/2026-01-06-cve-2025-7654/</link>
