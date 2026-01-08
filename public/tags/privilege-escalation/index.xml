@@ -8,8 +8,16 @@
     <language>en</language>
     <managingEditor>w41bu1@gmail.com (Bui Van Y)</managingEditor>
     <webMaster>w41bu1@gmail.com (Bui Van Y)</webMaster>
-    <lastBuildDate>Wed, 07 Jan 2026 19:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 08 Jan 2026 19:00:00 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/privilege-escalation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CVE-2025-2563 Analysis &amp; POC</title>
+      <link>http://localhost:1313/posts/2026-01-08-cve-2025-14156/</link>
+      <pubDate>Thu, 08 Jan 2026 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
+      <guid>http://localhost:1313/posts/2026-01-08-cve-2025-14156/</guid>
+      <category domain="http://localhost:1313/categories/cve-analysis/">CVE Analysis</category>
+      <description>Security Vulnerability in WordPress Fox LMS Plugin.</description>
+    </item>
     <item>
       <title>CVE-2025-2563 Analysis &amp; POC</title>
       <link>http://localhost:1313/posts/2026-01-07-cve-2025-2563/</link>
