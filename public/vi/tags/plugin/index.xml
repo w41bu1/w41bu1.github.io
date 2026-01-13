@@ -8,8 +8,16 @@
     <language>vi</language>
     <managingEditor>w41bu1@gmail.com (Bui Van Y)</managingEditor>
     <webMaster>w41bu1@gmail.com (Bui Van Y)</webMaster>
-    <lastBuildDate>Tue, 13 Jan 2026 19:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 14 Jan 2026 19:00:00 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/vi/tags/plugin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CVE-2025-3102 Analysis &amp; POC</title>
+      <link>http://localhost:1313/vi/posts/2026-01-14-cve-2025-3102/</link>
+      <pubDate>Wed, 14 Jan 2026 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
+      <guid>http://localhost:1313/vi/posts/2026-01-14-cve-2025-3102/</guid>
+      <category domain="http://localhost:1313/vi/categories/cve-analysis/">CVE Analysis</category>
+      <description>Security Vulnerability in WordPress OttoKit Plugin.</description>
+    </item>
     <item>
       <title>CVE-2025-4796 Analysis &amp; POC</title>
       <link>http://localhost:1313/vi/posts/2026-01-13-cve-2025-6688/</link>
