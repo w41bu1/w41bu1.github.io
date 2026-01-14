@@ -8,8 +8,16 @@
     <language>vi</language>
     <managingEditor>w41bu1@gmail.com (Bui Van Y)</managingEditor>
     <webMaster>w41bu1@gmail.com (Bui Van Y)</webMaster>
-    <lastBuildDate>Tue, 13 Jan 2026 22:41:08 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 15 Jan 2026 19:00:00 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/vi/tags/analyst/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CVE-2025-3102 Analysis &amp; POC</title>
+      <link>http://localhost:1313/vi/posts/2026-01-15-cve-2025-12788/</link>
+      <pubDate>Thu, 15 Jan 2026 19:00:00 +0700</pubDate><author>w41bu1@gmail.com (Bui Van Y)</author>
+      <guid>http://localhost:1313/vi/posts/2026-01-15-cve-2025-12788/</guid>
+      <category domain="http://localhost:1313/vi/categories/cve-analysis/">CVE Analysis</category>
+      <description>Security Vulnerability in WordPress Hydra Booking Plugin.</description>
+    </item>
     <item>
       <title>CVE-2025-3102 Analysis &amp; POC</title>
       <link>http://localhost:1313/vi/posts/2026-01-14-cve-2025-3102/</link>
