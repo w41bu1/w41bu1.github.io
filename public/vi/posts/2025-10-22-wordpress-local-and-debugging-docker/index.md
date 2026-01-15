@@ -79,8 +79,14 @@ nano Dockerfile
 ```dockerfile
 FROM wordpress:latest
 
-# Cài đặt Xdebug
-RUN pecl install xdebug && docker-php-ext-enable xdebug
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug
+
+ARG UID=1000
+ARG GID=1000
+
+RUN groupmod -g ${GID} www-data && \
+    usermod -u ${UID} -g ${GID} www-data
 ```
 
 ### Create docker-compose.yml
