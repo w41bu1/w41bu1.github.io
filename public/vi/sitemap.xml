@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/</loc>
-    <lastmod>2026-01-14T10:10:10+07:00</lastmod>
+    <lastmod>2026-01-15T21:10:48+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/"/>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/categories/</loc>
-    <lastmod>2026-01-14T10:10:10+07:00</lastmod>
+    <lastmod>2026-01-15T21:10:48+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/categories/"/>
@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/posts/</loc>
-    <lastmod>2026-01-14T10:10:10+07:00</lastmod>
+    <lastmod>2026-01-15T21:10:48+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/"/>
@@ -66,7 +66,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/tags/</loc>
-    <lastmod>2026-01-14T10:10:10+07:00</lastmod>
+    <lastmod>2026-01-15T21:10:48+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/"/>
@@ -608,7 +608,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/tags/wordpress/</loc>
-    <lastmod>2025-12-30T15:24:44+07:00</lastmod>
+    <lastmod>2026-01-15T21:10:48+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/wordpress/"/>
@@ -840,7 +840,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/tags/cms/</loc>
-    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
+    <lastmod>2026-01-15T21:10:48+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/cms/"/>
@@ -848,7 +848,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/tags/docker/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2026-01-15T21:10:48+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/docker/"/>
@@ -856,7 +856,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/tags/php/</loc>
-    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
+    <lastmod>2026-01-15T21:10:48+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/php/"/>
@@ -864,7 +864,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/categories/web/</loc>
-    <lastmod>2025-11-25T21:12:53+07:00</lastmod>
+    <lastmod>2026-01-15T21:10:48+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/categories/web/"/>
@@ -872,7 +872,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/posts/2025-10-22-wordpress-local-and-debugging-docker/</loc>
-    <lastmod>2025-10-27T01:40:34+07:00</lastmod>
+    <lastmod>2026-01-15T21:10:48+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/posts/2025-10-22-wordpress-local-and-debugging-docker/"/>
