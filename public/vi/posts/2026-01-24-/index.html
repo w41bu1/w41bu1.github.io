@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="vi">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>CVE-2025-10745 Analysis &amp; POC - Bui Van Y</title><meta name="author" content="Bui Van Y">
+<meta name="description" content="Security Vulnerability in WordPress Banhammer Plugin."><meta name="keywords" content='analyst, plugin, Bypass Vulnerability'>
+  <meta itemprop="name" content="CVE-2025-10745 Analysis & POC">
+  <meta itemprop="description" content="Security Vulnerability in WordPress Banhammer Plugin.">
+  <meta itemprop="datePublished" content="2026-01-23T19:00:00+07:00">
+  <meta itemprop="dateModified" content="2026-01-23T19:00:00+07:00">
+  <meta itemprop="wordCount" content="1431">
+  <meta itemprop="image" content="http://localhost:1313/app.png">
+  <meta itemprop="keywords" content="Analyst,Plugin,Bypass Vulnerability"><meta property="og:url" content="http://localhost:1313/vi/posts/2026-01-24-/">
+  <meta property="og:site_name" content="Bui Van Y">
+  <meta property="og:title" content="CVE-2025-10745 Analysis & POC">
+  <meta property="og:description" content="Security Vulnerability in WordPress Banhammer Plugin.">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-01-23T19:00:00+07:00">
+    <meta property="article:modified_time" content="2026-01-23T19:00:00+07:00">
+    <meta property="article:tag" content="Analyst">
+    <meta property="article:tag" content="Plugin">
+    <meta property="article:tag" content="Bypass Vulnerability">
+    <meta property="og:image" content="http://localhost:1313/app.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/app.png">
+  <meta name="twitter:title" content="CVE-2025-10745 Analysis & POC">
+  <meta name="twitter:description" content="Security Vulnerability in WordPress Banhammer Plugin.">
+<meta name="application-name" content="Bui Van Y">
+<meta name="apple-mobile-web-app-title" content="Bui Van Y"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/svg-spinners--wind-toy.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/vi/posts/2026-01-24-/" title="CVE-2025-10745 Analysis &amp; POC - Bui Van Y" /><link rel="prev" type="text/html" href="http://localhost:1313/vi/posts/2026-01-22-cve-2025-11707/" title="CVE-2025-11707 Analysis &amp; POC" /><link rel="next" type="text/html" href="http://localhost:1313/vi/posts/2026-01-23-cve-2025-10745/" title="CVE-2025-10745 Analysis &amp; POC" /><link rel="alternate" type="text/markdown" href="http://localhost:1313/vi/posts/2026-01-24-/index.md" title="CVE-2025-10745 Analysis & POC - Bui Van Y"><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "CVE-2025-10745 Analysis \u0026 POC",
+    "inLanguage": "vi",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/vi\/posts\/2026-01-24-\/"
+    },"image": ["http:\/\/localhost:1313\/images\/avatar.png"],"genre": "posts","keywords": "analyst, plugin, Bypass Vulnerability","wordcount":  1431 ,
+    "url": "http:\/\/localhost:1313\/vi\/posts\/2026-01-24-\/","datePublished": "2026-01-23T19:00:00+07:00","dateModified": "2026-01-23T19:00:00+07:00","publisher": {
+      "@type": "Organization",
+      "name": "/images/avatar.png","logo": "http:\/\/localhost:1313\/images\/avatar.png"},"author": {
+        "@type": "Person",
+        "name": "Bui Van Y"
+      },"description": "Security Vulnerability in WordPress Banhammer Plugin."
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/vi/" title="Bui Van Y"><img class="logo" src='/images/svg-spinners--wind-toy.svg' alt="Bui Van Y" height="32" width="32"><span class="header-title-text">Bui Van Y</span></a><span class="typeit header-subtitle"><template>w41bu1</template></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/vi/posts/"><i class="fa-solid fa-file-alt fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item">
+              <a class="menu-link" href="/vi/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a class="menu-link" href="/vi/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Tìm tiêu đề hoặc nội dung..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Tìm kiếm">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Xoá">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" role="button" aria-label="Đổi chủ đề" title="Đổi chủ đề"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></li><li class="menu-item language-switch">
+            <span role="button" aria-label="Chọn Ngôn ngữ" title="Chọn Ngôn ngữ"><i class="fa-solid fa-language fa-fw" aria-hidden="true"></i></span>
+            <ul class="sub-menu"><li class="menu-item"><a href="/posts/2026-01-24-/" class="menu-link" title="English">English</a></li><li class="menu-item"><span class="text-secondary" title="Vietnamese">Vietnamese</span></li></ul>
+          </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/vi/" title="Bui Van Y"><img class="logo" src='/images/svg-spinners--wind-toy.svg' alt="Bui Van Y" height="26" width="26"><span class="header-title-text">Bui Van Y</span></a><span class="typeit header-subtitle"><template>w41bu1</template></span></div>
+      <div class="theme-switch" role="button" aria-label="Đổi chủ đề"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Tìm tiêu đề hoặc nội dung..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Tìm kiếm">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Xoá">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Huỷ
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/vi/posts/"><i class="fa-solid fa-file-alt fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item"><a class="menu-link" href="/vi/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item"><a class="menu-link" href="/vi/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system"><span class="menu-system-item language-switch">
+              <span role="button" aria-label="Chọn Ngôn ngữ" title="Chọn Ngôn ngữ">Vietnamese<i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+              <select id="language-select" class="language-select" onchange="location = this.value;"><option value="/posts/2026-01-24-/">English</option><option value="/vi/posts/2026-01-24-/" selected disabled>Vietnamese</option></select>
+            </span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"><div class="details related-details open">
+      <div class="details-summary related-summary">
+        <i class="fa-solid fa-fire fa-fade text-danger fa-fw" aria-hidden="true"></i>
+        <span class="related-title">Nội dung liên quan</span><i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+      <div class="details-content related-content">
+        <ul class="related-list"><li class="related-item">
+              <a href="/vi/posts/2026-01-23-cve-2025-10745/" title="CVE-2025-10745 Analysis &amp; POC">CVE-2025-10745 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2026-01-22-cve-2025-11707/" title="CVE-2025-11707 Analysis &amp; POC">CVE-2025-11707 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2026-01-15-cve-2025-12788/" title="CVE-2025-12788 Analysis &amp; POC">CVE-2025-12788 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2026-01-14-cve-2025-3102/" title="CVE-2025-3102 Analysis &amp; POC">CVE-2025-3102 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2026-01-13-cve-2025-6688/" title="CVE-2025-4796 Analysis &amp; POC">CVE-2025-4796 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2026-01-12-cve-2025-4796/" title="CVE-2025-4796 Analysis &amp; POC">CVE-2025-4796 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2026-01-11-cve-2025-8059/" title="CVE-2025-8059 Analysis &amp; POC">CVE-2025-8059 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2026-01-08-cve-2025-14156/" title="CVE-2025-2563 Analysis &amp; POC">CVE-2025-2563 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2026-01-07-cve-2025-2563/" title="CVE-2025-2563 Analysis &amp; POC">CVE-2025-2563 Analysis &amp; POC</a></li><li class="related-item">
+              <a href="/vi/posts/2026-01-06-cve-2025-7654/" title="CVE-2025-7654 Analysis &amp; POC">CVE-2025-7654 Analysis &amp; POC</a></li></ul>
+      </div>
+    </div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>CVE-2025-10745 Analysis &amp; POC</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="github.com/w41bu1" title="Tác giả" rel=" author" class="author"><img class="avatar" src='/images/avatar.png' alt="Bui Van Y" height="16" width="16">&nbsp;Bui Van Y</a></span><span class="post-included-in">&nbsp;trong <a href="/vi/categories/cve-analysis/" class="post-category" title="Danh mục - CVE Analysis"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> CVE Analysis</a></span></div><div class="post-meta-line"><span title="đăng ngày 2026-01-23 19:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2026-01-23">2026-01-23</time></span>&nbsp;<span title="1431 từ"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>Khoảng 1500 từ</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>7 phút</span>&nbsp;</div>
+    </div><div class="featured-image"><img loading="eager" src='app.png' sizes="(max-width: 680px) 100vw, (max-width: 960px) 80vw, (max-width: 1440px) 56vw, 800px" alt="app.png"></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Nội dung</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#cve--basic-info">CVE &amp; Basic Info</a></li>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#analysis">Analysis</a></li>
+    <li><a href="#flow">Flow</a></li>
+    <li><a href="#proof-of-concept-poc">Proof of Concept (PoC)</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#key-takeaways">Key Takeaways</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 class="heading-element" id="cve--basic-info"><span>CVE &amp; Basic Info</span>
+  <a href="#cve--basic-info" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>Plugin <strong>Banhammer – Monitor Site Traffic, Block Bad Users and Bots</strong> cho WordPress bị tồn tại lỗ hổng <strong>vượt qua cơ chế chặn (Blocking Bypass)</strong> trong tất cả các phiên bản từ trước đến <strong>3.4.8</strong> (bao gồm cả 3.4.8). Nguyên nhân là do một <strong>“khóa bí mật” dùng chung cho toàn bộ website</strong> được tạo ra theo cách <strong>xác định trước</strong> từ một tập ký tự cố định bằng cách sử dụng hàm <code>md5()</code> và <code>base64_encode()</code>, sau đó được lưu trong tùy chọn <code>banhammer_secret_key</code>. Điều này cho phép kẻ tấn công <strong>không cần xác thực</strong> có thể vượt qua chức năng ghi log và chặn của plugin bằng cách thêm một tham số GET có tên <code>banhammer-process_{SECRET}</code>, trong đó <code>{SECRET}</code> là giá trị có thể dự đoán được, khiến Banhammer <strong>ngừng áp dụng các biện pháp bảo vệ cho request đó</strong>.</p>
+<ul>
+<li><strong>CVE ID</strong>: <a href="https://www.cve.org/CVERecord?id=CVE-2025-10745" target="_blank" rel="external nofollow noopener noreferrer">CVE-2025-10745</a></li>
+<li><strong>Vulnerability Type</strong>: Bypass Vulnerability</li>
+<li><strong>Affected Versions</strong>: &lt;= 3.4.8</li>
+<li><strong>Patched Versions</strong>: 3.4.9</li>
+<li><strong>CVSS severity</strong>: Low (5.3)</li>
+<li><strong>Required Privilege</strong>: Unauthenticated</li>
+<li><strong>Product</strong>: <a href="https://wordpress.org/plugins/login-lockdown/" target="_blank" rel="external nofollow noopener noreferrer">WordPress Banhammer Plugin</a></li>
+</ul>
+<h2 class="heading-element" id="requirements"><span>Requirements</span>
+  <a href="#requirements" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li><strong>Local WordPress &amp; Debugging</strong>
+<ul>
+<li><a href="https://w41bu1.github.io/posts/2025-08-21-wordpress-local-and-debugging/" target="_blank" rel="external nofollow noopener noreferrer">Virtual Machine</a></li>
+<li><a href="https://w41bu1.github.io/posts/2025-10-22-wordpress-local-and-debugging-docker/" target="_blank" rel="external nofollow noopener noreferrer">Docker</a></li>
+</ul>
+</li>
+<li><strong>Plugin Version</strong> - <strong>Banhammer</strong>:
+<ul>
+<li><code>3.4.7</code> – <strong>vulnerable</strong></li>
+<li><code>3.4.9</code> – <strong>patched</strong></li>
+</ul>
+</li>
+<li><strong>Diff Tool (diff)</strong> → <a href="https://meldmerge.org/" target="_blank" rel="external nofollow noopener noreferrer"><strong>Meld</strong></a> hoặc bất kỳ công cụ diff nào.</li>
+</ul>
+<h2 class="heading-element" id="analysis"><span>Analysis</span>
+  <a href="#analysis" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>Plugin đã đăng ký action hook:</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">add_action</span><span class="p">(</span><span class="s1">&#39;wp_ajax_banhammer_armory&#39;</span><span class="p">,</span> <span class="s1">&#39;banhammer_armory&#39;</span><span class="p">);</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p><code>wp_ajax_</code> là hook dành cho người đùng đã đăng nhập, khi có request gửi đến <code>/wp-admin/admin-ajax.php</code> với param <code>action=banhammer_armory</code> thì callback <code>banhammer_armory</code> được gọi:</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true" title="armory-ajax.php v3.4.7" data-open="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i><span class="title-inner">armory-ajax.php v3.4.7</span></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="2" style="--fi-max-shown-lines:10;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">banhammer_armory</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nx">check_ajax_referer</span><span class="p">(</span><span class="s1">&#39;banhammer&#39;</span><span class="p">,</span> <span class="s1">&#39;nonce&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">current_user_can</span><span class="p">(</span><span class="s1">&#39;manage_options&#39;</span><span class="p">))</span> <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nv">$vars</span> <span class="o">=</span> <span class="nx">banhammer_armory_vars</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nx">extract</span><span class="p">(</span><span class="nv">$vars</span><span class="p">);</span> <span class="c1">// $wpdb, $table, $items, $type, $bulk, $sort, $order, $search, $filter, $status, $fx, $jump, $count, $limit, $offset, $toggle
+</span></span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nv">$limit</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$limit</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="o">?</span> <span class="mi">10</span> <span class="o">:</span> <span class="nv">$limit</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">===</span> <span class="s1">&#39;add&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">===</span> <span class="s1">&#39;bulk&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">list</span> <span class="p">(</span><span class="nv">$query</span><span class="p">,</span> <span class="nv">$count</span><span class="p">)</span> <span class="o">=</span> <span class="nx">banhammer_armory_bulk</span><span class="p">(</span><span class="nv">$wpdb</span><span class="p">,</span> <span class="nv">$table</span><span class="p">,</span> <span class="nv">$offset</span><span class="p">,</span> <span class="nv">$limit</span><span class="p">,</span> <span class="nv">$sort</span><span class="p">,</span> <span class="nv">$order</span><span class="p">,</span> <span class="nv">$bulk</span><span class="p">,</span> <span class="nv">$items</span><span class="p">,</span> <span class="nv">$search</span><span class="p">,</span> <span class="nv">$filter</span><span class="p">,</span> <span class="nv">$status</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nx">banhammer_armory_results</span><span class="p">(</span><span class="nv">$wpdb</span><span class="p">,</span> <span class="nv">$table</span><span class="p">,</span> <span class="nv">$query</span><span class="p">,</span> <span class="nv">$count</span><span class="p">,</span> <span class="nv">$type</span><span class="p">,</span> <span class="nv">$offset</span><span class="p">,</span> <span class="nv">$limit</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">die</span><span class="p">();</span> <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="Mở rộng hoặc thu gọn khối mã" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
+</div>
+</div><p>Hàm <code>banhammer_armory()</code> trước hết kiểm tra nonce của AJAX và quyền truy cập của người dùng. Nếu không hợp lệ hoặc người dùng không có quyền <code>manage_options</code> (Administrator) thì hàm sẽ dừng ngay.</p>
+<p>Tiếp theo, hàm gọi <code>banhammer_armory_vars()</code> để lấy toàn bộ các tham số cần thiết từ request và lưu vào mảng <code>$vars</code>. Sau đó, các phần tử trong mảng này được gán thành các biến cục bộ bằng <code>extract($vars)</code>.</p>
+<p>Giá trị <code>$limit</code> được giới hạn tối đa là 10 để tránh truy vấn quá nhiều bản ghi trong một lần.</p>
+<p>Tùy theo giá trị của <code>$type</code>, hàm sẽ thực hiện các nhánh xử lý khác nhau: Nếu <code>$type === 'bulk'</code> thì gọi <code>banhammer_armory_bulk()</code> để thực hiện tính năng ban dựa trên IP.</p>
+<p>Chức năng này do <strong>administrator</strong> trực tiếp sử dụng.</p>
+<p><figure><a class="lightgallery" target="_blank" href="block.png" title="Ban IP" data-thumbnail="block.png" data-sub-html="<h2>Ban IP</h2><p>Ban IP</p>"><img loading="lazy" src='block.png' alt="Ban IP"></a><figcaption class="image-caption">Ban IP</figcaption>
+  </figure></p>
+<hr>
+<p>Plugin gắn <code>hàm banhammer_init()</code> vào hook <code>init</code>:</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">add_action</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">,</span> <span class="s1">&#39;banhammer_init&#39;</span><span class="p">);</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>Điều này có nghĩa là mỗi request WordPress đều sẽ chạy qua hàm này.</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true" title="armory-ajax.php v3.4.7" data-open="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i><span class="title-inner">armory-ajax.php v3.4.7</span></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="2" style="--fi-max-shown-lines:10;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">banhammer_init</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="nv">$BanhammerWP</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nv">$options</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span><span class="s1">&#39;banhammer_settings&#39;</span><span class="p">,</span> <span class="nv">$BanhammerWP</span><span class="o">-&gt;</span><span class="na">options</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">banhammer_abort</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span> <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nx">extract</span><span class="p">(</span><span class="nx">banhammer_get_vars</span><span class="p">());</span> <span class="c1">// $status, $date, $user, $protocol, $method, $domain, $request, $ua, $refer, $proxy, $ip
+</span></span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nv">$check</span> <span class="o">=</span> <span class="nx">banhammer_check</span><span class="p">(</span><span class="nv">$user</span><span class="p">,</span> <span class="nv">$ip</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nv">$banhammer</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nv">$status</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">is_array</span><span class="p">(</span><span class="nv">$check</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="nx">extract</span><span class="p">(</span><span class="nv">$check</span><span class="p">);</span> <span class="c1">// $tower, $status
+</span></span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="nx">update_option</span><span class="p">(</span><span class="s1">&#39;banhammer_tower&#39;</span><span class="p">,</span> <span class="nv">$tower</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nv">$status</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">||</span> <span class="nv">$status</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="nv">$banhammer</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nx">banhammer_insert</span><span class="p">(</span><span class="nv">$status</span><span class="p">,</span> <span class="nv">$date</span><span class="p">,</span> <span class="nv">$user</span><span class="p">,</span> <span class="nv">$protocol</span><span class="p">,</span> <span class="nv">$method</span><span class="p">,</span> <span class="nv">$domain</span><span class="p">,</span> <span class="nv">$request</span><span class="p">,</span> <span class="nv">$ua</span><span class="p">,</span> <span class="nv">$refer</span><span class="p">,</span> <span class="nv">$proxy</span><span class="p">,</span> <span class="nv">$ip</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$banhammer</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="nx">banhammer_disable_cache</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="nx">banhammer</span><span class="p">(</span><span class="nv">$options</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="Mở rộng hoặc thu gọn khối mã" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
+</div>
+</div><p>Trước khi thực hiện kiểm tra IP hoặc user có bị ban hay không, plugin sẽ gọi hàm:</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">banhammer_abort</span><span class="p">(</span><span class="nv">$options</span><span class="p">)</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>Nếu hàm này trả về true thì toàn bộ cơ chế kiểm tra ban sẽ bị bỏ qua cho request hiện tại.</p>
+<p>Nói cách khác: request đó sẽ không bị ban, không bị chặn và cũng không bị xử lý theo luật ban.</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true" title="banhammer-core.php v3.4.7" data-open="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i><span class="title-inner">banhammer-core.php v3.4.7</span></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="2" style="--fi-max-shown-lines:10;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">banhammer_abort</span><span class="p">(</span><span class="nv">$options</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$_GET</span> <span class="k">as</span> <span class="nv">$k</span> <span class="o">=&gt;</span> <span class="nv">$v</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">strpos</span><span class="p">(</span><span class="nv">$k</span><span class="p">,</span> <span class="s1">&#39;banhammer-process&#39;</span><span class="p">)</span> <span class="o">!==</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">                <span class="nv">$key</span> <span class="o">=</span> <span class="nx">banhammer_get_secret_key</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;abort check&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">                <span class="nv">$get_key</span> <span class="o">=</span> <span class="nx">explode</span><span class="p">(</span><span class="s1">&#39;banhammer-process_&#39;</span><span class="p">,</span> <span class="nv">$k</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">                <span class="nv">$get_key</span> <span class="o">=</span> <span class="nx">end</span><span class="p">(</span><span class="nv">$get_key</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="nv">$get_key</span> <span class="o">===</span> <span class="nv">$key</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    
+</span></span><span class="line"><span class="cl">                    <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                    
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="Mở rộng hoặc thu gọn khối mã" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
+</div>
+</div><p>Ở đây plugin cho phép bypass cơ chế ban này thông qua URL có chứa:</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">?banhammer-process_&lt;secret_key&gt;</span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>Nếu key khớp với secret key nội bộ.</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true" title="banhammer-functions.php v3.4.7" data-open="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i><span class="title-inner">banhammer-functions.php v3.4.7</span></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="2" style="--fi-max-shown-lines:10;--fi-line-digit:2;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">banhammer_get_secret_key</span><span class="p">(</span><span class="nv">$bytes</span><span class="p">,</span> <span class="nv">$context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nv">$key</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span><span class="s1">&#39;banhammer_secret_key&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$key</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="nv">$key</span> <span class="o">=</span> <span class="nx">banhammer_secret_key</span><span class="p">(</span><span class="nv">$bytes</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="nv">$update</span> <span class="o">=</span> <span class="nx">update_option</span><span class="p">(</span><span class="s1">&#39;banhammer_secret_key&#39;</span><span class="p">,</span> <span class="nv">$key</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="nv">$update</span> <span class="o">=</span> <span class="nv">$update</span> <span class="o">?</span> <span class="s1">&#39;added&#39;</span> <span class="o">:</span> <span class="s1">&#39;failed&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="nv">$context</span> <span class="o">=</span> <span class="nv">$update</span> <span class="o">.</span><span class="s1">&#39; via &#39;</span><span class="o">.</span> <span class="nv">$context</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="nv">$log</span> <span class="o">=</span> <span class="nx">apply_filters</span><span class="p">(</span><span class="s1">&#39;banhammer_get_secret_key_log&#39;</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nv">$log</span><span class="p">)</span> <span class="nx">error_log</span><span class="p">(</span><span class="s1">&#39;Banhammer: Secret key &#39;</span><span class="o">.</span> <span class="nx">print_r</span><span class="p">(</span><span class="nv">$context</span><span class="p">,</span> <span class="k">true</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">apply_filters</span><span class="p">(</span><span class="s1">&#39;banhammer_get_secret_key&#39;</span><span class="p">,</span> <span class="nv">$key</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="Mở rộng hoặc thu gọn khối mã" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
+</div>
+</div><p>Nếu key chưa được tạo, hàm gọi tới <code>banhammer_secret_key($bytes)</code> với <code>bytes=30</code></p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true" title="banhammer-functions.php v3.4.7" data-open="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i><span class="title-inner">banhammer-functions.php v3.4.7</span></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">banhammer_secret_key</span><span class="p">(</span><span class="nv">$bytes</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$chars</span> <span class="o">=</span> <span class="s1">&#39;1234567890abcdefghijklmnopqrstuvwxyz&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nv">$key</span> <span class="o">=</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="nx">substr</span><span class="p">(</span><span class="nx">md5</span><span class="p">(</span><span class="nv">$chars</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">$bytes</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">apply_filters</span><span class="p">(</span><span class="s1">&#39;banhammer_secret_key&#39;</span><span class="p">,</span> <span class="nv">$key</span><span class="p">);</span>	
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>Điểm máu chốt gây lỗi nằm ở hàm này, key hoàn toàn có thể đoán được, chỉ có 1 giá trị duy nhất:</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">OTI4ZjdiY2RjZDA4ODY5Y2M0NGMxYmYyNGU3YWJl</span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>Như vậy, khi gửi request với param:</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-fallback"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">?banhammer-process_OTI4ZjdiY2RjZDA4ODY5Y2M0NGMxYmYyNGU3YWJl</span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>Thì có thể bypass qua cơ chế ban này.</p>
+<p>Bản vá trong <strong>v3.4.9</strong> đã khắc phục lỗ hổng bằng cách <strong>ràng buộc cơ chế bypass với quyền Administrator</strong>. Cụ thể, plugin chỉ cho phép bỏ qua kiểm tra ban khi <strong>secret key hợp lệ và người dùng có quyền <code>manage_options</code></strong>:</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-php"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$get_key</span> <span class="o">===</span> <span class="nv">$key</span> <span class="o">&amp;&amp;</span> <span class="nx">current_user_can</span><span class="p">(</span><span class="s1">&#39;manage_options&#39;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><p>Nhờ đó, tham số <code>banhammer-process_{SECRET}</code> không còn có thể bị lợi dụng bởi người dùng chưa xác thực, và cơ chế bypass chỉ còn phục vụ cho các tác vụ quản trị hợp lệ.</p>
+<h2 class="heading-element" id="flow"><span>Flow</span>
+  <a href="#flow" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><div class="diagram-container">
+  <pre class="mermaid">flowchart TD
+A["Attacker sends request with param"]
+--> B["?banhammer-process_SECRET"]
+
+B --> C["banhammer_abort() scans $_GET keys"]
+
+C --> D{"Key starts with 'banhammer-process_'?"}
+
+D -->|Yes| E["Extract SECRET from param"]
+
+E --> F["Generate expected secret via banhammer_get_secret_key()"]
+
+F --> G{"Provided secret == stored/generated secret?"}
+
+G -->|Yes| H["Return TRUE (Abort protection)"]
+
+H --> I["Skip ban check, skip logging, no blocking"]
+
+G -->|No| J["Continue normal ban logic"]</pre>
+  <pre class="mermaid-dark">flowchart TD
+A["Attacker sends request with param"]
+--> B["?banhammer-process_SECRET"]
+
+B --> C["banhammer_abort() scans $_GET keys"]
+
+C --> D{"Key starts with 'banhammer-process_'?"}
+
+D -->|Yes| E["Extract SECRET from param"]
+
+E --> F["Generate expected secret via banhammer_get_secret_key()"]
+
+F --> G{"Provided secret == stored/generated secret?"}
+
+G -->|Yes| H["Return TRUE (Abort protection)"]
+
+H --> I["Skip ban check, skip logging, no blocking"]
+
+G -->|No| J["Continue normal ban logic"]</pre>
+  <pre class="mermaid-neutral">flowchart TD
+A["Attacker sends request with param"]
+--> B["?banhammer-process_SECRET"]
+
+B --> C["banhammer_abort() scans $_GET keys"]
+
+C --> D{"Key starts with 'banhammer-process_'?"}
+
+D -->|Yes| E["Extract SECRET from param"]
+
+E --> F["Generate expected secret via banhammer_get_secret_key()"]
+
+F --> G{"Provided secret == stored/generated secret?"}
+
+G -->|Yes| H["Return TRUE (Abort protection)"]
+
+H --> I["Skip ban check, skip logging, no blocking"]
+
+G -->|No| J["Continue normal ban logic"]</pre><div class="diagram-copy-btn" aria-label="Copy Mermaid code" role="button"><i class="fa-regular fa-clone" aria-hidden="true"></i></div>
+<template><pre>flowchart TD
+A["Attacker sends request with param"]
+--> B["?banhammer-process_SECRET"]
+
+B --> C["banhammer_abort() scans $_GET keys"]
+
+C --> D{"Key starts with 'banhammer-process_'?"}
+
+D -->|Yes| E["Extract SECRET from param"]
+
+E --> F["Generate expected secret via banhammer_get_secret_key()"]
+
+F --> G{"Provided secret == stored/generated secret?"}
+
+G -->|Yes| H["Return TRUE (Abort protection)"]
+
+H --> I["Skip ban check, skip logging, no blocking"]
+
+G -->|No| J["Continue normal ban logic"]</pre></template>
+</div><h2 class="heading-element" id="proof-of-concept-poc"><span>Proof of Concept (PoC)</span>
+  <a href="#proof-of-concept-poc" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>Gửi request với param:</p>
+<div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-http"><span class="code-title"><i class="arrow fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h fa-fw" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Chuyển đổi số dòng" role="button" title="Chuyển đổi số dòng"><i class="fa-solid fa-list-ol fa-fw" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Chuyển đổi xuống dòng" role="button" title="Chuyển đổi xuống dòng"><i class="fa-solid fa-right-left fa-fw" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Sao chép vào bộ nhớ tạm" role="button" title="Sao chép vào bộ nhớ tạm"><i class="fa-regular fa-clone fa-fw" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="nf">GET</span> <span class="nn">/?banhammer-process_OTI4ZjdiY2RjZDA4ODY5Y2M0NGMxYmYyNGU3YWJl</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Host</span><span class="o">:</span> <span class="l">localhost</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div><h2 class="heading-element" id="conclusion"><span>Conclusion</span>
+  <a href="#conclusion" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>CVE-2025-10745 cho phép bypass cơ chế bảo vệ của plugin Banhammer thông qua tham số GET chứa secret key có thể dự đoán được. Bản vá đã bổ sung điều kiện kiểm tra quyền người dùng, chỉ cho phép bypass khi <strong>key hợp lệ và người dùng có quyền <code>manage_options</code></strong>, qua đó ngăn chặn hoàn toàn khả năng khai thác từ phía <strong>unauthenticated attacker</strong>.</p>
+<h2 class="heading-element" id="key-takeaways"><span>Key Takeaways</span>
+  <a href="#key-takeaways" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
+<li>Lỗi logic có thể vô hiệu hóa toàn bộ cơ chế bảo vệ dù không có khai thác kỹ thuật phức tạp.</li>
+<li>Secret key sinh từ dữ liệu tĩnh không đảm bảo tính bảo mật.</li>
+<li>Cơ chế bypass cần được xác thực chặt chẽ và không nên dựa vào tham số GET cố định.</li>
+<li>Cần cập nhật plugin lên phiên bản đã vá để tránh bị vượt qua cơ chế chặn.</li>
+</ul>
+<h2 class="heading-element" id="references"><span>References</span>
+  <a href="#references" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><a href="https://patchstack.com/academy/wordpress/vulnerabilities/privilege-escalation/" target="_blank" rel="external nofollow noopener noreferrer">Bypass Vulnerability</a></p>
+<p><a href="https://patchstack.com/database/wordpress/plugin/banhammer/vulnerability/wordpress-banhammer-plugin-3-4-8-unauthenticated-protection-mechanism-bypass-vulnerability" target="_blank" rel="external nofollow noopener noreferrer">WordPress Banhammer Plugin &lt;= 3.4.8 is vulnerable to a medium priority Bypass Vulnerability</a></p></div><hr class="awesome-hr" />
+    <h2 id="see-also">Nội dung liên quan</h2>
+    <ul><li>
+          <a href="/vi/posts/2026-01-23-cve-2025-10745/" title="CVE-2025-10745 Analysis &amp; POC">CVE-2025-10745 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2026-01-22-cve-2025-11707/" title="CVE-2025-11707 Analysis &amp; POC">CVE-2025-11707 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2026-01-15-cve-2025-12788/" title="CVE-2025-12788 Analysis &amp; POC">CVE-2025-12788 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2026-01-14-cve-2025-3102/" title="CVE-2025-3102 Analysis &amp; POC">CVE-2025-3102 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2026-01-13-cve-2025-6688/" title="CVE-2025-4796 Analysis &amp; POC">CVE-2025-4796 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2026-01-12-cve-2025-4796/" title="CVE-2025-4796 Analysis &amp; POC">CVE-2025-4796 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2026-01-11-cve-2025-8059/" title="CVE-2025-8059 Analysis &amp; POC">CVE-2025-8059 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2026-01-08-cve-2025-14156/" title="CVE-2025-2563 Analysis &amp; POC">CVE-2025-2563 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2026-01-07-cve-2025-2563/" title="CVE-2025-2563 Analysis &amp; POC">CVE-2025-2563 Analysis &amp; POC</a></li><li>
+          <a href="/vi/posts/2026-01-06-cve-2025-7654/" title="CVE-2025-7654 Analysis &amp; POC">CVE-2025-7654 Analysis &amp; POC</a></li></ul><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod"><span title="Cập nhật ngày 2026-01-23 19:00:00">Cập nhật ngày 2026-01-23&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/vi/posts/2026-01-24-/index.md" title="Đọc với định dạng Markdown" class="link-to-markdown">Đọc với định dạng Markdown</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2026-01-24-/index.vi.md?plain=1" title="Xem mã nguồn" target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">Xem mã nguồn</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/edit/main/content/posts/2026-01-24-/index.vi.md" title="Chỉnh sửa trang này" target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">Chỉnh sửa trang này</a></span><span><a href="https://github.com/w41bu1/w41bu1.github.io/issues/new?title=[BUG]%20CVE-2025-10745&#43;Analysis&#43;%26&#43;POC&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cCVE-2025-10745&#43;Analysis&#43;%26&#43;POC%7c%0A%7cURL%7chttp://localhost:1313/vi/posts/2026-01-24-/%7c%0A%7cFilename%7chttps://github.com/w41bu1/w41bu1.github.io/blob/main/content/posts/2026-01-24-/index.vi.md?plain=1%7c" title="Báo cáo lỗi" target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">Báo cáo lỗi</a></span><span><a href="vscode://file//home/w41/Project/w41bu1.github.io/content/posts/2026-01-24-/index.vi.md" title="Mở trong trình chỉnh sửa" target="_blank" rel="external nofollow noopener noreferrer" class="link-to-vscode">Mở trong trình chỉnh sửa</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Chia sẻ trên X" data-sharer="twitter" data-url="http://localhost:1313/vi/posts/2026-01-24-/" data-title="CVE-2025-10745 Analysis &amp; POC" data-hashtags="analyst,plugin,Bypass Vulnerability"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Chia sẻ trên Facebook" data-sharer="facebook" data-url="http://localhost:1313/vi/posts/2026-01-24-/" data-hashtag="analyst"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Chia sẻ trên Linkedin" data-sharer="linkedin" data-url="http://localhost:1313/vi/posts/2026-01-24-/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Chia sẻ trên Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/vi/posts/2026-01-24-/" data-title="CVE-2025-10745 Analysis &amp; POC"><i class="fa-brands fa-hacker-news fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/vi/tags/analyst/" class="post-tag" title="Nhãn - Analyst">Analyst</a><a href="/vi/tags/plugin/" class="post-tag" title="Nhãn - Plugin">Plugin</a><a href="/vi/tags/bypass-vulnerability/" class="post-tag" title="Nhãn - Bypass Vulnerability">Bypass Vulnerability</a></section>
+    <section><span><a href="javascript:void(0);" onclick="window.history.back();">Quay lại</a></span>&nbsp;|&nbsp;<span><a href="/vi/">Trang chủ</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/vi/posts/2026-01-22-cve-2025-11707/" class="post-nav-item" rel="prev" title="CVE-2025-11707 Analysis &amp; POC"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>CVE-2025-11707 Analysis &amp; POC</a><a href="/vi/posts/2026-01-23-cve-2025-10745/" class="post-nav-item" rel="next" title="CVE-2025-10745 Analysis &amp; POC">CVE-2025-10745 Analysis &amp; POC<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Nội dung"><h2 class="toc-title">Nội dung&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
+      <div class="toc">
+        <h2 class="toc-title">Nội dung</h2>
+        <div class="toc-content" id="toc-content-drawer"><nav >
+  <ul>
+    <li><a href="#cve--basic-info">CVE &amp; Basic Info</a></li>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#analysis">Analysis</a></li>
+    <li><a href="#flow">Flow</a></li>
+    <li><a href="#proof-of-concept-poc">Proof of Concept (PoC)</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#key-takeaways">Key Takeaways</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav></div>
+      </div>
+    </dialog></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2026</span><span class="author" itemprop="copyrightHolder">
+              <a href="github.com/w41bu1">Bui Van Y</a></span><span class="license footer-divider">w41bu1</span></div><div class="footer-line statistics"></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='Tổng khách truy cập'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Tổng lượt truy cập'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian"><span class="gov"><i class="fa-solid fa-user-secret"></i></span><span class="icp footer-divider"><i class="fa-solid fa-bug"></i></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="Lên trên"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><svg viewBox="0 0 100 100">
+              <circle class="bg" cx="50" cy="50" r="50"></circle>
+              <circle class="progress" cx="50" cy="50" r="50"></circle>
+            </svg></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="Nội dung"><i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">Trang web này hoạt động tốt nhất khi JavaScript được kích hoạt.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/cell-watermark/watermark.min.js" defer></script><script src="/lib/pace/pace.min.js" async defer></script><script src="/vi/js/config/ac6e5f04a32e67cf42c2ff566e87eca1.js" defer></script><script src="/js/lib/mermaid.js" type="module"></script><script src="/js/theme.min.js" defer></script><script src="/js/flyfish.min.js" defer></script></body>
+</html>
